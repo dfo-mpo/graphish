@@ -1,0 +1,2941 @@
+[
+   {
+      "name":[
+         "Adams Lake Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/adams-lake-indian-band",
+      "loc":"Thompson River near Chase",
+      "lat":"50.80762",
+      "lng":"-119.72787",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.adamslakeband.org/"
+   },
+   {
+      "name":[
+         "Ahousaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ahousaht-first-nation",
+      "loc":"West coast of Vancouver Island",
+      "lat":"49.28083",
+      "lng":"-126.05782",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://ahousaht.ca/"
+   },
+   {
+      "name":[
+         "Aitchelitz Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/aitchelitz-band",
+      "loc":"Chilliwack",
+      "lat":"49.14915",
+      "lng":"-121.99078",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:loNation"
+      }
+   },
+   {
+      "name":[
+         "?Akisq'nuk First Nation",
+         "Akisq'nuk",
+         "Columbia Lake Indian Band "
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/-akisq-nuk-first-nation-columbia-lake-indian-band",
+      "loc":"Windermere Lake, near Windermere",
+      "lat":"50.40857",
+      "lng":"-115.92131",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ktunaxa-nation":"Ktunaxa Nation"
+      },
+      "website":"http://akisqnuk.org/home/"
+   },
+   {
+      "name":[
+         "?Esdilagh First Nation",
+         "Alexandria Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/-esdilagh-first-nation-alexandria-indian-band",
+      "loc":"Quesnel",
+      "lat":"52.57568",
+      "lng":"-122.48828",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsilhqot-in-national-government":"Tsilhqot'in National Government"
+      }
+   },
+   {
+      "name":[
+         "Tsi Del Del",
+         "Alexis Creek First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/alexis-creek-first-nation-tsi-del-del",
+      "loc":"110 km west of Williams Lake",
+      "lat":"52.13845",
+      "lng":"-123.9596",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsilhqot-in-national-government":"Tsilhqot'in National Government"
+      }
+   },
+   {
+      "name":[
+         "Tl'etinqox-t'in Government Office",
+         "Anaham Indian Band",
+         "Tl'etinqox Government Office"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tl-etinqox-government-office-anaham",
+      "loc":"100 km west of Williams Lake near Alexis Creek",
+      "lat":"52.02069",
+      "lng":"-123.18187",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsilhqot-in-national-government":"Tsilhqot'in National Government"
+      },
+      "website":"www.tletinqox.ca"
+   },
+   {
+      "name":[
+         "?Aq'am",
+         "St. Mary's Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/-aq-am-st-mary-s-indian-band",
+      "loc":"West bank of the Kootenay River at the mouth of the St. Mary's River, 15 km northeast of Cranbrook",
+      "lat":"49.62869",
+      "lng":"-115.71188",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ktunaxa-nation":"Ktunaxa Nation"
+      },
+      "website":"http://www.aqam.net/about"
+   },
+   {
+      "name":[
+         "Ashcroft Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ashcroft-indian-band",
+      "loc":"Ashcroft",
+      "lat":"50.71786",
+      "lng":"-121.31157",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux  First Nations"
+      },
+      "website":"http://www.ashcroftband.ca/"
+   },
+   {
+      "name":[
+         "Scia'new (Beecher Bay)",
+         "Beecher Bay First Nation",
+         "Scia'new First Nation ",
+         "Sc\u2019ianew/Chenuh"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/scia-new-beecher-bay-first-nations",
+      "loc":"East Sooke",
+      "lat":"48.34391",
+      "lng":"-123.58615",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/te-mexw-treaty-association":"Te'mexw Treaty Association",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://beecherbay.ca/"
+   },
+   {
+      "name":[
+         "Blueberry River First Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/blueberry-river-first-nations",
+      "loc":"80 km northwest of Fort St. John",
+      "lat":"56.70185",
+      "lng":"-121.09326",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty 8 First Nations"
+      },
+      "website":"https://blueberryfn.com/"
+   },
+   {
+      "name":[
+         "Bonaparte Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/bonaparte-indian-band",
+      "loc":"West of Cache Creek",
+      "lat":"50.8408",
+      "lng":"-121.37622",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.bonaparteindianband.com/"
+   },
+   {
+      "name":[
+         "Boothroyd Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/boothroyd-indian-band",
+      "loc":"55 km north of Hope",
+      "lat":"49.96173",
+      "lng":"-121.48347",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      }
+   },
+   {
+      "name":[
+         "Boston Bar First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/boston-bar-first-nation",
+      "loc":"Boston Bar",
+      "lat":"49.869715",
+      "lng":"-121.451301",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      }
+   },
+   {
+      "name":[
+         "Bridge River Indian Band", 
+         "Nxwisten"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/bridge-river-indian-band-nxwisten",
+      "loc":"Near Lillooet",
+      "lat":"50.814022",
+      "lng":"-122.040276",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://xwisten.ca/"
+   },
+   {
+      "name":[
+         "Burns Lake Indian Band",
+         "Ts'il Kaz Koh First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ts-il-kaz-koh-first-nation-burns-lake-indian-band",
+      "loc":"220 km west of Prince George",
+      "lat":"54.23757",
+      "lng":"-125.76625",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://www.burnslakeband.ca/"
+   },
+   {
+      "name":[
+         "Campbell River Indian Band",
+         "Wei Wai Kum First Nation",
+         "We Wai Kum Nation",
+         "We Wai Kum First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/we-wai-kum-nation-campbell-river-indian-band",
+      "loc":"Campbell River",
+      "lat":"50.04057",
+      "lng":"-125.25466",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/laich-kwil-tach-treaty-society":"Laich-Kwil-Tach Treaty Society",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      }
+   },
+   {
+      "name":[
+         "Canim Lake IB (Tsq'escen'),",
+         "Tsq'escen\u2019",
+         "Canim Lake Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/canim-lake-indian-band-tsq-escen",
+      "loc":"130 km southeast of Williams Lake",
+      "lat":"51.77873",
+      "lng":"-120.9796",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-shuswap-tribal-council-northern-secwepemc-te-qelmucw":"Northern Shuswap Tribal Council"
+      },
+      "website":"http://www.canimlakeband.com/"
+   },
+   {
+      "name":[
+         "Stswecem'c Xgat'tem First Nation",
+         "Canoe Creek Indian Band",
+         "Canoe Creek IB (Stswecem'c Xgat'tem)"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/canoe-creek-indian-band-stswecem-c-xgat-tem-first-nation",
+      "loc":"140 km southwest of Williams Lake",
+      "lat":"51.58718",
+      "lng":"-122.20441",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-shuswap-tribal-council-northern-secwepemc-te-qelmucw":"Northern Shuswap Tribal Council"
+      },
+      "website":"http://canoecreekband.ca/"
+   },
+   {
+      "name":[
+         "Cape Mudge Band",
+         "Cape Mudge Indian Band",
+         "We Wai Kai Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/we-wai-kai-nation-cape-mudge-band",
+      "loc":"Campbell River",
+      "lat":"50.018795",
+      "lng":"-125.293588",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/laich-kwil-tach-treaty-society":"Laich-Kwil-Tach Treaty Society",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council"
+      },
+      "website":"http://www.wewaikai.com/"
+   },
+   {
+      "name":[
+         "Carcross/Tagish First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carcross-tagish-first-nation",
+      "loc":"Carcross, 60 km southeast of Whitehorse",
+      "lat":"60.173458",
+      "lng":"-134.703923",
+      "region":"Yukon",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-regional-negotiations-table":"Northern Regional Negotiations Table"
+      },
+      "website":"http://www.ctfn.ca/"
+   },
+   {
+      "name":[
+         "Sekw'el'was First Nation",
+         "Sekw’el’was First Nation",
+         "Cayoose Creek Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/cayoose-creek-band-sekw-el-was",
+      "loc":"Near Lillooet",
+      "lat":"50.67101",
+      "lng":"-121.93584",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://cayoosecreek.ca/"
+   },
+   {
+      "name":[
+         "Champagne and Aishihik First Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/champagne-and-aishihik-first-nations",
+      "loc":"Haines Junction",
+      "lat":"60.755046",
+      "lng":"-137.506888",
+      "region":"Yukon",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-regional-negotiations-table":"Northern Regional Negotiations Table"
+      },
+      "website":"http://www.cafn.ca/"
+   },
+   {
+      "name":[
+         "Chawathil Band Hope",
+         "Chawathil First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/chawathil-band-hope",
+      "loc":"On the Fraser River near Hope",
+      "lat":"49.37164",
+      "lng":"-121.53831",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      },
+      "website":"http://chawathil.org/"
+   },
+   {
+      "name":[
+         "Cheam First Nation",
+         "Cheam Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/cheam-first-nation",
+      "loc":"On the Fraser River east of Chilliwack",
+      "lat":"49.19725",
+      "lng":"-121.76873",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      }
+   },
+   {
+      "name":[
+         "Stz'uminus First Nation",
+         "Chemainus First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/stz-uminus-first-nation-chemainus",
+      "loc":"30 km south of Nanaimo",
+      "lat":"49.01354",
+      "lng":"-123.78647",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hul-qumi-num-treaty-group":"Hul'qumi'num Treaty Group"
+      },
+      "website":"http://www.stzuminus.com/"
+   },
+   {
+      "name":[
+         "Whispering Pines/ Clinton",
+         "Whispering Pines / Clinton Indian Band",
+         "Whispering Pines Clinton Indian Band",
+         "Clinton / Whispering Pines Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/whispering-pines-clinton-indian-band",
+      "loc":"North Thompson River 18 km north of Kamloops",
+      "lat":"50.98669",
+      "lng":"-120.24794",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.wpcib.com/"
+   },
+   {
+      "name":[
+         "Coldwater Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/coldwater-indian-band",
+      "loc":"Near Merritt",
+      "lat":"50.03294",
+      "lng":"-120.85976",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      },
+      "website":"http://www.coldwaterband.com/"
+   },
+   {
+      "name":[
+         "Cook's Ferry Indian Band",
+         "Cook’s Ferry First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/cook-s-ferry-indian-band",
+      "loc":"Near Spences Bridge",
+      "lat":"50.42473",
+      "lng":"-121.31942",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      },
+      "website":"http://www.cooksferryband.ca/"
+   },
+   {
+      "name":[
+         "Cowichan Tribes"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/cowichan-tribes",
+      "loc":"Adjacent to Duncan, 50 km northwest of Victoria",
+      "lat":"48.76609",
+      "lng":"-123.64902",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hul-qumi-num-treaty-group":"Hul'qumi'num Treaty Group"
+      },
+      "website":"http://www.cowichantribes.com/"
+   },
+   {
+      "name":[
+         "Da'naxda'xw/Awaetlala First Nation",
+         "Tanakteuk Indian Band",
+         "Da'naxda'xw/Awaetlatla"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/da-naxda-xw-awaetlala-first-nation",
+      "loc":"North end of Vancouver Island and the Knight Inlet area",
+      "lat":"50.594587",
+      "lng":"-126.593792",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      },
+      "website":"http://www.danaxdaxw.com/"
+   },
+   {
+      "name":[
+         "Daylu Dene Nation",
+         "Daylu Dena (Lower Post)"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lower-post-first-nation-daylu-dena-council",
+      "loc":"7 km south of the B.C./Yukon boundary at Laird River near Lower Post",
+      "lat":"59.9322",
+      "lng":"-128.511",
+      "region":"North",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kaska-dena-council":"Kaska Dena Council"
+      },
+      "website":"http://dayludenacouncil.com/"
+   },
+   {
+      "name":[
+         "Dease River Band Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/dease-river-first-nation",
+      "loc":"Near Good Hope Lake",
+      "lat":"59.282156",
+      "lng":"-129.302437",
+      "region":"North",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kaska-dena-council":"Kaska Dena Council"
+      }
+   },
+   {
+      "name":[
+         "Ditidaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ditidaht-first-nation",
+      "loc":"Cowichan Lake, through Nitinat Lake, to the west coast of Vancouver Island",
+      "lat":"48.81034",
+      "lng":"-124.67144",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.ditidaht.ca/"
+   },
+   {
+      "name":[
+         "Doig River First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/doig-river-first-nation",
+      "loc":"30 km northeast of Fort St. John",
+      "lat":"56.57731",
+      "lng":"-120.4879",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty8 First Nations"
+      }
+   },
+   {
+      "name":[
+         "Xa\u2019xtsa",
+         "Douglas First Nation",
+         "Xa'xtsa"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/douglas-first-nation-xa-xtsa",
+      "loc":"Near Pemberton",
+      "lat":"49.752905",
+      "lng":"-122.171199",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://xaxtsa.ca/"
+   },
+   {
+      "name":[
+         "Tsawataineuk Indian Band",
+         "Dzawada\u2019enuxw First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/dzawada-enuxw-first-nation-tsawataineuk",
+      "loc":"Kingcome Inlet, approximately 300 km northwest of Vancouver",
+      "lat":"50.97263",
+      "lng":"-126.17582",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/musgamagw-dzawada-enuxw-tribal-council":"Musgamagw Dzawada'enuxw Tribal Council"
+      },
+      "website":"http://www.kingcome.ca/"
+   },
+   {
+      "name":[
+         "Ehattesaht First Nation",
+         "Ehatteshaht"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ehattesaht-first-nation",
+      "loc":"West coast of Vancouver Island, 70 km west of Gold River",
+      "lat":"49.8738",
+      "lng":"-126.97629",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.ehattesaht.com/"
+   },
+   {
+      "name":[
+         "Fort Nelson First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fort-nelson-first-nation",
+      "loc":"6 km southwest of Fort Nelson",
+      "lat":"58.792271",
+      "lng":"-122.546884",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty 8 First Nations"
+      },
+      "website":"http://www.fortnelsonfirstnation.org/"
+   },
+   {
+      "name":[
+         "Gingolx Village Government",
+         "Kincolith Village Government"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gingolx-village-of-kincolith",
+      "loc":"Along Nass River, north west of Terrace",
+      "lat":"54.99286",
+      "lng":"-129.94291",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nisga-a-lisims-government":"Nisga'a Lisims Government"
+      },
+      "website":"http://gingolx.ca/"
+   },
+   {
+      "name":[
+         "Gitanmaax Band Council",
+         "Gitxsan First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitanmaax-office-of",
+      "loc":"Skeena and Bulkley Rivers, adjacent to the village of Hazelton",
+      "lat":"55.26783",
+      "lng":"-127.67718",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitxsan-hereditary-chiefs-treaty-society":"Gitxsan"
+      },
+      "website":"http://www.gitanmaax.com/SitePages/CurrentCouncil.aspx"
+   },
+   {
+      "name":[
+         "Gitga'at First Nation", "Hartley Bay Village Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitga-at-nation-hartley-bay",
+      "loc":"Hartley Bay, 145 km southeast of Prince Rupert",
+      "lat":"53.42291",
+      "lng":"-129.2608",
+      "region":"North Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsimshian-first-nations-treaty-society":"Tsimshian First Nation Treaty Society"
+      },
+      "website":"http://www.gitgaat.net"
+   },
+   {
+      "name":[
+         "New Aiyansh",
+         "Gitlaxt'aamix Village Government"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitlaxt-aamix-village-government-new-aiyansh",
+      "loc":"Along Nass River, north west of Terrace",
+      "lat":"55.20485",
+      "lng":"-129.07859",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nisga-a-lisims-government":"Nisga'a Lisims Government"
+      },
+      "website":"http://www.gitlaxtaamiks.com/"
+   },
+   {
+      "name":[
+         "Gitsegukla Indian Band",
+         "Kitsegugkla"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitsegukla-indian-band-kitsegugkla",
+      "loc":"34 km west of New Hazelton",
+      "lat":"55.10555",
+      "lng":"-127.81522",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitxsan-hereditary-chiefs-treaty-society":"Gitxsan"
+      }
+   },
+   {
+      "name":[
+         "Kitwanga",
+         "Gitwangak Band Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitwangak-band-council-kitwanga",
+      "loc":"120 km northeast of Terrace",
+      "lat":"55.09873",
+      "lng":"-128.0676",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitxsan-hereditary-chiefs-treaty-society":"Gitxsan"
+      }
+   },
+   {
+      "name":[
+         "Gitwinksihlkw Village Government"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitwinksihlkw-village-government",
+      "loc":"Along Nass River, north west of Terrace",
+      "lat":"55.19613",
+      "lng":"-129.22088",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nisga-a-lisims-government":"Nisga'a Lisims Government"
+      },
+      "website":"http://www.nisgaanation.ca/gitwinksihlkw-canyon-city"
+   },
+   {
+      "name":[
+         "Glen Vowell (Sik-e-Dahk)",
+         "Glen Vowell Indian Band",
+         "Sik-e-Dakh"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/glen-vowell-indian-band-sik-e-dakh",
+      "loc":"12 km north of Hazelton and 4 km south of the Kispiox River",
+      "lat":"55.30873",
+      "lng":"-127.6846",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitxsan-hereditary-chiefs-treaty-society":"Gitxsan"
+      },
+      "website":"http://www.sik-e-dakh.com/"
+   },
+   {
+      "name":[
+         "Gwa'Sala-Nakwaxda'xw",
+         "Gwa'sala-'Nakwaxda'xw Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gwa-sala-nakwaxda-xw-nation",
+      "loc":"Adjacent to Port Hardy on the northeastern tip of Vancouver Island",
+      "lat":"50.73313",
+      "lng":"-127.4986",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      },
+      "website":"http://www.gwanak.info/"
+   },
+   {
+      "name":[
+         "Gwawaenuk Tribe"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gwawaenuk-tribe",
+      "loc":"Near Hopetown",
+      "lat":"50.9234",
+      "lng":"-126.82118",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/musgamagw-dzawada-enuxw-tribal-council":"Musgamagw Dzawada'enuxw Tribal Council"
+      }
+   },
+   {
+      "name":[
+         "Hagwilget Village Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hagwilget-village-council",
+      "loc":"2 km north of New Hazelton and 8 km east of Hazelton",
+      "lat":"55.25821",
+      "lng":"-127.6",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/office-of-the-wet-suwet-en-society":"Office of the Wet'suwet'en Society"
+      },
+      "website":"http://www.hagwilget.com/"
+   },
+   {
+      "name":[
+         "Halalt First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/halalt-first-nation",
+      "loc":"Near Crofton, 55 km northwest of Victoria",
+      "lat":"48.87647",
+      "lng":"-123.69356",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hul-qumi-num-treaty-group":"Hul'qumi'num Treaty Group"
+      },
+      "website":"http://halalt.org/"
+   },
+   {
+      "name":[
+         "Halfway River First Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/halfway-river-first-nation",
+      "loc":"100 km northwest of Fort St. John on the Halfway River",
+      "lat":"56.47346",
+      "lng":"-121.88186",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty 8 First Nations"
+      },
+      "website":"http://hrfn.ca/"
+   },
+   {
+      "name":[
+         "Hesquiaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hesquiaht-first-nation",
+      "loc":"Hotsprings Cove, 35 km northwest of Tofino",
+      "lat":"49.3678",
+      "lng":"-126.2719",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://hesquiaht.ca/new/"
+   },
+   {
+      "name":[
+         "Homalco ",
+         "Xwemalhkwu Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/homalco-xwemalhkwu-indian-band",
+      "loc":"Calm Channel, 35 km northeast of Campbell River",
+      "lat":"49.94886",
+      "lng":"-125.24319",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://www.homalco.com/"
+   },
+   {
+      "name":[
+         "Hupacasath First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hupacasath-first-nation",
+      "loc":"Near Port Alberni, 150 km northwest of Victoria",
+      "lat":"49.26513",
+      "lng":"-124.8256",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.hupacasath.ca/"
+   },
+   {
+      "name":[
+         "Huu-ay-aht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/huu-ay-aht-first-nations",
+      "loc":"Barkley Sound near Bamfield",
+      "lat":"48.8002",
+      "lng":"-125.12313",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/maa-nulth-first-nations":"Maa-nulth First Nations"
+      },
+      "website":"http://huuayaht.org/"
+   },
+   {
+      "name":[
+         "Iskut First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/iskut-band-council",
+      "loc":"500 kilometres north of Terrace",
+      "lat":"57.83916",
+      "lng":"-129.9854",
+      "region":"North",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tahltan-central-council":"Tahltan Central Council"
+      },
+      "website":"http://iskut.org/"
+   },
+   {
+      "name":[
+         "Kamloops Indian Band",
+         "Tk'eml\u00faps te Secwepemc",
+         "Tk\u2019emlups",
+         "Tk'emlups te Secwepemc",
+         "Tk’emlups First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tk-eml-ps-te-secwepemc-kamloops-indian-band",
+      "loc":"North Thompson and South Thompson rivers, at Kamloops",
+      "lat":"50.72782",
+      "lng":"-120.20526",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.tkemlups.ca/"
+   },
+   {
+      "name":[
+         "Kanaka Bar Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kanaka-bar-indian-band-t-eqt-aqtn-mux",
+      "loc":"Near Lytton",
+      "lat":"50.1108",
+      "lng":"-121.5586",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      },
+      "website":"http://www.kanakabarband.ca/"
+   },
+   {
+      "name":[
+         "Ka:'yu:'k't'h'/Che:k'tles7et'h'",
+         "Kyoquot",
+         "Ka:\u2019yu:\u2019k\u2019t\u2019h\u2019/Che:k\u2019tles7et\u2019h",
+         "Ka:'yu:'k't'h'/Che:k:tles7et'h' First Nation",
+         "Kyuquot First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ka-yu-k-t-h-che-k-tles7et-h-first-nations-kyuquot",
+      "loc":"Kyuquot Sound",
+      "lat":"50.03052",
+      "lng":"-127.37817",
+      "region":"Vancouver Island/ South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/maa-nulth-first-nations":"Maa-nulth First Nations"
+      },
+      "website":"http://www.kyuquotbc.ca/"
+   },
+   {
+      "name":[
+         "Kispiox Band Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kispiox-band-council",
+      "loc":"Confluence of the Skeena and Kispiox Rivers, 16 km north of Hazelton",
+      "lat":"55.350911",
+      "lng":"-127.687325",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitxsan-hereditary-chiefs-treaty-society":"Gitxsan"
+      },
+      "website":"http://www.kispioxband.com/"
+   },
+   {
+      "name":[
+         "Haisla Nation Council", "Kitimaat Village Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/haisla-first-nation-kitimaat-village-council",
+      "loc":"Kitamaat Village, 10 km south of Kitimat, at the head of Douglas Inlet",
+      "lat":"53.97287",
+      "lng":"-128.6438",
+      "region":"North Coast",
+      "website":"http://haisla.ca/"
+   },
+   {
+      "name":[
+         "Kitasoo/Xai'xais Band Council",
+         "Kitasoo/Xai-Xais First Nation",
+         "Klemtu Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kitasoo-xai-xais-nation-klemtu",
+      "loc":"Klemtu on the east shore of Swindle Island",
+      "lat":"52.59063",
+      "lng":"-128.52791",
+      "region":"Central Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsimshian-first-nations-treaty-society":"Tsimshian First Nations Treaty Society",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/coastal-first-nations":"Coastal First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/wuikinuxv-kitasoo-nuxalk-tribal-council":"Wuikinuxv Kitasoo Nuxalk Tribal Council"
+      },
+      "website":"http://klemtu.com/"
+   },
+   {
+      "name":[
+         "Gitxaala Nation",
+         "Gitxaala First Nation",
+         "Kitkatla",
+         "Kitkatla First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitxaala-nation-kitkatla",
+      "loc":"Kitkatla",
+      "lat":"53.77313",
+      "lng":"-130.43922",
+      "region":"North West",
+      "website":"http://gitxaalanation.com/"
+   },
+   {
+      "name":[
+         "Kitselas First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kitselas-nation",
+      "loc":"Skeena River east of Terrace",
+      "lat":"54.49327",
+      "lng":"-128.58488",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsimshian-first-nations-treaty-society":"Tsimshian First Nations Treaty Society"
+      },
+      "website":"http://www.kitselas.com/"
+   },
+   {
+      "name":[
+         "Kitsumkalum First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kitsumkalum-first-nation",
+      "loc":"5 km west of Terrace",
+      "lat":"54.52262",
+      "lng":"-128.66824",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsimshian-first-nations-treaty-society":"Tsimshian First Nations Treaty Society"
+      },
+      "website":"http://www.kitsumkalum.bc.ca/"
+   },
+   {
+      "name":[
+         "Klahoose First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/klahoose-first-nation",
+      "loc":"East shore of Cortes Island",
+      "lat":"50.12818",
+      "lng":"-124.93219",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://klahoose.org/"
+   },
+   {
+      "name":[
+         "K'ómoks First Nation", "Comox First Nation", "K'omox First Nations", "K’omoks First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/k-moks-first-nation-comox-indian-band",
+      "loc":"Comox Valley, 200 km north of Victoria",
+      "lat":"49.67936",
+      "lng":"-124.9552",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      },
+      "website":"http://www.komoks.ca/"
+   },
+   {
+      "name":[
+         "Lhoosk\u2019uz Den\u00e9 Nation",
+         "Lhoosk'uz Dene' Government Administration",
+         "Lhoosk'uz Dene Government Administration",
+         "Kluskus Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lhoosk-uz-dene-nation-kluskus-indian-band",
+      "loc":"173 km west of Quesnel",
+      "lat":"53.09069",
+      "lng":"-124.48814",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-chilcotin-tribal-council":"Carrier Chilcotin Tribal Council"
+      },
+      "website":"http://www.lhooskuz.com/"
+   },
+   {
+      "name":[
+         "Kwadacha Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwadacha-nation-fort-ware",
+      "loc":"Fort Ware",
+      "lat":"57.42903",
+      "lng":"-125.6406",
+      "region":"North",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kaska-dena-council":"Kaska Dena Council"
+      },
+      "website":"http://www.kwadacha.com/"
+   },
+   {
+      "name":[
+         "Kwakiutl Indian Band",
+         "Kwakiutl First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-indian-band",
+      "loc":"Near Port Hardy",
+      "lat":"50.6942",
+      "lng":"-127.41081",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council"
+      }
+   },
+   {
+      "name":[
+         "Kwantlen First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwantlen-first-nation-fort-langley",
+      "loc":"On the Fraser River at Fort Langley",
+      "lat":"49.17568",
+      "lng":"-122.55879",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      },
+      "website":"http://www.kwantlenfn.ca/"
+   },
+   {
+      "name":[
+         "Kwaw'Kwaw'Apilt",
+         "Kwaw-kwaw-a-pilt First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwaw-kwaw-apilt-first-nation",
+      "loc":"Near Chilliwack",
+      "lat":"49.16254",
+      "lng":"-121.98255",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      }
+   },
+   {
+      "name":[
+         "Kwiakah First Nations",
+         "Kwiakah First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwiakah-first-nation",
+      "loc":"40 km north of Campbell River on the South Coast",
+      "lat":"50.42154",
+      "lng":"-125.15601",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/laich-kwil-tach-treaty-society":"Laich-Kwil-Tach Treaty Society",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      },
+      "website":"http://kwiakah.com/"
+   },
+   {
+      "name":[
+         "Kwikwasut'inuxw Haxwa'mis First Nation",
+         "Kwicksutaineuk/Ah-Kwa-Mish Tribes"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwicksutaineuk-ah-kwa-mish-tribes",
+      "loc":"Gilford Island, 40 east of Port Hardy",
+      "lat":"50.69417",
+      "lng":"-126.59857",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/musgamagw-dzawada-enuxw-tribal-council":"Musgamagw Dzawada'enuxw Tribal Council"
+      },
+      "website":"http://khfn.ca/"
+   },
+   {
+      "name":[
+         "Lake Cowichan First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lake-cowichan-first-nation",
+      "loc":"North shore of Cowichan Lake, approximately 80 km northwest of Victoria",
+      "lat":"48.82813",
+      "lng":"-124.0736",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hul-qumi-num-treaty-group":"Hul'qumi'num Treaty Group"
+      },
+      "website":"http://lakecowichanfn.ca/"
+   },
+   {
+      "name":[
+         "Laxgalts\u2019ap",
+         "Laxgalts'ap Village Government"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/laxgalts-ap-village-government-greenville",
+      "loc":"Along Nass River, north west of Terrace",
+      "lat":"55.03733",
+      "lng":"-129.5536",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nisga-a-lisims-government":"Nisga'a Lisims Government"
+      },
+      "website":"http://www.laxgaltsap.ca/"
+   },
+   {
+      "name":[
+         "Leq'a:mel First Nation",
+         "Lakahahmen"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/leq-mel-first-nation-lakahahmen",
+      "loc":"Near Deroche, 20 km east of Mission",
+      "lat":"49.18697",
+      "lng":"-122.07498",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://leqamel.ca/"
+   },
+   {
+      "name":[
+         "Lhtako Den\u00e9 Nation",
+         "Lhtako Dene Nation",
+         "Red Bluff Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lhtako-dene-nation-red-bluff-indian-band",
+      "loc":"Quesnel, North Cariboo",
+      "lat":"52.9484",
+      "lng":"-122.47971",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-chilcotin-tribal-council":"Carrier Chilcotin Tribal Council,",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/southern-dakelh-nation-alliance":"Southern Dakelh Nation Alliance"
+      },
+      "website":"http://carrierchilcotin.org/lhtako-dene-nation/"
+   },
+   {
+      "name":[
+         "Liard First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/liard-first-nation",
+      "loc":"Watson Lake",
+      "lat":"60.068233",
+      "lng":"-128.711373",
+      "region":"Yukon",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kaska-dena-council":"Kaska Dena Council"
+      },
+      "website":"https://liardfirstnation.org/"
+   },
+   {
+      "name":[
+         "T'it'q'et Administration",
+         "Lillooet Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/t-it-q-et-lillooet-indian-band",
+      "loc":"Near Lillooet",
+      "lat":"50.689754",
+      "lng":"-121.950058",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://www.titqet.org/"
+   },
+   {
+      "name":[
+         "Lil'wat Nation",
+         "Mount Currie Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lil-wat-nation-mount-currie-indian-band",
+      "loc":"At Mount Currie, 79 km southwest of Lillooet",
+      "lat":"50.3318",
+      "lng":"-122.66991",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://www.lilwat.ca/"
+   },
+   {
+      "name":[
+         "Yaqan nu?kiy",
+         "Lower Kootenay Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/yaqan-nu-kiy-lower-kootenay-band",
+      "loc":"On the Kootenay River, near Creston",
+      "lat":"49.05304",
+      "lng":"-116.53626",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ktunaxa-nation":"Ktunaxa Kinbasket Treaty Council"
+      },
+      "website":"http://lowerkootenay.com/"
+   },
+   {
+      "name":[
+         "Lower Similkameen Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lower-similkameen-indian-band",
+      "loc":"Similkameen River, near Keremeos",
+      "lat":"49.043867",
+      "lng":"-119.731366",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance"
+      },
+      "website":"http://www.lsib.net/"
+   },
+   {
+      "name":[
+         "Lyackson First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lyackson-first-nation",
+      "loc":"Valdes Island, off the east Coast of Vancouver Island",
+      "lat":"49.04129",
+      "lng":"-123.63683",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hul-qumi-num-treaty-group":"Hul'qumi'num Treaty Group"
+      },
+      "website":"http://www.lyackson.bc.ca/"
+   },
+   {
+      "name":[
+         "Lytton First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lytton-first-nation",
+      "loc":"Lytton at the confluence of the Fraser and Thompson Rivers",
+      "lat":"50.25858",
+      "lng":"-121.591348",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      },
+      "website":"http://www.lyttonfirstnations.com/"
+   },
+   {
+      "name":[
+         "Malahat Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/malahat-nation",
+      "loc":"Western shore of Saanich Inlet, south of Mill Bay",
+      "lat":"48.62379",
+      "lng":"-123.52793",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/te-mexw-treaty-association":"Te'mexw Treaty Association",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://www.malahatnation.ca"
+   },
+   {
+      "name":[
+         "Mamalilikulla First Nation",
+         "Mamalilikulla Qwe'Qwa'Sot'Em",
+         "Mamalilikulla-Que'Qwa'Sot'Em"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/mamalilikulla-qwe-qwa-sot-em-band",
+      "loc":"Near Campbell River",
+      "lat":"50.59418",
+      "lng":"-126.6823",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      },
+      "website":"http://mamalilikulla.ca/"
+   },
+   {
+      "name":[
+         "Matsqui First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/matsqui-first-nation",
+      "loc":"On the Fraser River, southeast of Mission",
+      "lat":"49.1107",
+      "lng":"-122.34923",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://www.angelfire.com/empire2/matsquifirstnation/"
+   },
+   {
+      "name":[
+         "Metlakatla First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/metlakatla-first-nation",
+      "loc":"5 km west of Prince Rupert, on the Tsimshian (Tsimpsean) Peninsula",
+      "lat":"54.36278",
+      "lng":"-130.44533",
+      "region":"North Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsimshian-first-nations-treaty-society":"Tsimshian First Nations Treaty Society"
+      },
+      "website":"http://www.metlakatla.ca/"
+   },
+   {
+      "name":[
+         "Mowachaht/Muchalaht First Nation",
+         "Mowachaht/ Muchalaht"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/mowachaht-muchalaht-first-nation",
+      "loc":"Mouth of Nootka Sound",
+      "lat":"49.81186",
+      "lng":"-126.076867",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.yuquot.ca/"
+   },
+   {
+      "name":[
+         "Nadleh Whut'en Band (Fraser Lake)", "Nadleh Whut'en First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nadleh-whut-en-first-nation-fraser-lake",
+      "loc":"Near Fort Fraser, approximately 130 km west of Prince George",
+      "lat":"54.07354",
+      "lng":"-124.60565",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://www.nadleh.ca/"
+   },
+   {
+      "name":[
+         "Nak'azdli Band",
+         "Nak'azdli First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nak-azdli-band",
+      "loc":"145 km northwest of Prince George",
+      "lat":"54.43142",
+      "lng":"-124.24753",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://www.nakazdli.ca/"
+   },
+   {
+      "name":[
+         "Snaw-aw-as (Nanoose)",
+         "Snaw-Naw-As First Nation",
+         "Nanoose First Nation",
+         "Snaw-naw-as"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/snaw-naw-as-nanoose-first-nation",
+      "loc":"10 km north of Nanaimo",
+      "lat":"49.25278",
+      "lng":"-124.12147",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/te-mexw-treaty-association":"Te'mexw Treaty Association",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://www.nanoose.org/"
+   },
+   {
+      "name":[
+         "Nazko First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nazko-first-nation",
+      "loc":"112 km west of Quesnel",
+      "lat":"52.95423",
+      "lng":"-123.5836",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-chilcotin-tribal-council":"Carrier Chilcotin Tribal Council,",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/southern-dakelh-nation-alliance":"Southern Dakelh Nation Alliance"
+      }
+   },
+   {
+      "name":[
+         "Nee Tahi Buhn",
+         "Nee-Tahi-Buhn Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nee-tahi-buhn-band",
+      "loc":"Near Burns Lake",
+      "lat":"53.93451",
+      "lng":"-125.67012",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/office-of-the-wet-suwet-en-society":"Office of the Wet'suwet'en Society"
+      }
+   },
+   {
+      "name":[
+         "Nemaiah Band",
+         "Xeni Gwet-in First Nations Government ",
+         "Xeni Gwet'in",
+         "Nemiah"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/xeni-gwet-in-first-nations-government",
+      "loc":"Nemiah Valley",
+      "lat":"51.42014",
+      "lng":"-124.09877",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsilhqot-in-national-government":"Tsilhqot'in National Government"
+      },
+      "website":"http://www.xenigwetin.ca/"
+   },
+   {
+      "name":[
+         "Neskonlith Indian Band",
+         "Little Shuswap Lake Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/neskonlith-indian-band",
+      "loc":"South Thompson River just below Little Shuswap Lake, near Chase",
+      "lat":"50.78396",
+      "lng":"-119.75402",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://neskonlith.org/"
+   },
+   {
+      "name":[
+         "Nicomen Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicomen-indian-band",
+      "loc":"Near Lytton",
+      "lat":"50.26381",
+      "lng":"-121.40319",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      },
+      "website":"http://www.nicomenband.com/"
+   },
+   {
+      "name":[
+         "Nooaitch Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nooaitch-indian-band",
+      "loc":"Near Merritt",
+      "lat":"50.18935",
+      "lng":"-121.05842",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      },
+      "website":"https://www.nooaitchindianband.com/"
+   },
+   {
+      "name":[
+         "North Thompson River Indian Band",
+         "Simpcw First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/simpcw-first-nation-north-thompson-river",
+      "loc":"North Thompson River, 70 km north of Kamloops",
+      "lat":"51.29518",
+      "lng":"-120.15432",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.simpcw.com/"
+   },
+   {
+      "name":[
+         "Anderson Lake",
+         "N'Quatqua Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/n-quatqua-band-anderson-lake",
+      "loc":"Near D'arcy",
+      "lat":"50.53386",
+      "lng":"-122.49279",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://www.nquatqua.ca/"
+   },
+   {
+      "name":[
+         "Nuchatlaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuchatlaht-first-nation",
+      "loc":"At the head of Espinosa Inlet 70 km west of Gold River",
+      "lat":"49.98954",
+      "lng":"-126.9417",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.nuchatlaht.com/"
+   },
+   {
+      "name":[
+         "Nuxalk Nation",
+         "Bella Coola Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuxalk-bella-coola-nation",
+      "loc":"Bella Coola",
+      "lat":"52.37609",
+      "lng":"-126.73038",
+      "region":"Central Coast",
+      "website":"http://nuxalknation.ca/"
+   },
+   {
+      "name":[
+         "Okanagan Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-indian-band",
+      "loc":"Near of Vernon at he north end of Okanagan Lake",
+      "lat":"50.34811",
+      "lng":"-119.29454",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance"
+      },
+      "website":"http://okib.ca/"
+   },
+   {
+      "name":[
+         "Old Massett Village Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/old-masset-village-council",
+      "loc":"5 km northwest of Masset, on Graham Island, Haida Gwaii",
+      "lat":"54.03865",
+      "lng":"-132.18026",
+      "region":"North Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/haida-nation-council-of":"Haida Nation, Council o"
+      },
+      "website":"http://www.oldmassettvillagecouncil.com/"
+   },
+   {
+      "name":[
+         "Oregon Jack Creek Band",
+         "Nteqem/ Snapaa (Oregon Jack)"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/oregon-jack-creek-band",
+      "loc":"6 km west of Cache Creek on the Trans Canada Highway",
+      "lat":"50.61778",
+      "lng":"-121.31774",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      }
+   },
+   {
+      "name":[
+         "Osoyoos Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/osoyoos-indian-band",
+      "loc":"Near Osoyoos",
+      "lat":"49.13909",
+      "lng":"-119.49085",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance"
+      },
+      "website":"http://oibdc.ca/"
+   },
+   {
+      "name":[
+         "Pacheedaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/pacheedaht-first-nation",
+      "loc":"80 km northwest of Victoria, near Port Renfrew",
+      "lat":"48.57867",
+      "lng":"-124.40829",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ditidaht-first-nation":"Ditidaht First Nation"
+      },
+      "website":"http://pacheedahtfirstnation.com/"
+   },
+   {
+      "name":[
+         "Penelakut Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/penelakut-tribe",
+      "loc":"Kuper Island, off the east coast of Vancouver Island",
+      "lat":"48.95895",
+      "lng":"-123.64835",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/hul-qumi-num-treaty-group":"Hul'qumi'num Treaty Group"
+      },
+      "website":"http://www.penelakut.ca/"
+   },
+   {
+      "name":[
+         "Penticton Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/penticton-indian-band",
+      "loc":"Southwest section of the Okanagan Valley, adjacent to the City of Penticton",
+      "lat":"49.47297",
+      "lng":"-119.68499",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance"
+      },
+      "website":"http://pib.ca/"
+   },
+   {
+      "name":[
+         "Popkum Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/popkum-indian-band",
+      "loc":"On the Fraser River, south of Hope",
+      "lat":"49.20537",
+      "lng":"-121.71942",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      }
+   },
+   {
+      "name":[
+         "Prophet River Band",
+         "Denetsaa Tse K'Nai"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/prophet-river-first-nation-denetsaa-tse-k-nai",
+      "loc":"100 km south of Fort Nelson",
+      "lat":"58.07992",
+      "lng":"-122.6984",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty 8 First Nations"
+      },
+      "website":"http://www.prophetriverfn.com/"
+   },
+   {
+      "name":[
+         "Quatsino First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/quatsino-first-nation",
+      "loc":"North end of Vancouver Island and the Knight Inlet area on the mainland",
+      "lat":"50.61329",
+      "lng":"-127.57366",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council"
+      },
+      "website":"http://quatsinofn.com/"
+   },
+   {
+      "name":[
+         "Ross River Dene Council",
+         "Ross River Dena Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ross-river-dena-council",
+      "loc":"Ross River",
+      "lat":"61.980332",
+      "lng":"-132.44936",
+      "region":"Yukon",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kaska-dena-council":"Kaska Dena Council"
+      },
+      "website":"http://www.kaskadenacouncil.com/kaska-nations/ross-river-dena-council"
+   },
+   {
+      "name":[
+         "Saik'uz First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/saik-uz-first-nation-stony-creek",
+      "loc":"95 km west of Prince George",
+      "lat":"53.93837",
+      "lng":"-124.12531",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://www.saikuz.com/"
+   },
+   {
+      "name":[
+         "Samahquam First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/samahquam-first-nation",
+      "loc":"Douglas Portage on the Lillooet River",
+      "lat":"49.99045",
+      "lng":"-122.45676",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/in-shuck-ch-nation":"Nation",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lower-stl-atl-imx-tribal-council":"Lower Stl'atl'imx Tribal Council"
+      }
+   },
+   {
+      "name":[
+         "Saulteau First Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/saulteau-first-nations",
+      "loc":"100 km southwest of Fort St. John",
+      "lat":"55.84717",
+      "lng":"-121.64408",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty 8 First Nations"
+      },
+      "website":"http://www.saulteau.com/"
+   },
+   {
+      "name":[
+         "Seabird Island Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/seabird-island-indian-band",
+      "loc":"Seabird Island, in the Fraser River, 3 km east of Agassiz, 20 km northeast of Chilliwack",
+      "lat":"49.27532",
+      "lng":"-121.70495",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      },
+      "website":"http://www.seabirdisland.ca/"
+   },
+   {
+      "name":[
+         "Seton Lake Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/seton-lake-band",
+      "loc":"North shore of Seton Lake, 20 km northwest of Lillooet",
+      "lat":"50.7421",
+      "lng":"-122.2014",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://tsalalh.net/"
+   },
+   {
+      "name":[
+         "Shackan Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shackan-indian-band",
+      "loc":"Near Merritt",
+      "lat":"50.289317",
+      "lng":"-121.180515",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      },
+      "website":"http://www.shackan.ca/"
+   },
+   {
+      "name":[
+         "Shuswap Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-band",
+      "loc":"Columbia River, one mile north of Invermere",
+      "lat":"50.53837",
+      "lng":"-116.02039",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.shuswapband.net/"
+   },
+   {
+      "name":[
+         "Shxw'ow'hamel First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shxw-ow-hamel-first-nation",
+      "loc":"Near Hope",
+      "lat":"49.34026",
+      "lng":"-121.60558",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      },
+      "website":"http://www.shxwowhamel.ca/"
+   },
+   {
+      "name":[
+         "Shxwh\u00e1:y Village",
+         "Skway",
+         "Shxwha:y"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shxwh-y-village-skway-first-nation",
+      "loc":"3km west of Chillwack",
+      "lat":"49.16999",
+      "lng":"-121.99542",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://www.skway.com/"
+   },
+   {
+      "name":[
+         "Siska Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/siska-indian-band",
+      "loc":"On the Fraser River at Siska Creek, south of Lytton",
+      "lat":"50.13868",
+      "lng":"-121.56983",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      }
+   },
+   {
+      "name":[
+         "Skookumchuck",
+         "Skatin Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skatin-nations-skookumchuck",
+      "loc":"Douglas Portage on the Lillooet River",
+      "lat":"49.94371",
+      "lng":"-122.40972",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/in-shuck-ch-nation":"L",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lower-stl-atl-imx-tribal-council":"ower Stl'atl'imx Tribal Council"
+      },
+      "website":"http://skatin.ca/"
+   },
+   {
+      "name":[
+         "Skawahlook"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skawahlook-first-nation",
+      "loc":"On the Fraser River at the mouth of Ruby Creek, 15 km west of Hope",
+      "lat":"49.35467",
+      "lng":"-121.60862",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://www.skawahlook.com/"
+   },
+   {
+      "name":[
+         "Skeetchestn Indian Band",
+         "Deadman's Creek"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skeetchestn-indian-band",
+      "loc":"Deadman and Thompson Rivers, approximately 40 km northwest of Kamloops",
+      "lat":"50.81837",
+      "lng":"-120.95981",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.skeetchestn.ca/"
+   },
+   {
+      "name":[
+         "Skidegate Band Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skidegate-band-council",
+      "loc":"On the southeast corner of Graham Island, Haida Gwaii",
+      "lat":"53.26143",
+      "lng":"-131.99707",
+      "region":"North Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/haida-nation-council-of":"Haida Nation, Council of"
+      },
+      "website":"http://www.skidegate.ca/"
+   },
+   {
+      "name":[
+         "Skin Tyee Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skin-tyee-band",
+      "loc":"Near Francois Lake, west of Prince George",
+      "lat":"53.998304",
+      "lng":"-125.879403",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/office-of-the-wet-suwet-en-society":"Office of the Wet'suwet'en Society"
+      }
+   },
+   {
+      "name":[
+         "Skowkale First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skowkale-first-nation-skulkayn",
+      "loc":"2 km east of Sardis, south of Chilliwack and the Fraser River",
+      "lat":"49.13768",
+      "lng":"-121.94237",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/sto-lo-xwexwilmexw-treaty-association":"Sto:lo Xwexwilmexw Treaty Association"
+      },
+      "website":"http://www.skowkalefn.com/"
+   },
+   {
+      "name":[
+         "Skuppah Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skuppah-indian-band",
+      "loc":"Near Lytton",
+      "lat":"50.19338",
+      "lng":"-121.57647",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      }
+   },
+   {
+      "name":[
+         "Sliammon First Nation",
+         "Tla'amin Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tla-amin-nation-sliammon-first-nation",
+      "loc":"North of Powell River on the Sunshine Coast",
+      "lat":"49.90601",
+      "lng":"-124.61105",
+      "region":"South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://sliammonfirstnation.com/"
+   },
+   {
+      "name":[
+         "Snuneymuxw First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/snuneymuxw-first-nation",
+      "loc":"Nanaimo River watershed",
+      "lat":"49.15087",
+      "lng":"-123.92788",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://www.snuneymuxw.ca/"
+   },
+   {
+      "name":[
+         "Xats\u2019ull (Soda Creek IB)",
+         "Xat'sull First Nation",
+         "Soda Creek Indian Band "
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/xat-sull-first-nation-soda-creek",
+      "loc":"35 km north of Williams Lake",
+      "lat":"52.26222",
+      "lng":"-122.09341",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-shuswap-tribal-council-northern-secwepemc-te-qelmucw":"Northern Shuswap Tribal Council"
+      },
+      "website":"http://www.xatsull.com/"
+   },
+   {
+      "name":[
+         "Songhees First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/songhees-nation",
+      "loc":"Esquimalt Harbour",
+      "lat":"48.44532",
+      "lng":"-123.42485",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/te-mexw-treaty-association":"Te'mexw Treaty Association"
+      },
+      "website":"http://songheesnation.ca/"
+   },
+   {
+      "name":[
+         "T'sou-ke",
+         "T'Sou-ke Nation",
+         "Sooke Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/t-sou-ke-nation",
+      "loc":"Sooke Basin",
+      "lat":"48.38669",
+      "lng":"-123.69449",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/te-mexw-treaty-association":"Te'mexw Treaty Association"
+      },
+      "website":"http://www.tsoukenation.com/"
+   },
+   {
+      "name":[
+         "Soowahlie Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/soowahlie-indian-band",
+      "loc":"On the Chilliwack River, 12 km south of Chilliwack",
+      "lat":"49.08399",
+      "lng":"-121.95686",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      },
+      "website":"http://soowahlie.ca/"
+   },
+   {
+      "name":[
+         "Splats\u00edn",
+         "Spallumcheen Band",
+         "Splatsin Band",
+         "Splatsin First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/splatsin-spallumcheen-band",
+      "loc":"Enderby on the Shuswap River at the mouth of Fortune Creek",
+      "lat":"50.52168",
+      "lng":"-119.15223",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/shuswap-nation-tribal-council":"Shuswap Nation Tribal Council"
+      },
+      "website":"http://www.splatsin.ca"
+   },
+   {
+      "name":[
+         "Spuzzum (Sp\u00f4\u2019z\u00eam)  First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/spuzzum-first-nation",
+      "loc":"Fraser Canyon, north of Yale",
+      "lat":"49.66112",
+      "lng":"-121.41335",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux-tribal-council":"Nlaka'pamux First Nations",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/fraser-thompson-indian-services-society":"Fraser Thompson Indian Services Society"
+      },
+      "website":"http://www.spuzzumnation.com/"
+   },
+   {
+      "name":[
+         "Sq'ewlets First Nation", "Scowlitz First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/scowlitz-first-nation",
+      "loc":"On the shore of Harrison Bay, northeast of Chilliwack",
+      "lat":"49.23922",
+      "lng":"-122.00235",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-tribal-council":"St\u00f3:lo Tribal Council"
+      }
+   },
+   {
+      "name":[
+         "Squiala First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/squiala-first-nation",
+      "loc":"On the Chilliwack River, in Chilliwack",
+      "lat":"49.15593",
+      "lng":"-121.9796",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://www.squiala.com/"
+   },
+   {
+      "name":[
+         "Stellat'en First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/stellat-en-first-nation",
+      "loc":"150 km west of Prince George",
+      "lat":"54.05836",
+      "lng":"-124.88562",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://www.stellaten.ca/"
+   },
+   {
+      "name":[
+         "Yunesit'in First Nation",
+         "Stone Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/yunesit-in-first-nation-stone",
+      "loc":"Hanceville, 90 km west of Williams Lake",
+      "lat":"51.93546",
+      "lng":"-123.14252",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsilhqot-in-national-government":"Tsilhqot'in National Government"
+      }
+   },
+   {
+      "name":[
+         "Sumas First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/sumas-first-nation",
+      "loc":"On the Sumas River at Lonzo Creek, near Abbotsford",
+      "lat":"49.05037",
+      "lng":"-122.19496",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://www.sumasfirstnation.com/"
+   },
+   {
+      "name":[
+         "Tahltan Band Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tahltan-band-council",
+      "loc":"700 kilometres northwest of Terrace",
+      "lat":"57.90688",
+      "lng":"-131.16039",
+      "region":"North",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tahltan-central-council":"Tahltan Central Council"
+      },
+      "website":"http://www.tahltan.ca/"
+   },
+   {
+      "name":[
+         "Takla First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/takla-lake-first-nation",
+      "loc":"East shore of Takla Lake, 130 km north of Burns Lake",
+      "lat":"55.48293",
+      "lng":"-125.9686",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://www.taklafn.ca/"
+   },
+   {
+      "name":[
+         "Teslin Tlingit Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/teslin-tlingit-council",
+      "loc":"Teslin, 18 km north of the B.C./Yukon boundary",
+      "lat":"60.17138",
+      "lng":"-132.744485",
+      "region":"Yukon",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-regional-negotiations-table":"Northern Regional Negotiations Table"
+      },
+      "website":"http://www.ttc-teslin.com/"
+   },
+   {
+      "name":[
+         "Tla-o-qui-aht First Nation",
+         "Clayoquot"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tla-o-qui-aht-first-nations",
+      "loc":"West coast of central Vancouver Island",
+      "lat":"49.17607",
+      "lng":"-125.91101",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.tla-o-qui-aht.org/"
+   },
+   {
+      "name":[
+         "Tlatlasikwala First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tlatlasikwala-first-nation",
+      "loc":"Northern tip of Vancouver Island",
+      "lat":"50.91758",
+      "lng":"-127.91465",
+      "region":"Vancouver Island / South Coast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwakiutl-district-council":"Kwakiutl District Council"
+      },
+      "website":"http://www.tlatlasikwala.com/"
+   },
+   {
+      "name":[
+         "Tl'azt'en First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tl-azt-en-nation",
+      "loc":"50 km northwest of Fort St. James",
+      "lat":"54.66206",
+      "lng":"-124.7384",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council"
+      },
+      "website":"http://tlaztennation.ca/"
+   },
+   {
+      "name":[
+         "Tlowitsis First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tlowitsis-nation",
+      "loc":"100 km northwest of Campbell River",
+      "lat":"50.53201",
+      "lng":"-125.98274",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nanwakolas-council":"Nanwakolas Council"
+      },
+      "website":"http://www.tlowitsis.com/"
+   },
+   {
+      "name":[
+         "Tobacco Plains Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tobacco-plains-indian-band",
+      "loc":"12 km south of Grasmere and 60 km southeast of Cranbrook",
+      "lat":"49.04682",
+      "lng":"-115.09122",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ktunaxa-nationl":"Ktunaxa Kinbasket Treaty Council"
+      },
+      "website":"http://www.tobaccoplains.org/"
+   },
+   {
+      "name":[
+         "Toosey Indian Band (Tl'esqox)"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/toosey-indian-band-tl-esqox",
+      "loc":"40 km south of Williams Lake",
+      "lat":"51.92029",
+      "lng":"-122.4838",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsilhqot-in-national-government":"Tsilhqot'in National Government",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-chilcotin-tribal-council":"Carrier Chilcotin Tribal Council"
+      }
+   },
+   {
+      "name":[
+         "Toquaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/toquaht-nation",
+      "loc":"Toquart Bay on the north side of Barkley Sound",
+      "lat":"48.99351",
+      "lng":"-125.38386",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/maa-nulth-first-nations":"Maa-nulth First Nations"
+      },
+      "website":"http://www.toquaht.ca/"
+   },
+   {
+      "name":[
+         "Tsawwassen First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsawwassen-first-nation",
+      "loc":"South of Vancouver near the U.S, border",
+      "lat":"49.03312",
+      "lng":"-123.09438",
+      "region":"Lower Mainland",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://www.tsawwassenfirstnation.com/"
+   },
+   {
+      "name":[
+         "Tseshaht First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tseshaht-first-nation",
+      "loc":"On the Somass River, 5 km northwest of Port Alberni",
+      "lat":"49.2738",
+      "lng":"-124.86458",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nuu-chah-nulth-tribal-council":"Nuu-chah-nulth Tribal Council"
+      },
+      "website":"http://www.tseshaht.com/"
+   },
+   {
+      "name":[
+         "Ts'Kw'aylaxw",
+         "Ts'kw'aylaxw First Nation",
+         "Pavilion Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ts-kw-aylaxw-first-nation-pavilion-indian-band",
+      "loc":"Near Lillooet, on the bank of the Fraser River north of Pavilion Creek",
+      "lat":"50.88185",
+      "lng":"-121.84435",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://www.tskwaylaxw.com/"
+   },
+   {
+      "name":[
+         "Tsleil-Waututh Nation", "Tsleil-Waututh First Nation", "Burrard Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsleil-waututh-nation-burrard-band",
+      "loc":"Burrard Inlet, North Vancouver",
+      "lat":"49.3078",
+      "lng":"-122.97979",
+      "region":"Lower Mainland",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/naut-sa-mawt-tribal-council-alliance-tribal-council":"Naut'sa mawt Tribal Council"
+      },
+      "website":"http://www.twnation.ca/"
+   },
+   {
+      "name":[
+         "Tzeachten First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tzeachten-first-nation",
+      "loc":"3 km south of Sardis",
+      "lat":"49.10986",
+      "lng":"-121.93724",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      },
+      "website":"http://www.tzeachten.ca/"
+   },
+   {
+      "name":[
+         "Uchucklesaht Tribe"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/uchucklesaht-tribe",
+      "loc":"On Uchucklesit Inlet and Henderson Lake",
+      "lat":"49.02374",
+      "lng":"-125.04041",
+      "region":"Vancouver Island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/maa-nulth-first-nations":"Maa-nulth First Nations"
+      },
+      "website":"http://www.uchucklesaht.ca/"
+   },
+   {
+      "name":[
+         "Yuu\u0142u\u0294i\u0142\u0294ath",
+         "Ucluelet First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/yuu-u-i-at-first-nation-ucluelet",
+      "loc":"At Ucluelet on the west coast of Vancouver Island",
+      "lat":"48.93962",
+      "lng":"-125.52934",
+      "region":"Vancouver island",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/maa-nulth-first-nations":"Maa-nulth First Nations"
+      },
+      "website":"http://www.ufn.ca/"
+   },
+   {
+      "name":[
+         "Ulkatcho First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/ulkatcho-first-nation",
+      "loc":"Anahim Lake, approximately 100 km east of Bella Coola, and 325 km west of Williams Lake",
+      "lat":"52.4753",
+      "lng":"-125.30074",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-chilcotin-tribal-council":"Carrier Chilcotin Tribal Council,",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/southern-dakelh-nation-alliance":"Southern Dakelh Nation Alliance"
+      }
+   },
+   {
+      "name":[
+         "Upper Nicola Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/upper-nicola-band",
+      "loc":"45km east of Merritt",
+      "lat":"50.17101",
+      "lng":"-120.28035",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nicola-tribal-association":"Nicola Tribal Association"
+      },
+      "website":"http://uppernicola.com/"
+   },
+   {
+      "name":[
+         "Upper Similkameen Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/upper-similkameen-indian-band",
+      "loc":"Similkameen River near Keremeos",
+      "lat":"49.36995",
+      "lng":"-120.10039",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance"
+      }
+   },
+   {
+      "name":[
+         "West Moberly First Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/west-moberly-first-nations1",
+      "loc":"90 km southwest of Fort St. John",
+      "lat":"55.806712",
+      "lng":"-121.885429",
+      "region":"Northeast",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/treaty-8-first-nations":"Treaty 8 First Nations"
+      }
+   },
+   {
+      "name":[
+         "Westbank First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/westbank-first-nation",
+      "loc":"West shore of Okanagan Lake, across from Kelowna",
+      "lat":"49.83693",
+      "lng":"-119.60729",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/okanagan-nation-alliance":"Okanagan Nation Alliance"
+      },
+      "website":"http://www.wfn.ca/"
+   },
+   {
+      "name":[
+         "Wet'suwet'en,", "Wet'suwet'en First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/wet-suwet-en-first-nation-broman-lake",
+      "loc":"Between Burns Lake and Houston",
+      "lat":"54.3314",
+      "lng":"-125.89347",
+      "region":"North Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/carrier-sekani-tribal-council":"Carrier Sekani Tribal Council",
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/office-of-the-wet-suwet-en-society":"Office of the Wet'suwet'en Society"
+      },
+      "website":"http://www.wetsuweten.com/communities/browman-lake/"
+   },
+   {
+      "name":[
+         "Willams Lake IB (T'exelc)", "Williams Lake First Nation", "Williams Lake Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/williams-lake-first-nation",
+      "loc":"8 km south of Williams Lake",
+      "lat":"52.10624",
+      "lng":"-121.99392",
+      "region":"South Central",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/northern-shuswap-tribal-council-northern-secwepemc-te-qelmucw":"Northern Shuswap Tribal Council"
+      },
+      "website":"http://www.williamslakeband.ca/"
+   },
+   {
+      "name":[
+         "Witset First Nation ",
+         "Moricetown Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/moricetown-band-administration",
+      "loc":"Halfway between Smithers and New Hazelton",
+      "lat":"55.01163",
+      "lng":"-127.32254",
+      "region":"North West",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/office-of-the-wet-suwet-en-society":"Office of the Wet'suwet'en Society"
+      },
+      "website":"https://www.witset.ca/about"
+   },
+   {
+      "name":[
+         "Oweekeno Nation",
+         "Wuikinuxv Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/wuikinuxv-first-nation-oweekeno",
+      "loc":"80 km from Bella Bella, on the Wannock River, between Rivers Inlet and Owikeno Lake",
+      "lat":"51.68385",
+      "lng":"-127.21298",
+      "region":"Central Coast",
+      "website":"http://wuikinuxv.net/"
+   },
+   {
+      "name":[
+         "Xaxli'p First Nation (Fountain)",
+         "Xaxl'ip"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/xaxli-p-first-nation-fountain-band",
+      "loc":"On the Fraser River, north of Lillooet",
+      "lat":"50.73593",
+      "lng":"-121.8636",
+      "region":"South Interior",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-t-imc-chiefs-council-includes-lillooet-tribal-council-bands":"St'\u00e1t'imc Chiefs Council"
+      },
+      "website":"http://www.xaxlip.ca/"
+   },
+   {
+      "name":[
+         "Yakweakwioose First Nation",
+         "Yakweakwioose,"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/yakweakwioose-first-nation",
+      "loc":"1.5 km east of Sardis",
+      "lat":"49.13338",
+      "lng":"-121.9361",
+      "region":"Fraser Valley",
+      "groups":{
+         "https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/st-lo-nation1":"St\u00f3:lo Nation"
+      }
+   },
+   {
+      "name":[
+         "Acho Dene Koe First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/acho-dene-koe-first-nation-nwt",
+      "loc":"Fort Liard",
+      "lat":"60.249984",
+      "lng":"-123.470155",
+      "region":"Northwest Territories",
+      "website":"http://www.adkfirstnation.ca/community/"
+   },
+   {
+      "name":[
+         "Heiltsuk Nation",
+         "Bella Bella Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/heiltsuk-bella-bella-nation",
+      "loc":"Campbell Island",
+      "lat":"52.15843",
+      "lng":"-128.1546",
+      "region":"Central Coast"
+   },
+   {
+      "name":[
+         "Binche Whut'en First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/bi-nche-first-nations",
+      "loc":"Ft. St. James",
+      "lat":"",
+      "lng":"",
+      "region":"North Central",
+      "website":"http://binchekeyoh.ca/"
+   },
+   {
+      "name":[
+         "Cheslatta Carrier Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/cheslatta-carrier-nation",
+      "loc":"Southbank, on south shore of Francois Lake, 23 km south of Burns Lake",
+      "lat":"54.00563",
+      "lng":"-125.7126",
+      "region":"North Central"
+   },
+   {
+      "name":[
+         "Esk'etemc First Nation",
+         "Esk'etemc First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/esk-etemc-first-nation-alkali-indian-band",
+      "loc":"50 km south of Williams Lake",
+      "lat":"51.78903",
+      "lng":"-122.2286",
+      "region":"South Central",
+      "website":"http://www.esketemc.org/"
+   },
+   {
+      "name":[
+         "Esquimalt Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/esquimalt-first-nation",
+      "loc":"West of Victoria",
+      "lat":"48.444176",
+      "lng":"-123.428946",
+      "region":"Vancouver Island",
+      "website":"http://www.esquimaltnation.ca/"
+   },
+   {
+      "name":[
+         "Gitanyow Hereditary Chiefs", "Gitanyow First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/gitanyow-hereditary-chiefs1",
+      "loc":"140 km northeast of Terrace",
+      "lat":"55.26763",
+      "lng":"-128.0706",
+      "region":"North West",
+      "website":"http://www.gitanyowchiefs.com/"
+   },
+   {
+      "name":[
+         "High Bar First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/high-bar-first-nation",
+      "loc":"BC Rail line east of Clinton",
+      "lat":"51.11295",
+      "lng":"-122.01813",
+      "region":"South Interior",
+      "website":"http://www.highbarfirstnation.com/"
+   },
+   {
+      "name":[
+         "Katzie First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/katzie-first-nation",
+      "loc":"On the Fraser River, near Port Hammond in Maple Ridge",
+      "lat":"49.20313",
+      "lng":"-122.6736",
+      "region":"Fraser Valley",
+      "website":"http://www.katzie.ca/"
+   },
+   {
+      "name":[
+         "Kwikwetlem First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/kwikwetlem-first-nation",
+      "loc":"Coquitlam",
+      "lat":"49.23067",
+      "lng":"-122.80371",
+      "region":"Fraser Valley",
+      "website":"http://www.kwikwetlem.com/"
+   },
+   {
+      "name":[
+         "Lake Babine Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lake-babine-nation",
+      "loc":"Adjacent to the village of Burns Lake, 230 km west of Prince George",
+      "lat":"54.23873",
+      "lng":"-125.76234",
+      "region":"North Central",
+      "website":"http://www.lakebabine.com/"
+   },
+   {
+      "name":[
+         "Laxkw'alaams Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lax-kw-alaams-band",
+      "loc":"Port Simpson, approximately 30 km northwest of Prince Rupert",
+      "lat":"54.55559",
+      "lng":"-130.43388",
+      "region":"North Coast",
+      "website":"http://laxkwalaams.ca/"
+   },
+   {
+      "name":[
+         "Lheidli-T'enneh First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lheidli-t-enneh-first-nation",
+      "loc":"On the Fraser and Nechako Rivers, near Prince George",
+      "lat":"54.008613",
+      "lng":"-122.614038",
+      "region":"North Central",
+      "website":"http://www.lheidli.ca/"
+   },
+   {
+      "name":[
+         "Little Shuswap Lake Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/little-shuswap-lake-indian-band",
+      "loc":"Near Chase, approximately 30 km northwest of Salmon Arm",
+      "lat":"50.88072",
+      "lng":"-119.6098",
+      "region":"South Interior",
+      "website":"http://www.lslib.com/"
+   },
+   {
+      "name":[
+         "Lower Nicola Indian Band", "Lower Nicola Tribal Council"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/lower-nicola-indian-band",
+      "loc":"Near Merritt",
+      "lat":"50.18549",
+      "lng":"-120.84562",
+      "region":"South Interior",
+      "website":"http://lnib.net/about/"
+   },
+   {
+      "name":[
+         "McLeod Lake Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/mcleod-lake-indian-band",
+      "loc":"McLeod Lake, 140 km north of Prince George",
+      "lat":"54.98803",
+      "lng":"-123.04575",
+      "region":"North Central",
+      "website":"http://www.mlib.ca/"
+   },
+   {
+      "name":[
+         "Musqueam Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/musqueam-indian-band",
+      "loc":"Point Grey area of Vancouver",
+      "lat":"49.23022",
+      "lng":"-123.20614",
+      "region":"Lower Mainland",
+      "website":"http://www.musqueam.bc.ca/"
+   },
+   {
+      "name":[
+         "'Namgis First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/-namgis-first-nation",
+      "loc":"Centred around Alert Bay, south of Pt. McNeill on Cormorant Island",
+      "lat":"50.59623",
+      "lng":"-126.9476",
+      "region":"Vancouver Island",
+      "website":"http://www.namgis.bc.ca"
+   },
+   {
+      "name":[
+         "Qayqayt First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/qayqayt-first-nation-new-westminister",
+      "loc":"New Westminster",
+      "lat":"49.203108",
+      "lng":"-122.933885",
+      "region":"Lower Mainland"
+   },
+   {
+      "name":[
+         "Nlaka'pamux First Nations"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/nlaka-pamux",
+      "loc":"South Interior",
+      "lat":"",
+      "lng":"",
+      "region":"South Interior"
+   },
+   {
+      "name":[
+         "Pauquachin First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/pauquachin-first-nation",
+      "loc":"Near Sidney, northern Saanich Peninsula",
+      "lat":"48.6228",
+      "lng":"-123.45786",
+      "region":"Vancouver Island"
+   },
+   {
+      "name":[
+         "Peters Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/peters-band",
+      "loc":"Near Hope",
+      "lat":"49.30143",
+      "lng":"-121.65176",
+      "region":"Fraser Valley"
+   },
+   {
+      "name":[
+         "Qualicum First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/qualicum-first-nation",
+      "loc":"Qualicum Beach",
+      "lat":"49.39861",
+      "lng":"-124.61164",
+      "region":"Vancouver Island"
+   },
+   {
+      "name":[
+         "Sechelt First Nation", 
+         "Sechelt Indian Band",
+         "Shíshálh Nation",
+         "Shishalth Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/sechelt-sh-sh-lh-first-nation",
+      "loc":"Sechelt Peninsula (Sunshine Coast), 50 km northwest of Vancouver",
+      "lat":"49.47543",
+      "lng":"-123.74473",
+      "region":"South Coast",
+      "website":"http://www.shishalh.com/"
+   },
+   {
+      "name":[
+         "Semiahmoo First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/semiahmoo-first-nation",
+      "loc":"South of Vancouver on the U.S. border",
+      "lat":"49.011",
+      "lng":"-122.76466",
+      "region":"Lower Mainland"
+   },
+   {
+      "name":[
+         "Skwah First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skwah-first-nation",
+      "loc":"Near Chilliwack",
+      "lat":"49.17609",
+      "lng":"-121.97576",
+      "region":"Fraser Valley"
+   },
+   {
+      "name":[
+         "Squamish Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/squamish-nation",
+      "loc":"Lower Mainland to Howe Sound and the Squamish Valley watershed",
+      "lat":"49.31599",
+      "lng":"-123.08886",
+      "region":"Lower Mainland",
+      "website":"http://www.squamish.net"
+   },
+   {
+      "name":[
+         "Sts'ailes First Nation", "Chehalis Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/sts-ailes-nation-chehalis-indian-band",
+      "loc":"100km east of Vancouver on the banks of the Harrison River",
+      "lat":"49.29317",
+      "lng":"-121.90978",
+      "region":"Fraser Valley",
+      "website":"http://www.stsailes.com/home"
+   },
+   {
+      "name":[
+         "Taku River Tlingit First Nation",
+         "Atlin First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/taku-river-tlingit-first-nations-atlin-first-nation",
+      "loc":"Around Atlin Lake and Teslin Lake",
+      "lat":"59.49784",
+      "lng":"-133.645593",
+      "region":"North",
+      "website":"http://trtfn.yikesite.com/"
+   },
+   {
+      "name":[
+         "Tsartlip First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsartlip-first-nation",
+      "loc":"Brentwood Bay, Saanich Peninsula",
+      "lat":"48.58505",
+      "lng":"-123.45728",
+      "region":"Vancouver Island",
+      "website":"http://tsartlip.com/"
+   },
+   {
+      "name":[
+         "Tsawout First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsawout-first-nation",
+      "loc":"Saanich Peninsula",
+      "lat":"48.58888",
+      "lng":"-123.38676",
+      "region":"Vancouver Island",
+      "website":"http://www.tsawout.com/"
+   },
+   {
+      "name":[
+         "Tsay Keh Dene"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tsay-keh-dene-band",
+      "loc":"South of Finlay River at the north end of Williston Lake",
+      "lat":"56.89172",
+      "lng":"-124.969058",
+      "region":"North",
+      "website":"http://www.tsaykeh.com/"
+   },
+   {
+      "name":[
+         "Tsetsaut / Skii km Lax Ha Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/skii-km-lax-ha-nation-17705",
+      "loc":"Nass, Stikine and Skeena Rivers area",
+      "lat":"",
+      "lng":"",
+      "region":"North West"
+   },
+   {
+      "name":[
+         "Tseycum First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/tseycum-first-nation",
+      "loc":"Saanich Peninsula",
+      "lat":"48.66441",
+      "lng":"-123.45102",
+      "region":"Vancouver Island",
+      "website":"http://www.tseycum.ca"
+   },
+   {
+      "name":[
+         "Union Bar Indian Band"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/union-bar-indian-band",
+      "loc":"Near Hope",
+      "lat":"49.408636",
+      "lng":"-121.424954",
+      "region":"South interior",
+      "website":"http://www.unionbarfirstnations.com/phpBB3_305/"
+   },
+   {
+      "name":[
+         "Wuikinuxv Kitasoo Nuxalk Tribal Council "
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/wuikinuxv-kitasoo-nuxalk-tribal-council",
+      "loc":"Bella Coola Valley, Klemtu,",
+      "lat":"",
+      "lng":"",
+      "region":"Central Coast",
+      "website":"http://www.wkntc.org/"
+   },
+   {
+      "name":[
+         "Yale First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/yale-first-nation",
+      "loc":"Fraser River at Yale",
+      "lat":"49.56168",
+      "lng":"-121.42264",
+      "region":"South Interior",
+      "website":"http://www.yalefirstnation.ca/"
+   },
+   {
+      "name":[
+         "Yekooche First Nation"
+      ],
+      "url":"https://www2.gov.bc.ca/gov/content/environment/natural-resource-stewardship/consulting-with-first-nations/first-nations-negotiations/first-nations-a-z-listing/yekooche-first-nation",
+      "loc":"50 km northwest of Fort St. James",
+      "lat":"54.60039",
+      "lng":"-125.06622",
+      "region":"North Central",
+      "website":"http://www.yekooche.com/"
+   }
+]

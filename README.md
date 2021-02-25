@@ -8,7 +8,29 @@ One focus of the initiative is on information pertaining to current salmon rebui
 
 This **Proof of Concept** (PoC) is intended to demonstrate the value of KG technology as a means of helping to achieve the overall goals of the PSS by showcasing data processing procedures for assembly, cleaning, transformation (standardization), loading, and linking of data from text sources (e.g. reports, Word documents and Excel spreadsheets) into nodes and links in a Salmon Knowledge Graph.
 
-### B. Quick-start
+### B1. Shortcut for `PaRR projects` showcase:
+
+***This is for people who used this system - don't do it if read first time***
+
+    git clone https://github.com/dfo-mpo/graphish.git
+    cd graphish
+    ./gather_neo4j_plugins.sh
+
+Choose to create dockers
+
+    docker-compose up --build nlp neo4j show
+
+Or pull them
+
+    docker-compose pull nlp neo4j show
+
+Then in Neo4j Browser window:
+
+    :play http://localhost:8001/html/parr_show.html
+
+Follow all instructions, would take 15-20 minutes depending on machine.
+
+### B2. Quick-start
 
 ##### 1. Prerequisite
 
@@ -236,6 +258,10 @@ Open the browser, go to http://localhost:7474, enter username (neo4j) and passwo
   Open the brower, go to http://localhost:7474, enter username (neo4j) and password (pskgi), type the below and press `[Ctrl/Cmd]+Enter`:
 
     :play http://localhost:8001/html/show.html
+
+  or (for PaRR Projects, note that importing PaRR projects would take 10-15 mins depending on machine configuration)
+
+    :play http://localhost:8001/html/parr_show.html
 
   and follow the instructions on the screen.
 
