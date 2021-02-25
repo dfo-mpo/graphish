@@ -1,6 +1,6 @@
 __author__ = "Nghia Doan"
 __copyright__ = "Copyright 2021"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __maintainer__ = "Nghia Doan"
 __email__ = "nghia71@gmail.com"
 __status__ = "Development"
@@ -73,13 +73,12 @@ class PostProcessor(object):
 
             # Collect matched pair (word index, xpos_tag) based on `collect`
             good_words = [{
-                'c': words[int(i)].text.lower() if 'P' not in x else words[int(i)].text,
                 'l': words[int(i)].lemma.lower()
             } for i, x in self.collect.findall(id_xpos_list[s:e])]
 
             # Create new key phrase
             key_phrases.append({
-                'c': ' '.join(w['c'] for w in good_words),
+                'c': ' '.join(w['l'] for w in good_words),
                 'w': good_words
             })
 
@@ -100,11 +99,26 @@ class PostProcessor(object):
         ]
 
     def process(self, document):
-        return [
-            {
-                'c': sentence.text,
-                's': sentence.sentiment,
-                'e': self.extract_entities(document.entities),
-                'k': self.filter_key_phrases(sentence.words)
-            } for sentence in document.sentences
-        ]
+        processed_doc = []
+        for sentence in document.sentences:
+
+            el = self.extract_entities(sentence.entities)
+            es = set(e['c'] for e in el)
+            ex = set(s for s in es if any(s in x and s != x for x in es))
+            le = set(' '.join(w['l'] for w in e['w']) for e in el)
+
+            kl = self.filter_key_phrases(sentence.words)
+            ks = set(k['c'] for k in kl)
+            ekx = set(s for s in es if any(s in x and s != x for x in ks))
+            kex = set(s for s in ks if any(s in x and s != x for x in le))
+
+            ec = es.difference(ex).difference(ekx)
+            kc = ks.difference(kex)
+
+            processed_doc.append({
+                'c': sentence.text, 's': sentence.sentiment,
+                'e': [e for e in el if e['c'] in ec],
+                'k': [k for k in kl if k['c'] in kc],
+            })
+
+        return processed_doc

@@ -237,6 +237,10 @@ Open the browser, go to http://localhost:7474, enter username (neo4j) and passwo
 
     :play http://localhost:8001/html/show.html
 
+  or (for PaRR Projects, note that importing PaRR projects would take 10-15 mins depending on machine configuration)
+
+    :play http://localhost:8001/html/parr_show.html
+
   and follow the instructions on the screen.
 
 </details>
