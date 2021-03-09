@@ -1,0 +1,3971 @@
+[
+   {
+      "data_source":"CA",
+      "project_id":"2018AFSAR3194",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Seyem' Qwantlen Salmon River Habitat Enhancement Project",
+      "project_description":"SQ, as owned and operated by Kwantlen First Nation, will engage in a multi-phased fish and water quality study and riparian planting of the Salmon river, Davidson Creek and associated tributaries in Fort Langley, BC. This project will fill data gaps for the Salish Sucker, and will enhance and improve habitat and biodiversity through replanting and bioengineering efforts.",
+      "project_goals":"Enhance the quality of the watershed and improve habitat and biodiversity for Salish Sucker.",
+      "project_duration":[
+         2018,
+         2020
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "name":"Marilyn Carpenter"
+         }
+      ],
+      "project_lead_organization":[
+         "Seyem' Qwantlen Resources Ltd."
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.142309,
+      "longitude_in_decimal_degrees":-122.60165,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":38235,
+      "g_c_funding_sources":[
+         "AFSAR"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":38235,
+      "what_is_the_total_cost_of_the_project":42432.5,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CO",
+         "SSU"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "what_was_the_primary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric":"Square-metres riparian habitat treated",
+      "outcome_value":1465,
+      "what_was_the_primary_socio_economic_outcome":"Number of people trained",
+      "provide_the_value_of_the_primary_socio_economic_outcome":2,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":8,
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"CA from FPP drive, C. Nessman Master List",
+      "project_id":"19-NF-PAC-043",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"An integrated plan to restore and enhance waterways within the City of Chilliwack",
+      "project_description":"The population of Chilliwack is projected to double by year 2041 and; therefore, the development of both immediate and future management and restoration initiatives is critical to ensure ongoing ecological function. Waterways within the targeted area have been subjected to impacts by numerous anthropogenic factors which threaten SAR such as Coastrange Sculpin, Salish Sucker, and Sockeye, Chinook, and Coho Salmon. Both the quality and quantity of SAR habitat in this area has been reduced due to infrastructure development, agricultural, and forestry activities, introduction of invasive plant species and the increasing impacts of climate change. Impacts include reduced access to off-channel habitat, declining aquatic water quality, and disruptions of natural systems. Key subset areas within Chilliwack will be identified, assessed, and prioritized for restoration and habitat improvement activities.",
+      "project_goals":"Ensure the long-term health and biodiversity of nearby Chilliwack waterways in order to meaningfully contribute to the recovery of local SAR as well as support diverse aquatic species populations in general.",
+      "project_duration":[
+         2019,
+         2023
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"Kim.Hardacre@dfo-mpo.gc.ca",
+            "tel":"604-666-0130",
+            "name":"Kim Hardacre"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watershed Coalition"
+      ],
+      "project_partners":[
+         "City of Chilliwack",
+         "Cultus Lake Aquatic Stewardship Strategy",
+         "Fraser Basin Council",
+         "Chilliwack Cultural Museum",
+         "Tourism Chilliwack",
+         "Ministry of Agriculture",
+         "Pacific Salmon Foundation",
+         "Environment Canada Environmental Damages Fund"
+      ],
+      "watershed_name":"Lower Fraser",
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":70675,
+      "g_c_funding_sources":[
+         "CNFASAR"
+      ],
+      "other_cash_contributions":197506,
+      "other_in_kind_contributions":71000,
+      "other_funding_sources":[
+         "Chilliwack Cultural Museum",
+         "Tourism Chilliwack",
+         "Ministry of Agriculture",
+         "Pacific Salmon Foundation",
+         "Environment Canada Environmental Damages Fund",
+         "Fraser Basin Council",
+         "Cultus Lake Aquatic Stewardship Strategy",
+         "Pearson Ecological"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":339181,
+      "what_is_the_total_cost_of_the_project":452180,
+      "project_phase":"Active",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "SK",
+         "SSU",
+         "CAL"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "what_was_the_primary_restoration_activity":"Watershed planning and assessment",
+      "outcome_metric":"Number of watershed plans and assessments completed"
+   },
+   {
+      "data_source":"CA from FPP drive, C. Nessman Master List",
+      "rru_involvement":true,
+      "project_id":"19-HPAC-00039",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Habitat Restoration in the Lower Fraser River and Estuary",
+      "project_description":"The Musqueam nation is seeking to build its capacity to be key partners and leaders in aquatic and foreshore fisheries habitat restoration within Musqueam territory (Lower Fraser River and parts of Salish Sea). Key areas of interest to Musqueam include the Steveston Harbour area in the South arm of the Fraser River, MacDonald Slough, and the foreshore areas around and in Musqueam Indian Reserve in the North arm of the Fraser River. Objectives of this project are: 1) Develop assessment and restoration plans of key areas of interest to Musqueam for fisheries habitat restoration, 2) Develop protocols and relationships with partners to support Musqueam fisheries habitat restoration initiatives, 3) Hire and train a 3-member Musqueam team for fisheries habitat restoration, 4) Participate and secure Musqueam involvement in planning and operational co-management for fisheries habitat restoration.",
+      "project_goals":"Restore key fisheries habitat areas of interest to Musqueam in partnership with Canada and other partners. Build Musqueam technical capacities to improve fisheries habitat restoration and planning for meaningful co-management and shared decision-making.",
+      "project_duration":[
+         2018,
+         2022
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"jsanchez@musqueam.bc.ca",
+            "tel":"250-713-1129",
+            "name":"Jaime Sanchez"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Musqueam Indian Band"
+      ],
+      "project_partners":[
+         "Vancouver Airport Authority",
+         "British Columbia Ministry of Forests",
+         "Lands",
+         "Natural Resource Operations and Rural Development"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.191892,
+      "longitude_in_decimal_degrees":-123.23079,
+      "sep_rru_in_kind_contributions":1630,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":500000,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":501630,
+      "what_is_the_total_cost_of_the_project":1183316,
+      "project_phase":"Active",
+      "ecosystem_type":[
+         "Estuarine"
+      ],
+      "target_species":[
+         "CH"
+      ],
+      "life_stage":[
+         "Estuarine juvenile"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, Schedule 7, Monitoring Report, C. Nessman Master List",
+      "rru_involvement":true,
+      "project_id":"18-HPAC-00324\n(C1-PAC-47)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Estuary Restoration in the Fraser River Delta and Connected Wetlands",
+      "project_description":"In the Fraser River delta, over 70% of the historic estuarine habitat has been developed for human use. In addition, impacts associated with climate change (e.g. sea level rise, wetter winters, dryer summers) will further stress habitats, reducing the extent of salt brackish marsh and mudflats currently constrained by dikes and other infrastructure. This project will re-connect previously alienated habitat through dike breaches and improvements to water control structures. Fish access to marsh habitat in the South Arm Marshes by upgrading water control infrastructure on Gunn and Rose Kirkland Islands and breaches in the Kirkland Island Jetty. Marsh habitat currently alienated behind dikes in the Alaksen National Wildlife Area will also be restored. Natural physical processes such as circulation, salinity gradients, and nutrient and estuary sedimentation processes will be restored, ensuring these habitats are more resilient and robust to sea level rise. Removal of invasive plants and restoration of native vegetation to improve overall habitat quality of estuaries and salt marshes by supporting food-web for aquatic species.",
+      "project_goals":"Overall increase in the amount of accessible wetland, intertidal, and salt marsh habitat for fish and other aquatic organisms.",
+      "project_duration":[
+         2018,
+         2022
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"s_nathan@ducks.ca",
+            "tel":"778-888-1706",
+            "name":"Sarah Nathan"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Ducks Unlimited Canada"
+      ],
+      "project_partners":[
+         "Raincoast Conservation Foundation",
+         "Province of BC",
+         "British Columbia Institute of Technology",
+         "South Coast Conservation Lands Management Program",
+         "Canadian Wildlife Services",
+         "Habitat Conservation Trust Foundation",
+         "Greater Vancouver Regional District",
+         "The City of Richmond",
+         "BC Ministry of Forests Lands Natural Resource Operations and Rural Development",
+         "Nature Trust of BC",
+         "Musqueam First Nation"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.100877,
+      "longitude_in_decimal_degrees":-123.127505,
+      "sep_rru_in_kind_contributions":7380,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":647098,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_cash_contributions":200000,
+      "other_funding_sources":[
+         "Province of British Columbia Spartina funding"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":854478,
+      "what_is_the_total_cost_of_the_project":2474294,
+      "project_phase":"Active",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Estuarine"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "SK"
+      ],
+      "life_stage":[
+         "Estuarine juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Fish passage",
+      "outcome_metric":"Square-metres habitat made accessible",
+      "outcome_value":27000,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":4,
+      "what_was_the_secondary_socio_economic_outcome":"Number of people trained",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":6,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity",
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Vegetation surveys",
+         "Benthic surveys",
+         "Nets and traps",
+         "Water sampling"
+      ],
+      "number_of_years_of_monitoring_before_restoration":1,
+      "number_of_years_of_monitoring_after_restoration":4,
+      "monitoring_design":"BACI",
+      "season_monitored":[
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Estuarine juvenile"
+      ],
+      "other_information":"https://www.ducks.ca/stories/pacific-coast/major-investment-bc-fraser-river-estuary/"
+   },
+   {
+      "data_source":"EOI, CA, Summary Report, Progress Report, CA from FPP drive, C. Nessman Master List",
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01090",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Lower Fraser River wetland conservation and restoration plan",
+      "project_description":"This project is to formalize partnerships between First Nations, conservation organizations, and researchers leading to conservation activities in the Lower Fraser River. Restoration projects will be prioritized using the Priority Threat Management (PTM) method in partnership with the Martin Conservation Decisions Lab (at UBC) and the Marxan Method. These tools provide a systematic process of developing conservation planning that maximizes outcomes for biodiversity and other primary goals. A deliverable of this project is to complete a report entitled \"The Lower Fraser Regional Strategic Fish Habitat Restoration Plan\" and to establish a recommended list of restoration projects to best support Pacific salmon.",
+      "project_goals":"Create a strategic habitat restoration plan for the Lower Fraser River and Estuary. Provide restoration training and capacity building to First Nations. Establish project specific environmental baselines to support long-term monitoring and detailed restoration project design.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Jeanne.hughes@lffa.ca",
+            "tel":"604-615-9333",
+            "name":"Jeanne Hughes"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Lower Fraser Fisheries Alliance"
+      ],
+      "project_partners":[
+         "Pacific Salmon Foundation",
+         "Community Mapping Network",
+         "Raincoast Conservation",
+         "University of British Columbia",
+         "Ducks Unlimited",
+         "BC Fish and Wildlife Federation",
+         "Fraser River Discovery Centre Society",
+         "BC/World Rivers Day",
+         "University of Victoria"
+      ],
+      "watershed_name":"Lower Fraser",
+      "sep_rru_in_kind_contributions":2445,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":245075,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_cash_contributions":125000,
+      "other_in_kind_contributions":240000,
+      "other_funding_sources":[
+         "Community Mapping Network",
+         "Pacific Samon Foundation",
+         "Pacific Salmon Endowment Fund Society"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":612520,
+      "what_is_the_total_cost_of_the_project":1165427,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "PK",
+         "CM",
+         "CO",
+         "SRKW",
+         "WSG",
+         "Eulachon"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "what_was_the_primary_socio_economic_outcome":"Number of partners engaged in project",
+      "provide_the_value_of_the_primary_socio_economic_outcome":9,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Baseline information"
+      ],
+      "monitoring_activities":[
+         "Invertebrate surveys",
+         "Water sampling",
+         "Qualitative visual assessments",
+         "Nets and traps"
+      ],
+      "number_of_years_of_monitoring_before_restoration":1,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"CA from FPP drive, EOI, C. Nessman Master List",
+      "number_of_sites":6,
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01101",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Heart of the Fraser: Collaborative Partnership to Restore Chinook and Chum Salmon Habitat in the Harrison-Chehalis and Nicomen Slough River Systems - William Phillips Slough",
+      "project_description":"William Phillips Slough - Planning for enhancement and restoration of William Phillips Slough. The \"Heart of the Fraser\" located in and around the Harrison River and its confluence with the Fraser River is a highly productive area for Pacific salmon (e.g. Harrison River Chinook). This project will restore historic slough systems within the Harrison River, Nicomen Slough, and the Fraser River. Project activities will primarily focus on creating and restoring Chinook and chum salmon rearing and overwintering habitat by addressing four main issues/threats: 1) sloughs and side channels in the Harrison-Chehalis and Nicomen Slough area have been lost through anthropogenic changes, 2) lake outlets have very little gravel replenishment, 3) increased sedimentation from the Norrish and Deroche Creek fans, and 4) significant need to continue developing management efforts for the Lh\u00e1:lt/Harrison-Chehalis Wildlife Management Area and Harrison Salmon Stronghold Strategic Plan.",
+      "project_goals":"Contribute to strategic planning for restoration priorities supporting important Pacific salmon stocks in the Fraser River estuary, rehabilitate aquatic habitats, build local capacity and understanding.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Sts'ailes First Nation",
+         "Hemmera Envirochem Inc.",
+         "Leq'a:mel First Nation",
+         "Swqelets First Nation",
+         "South Coast Conservation Land Management Program",
+         "Western Painted Turtle Recovery Team",
+         "Pearson Ecological"
+      ],
+      "number_of_indigenous_partners":3,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.283231,
+      "longitude_in_decimal_degrees":-121.911239,
+      "sep_rru_in_kind_contributions":1630,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":334285,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":27008,
+      "other_funding_sources":[
+         "Fraser Valley Watersheds Coalition",
+         "Hemmera & Harrison Salmon Stronghold",
+         "South Coast Conservation Lands Management Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":362923,
+      "what_is_the_total_cost_of_the_project":1283983,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "SK",
+         "PK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, EOI, C. Nessman Master List",
+      "number_of_sites":6,
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01101",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Heart of the Fraser: Collaborative Partnership to Restore Chinook and Chum Salmon Habitat in the Harrison-Chehalis and Nicomen Slough River Systems - Bateson Slough",
+      "project_description":"Bateson Slough - Planning for restoration of connectivity and hydrology in Bateson Slough. The \"Heart of the Fraser\" located in and around the Harrison River and its confluence with the Fraser River is a highly productive area for Pacific salmon (e.g. Harrison River Chinook). This project will restore historic slough systems within the Harrison River, Nicomen Slough, and the Fraser River. Project activities will primarily focus on creating and restoring Chinook and chum salmon rearing and overwintering habitat by addressing four main issues/threats: 1) sloughs and side channels in the Harrison-Chehalis and Nicomen Slough area have been lost through anthropogenic changes, 2) lake outlets have very little gravel replenishment, 3) increased sedimentation from the Norrish and Deroche Creek fans, and 4) significant need to continue developing management efforts for the Lh\u00e1:lt/Harrison-Chehalis Wildlife Management Area and Harrison Salmon Stronghold Strategic Plan.",
+      "project_goals":"Contribute to strategic planning for restoration priorities supporting important Pacific salmon stocks in the Fraser River estuary, rehabilitate aquatic habitats, build local capacity and understanding.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Sts'ailes First Nation",
+         "Hemmera Envirochem Inc.",
+         "Leq'a:mel First Nation",
+         "Swqelets First Nation",
+         "South Coast Conservation Land Management Program",
+         "Western Painted Turtle Recovery Team",
+         "Pearson Ecological"
+      ],
+      "number_of_indigenous_partners":3,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.247,
+      "longitude_in_decimal_degrees":-121.931139,
+      "sep_rru_in_kind_contributions":2460,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":334285,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":27008,
+      "other_funding_sources":[
+         "Fraser Valley Watersheds Coalition",
+         "Hemmera & Harrison Salmon Stronghold",
+         "South Coast Conservation Lands Management Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":363753,
+      "what_is_the_total_cost_of_the_project":1283983,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "SK",
+         "PK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, EOI, C. Nessman Master List",
+      "number_of_sites":6,
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01101",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Heart of the Fraser: Collaborative Partnership to Restore Chinook and Chum Salmon Habitat in the Harrison-Chehalis and Nicomen Slough River Systems - Sqwaukum Creek",
+      "project_description":"Sqwaukum Creek -  Gravel augmentation to support improved spawning salmon habitat. The \"Heart of the Fraser\" located in and around the Harrison River and its confluence with the Fraser River is a highly productive area for Pacific salmon (e.g. Harrison River Chinook). This project will restore historic slough systems within the Harrison River, Nicomen Slough, and the Fraser River. Project activities will primarily focus on creating and restoring Chinook and chum salmon rearing and overwintering habitat by addressing four main issues/threats: 1) sloughs and side channels in the Harrison-Chehalis and Nicomen Slough area have been lost through anthropogenic changes, 2) lake outlets have very little gravel replenishment, 3) increased sedimentation from the Norrish and Deroche Creek fans, and 4) significant need to continue developing management efforts for the Lh\u00e1:lt/Harrison-Chehalis Wildlife Management Area and Harrison Salmon Stronghold Strategic Plan.",
+      "project_goals":"Contribute to strategic planning for restoration priorities supporting important Pacific salmon stocks in the Fraser River estuary, rehabilitate aquatic habitats, build local capacity and understanding.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Sts'ailes First Nation",
+         "Hemmera Envirochem Inc.",
+         "Leq'a:mel First Nation",
+         "Swqelets First Nation",
+         "South Coast Conservation Land Management Program",
+         "Western Painted Turtle Recovery Team",
+         "Pearson Ecological"
+      ],
+      "number_of_indigenous_partners":3,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.232656,
+      "longitude_in_decimal_degrees":-122.004869,
+      "sep_rru_in_kind_contributions":2165,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":334285,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":27008,
+      "other_funding_sources":[
+         "Fraser Valley Watersheds Coalition",
+         "Hemmera & Harrison Salmon Stronghold",
+         "South Coast Conservation Lands Management Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":363458,
+      "what_is_the_total_cost_of_the_project":1283983,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CM"
+      ],
+      "life_stage":[
+         "Returning adult"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, EOI, C. Nessman Master List",
+      "number_of_sites":6,
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01101",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Heart of the Fraser: Collaborative Partnership to Restore Chinook and Chum Salmon Habitat in the Harrison-Chehalis and Nicomen Slough River Systems - Skumulapsh Slough",
+      "project_description":"Skumulapsh Slough - Improve access to existing off-channel habitat through excavation and removal of barriers. The \"Heart of the Fraser\" located in and around the Harrison River and its confluence with the Fraser River is a highly productive area for Pacific salmon (e.g. Harrison River Chinook). This project will restore historic slough systems within the Harrison River, Nicomen Slough, and the Fraser River. Project activities will primarily focus on creating and restoring Chinook and chum salmon rearing and overwintering habitat by addressing four main issues/threats: 1) sloughs and side channels in the Harrison-Chehalis and Nicomen Slough area have been lost through anthropogenic changes, 2) lake outlets have very little gravel replenishment, 3) increased sedimentation from the Norrish and Deroche Creek fans, and 4) significant need to continue developing management efforts for the Lh\u00e1:lt/Harrison-Chehalis Wildlife Management Area and Harrison Salmon Stronghold Strategic Plan.",
+      "project_goals":"Contribute to strategic planning for restoration priorities supporting important Pacific salmon stocks in the Fraser River estuary, rehabilitate aquatic habitats, build local capacity and understanding.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Sts'ailes First Nation",
+         "Hemmera Envirochem Inc.",
+         "Leq'a:mel First Nation",
+         "Swqelets First Nation",
+         "South Coast Conservation Land Management Program",
+         "Western Painted Turtle Recovery Team",
+         "Pearson Ecological"
+      ],
+      "number_of_indigenous_partners":3,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.197275,
+      "longitude_in_decimal_degrees":-122.01815,
+      "sep_rru_in_kind_contributions":2460,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":334285,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":27008,
+      "other_funding_sources":[
+         "Fraser Valley Watersheds Coalition",
+         "Hemmera & Harrison Salmon Stronghold",
+         "South Coast Conservation Lands Management Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":363753,
+      "what_is_the_total_cost_of_the_project":1283983,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "SK",
+         "PK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, EOI, C. Nessman Master List",
+      "number_of_sites":6,
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01101",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Heart of the Fraser: Collaborative Partnership to Restore Chinook and Chum Salmon Habitat in the Harrison-Chehalis and Nicomen Slough River Systems - Norrish Creek Fan",
+      "project_description":"Norrish Creek Fan - Large-scale restoration to recontour the fan and build a training berm to direct sediment from inflling the slough. The \"Heart of the Fraser\" located in and around the Harrison River and its confluence with the Fraser River is a highly productive area for Pacific salmon (e.g. Harrison River Chinook). This project will restore historic slough systems within the Harrison River, Nicomen Slough, and the Fraser River. Project activities will primarily focus on creating and restoring Chinook and chum salmon rearing and overwintering habitat by addressing four main issues/threats: 1) sloughs and side channels in the Harrison-Chehalis and Nicomen Slough area have been lost through anthropogenic changes, 2) lake outlets have very little gravel replenishment, 3) increased sedimentation from the Norrish and Deroche Creek fans, and 4) significant need to continue developing management efforts for the Lh\u00e1:lt/Harrison-Chehalis Wildlife Management Area and Harrison Salmon Stronghold Strategic Plan.",
+      "project_goals":"Contribute to strategic planning for restoration priorities supporting important Pacific salmon stocks in the Fraser River estuary, rehabilitate aquatic habitats, build local capacity and understanding.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Sts'ailes First Nation",
+         "Hemmera Envirochem Inc.",
+         "Leq'a:mel First Nation",
+         "Swqelets First Nation",
+         "South Coast Conservation Land Management Program",
+         "Western Painted Turtle Recovery Team",
+         "Pearson Ecological"
+      ],
+      "number_of_indigenous_partners":3,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.170308,
+      "longitude_in_decimal_degrees":-122.136683,
+      "sep_rru_in_kind_contributions":2460,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":334285,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":27008,
+      "other_funding_sources":[
+         "Fraser Valley Watersheds Coalition",
+         "Hemmera & Harrison Salmon Stronghold",
+         "South Coast Conservation Lands Management Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":363753,
+      "what_is_the_total_cost_of_the_project":1283983,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "SK",
+         "PK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, EOI, C. Nessman Master List",
+      "number_of_sites":6,
+      "rru_involvement":true,
+      "project_id":"18-HPAC-01101",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Heart of the Fraser: Collaborative Partnership to Restore Chinook and Chum Salmon Habitat in the Harrison-Chehalis and Nicomen Slough River Systems - Harrison Chehalis Wildlife Management Area",
+      "project_description":"Harrison Chehalis Wildlife Management Area - Work with three local First Nations and other key stakeholders to update and direct management plan outcomes. The \"Heart of the Fraser\" located in and around the Harrison River and its confluence with the Fraser River is a highly productive area for Pacific salmon (e.g. Harrison River Chinook). This project will restore historic slough systems within the Harrison River, Nicomen Slough, and the Fraser River. Project activities will primarily focus on creating and restoring Chinook and chum salmon rearing and overwintering habitat by addressing four main issues/threats: 1) sloughs and side channels in the Harrison-Chehalis and Nicomen Slough area have been lost through anthropogenic changes, 2) lake outlets have very little gravel replenishment, 3) increased sedimentation from the Norrish and Deroche Creek fans, and 4) significant need to continue developing management efforts for the Lh\u00e1:lt/Harrison-Chehalis Wildlife Management Area and Harrison Salmon Stronghold Strategic Plan.",
+      "project_goals":"Contribute to strategic planning for restoration priorities supporting important Pacific salmon stocks in the Fraser River estuary, rehabilitate aquatic habitats, build local capacity and understanding.",
+      "project_duration":[
+         2019,
+         2022
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Sts'ailes First Nation",
+         "Hemmera Envirochem Inc.",
+         "Leq'a:mel First Nation",
+         "Swqelets First Nation",
+         "South Coast Conservation Land Management Program",
+         "Western Painted Turtle Recovery Team",
+         "Pearson Ecological"
+      ],
+      "number_of_indigenous_partners":3,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.267117,
+      "longitude_in_decimal_degrees":-121.927903,
+      "sep_rru_in_kind_contributions":1630,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":334285,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":27008,
+      "other_funding_sources":[
+         "Fraser Valley Watersheds Coalition",
+         "Hemmera & Harrison Salmon Stronghold",
+         "South Coast Conservation Lands Management Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":362923,
+      "what_is_the_total_cost_of_the_project":1283983,
+      "project_phase":"Planning",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "SK",
+         "PK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Estuarine juvenile",
+         "Freshwater juvenile",
+         "Incubation"
+      ]
+   },
+   {
+      "data_source":"CA from FPP drive, Schedule 7, EOI, Monitoring report, C. Nessman Master List",
+      "rru_involvement":true,
+      "project_id":"17-HPAC-01419\n(C1-PAC-80)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Restoring Estuary Connectivity on the Delta of the Fraser River Estuary",
+      "project_description":"The Lower Fraser estuary has been heavily modified by the historic construction of large in-channel structures such as dikes and jetties, which were installed to improve navigation to the extensive port facilities in the area. While these structures serve their intended purpose, they restrict the lateral flow of the river arms to Sturgeon and Roberts Banks, and discourage the exchange of water and sediment between the rivers and its delta. Natural nutrient, sediment, and biogeochemical processes which support a healthy delta and marsh are not functioning efficiently. Tidal marsh habitats in the Fraser estuary provide productive rearing areas for juvenile salmon, and have been reduced to a fraction of their historic area. The Raincoast Conservation Foundation estuary connectivity project will improve fish access to tidal marsh habitat in the Fraser River South Arm over 4 years by modifying existing jetties and flood control infrastructure that is currently impairing the ability of the area to provide habitat to fish. These activities will directly benefit juvenile chinook and other Pacific salmon species, as well as many other species which rely on the estuary. Better access throughout the Fraser estuary will potentially improve early marine survival for Pacific salmon.",
+      "project_goals":"Improve habitat connectivity and natural processes on the banks of the Fraser estuary.",
+      "project_duration":[
+         2017,
+         2022
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"misty@raincoast.org",
+            "tel":"250-818-2136",
+            "name":"Misty MacDuffee"
+         },
+         {
+            "email":"adam.silverstein@dfo-mpo.gc.ca",
+            "tel":"250-339-2809",
+            "name":"Adam Silverstein"
+         }
+      ],
+      "project_lead_organization":[
+         "Raincoast Conservation Foundation"
+      ],
+      "project_partners":[
+         "Ducks Unlimited",
+         "Tsawwassen First Nation",
+         "Musqueam First Nation",
+         "Tsleil-Waututh First Nation",
+         "Kwantlen First Nation",
+         "St\u00f3:l\u014d Research and Resource Management Center",
+         "Watershed Watch",
+         "Lower Fraser Fisheries Alliance",
+         "YVR Airport",
+         "Port of Vancouver",
+         "Province of BC",
+         "City of Richmond",
+         "Ministry of Forests Lands Natural Resource Operations and Rural Development",
+         "Environment and Climate Change Canada",
+         "Metro Vancouver Regional Parks",
+         "Tetra Tech",
+         "Northwest Hydraulic Consultants",
+         "CMO consultants",
+         "Worley Parsons"
+      ],
+      "number_of_indigenous_partners":5,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.191892,
+      "longitude_in_decimal_degrees":-123.23079,
+      "sep_rru_in_kind_contributions":15000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":626725.29,
+      "g_c_funding_sources":[
+         "CRF"
+      ],
+      "other_in_kind_contributions":63998.29,
+      "other_funding_sources":[
+         "Raincoast Conservation Foundation",
+         "Ducks Unlimited",
+         "Canada Summer Jobs"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":705723.5800000001,
+      "what_is_the_total_cost_of_the_project":2812420.58,
+      "project_phase":"Active",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Estuarine"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "SK"
+      ],
+      "life_stage":[
+         "Estuarine juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Fish passage",
+      "outcome_metric":"Number of obstructions removed",
+      "outcome_value":3,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":21,
+      "what_was_the_secondary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":3,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity",
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Hydrological modeling",
+         "Physical habitat surveys",
+         "Vegetation surveys",
+         "Nets and traps",
+         "Temperature loggers",
+         "Water sampling",
+         "LiDAR",
+         "GIS"
+      ],
+      "number_of_years_of_monitoring_before_restoration":4,
+      "number_of_years_of_monitoring_after_restoration":1,
+      "monitoring_design":"BACI",
+      "season_monitored":[
+         "Spring",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Estuarine juvenile"
+      ],
+      "other_benefitting_species":[
+         "SRKW"
+      ],
+      "are_sara_listed_aquatic_species_present":true,
+      "other_information":"https://www.raincoast.org/connectivity/"
+   },
+   {
+      "data_source":"CA, Schedule 7, Summary Report",
+      "rru_involvement":true,
+      "project_id":"FHRI-2018-1081",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Activity 1: Harrison River Mainstem Habitat Characterization and Mapping",
+      "project_description":"The Harrison River has been subject to many anthropogenic activities which have modified fish habitat over the last 150 years, including dredging activities, deforestation of riparian areas, modifications to major tributaries, diking of floodplain areas, and rural and agricultural development adjacent to the river. Spawning distribution of salmon species within the mainstem of the Harrison River was mapped in the 1960s. These maps are likely out of date, as a result of changes to the Harrison River in many areas. This Activity includes gathering background information related to fish habitat and previous anthropogenic activities in the Harrison River mainstem, field work to ground truth the results of the desktop study, and mapping/reporting.",
+      "project_goals":"Improve understanding and documentation of the physical impacts of anthropogenic activities on the Harrison River mainstem.",
+      "project_duration":[
+         2018,
+         2019
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"dmoore@dmfishdev.com",
+            "tel":"250-372-9472",
+            "name":"David Moore"
+         },
+         {
+            "email":"tracey.sandgathe@dfo-mpo.gc.ca",
+            "tel":"604-666-0129",
+            "name":"Tracey Sandgathe"
+         }
+      ],
+      "project_lead_organization":[
+         "Sts'ailes First Nation"
+      ],
+      "project_partners":[
+         "Scowlitz First Nation",
+         "Hemmera"
+      ],
+      "number_of_indigenous_partners":2,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.276289,
+      "longitude_in_decimal_degrees":-121.91394,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":23590,
+      "g_c_funding_sources":[
+         "FHRI"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":23590,
+      "what_is_the_total_cost_of_the_project":100000,
+      "project_phase":"Active",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "CM",
+         "PK",
+         "SK",
+         "CT",
+         "ST",
+         "WSG"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity",
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Boat surveys"
+      ],
+      "season_monitored":[
+         "Fall"
+      ]
+   },
+   {
+      "data_source":"ECCC Portal",
+      "number_of_sites":5,
+      "project_id":"2017HSP7980",
+      "dfo_area":[
+         "SCA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Watershed Education and Habitat Enhancement for Aquatic Species at Risk in Langley BC - Site 1",
+      "project_description":"Site 1 - Private Landowner West Creek - This two year project will address habitat degradation in the Salmon River and West Creek Watersheds of Langley, within the Lower Fraser Valley of British Columbia and is a continuation of work recently conducted (2013-2016). Target species are the SARA-listed Salish sucker (Endangered) and Northern Red Legged Frog (Special Concern). These watersheds have been identified as a priority areas due to the concentrations of the species at risk are found here. The project will also benefit SAR associated with these aquatic habitats, including Oregon spotted frog (E), the Pacific water shew (E) and the Western Painted Turtle (E). The project is an ecosystem-based recovery initiative focused on the importance of the larger ecosystem. Riparian enhancement activities will be carried out on five sites which are located in identified critical habitat areas. Activities will including invasive plant control and installation native plant species, plus tree protection (vole/beaver guards, as required) with the cooperation of private landowners. Twenty Species at Risk education sessions will be delivered to Langley students during the school months.",
+      "project_goals":"Address habitat degradation in the Salmon River and West Creek watersheds.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"finance@leps.bc.ca",
+            "tel":"604-340-9596",
+            "name":"Lonnie Prouse"
+         }
+      ],
+      "project_lead_organization":[
+         "Langley Environmental Partners Society"
+      ],
+      "project_partners":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Local Stewardship Groups",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners",
+         "Greater Vancouver Zoo",
+         "Pacific Salmon Foundation",
+         "Environment Canada",
+         "Lower Fraser Valley Fisheries Alliance"
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.122778,
+      "longitude_in_decimal_degrees":-122.490833,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":36640,
+      "g_c_funding_sources":[
+         "HSP"
+      ],
+      "other_cash_contributions":29268,
+      "other_in_kind_contributions":52470,
+      "other_funding_sources":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Greater Vancouver Zoo",
+         "Langley Environmental Partners Society",
+         "Local Stewardship Groups",
+         "Pacific Salmon Foundation",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":118378,
+      "what_is_the_total_cost_of_the_project":221642,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SSU"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2470,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":200,
+      "what_was_the_primary_socio_economic_outcome":"Number of classes involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteer person days donated",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":100,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Water sampling"
+      ],
+      "number_of_years_of_monitoring_after_restoration":2,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_benefitting_species":[
+         "CO",
+         "CT"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"ECCC Portal",
+      "number_of_sites":5,
+      "project_id":"2017HSP7980",
+      "dfo_area":[
+         "SCA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Watershed Education and Habitat Enhancement for Aquatic Species at Risk in Langley BC - Site 2",
+      "project_description":"Site 2 - Private Landowner Salmon River GV Zoo - This two year project will address habitat degradation in the Salmon River and West Creek Watersheds of Langley, within the Lower Fraser Valley of British Columbia and is a continuation of work recently conducted (2013-2016). Target species are the SARA-listed Salish sucker (Endangered) and Northern Red Legged Frog (Special Concern). These watersheds have been identified as a priority areas due to the concentrations of the species at risk are found here. The project will also benefit SAR associated with these aquatic habitats, including Oregon spotted frog (E), the Pacific water shew (E) and the Western Painted Turtle (E). The project is an ecosystem-based recovery initiative focused on the importance of the larger ecosystem. Riparian enhancement activities will be carried out on five sites which are located in identified critical habitat areas. Activities will including invasive plant control and installation native plant species, plus tree protection (vole/beaver guards, as required) with the cooperation of private landowners. Twenty Species at Risk education sessions will be delivered to Langley students during the school months.",
+      "project_goals":"Address habitat degradation in the Salmon River and West Creek watersheds.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"finance@leps.bc.ca",
+            "tel":"604-340-9596",
+            "name":"Lonnie Prouse"
+         }
+      ],
+      "project_lead_organization":[
+         "Langley Environmental Partners Society"
+      ],
+      "project_partners":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Local Stewardship Groups",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners",
+         "Greater Vancouver Zoo",
+         "Pacific Salmon Foundation",
+         "Environment Canada",
+         "Lower Fraser Valley Fisheries Alliance"
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.091389,
+      "longitude_in_decimal_degrees":-122.491389,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":36640,
+      "g_c_funding_sources":[
+         "HSP"
+      ],
+      "other_cash_contributions":29268,
+      "other_in_kind_contributions":52470,
+      "other_funding_sources":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Greater Vancouver Zoo",
+         "Langley Environmental Partners Society",
+         "Local Stewardship Groups",
+         "Pacific Salmon Foundation",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":118378,
+      "what_is_the_total_cost_of_the_project":221642,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SSU"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2470,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":200,
+      "what_was_the_primary_socio_economic_outcome":"Number of classes involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteer person days donated",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":100,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Water sampling"
+      ],
+      "number_of_years_of_monitoring_after_restoration":2,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_benefitting_species":[
+         "CO",
+         "CT"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"ECCC Portal",
+      "number_of_sites":5,
+      "project_id":"2017HSP7980",
+      "dfo_area":[
+         "SCA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Watershed Education and Habitat Enhancement for Aquatic Species at Risk in Langley BC - Site 3",
+      "project_description":"Site 3 - Private Landowner Salmon River Hopton - This two year project will address habitat degradation in the Salmon River and West Creek Watersheds of Langley, within the Lower Fraser Valley of British Columbia and is a continuation of work recently conducted (2013-2016). Target species are the SARA-listed Salish sucker (Endangered) and Northern Red Legged Frog (Special Concern). These watersheds have been identified as a priority areas due to the concentrations of the species at risk are found here. The project will also benefit SAR associated with these aquatic habitats, including Oregon spotted frog (E), the Pacific water shew (E) and the Western Painted Turtle (E). The project is an ecosystem-based recovery initiative focused on the importance of the larger ecosystem. Riparian enhancement activities will be carried out on five sites which are located in identified critical habitat areas. Activities will including invasive plant control and installation native plant species, plus tree protection (vole/beaver guards, as required) with the cooperation of private landowners. Twenty Species at Risk education sessions will be delivered to Langley students during the school months.",
+      "project_goals":"Address habitat degradation in the Salmon River and West Creek watersheds.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"finance@leps.bc.ca",
+            "tel":"604-340-9596",
+            "name":"Lonnie Prouse"
+         }
+      ],
+      "project_lead_organization":[
+         "Langley Environmental Partners Society"
+      ],
+      "project_partners":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Local Stewardship Groups",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners",
+         "Greater Vancouver Zoo",
+         "Pacific Salmon Foundation",
+         "Environment Canada",
+         "Lower Fraser Valley Fisheries Alliance"
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.083889,
+      "longitude_in_decimal_degrees":-122.518889,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":36640,
+      "g_c_funding_sources":[
+         "HSP"
+      ],
+      "other_cash_contributions":29268,
+      "other_in_kind_contributions":52470,
+      "other_funding_sources":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Greater Vancouver Zoo",
+         "Langley Environmental Partners Society",
+         "Local Stewardship Groups",
+         "Pacific Salmon Foundation",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":118378,
+      "what_is_the_total_cost_of_the_project":221642,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SSU"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2470,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":200,
+      "what_was_the_primary_socio_economic_outcome":"Number of classes involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteer person days donated",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":100,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Water sampling"
+      ],
+      "number_of_years_of_monitoring_after_restoration":2,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_benefitting_species":[
+         "CO",
+         "CT"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"ECCC Portal",
+      "number_of_sites":5,
+      "project_id":"2017HSP7980",
+      "dfo_area":[
+         "SCA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Watershed Education and Habitat Enhancement for Aquatic Species at Risk in Langley BC - Site 4",
+      "project_description":"Site 4 - Private Landowner Salmon River Mattson - This two year project will address habitat degradation in the Salmon River and West Creek Watersheds of Langley, within the Lower Fraser Valley of British Columbia and is a continuation of work recently conducted (2013-2016). Target species are the SARA-listed Salish sucker (Endangered) and Northern Red Legged Frog (Special Concern). These watersheds have been identified as a priority areas due to the concentrations of the species at risk are found here. The project will also benefit SAR associated with these aquatic habitats, including Oregon spotted frog (E), the Pacific water shew (E) and the Western Painted Turtle (E). The project is an ecosystem-based recovery initiative focused on the importance of the larger ecosystem. Riparian enhancement activities will be carried out on five sites which are located in identified critical habitat areas. Activities will including invasive plant control and installation native plant species, plus tree protection (vole/beaver guards, as required) with the cooperation of private landowners. Twenty Species at Risk education sessions will be delivered to Langley students during the school months.",
+      "project_goals":"Address habitat degradation in the Salmon River and West Creek watersheds.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"finance@leps.bc.ca",
+            "tel":"604-340-9596",
+            "name":"Lonnie Prouse"
+         }
+      ],
+      "project_lead_organization":[
+         "Langley Environmental Partners Society"
+      ],
+      "project_partners":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Local Stewardship Groups",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners",
+         "Greater Vancouver Zoo",
+         "Pacific Salmon Foundation",
+         "Environment Canada",
+         "Lower Fraser Valley Fisheries Alliance"
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.1025,
+      "longitude_in_decimal_degrees":-122.548056,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":36640,
+      "g_c_funding_sources":[
+         "HSP"
+      ],
+      "other_cash_contributions":29268,
+      "other_in_kind_contributions":52470,
+      "other_funding_sources":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Greater Vancouver Zoo",
+         "Langley Environmental Partners Society",
+         "Local Stewardship Groups",
+         "Pacific Salmon Foundation",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":118378,
+      "what_is_the_total_cost_of_the_project":221642,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SSU"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2470,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":200,
+      "what_was_the_primary_socio_economic_outcome":"Number of classes involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteer person days donated",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":100,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Water sampling"
+      ],
+      "number_of_years_of_monitoring_after_restoration":2,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_benefitting_species":[
+         "CO",
+         "CT"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"ECCC Portal",
+      "number_of_sites":5,
+      "project_id":"2017HSP7980",
+      "dfo_area":[
+         "SCA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Watershed Education and Habitat Enhancement for Aquatic Species at Risk in Langley BC - Site 5",
+      "project_description":"Site 5 - Private Landowner Salmon River Retreat Centre - This two year project will address habitat degradation in the Salmon River and West Creek Watersheds of Langley, within the Lower Fraser Valley of British Columbia and is a continuation of work recently conducted (2013-2016). Target species are the SARA-listed Salish sucker (Endangered) and Northern Red Legged Frog (Special Concern). These watersheds have been identified as a priority areas due to the concentrations of the species at risk are found here. The project will also benefit SAR associated with these aquatic habitats, including Oregon spotted frog (E), the Pacific water shew (E) and the Western Painted Turtle (E). The project is an ecosystem-based recovery initiative focused on the importance of the larger ecosystem. Riparian enhancement activities will be carried out on five sites which are located in identified critical habitat areas. Activities will including invasive plant control and installation native plant species, plus tree protection (vole/beaver guards, as required) with the cooperation of private landowners. Twenty Species at Risk education sessions will be delivered to Langley students during the school months.",
+      "project_goals":"Address habitat degradation in the Salmon River and West Creek watersheds.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"finance@leps.bc.ca",
+            "tel":"604-340-9596",
+            "name":"Lonnie Prouse"
+         }
+      ],
+      "project_lead_organization":[
+         "Langley Environmental Partners Society"
+      ],
+      "project_partners":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Local Stewardship Groups",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners",
+         "Greater Vancouver Zoo",
+         "Pacific Salmon Foundation",
+         "Environment Canada",
+         "Lower Fraser Valley Fisheries Alliance"
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.134167,
+      "longitude_in_decimal_degrees":-122.596944,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":36640,
+      "g_c_funding_sources":[
+         "HSP"
+      ],
+      "other_cash_contributions":29268,
+      "other_in_kind_contributions":52470,
+      "other_funding_sources":[
+         "BC Community Gaming Grant",
+         "City of Langley",
+         "Greater Vancouver Zoo",
+         "Langley Environmental Partners Society",
+         "Local Stewardship Groups",
+         "Pacific Salmon Foundation",
+         "Pearson Ecological",
+         "Township of Langley",
+         "Township of Langley Landowners"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":118378,
+      "what_is_the_total_cost_of_the_project":221642,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SSU"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2470,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":200,
+      "what_was_the_primary_socio_economic_outcome":"Number of classes involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteer person days donated",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":100,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Water sampling"
+      ],
+      "number_of_years_of_monitoring_after_restoration":2,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_benefitting_species":[
+         "CO",
+         "CT"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2017-18 Project List, R2 Resource Consultants Inc.",
+      "rru_involvement":true,
+      "project_id":"COA-F18-F-2362\n(Ecocat ID 54480)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Sockeye Smolt Passage Design for Coquitlam Reservoir Forebay",
+      "project_description":"BC Hydro, Metro Vancouver, First Nations, Fisheries and Oceans Canada (DFO), the Ministry of Environment (MOE), and local municipalities have formed the Kwikwetlem Salmon Restoration Program (KSRP) with the goal of restoring anadromous fish to the Coquitlam Watershed. A primary KSRP goal is the restoration of sockeye salmon in the Coquitlam Reservoir. A critical uncertainty identified for this goal is the feasibility of providing safe and effective downstream passage for smolts from the reservoir to the lower river. Using data from other fish passage facilities and site-specific information, this project will evaluate passage feasibility and develop a concept-level design and cost estimate for a chosen alternative. The project will also address potential operational modifications to attract smolts to the outlet at the south end of the reservoir.",
+      "project_goals":"Restore sockeye salmon in the Coquitlam Reservoir.",
+      "project_duration":[
+         2017,
+         2018
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "email":"mail@r2usa.com",
+            "tel":"425-556-1288",
+            "name":"Peter Christensen and Phillip Hilgert"
+         }
+      ],
+      "project_lead_organization":[
+         "R2 Resource Consultants Inc."
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Kwikwetlem First Nation",
+         "Metro Vancouver",
+         "Ministry of Environment"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.358909,
+      "longitude_in_decimal_degrees":-122.788348,
+      "other_cash_contributions":93000,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":93000,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r49038/14.COQ.02_1443102038953_3101245784.pdf"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2017-18 Project List, Alouette River Management Society Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F18-F-2385\n(Ecocat ID 54483)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Alouette Watershed Sockeye - fish passage feasibility year one",
+      "project_description":"The Alouette River Sockeye Re-Anadromization Program (ARSRP) is a joint initiative between the Katzie First Nation, Alouette River Management Society, BC Hydro, the Ministry of Environment (MOE), Fisheries and Oceans Canada (DFO), and local stakeholders that works to promote the re-establishment of anadromous Alouette Sockeye and investigate the feasibility of fish passage at Alouette Dam. This project will: 1) Undertake a peer review and a formal DFO review of the ARSRP program and review the MOE\u2019s Nerkid Model to determine if it can accurately forecast sockeye restoration feasibility, 2) Monitor adult returns and juvenile outmigration necessary for the evaluation of heritability and for eventual Fish and Wildlife Compensation Program (FWCP) endorsement, and 3) Determine the availability of spawner habitat to confirm it can support a self-sustaining population.",
+      "project_goals":"Re-establish anadromous Alouette sockeye salmon and investigate the feasibility of fish passage at Alouette Dam.",
+      "project_duration":[
+         2017,
+         2018
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "name":"Greta Borick-Cunningham"
+         }
+      ],
+      "project_lead_organization":[
+         "Alouette River Management Society"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Katzie First Nation",
+         "Ministry of Environment and Climate Change Strategy",
+         "LGL Limited",
+         "BC Corrections",
+         "University of British Columbia",
+         "Cultus Lake Salmon Research Laboratory"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.3335,
+      "longitude_in_decimal_degrees":-122.418194,
+      "other_cash_contributions":137877,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":137877,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Research and Monitoring"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Baseline information"
+      ],
+      "monitoring_activities":[
+         "Nerkid Model",
+         "Nets and traps",
+         "DNA sampling",
+         "Tissue sampling",
+         "Scale sampling"
+      ],
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r57514/COA_F19_F_2683_1569265406671_9263576779.pdf\nhttps://a100.gov.bc.ca/pub/acat/documents/r58712/COA_F20_F_3072_1593623237718_3623147883.pdf\nhttps://alouetteriver.org/fish-passage"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2017-18 Project List, Fraser Valley Watersheds Coalition Final Report",
+      "number_of_sites":2,
+      "rru_involvement":true,
+      "project_id":"COA-F18-F-2396\n(Ecocat ID 54487)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Stave River Watershed - Restoring Salmon Habitat - Site 2",
+      "project_description":"Site 2 - The construction of the Ruskin Dam on the lower Stave River permanently alienated over 90% of the historic habitat available to aalmonids in this watershed. A grassland area named \"Site 2\" on the left bank of the Stave River offers one of the last remaining habitat for anadromous salmon within the watershed. There has been extensive wetland loss, rapid development and growth, invasive species encroachment, and nearby industrial and agricultural land use impacting the watershed.",
+      "project_goals":"Restore low-floodplain tidally influenced channels to support rearing and overwintering habitat.",
+      "project_duration":[
+         2017,
+         2018
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"Dave.Nanson@dfo-mpo.gc.ca",
+            "tel":"604-666-8182",
+            "name":"Dave Nanson"
+         },
+         {
+            "email":"Murray.Manson@dfo-mpo.gc.ca",
+            "tel":"604-318-4758",
+            "name":"Murray Manson"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Kwantlen First Nations",
+         "Stave Valley Salmonid Enhancement Society",
+         "Ducks Unlimited Canada",
+         "District of Mission",
+         "and Fraser Valley Regional District"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.177129,
+      "longitude_in_decimal_degrees":-122.417722,
+      "sep_rru_in_kind_contributions":5000,
+      "other_cash_contributions":78894.2,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program",
+         "National Wetlands Conservation Fund",
+         "Pacific Salmon Foundation",
+         "Stave Valley Salmonid Enhancement Society",
+         "Coastal Painted Turtle Project",
+         "University of the Fraser Valley",
+         "Ducks Unlimited Canada",
+         "Kwantlen First Nation",
+         "District of Mission",
+         "the local community members",
+         "the Fraser Valley Watersheds Coalition",
+         "and the Fraser Valley Regional District"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":83894.2,
+      "what_is_the_total_cost_of_the_project":248200,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "western painted turtle",
+         "common nighthawk",
+         "macGillivrays warbler",
+         "orange crowned warbler",
+         "spotted towhee",
+         "willow flycatcher",
+         "sandhill cranes"
+      ],
+      "life_stage":[
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric":"Square-metres floodplain habitat created",
+      "outcome_value":12500,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat created",
+      "outcome_value_2":4375,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":50,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Temperature loggers",
+         "Water sampling",
+         "Bird surveys",
+         "Western painted turtle surveys"
+      ],
+      "number_of_years_of_monitoring_after_restoration":1,
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r52611/COA_F17_F_1371_1500590579371_0588693505.pdf\n \n https://fwcp.ca/project/restoring-salmon-habitat-in-the-stave-river-watershed/"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2017-18 Project List, Fraser Valley Watersheds Coalition Final Report",
+      "number_of_sites":2,
+      "rru_involvement":true,
+      "project_id":"COA-F18-F-2396\n(Ecocat ID 54487)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Stave River Watershed - Restoring Salmon Habitat - Site 3",
+      "project_description":"Site 3 - The construction of the Ruskin Dam on the lower Stave River permanently alienated over 90% of the historic habitat available to aalmonids in this watershed. A grassland area named \"Site 2\" on the left bank of the Stave River offers one of the last remaining habitat for anadromous salmon within the watershed. There has been extensive wetland loss, rapid development and growth, invasive species encroachment, and nearby industrial and agricultural land use impacting the watershed.",
+      "project_goals":"Restore low-floodplain tidally influenced channels to support rearing and overwintering habitat.",
+      "project_duration":[
+         2017,
+         2018
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"Dave.Nanson@dfo-mpo.gc.ca",
+            "tel":"604-666-8182",
+            "name":"Dave Nanson"
+         },
+         {
+            "email":"Murray.Manson@dfo-mpo.gc.ca",
+            "tel":"604-318-4758",
+            "name":"Murray Manson"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Kwantlen First Nations",
+         "Stave Valley Salmonid Enhancement Society",
+         "Ducks Unlimited Canada",
+         "District of Mission",
+         "and Fraser Valley Regional District"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.168252,
+      "longitude_in_decimal_degrees":-122.414659,
+      "sep_rru_in_kind_contributions":5000,
+      "other_cash_contributions":78894.2,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program",
+         "National Wetlands Conservation Fund",
+         "Pacific Salmon Foundation",
+         "Stave Valley Salmonid Enhancement Society",
+         "Coastal Painted Turtle Project",
+         "University of the Fraser Valley",
+         "Ducks Unlimited Canada",
+         "Kwantlen First Nation",
+         "District of Mission",
+         "the local community members",
+         "the Fraser Valley Watersheds Coalition",
+         "and the Fraser Valley Regional District"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":83894.2,
+      "what_is_the_total_cost_of_the_project":248200,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "western painted turtle",
+         "common nighthawk",
+         "macGillivrays warbler",
+         "orange crowned warbler",
+         "spotted towhee",
+         "willow flycatcher",
+         "sandhill cranes"
+      ],
+      "life_stage":[
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric":"Square-metres floodplain habitat created",
+      "outcome_value":12500,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat created",
+      "outcome_value_2":4375,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":50,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Temperature loggers",
+         "Water sampling",
+         "Bird surveys",
+         "Sandhill crane visual ground surveys"
+      ],
+      "number_of_years_of_monitoring_before_restoration":1,
+      "number_of_years_of_monitoring_after_restoration":1,
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r52611/COA_F17_F_1371_1500590579371_0588693505.pdf\n \n https://fwcp.ca/project/restoring-salmon-habitat-in-the-stave-river-watershed/"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2017-18 Project List, LGL Limited Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F18-F-2485\n(Ecocat ID 55505)",
+      "dfo_area":[
+         "SCA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Sockeye Smolt Behaviour in the Coquitlam Reservoir Forebay",
+      "project_description":"This project proposes to carry out an Acoustic Telemetry Study using 100 tags deployed in hatchery raised Coquitlam Reservoir Kokanee/Sockeye Salmon smolts that will be released into the Coquitlam Reservoir forebay area. The smolts will be tracked using an array of time-synchronized receivers with overlapping fields of detection resulting in a high-detail behavioural forebay assessment. In addition, 500 Chinook Salmon smolts raised in a Coquitlam River hatchery will be released close to or into the Coquitlam Dam Sluice Tower to assess tunnel passage mortality. Forebay behaviour and tunnel passage mortality will be assessed during high- and low-flow scenarios, and will inform the feasibility assessment of a dam passage structure for Sockeye smolts.",
+      "project_goals":"Compare (1) General smolt movement, (2) Dam passage frequency, and (3) Dam passage survival between low (3 cms) and high (8 cms) dishcarge treatment at Coquitlam Dam.",
+      "project_duration":[
+         2017,
+         2018
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "name":"David"
+         },
+         {
+            "name":"Elmar Plate"
+         }
+      ],
+      "project_lead_organization":[
+         "LGL Limited Environmental Research Associates Ltd."
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Kwikwetlem First Nation",
+         "Greater Vancouver Regional District"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.354585,
+      "longitude_in_decimal_degrees":-122.77706,
+      "other_cash_contributions":96536,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":96536,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Research and Monitoring"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "SK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r49038/14.COQ.02_1443102038953_3101245784.pdf"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2018-19 Project List, Alouette River Management Society Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F19-F-2683\n(Ecocat ID 57514)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Alouette Watershed Sockeye - Fish Passage Feasibility Year 2",
+      "project_description":"The Alouette River Sockeye Re-Anadromization Program (ARSRP) is a joint initiative between the Katzie First Nation, Alouette River Management Society, BC Hydro, the Ministry of Environment (MOE), Fisheries and Oceans Canada (DFO), and local stakeholders that works to promote the re-establishment of anadromous Alouette Sockeye and investigate the feasibility of fish passage at Alouette Dam. . This project is Year 2 of a multi-year plan to address remaining uncertainties in the feasibility of Alouette Sockeye restoration. This project will: 1) initiate a formal Canadian Scientific Advisory Secretariat (CSAS) review of the ARSRP program and Nerkid Model to determine risks of re-establishment of Alouette sockeye and other salmon; and 2) monitor adult Sockeye returns and juvenile outmigration necessary for the evaluation of heritability, long-term Sockeye projections and for eventual FWCP endorsement.",
+      "project_goals":"Re-establish anadromous Alouette sockeye salmon and investigate the feasibility of fish passage at Alouette Dam.",
+      "project_duration":[
+         2018,
+         2019
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "name":"Greta Borick-Cunningham"
+         }
+      ],
+      "project_lead_organization":[
+         "Alouette River Management Society"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Katzie First Nation",
+         "Ministry of Environment and Climate Change Strategy",
+         "LGL Limited",
+         "BC Corrections",
+         "University of British Columbia",
+         "Cultus Lake Salmon Research Laboratory"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.325245,
+      "longitude_in_decimal_degrees":-122.43629,
+      "other_cash_contributions":87932,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":87932,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Research and Monitoring"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SK",
+         "KO"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Baseline information"
+      ],
+      "monitoring_activities":[
+         "Nerkid Model",
+         "Nets and traps",
+         "DNA sampling",
+         "Tissue sampling",
+         "Scale sampling"
+      ],
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r57514/COA_F19_F_2683_1569265406671_9263576779.pdf\nhttps://a100.gov.bc.ca/pub/acat/documents/r58712/COA_F20_F_3072_1593623237718_3623147883.pdf \nhttps://alouetteriver.org/fish-passage"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2018-19 Project List, North Fraser Salmon Assistance Project Society Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F19-F-2728\n(Ecocat ID 55506)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Coquitlam River Salmon Habitat Restoration Work Maintenance Project 2018: Archery Headpond Project",
+      "project_description":"This project was located in the Archery Pond Complex, on the right bank of the Coquitlam River. This habitat complex produces 50% of coho salmon smolts for the watershed (3,300 coho smolts per year) and 75,000 chum fry each year. In February 2017, a weather event resulted in high flows and sedimentation of this habitat, which infilled and greatly reduced access and productivity in Archery Pond. This project excavated the accumulated sediments, reshaped the existing head pond, and excavated a new larger sediment pond that is easy to access for clean out. In addition, a new spawning side channel was constructed creating a total amount of new habitat: 100 square-metre sediment detention pond and 100 square-metre spawning habitat.",
+      "project_goals":"1) Increase the abundance of salmonids in the Coquitlam River watershed by repairing and improving access to the available off channel rearing and spawning habitat. 2) Increase the size of the off channel pond and provide more available rearing space for juvenile salmonids present in the watershed.",
+      "project_duration":[
+         2018,
+         2019
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"antonmnfsaps@gmail.com",
+            "tel":"604-710-0581",
+            "name":"Anton Matalija"
+         }
+      ],
+      "project_lead_organization":[
+         "North Fraser Salmon Assistance Project Society"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Kwikwetlem First Nation",
+         "City of Coquitlam",
+         "Wesbild Holdings Ltd.",
+         "Jack Cewe Ltd.",
+         "Lafarge Canada Inc.",
+         "Port Coquitlam and District Hunting and Fishing Club"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.326318742,
+      "longitude_in_decimal_degrees":-122.7725404,
+      "other_cash_contributions":36467,
+      "other_in_kind_contributions":37705,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":74172,
+      "what_is_the_total_cost_of_the_project":83450,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Maintenance"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "SK",
+         "ST"
+      ],
+      "life_stage":[
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric":"Square-metres floodplain habitat created",
+      "outcome_value":100,
+      "what_was_the_secondary_restoration_activity":"Instream structure",
+      "outcome_metric_2":"Square-metres instream habitat created",
+      "outcome_value_2":100,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps"
+      ],
+      "number_of_years_of_monitoring_after_restoration":1,
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://www.coquitlamriverwatershed.ca/download/archery-headpond-project-final-report/?wpdmdl=1630"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2018-19 Project List, LGL Limited Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F19-F-2729\n(Ecocat ID 57517)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Monitoring of Coquitlam Kokanee Smolt Outmigration",
+      "project_description":"The Kokanee smolt outmigration response to optimized reservoir operations will be tested during April-May 2018 in the Coquitlam River ~ 1.6 km below Coquitlam Dam using a Rotary Screw Trap (RST). Results of the real-time monitoring of Kokanee smolt outmigration in a proven and highly successful location will be used to: 1) identify the timing and volume of releases through the Sluice Tower that optimize the rate of outmigration; 2) identify the timing and degree of constraints on the Buntzen Tunnel required to optimize the rate of outmigration; 3) validate the assumption that passage through LLOG-2 does not result in unacceptable injury rates; and 4) quantify the number of outmigrating smolts to determine smolt-to-adult survival associated with outmigrating Kokanee.",
+      "project_goals":"Research into the optimization of discharge and reservoir levels for smolt outmigration and discharges.",
+      "project_duration":[
+         2018,
+         2019
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "name":"Elmar Plate"
+         }
+      ],
+      "project_lead_organization":[
+         "Watershed Watch Salmon Society"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "LGL Limited",
+         "Instream Fisheries Research Inc."
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.344946,
+      "longitude_in_decimal_degrees":-122.765905,
+      "other_cash_contributions":16286,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":16286,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Research and Monitoring"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SK",
+         "KO"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Nets and traps"
+      ],
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Spring"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r50807/16.COQ.02_WWSS_Sockeye_1471461889605_1454913494.pdf"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2018-19 Project List, Fraser Valley Watersheds Coalition Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F-2851-DCA\n(Ecocat ID 57721)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Stave River Spawning Restoration Project: Rewatering Centre-Right (Channel 5) and Addressing Right Bank Erosion",
+      "project_description":"This project is within the lower 2 km of the Stave River south of the Ruskin Hydro dam. This area consists of numerous channels and gravel bars, important for salmon spawning and rearing. There are limited areas remaining on the lower Stave River floodplain that supports significant populations of coho salmon adults and juveniles. This section of the river also provides the only remaining spawning habitat for 500,000 chum and hundreds of coho, pink, and Chinook salmon. In 2007, Fraser Valley Watershed Coalition and partners took actions to create more complex spawning habitat (off-channels) appropriate for the tail-water release flows of the Ruskin Dam. These channels (1 through 5) were anticipated to require management every ten to twenty to ensure gravel and bar movement. This project is part of a continued effort to manage these channels.",
+      "project_goals":"1) Restore a section of the mainstem river that had become dewatered from a gravel blockage, 2) Stop the on-going erosion of the bank, and 3) Create fish habitat improvements in the form of complex and overhanging cover.",
+      "project_duration":[
+         2018,
+         2019
+      ],
+      "year_project_was_initiated":2018,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Stave Valley Salmonid Enhancement Society",
+         "Fraser Valley Regional District",
+         "Kwantlen First Nations",
+         "Cordillera Archaeology",
+         "Ducks Unlimited Canada",
+         "University of the Fraser Valley",
+         "District of Mission",
+         "Greenbank Consulting"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Stave River",
+      "latitude_in_decimal_degrees":49.18878,
+      "longitude_in_decimal_degrees":-122.411537,
+      "other_cash_contributions":90626,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":90626,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK"
+      ],
+      "life_stage":[
+         "Returning adult"
+      ],
+      "what_was_the_primary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric":"Square-metres floodplain habitat created",
+      "outcome_value":6000,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Stream lengths (m) riparian habitat treated",
+      "outcome_value_2":250,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":15,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r57721/COA_F19_F_2851_DCA_1574266736052_4265887703.pdf"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2019-20 Project List, Alouette River Management Society Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F20-F-3072\n(Ecocat ID 58714)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Alouette Watershed Sockeye-Fish Passage Feasibility-Year 3",
+      "project_description":"The Alouette River Sockeye Re-anadromization Program is a joint initiative between the Katzie First Nation, the Alouette River Management Society, BC Hydro, the Province of B.C., Fisheries and Oceans Canada, LGL Limited, and local stakeholders. The project promotes the re-establishment of anadromous Alouette Sockeye (Oncorhynchus nerka) at Alouette Dam. This project will support work on year three of an updated 11-year plan to assess environmental feasibility of fish passage in alignment with step three of the BC Hydro Fish Passage Decision Framework.",
+      "project_goals":"(1) Initiate independent review of the ARSRP program and Nerkid Model, (2) Monitor adult Sockeye returns and juvenile outmigration necessary for the evaluation of heritability",
+      "project_duration":[
+         2019,
+         2020
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "name":"Greta Borick-Cunningham"
+         }
+      ],
+      "project_lead_organization":[
+         "Alouette River Management Society"
+      ],
+      "project_partners":[
+         "Katzie First Nation",
+         "BC Hydro",
+         "Province of BC",
+         "LGL Limited",
+         "BC Corrections Fraser Regional Correctional Centre",
+         "Ministry of Environment and Climate Change Strategy"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.247139,
+      "longitude_in_decimal_degrees":-122.532376,
+      "sep_rru_in_kind_contributions":4075,
+      "sep_cip_in_kind_contributions":5550,
+      "other_cash_contributions":97909,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":107534,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Research and Monitoring"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "SK",
+         "KO"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Baseline information"
+      ],
+      "monitoring_activities":[
+         "Nerkid Model",
+         "Nets and traps",
+         "DNA sampling",
+         "Tissue sampling",
+         "Scale sampling"
+      ],
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r57514/COA_F19_F_2683_1569265406671_9263576779.pdf\nhttps://a100.gov.bc.ca/pub/acat/documents/r58712/COA_F20_F_3072_1593623237718_3623147883.pdf \nhttps://alouetteriver.org/fish-passage"
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2019-20 Project List, NFSAPS Final Report",
+      "rru_involvement":true,
+      "project_id":"COA-F20-F-3083\n(Ecocat ID 58889)",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Reeve Slough Feasibility Assessment  2019",
+      "project_description":"This project will provide a feasibility assessment of Reeve Slough, which could provide 31,800 square-metre of potential rearing habitat for salmonids. This is the largest parcel of unrestored, off-channel habitat remaining in the Coquitlam Watershed. Assessment and restoration of this site would primarily benefit Coho Salmon, but would also be accessible and utilized by Chinook, Chum, Sockeye, and Pink Salmon, as well as Cutthroat and Steelhead juveniles. The project is located in Port Coquitlam B.C., on Kwikwetlem First Nation lands.",
+      "project_goals":"Determining the feasibility of future enhancement works in Reeve Slough to benefit all life stages of Coho, Chinook, Chum, Sockeye, Pink, Coastal Cutthroat and Steelhead and with the goal of habitat enhancement.",
+      "project_duration":[
+         2019,
+         2020
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_lead_organization":[
+         "North Fraser Salmon Assistance Project Society"
+      ],
+      "project_partners":[
+         "BC Hydro",
+         "Province of BC",
+         "Kwikwetlem First Nation",
+         "City of Port Coquitlam"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.249531,
+      "longitude_in_decimal_degrees":-122.797337,
+      "other_cash_contributions":79634,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":79634,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Design and Feasibility"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "SK",
+         "CT",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Baseline information"
+      ],
+      "monitoring_activities":[
+         "Nets and traps",
+         "Physical habitat surveys",
+         "Hydrological modeling",
+         "Hydrometre installments",
+         "Sediment sampling",
+         "Levelogger",
+         "YSI metre"
+      ],
+      "season_monitored":[
+         "Fall",
+         "Spring",
+         "Summer",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ]
+   },
+   {
+      "data_source":"FWCP Excel Coastal Region Tracking List, FWCP Coastal Region 2019-20 Project List",
+      "rru_involvement":true,
+      "project_id":"COA-F20-F-3110",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Thompson Creek Fish ladder, Replanting and Assessments",
+      "project_description":"This project will improve fish passage and habitat in the Stave River Watershed, and will benefit Coho, Chum, Chinook, Sockeye, and Pink Salmon, as well as Cutthroat and Rainbow Trout. A wooden fish ladder on Thompson Creek - a salmon-bearing tributary to the Stave River - will be replaced. Bio-engineering and planting efforts will continue within the Stave River to replace invasive Reed Canarygrass with natural vegetation and to improve ecological function. An effectiveness assessment will be conducted on right bank erosion protection work and will help further downstream restoration of additional off-channel habitats. This project will host a local stakeholder meeting and community planting events.",
+      "project_goals":"To replace an existing fish ladder on Thompson Creek to re-establish fish passage for spawing coho and chum.",
+      "project_duration":[
+         2019,
+         2020
+      ],
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2020,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "watershed_name":"Stave River",
+      "latitude_in_decimal_degrees":49.191329,
+      "longitude_in_decimal_degrees":-122.413204,
+      "sep_rru_in_kind_contributions":3375,
+      "sep_rru_cash_contributions":1000,
+      "sep_cip_in_kind_contributions":1000,
+      "other_cash_contributions":69646,
+      "other_funding_sources":[
+         "Fish and Wildlife Compensation Program"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":75021,
+      "project_phase":"Active",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CM",
+         "CO",
+         "PK",
+         "RB",
+         "CT"
+      ],
+      "life_stage":[
+         "Returning adult"
+      ],
+      "what_was_the_primary_restoration_activity":"Fish passage",
+      "outcome_metric":"Square meters habitat made accessible",
+      "outcome_value":500,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Qualitative Visual Assessment"
+      ],
+      "number_of_years_of_monitoring_before_restoration":5,
+      "number_of_years_of_monitoring_after_restoration":5,
+      "season_monitored":[
+         "Fall",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Returning adult"
+      ],
+      "other_information":"https://fwcp.ca/project/improving-fish-passage-habitat-stave-river-watershed/"
+   },
+   {
+      "data_source":"Google Form Entry",
+      "rru_involvement":true,
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Kwikwetlem River Sockeye Restoration Project",
+      "project_description":"The Coquitlam River dam has blocked fish passage to the upper Coquitlam River since it was constructed in the early 1900's. The sockeye run was extirpated at the time. A long term effort is underway to re-establish the sockeye population to the Coquitlam River.",
+      "project_goals":"1) Trap and transport adult sockeye salmon above the Coquitlam River dam, 2) Long term establishment of fish passage to the upper Coquitlam watershed.",
+      "year_project_was_initiated":2009,
+      "year_project_was_last_modified":2018,
+      "project_partners":[
+         "Kwikwetlem First Nation",
+         "BC Hydro",
+         "Metro Vancouver",
+         "City of Coquitlam"
+      ],
+      "number_of_indigenous_partners":1,
+      "policy_and_program_connections":[
+         "COSEWIC Assessed Populations",
+         "WSP Implementation"
+      ],
+      "watershed_name":"Coquitlam River",
+      "latitude_in_decimal_degrees":49.354452,
+      "longitude_in_decimal_degrees":-122.77522,
+      "sep_rru_in_kind_contributions":2445,
+      "sep_cip_in_kind_contributions":3330,
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":5775,
+      "project_phase":"Active",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CO",
+         "SK"
+      ],
+      "life_stage":[
+         "Returning adult"
+      ],
+      "what_was_the_primary_restoration_activity":"Fish passage",
+      "outcome_metric":"Stream lengths (km) habitat made accessible",
+      "outcome_value":5,
+      "was_project_monitoring_completed":true,
+      "monitoring_activities":[
+         "Fish trap monitoring"
+      ],
+      "number_of_years_of_monitoring_before_restoration":15,
+      "number_of_years_of_monitoring_after_restoration":10,
+      "season_monitored":[
+         "Fall",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Returning adult"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"Google Form Entry",
+      "rru_involvement":true,
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Peach Creek Groundwater Channel Extension",
+      "project_description":"Peach Creek is a tributary to the Vedder River that has been the target of several restoration efforts since 1982. Groundwater channels have been constructed in the natural gravel floodplain substrates behind the dike, and were extended in 2019.",
+      "project_goals":"1) to extend the Peach Creek groundwater channel and increase downstream flows",
+      "year_project_was_initiated":1982,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "name":"Murray Manson"
+         }
+      ],
+      "project_lead_organization":[
+         "DFO"
+      ],
+      "project_partners":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "number_of_indigenous_partners":1,
+      "policy_and_program_connections":[
+         "WSP Implementation"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.100026,
+      "longitude_in_decimal_degrees":-121.991098,
+      "sep_rru_in_kind_contributions":4890,
+      "sep_rru_cash_contributions":500,
+      "other_cash_contributions":25000,
+      "other_in_kind_contributions":50000,
+      "other_funding_sources":[
+         "Element Excavation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":80390,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CM",
+         "CO",
+         "CT",
+         "PK",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat created",
+      "outcome_value":5500,
+      "what_was_the_primary_socio_economic_outcome":"Number of employment days created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":15,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Qualitative visual assessment"
+      ],
+      "number_of_years_of_monitoring_before_restoration":5,
+      "number_of_years_of_monitoring_after_restoration":5,
+      "monitoring_design":"None",
+      "season_monitored":[
+         "Fall",
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Returning adult"
+      ],
+      "other_information":"https://fvwc.ca/wp-content/uploads/2019/09/Peach-Creek-Salmon-Habitat-Restoration-Information-Sheet-2019.pdf"
+   },
+   {
+      "data_source":"Google Form Entry",
+      "rru_involvement":true,
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Blue Creek Channel Improvements Upper Pitt River",
+      "project_description":"Blue Creek is a tributary to the Upper Pitt River, and one of the few known spawning areas for Pitt River Chinook salmon. A landslide had created an instream barrier to migration, and further works were conducted on the Pitt River floodplain to extend and protect the lower channel.",
+      "project_goals":"1) re-establish access for spawning Chinook salmon, 2) protect the lower Blue Creek channel from encroachment by the Pitt River.",
+      "project_duration":2019,
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "name":"Ian"
+         }
+      ],
+      "project_lead_organization":[
+         "LFFA"
+      ],
+      "project_partners":[
+         "Lower Fraser Fisheries Alliance",
+         "Katzie First Nation",
+         "World Wildlife Federation"
+      ],
+      "number_of_indigenous_partners":2,
+      "policy_and_program_connections":[
+         "COSEWIC Assessed Populations",
+         "WSP Implementation",
+         "Southern BC Chinook Initiative"
+      ],
+      "watershed_name":"Pitt River",
+      "latitude_in_decimal_degrees":49.709402,
+      "longitude_in_decimal_degrees":-122.716775,
+      "sep_rru_in_kind_contributions":3375,
+      "sep_rru_cash_contributions":2000,
+      "other_cash_contributions":100000,
+      "other_in_kind_contributions":4000,
+      "other_funding_sources":[
+         "World Wildlife Federation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":109375,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "PK",
+         "SK",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "what_was_the_primary_restoration_activity":"Fish passage",
+      "outcome_metric":"Square-metres habitat made accessible",
+      "outcome_value":4000,
+      "what_was_the_secondary_restoration_activity":"Instream structure",
+      "outcome_metric_2":"Square-metres instream habitat treated",
+      "outcome_value_2":2000,
+      "what_was_the_primary_socio_economic_outcome":"Number of employment days created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Construction impacts",
+         "Infrastructure inspection and design",
+         "Biological and productivity",
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Physical habitat surveys",
+         "Photo point monitoring",
+         "Qualitative visual assessment"
+      ],
+      "number_of_years_of_monitoring_before_restoration":2,
+      "number_of_years_of_monitoring_after_restoration":5,
+      "monitoring_design":"None",
+      "season_monitored":[
+         "Fall",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Returning adult"
+      ],
+      "are_sara_listed_aquatic_species_present":true,
+      "other_information":"https://www.lffa.ca/news-and-events/newsletters/2019-newsletters?download=578:2nd-quarter-july-2019"
+   },
+   {
+      "data_source":"Google Form Entry",
+      "rru_involvement":true,
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2019,
+         2020
+      ],
+      "project_name":"Red Slough/Larsen Creek Channel Improvements - Upper Pitt River",
+      "project_description":"Larsen Creek is a tributary to Red Slough on the Pitt River Floodplain above the lake. Red Slough has been isolated from the Pitt River by the forest service road. Potential connection points to reestablish surface flow from the Pitt River to Red Slough are to be assessed and the upper Red Slough/Larsen Creek confluence is to be cleared of debris flows which have filled spawning and rearing channels and created fish passage issues.",
+      "project_goals":"1) investigate options for surface flow connection of the Pitt River with Red Slough, 2) remove gravel, sediment and wood debris accumulations from torrents in the Larsen Creek confluence with Red Slough",
+      "year_project_was_initiated":2019,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "name":"Ian"
+         }
+      ],
+      "project_lead_organization":[
+         "Lower Fraser Fisheries Alliance"
+      ],
+      "project_partners":[
+         "Lower Fraser Fisheries Alliance",
+         "Katzie Nation",
+         "World Wildlife Federation"
+      ],
+      "number_of_indigenous_partners":2,
+      "policy_and_program_connections":[
+         "COSEWIC Assessed Populations",
+         "WSP Implementation",
+         "Southern BC Chinook Initiative"
+      ],
+      "watershed_name":"Pitt River",
+      "latitude_in_decimal_degrees":49.59258,
+      "longitude_in_decimal_degrees":-122.627789,
+      "sep_rru_in_kind_contributions":3375,
+      "sep_rru_cash_contributions":2000,
+      "other_cash_contributions":100000,
+      "other_in_kind_contributions":2000,
+      "other_funding_sources":[
+         "World Wildlife Federation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":107375,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "CT",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile",
+         "Incubation"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":6000,
+      "what_was_the_secondary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric_2":"Square-metres floodplain habitat treated",
+      "outcome_value_2":200000,
+      "what_was_the_primary_socio_economic_outcome":"Number of employment days created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":12,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Habitat structure"
+      ],
+      "monitoring_activities":[
+         "Qualitative visual assessment"
+      ],
+      "number_of_years_of_monitoring_before_restoration":1,
+      "number_of_years_of_monitoring_after_restoration":3,
+      "monitoring_design":"None",
+      "season_monitored":[
+         "Fall",
+         "Summer"
+      ],
+      "life_stage_monitored":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "are_sara_listed_aquatic_species_present":true
+   },
+   {
+      "data_source":"RRU Network Drive > LFA Construction Reports > 2017 > 2017 FVWC Peach CRV Summary Report",
+      "rru_involvement":true,
+      "project_id":"16-HPAC-01266",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Restoring Salmon Habitat in the Chilliwack/Vedder Corridor: Peach, Street & Salwein Creeks - Peach Creek Extension Channel",
+      "project_description":"Peach Creek Extension Channel - This project is part of a multi-year watershed level restoration project to restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. The Peach Creek Extension Channel is an off-channel habitat to support increased salmon spawning. Lack of gravel recruitment in the upper reaches of the Chilliwack River limits spawning by chinook salmon, steelhead, and other salmonid species in downstream areas. Primary project objectives were to increase viable off-channel habitats to support rearing, overwintering, and spawning salmon, wildlife, and overall biodiversity. Restoration efforts targeted three main project sites: 1) Stewart Creek, 2) Street Creek, and 3) Peach Creek Extension Channel.\n\nPeach Creek Extension Channel is an off-channel habitat designed to support increased salmon spawning within the lower Vedder River. An area that has been influenced by development, upstream natural geological instability, controlled flows through dykes and changes to the natural floodplain, resulting in the loss of historic off-channel systems. Excavated gravels were trucked up to Foley Creek, to augment spawning habitat in the upper watershed.",
+      "project_goals":"Extend a groundwater-spawning channel east along the north bank floodplain of the Vedder River.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"Dave.Nanson@dfo-mpo.gc.ca",
+            "tel":"604-666-8182",
+            "name":"Dave Nanson"
+         },
+         {
+            "email":"Murray.Manson@dfo-mpo.gc.ca",
+            "tel":"604-318-4758",
+            "name":"Murray Manson"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Fraser Valley Regional District",
+         "City of Chilliwack",
+         "Yarrow EcoVillage",
+         "landowner partners",
+         "Instream",
+         "Pearson Ecological",
+         "ADS Bobcat",
+         "Jims Contracting and Streetwise"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.098507,
+      "longitude_in_decimal_degrees":-121.995617,
+      "sep_rru_in_kind_contributions":30000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":114240,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":26860,
+      "other_in_kind_contributions":88195,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community volunteers",
+         "City of Chilliwack Operations Department",
+         "City of Chilliwack Environmental Engineering Department",
+         "ROTARY/Great Blue Heron Nature Reserve Society",
+         "Steelhead Derby Donation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":259295,
+      "what_is_the_total_cost_of_the_project":444504,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat created",
+      "outcome_value":2920,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":624,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":30,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Hydrometre installments",
+         "Water sampling"
+      ],
+      "season_monitored":[
+         "Winter"
+      ],
+      "other_information":"https://fvwc.ca/wp-content/uploads/2019/09/Peach-Creek-Salmon-Habitat-Restoration-Information-Sheet-2019.pdf"
+   },
+   {
+      "data_source":"RRU Network Drive > LFA Construction Reports > 2017 > 2017 FVWC Peach CRV Summary Report",
+      "rru_involvement":true,
+      "project_id":"16-HPAC-01266",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Restoring Salmon Habitat in the Chilliwack/Vedder Corridor: Peach, Street & Salwein Creeks - Stewart Creek",
+      "project_description":"Stewart Creek - This project is part of a multi-year watershed level restoration project to restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. The Peach Creek Extension Channel is an off-channel habitat to support increased salmon spawning. Lack of gravel recruitment in the upper reaches of the Chilliwack River limits spawning by Chinook salmon, steelhead, and other salmonid species in downstream areas. Restoration efforts targeted three main project sites: 1) Stewart Creek, 2) Street Creek, and 3) Peach Creek Extension Channel.\n\nStewart Creek runs through agricultural land in Chilliwack BC. This creek is impacted by numerous challenges such as removal of riparian vegetation, development and infilling, storm-water and agricultural run-off, and encroachment of invasive reed canary grass and yellow flag iris.",
+      "project_goals":"Remove the invasive Yellow flag iris (Iris pseudacorus) from the pond and add native shrubs and sedge to increase diversity of the area to benefit salmon habitat",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"Dave.Nanson@dfo-mpo.gc.ca",
+            "tel":"604-666-8182",
+            "name":"Dave Nanson"
+         },
+         {
+            "email":"Murray.Manson@dfo-mpo.gc.ca",
+            "tel":"604-318-4758",
+            "name":"Murray Manson"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Fraser Valley Regional District",
+         "City of Chilliwack",
+         "Yarrow EcoVillage",
+         "landowner partners",
+         "Instream",
+         "Pearson Ecological",
+         "ADS Bobcat",
+         "Jims Contracting and Streetwise"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.075232,
+      "longitude_in_decimal_degrees":-122.067151,
+      "sep_rru_in_kind_contributions":30000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":114241,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":26860,
+      "other_in_kind_contributions":88195,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community volunteers",
+         "City of Chilliwack Operations Department",
+         "City of Chilliwack Environmental Engineering Department",
+         "ROTARY/Great Blue Heron Nature Reserve Society",
+         "Steelhead Derby Donation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":259296,
+      "what_is_the_total_cost_of_the_project":444504,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":124,
+      "what_was_the_secondary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric_2":"Square-metres floodplain habitat treated",
+      "outcome_value_2":84,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":30,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Hydrometre installments",
+         "Water sampling"
+      ],
+      "season_monitored":[
+         "Winter"
+      ]
+   },
+   {
+      "data_source":"RRU Network Drive > LFA Construction Reports > 2017 > 2017 FVWC Peach CRV Summary Report",
+      "rru_involvement":true,
+      "project_id":"16-HPAC-01266",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Restoring Salmon Habitat in the Chilliwack/Vedder Corridor: Peach, Street & Salwein Creeks - Street Creek",
+      "project_description":"Street Creek - This project is part of a multi-year watershed level restoration project to restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. The Peach Creek Extension Channel is an off-channel habitat to support increased salmon spawning. Lack of gravel recruitment in the upper reaches of the Chilliwack River limits spawning by chinook salmon, steelhead, and other salmonid species in downstream areas. Primary project objectives were to increase viable off-channel habitats to support rearing, overwintering, and spawning salmon, wildlife, and overall biodiversity. Restoration efforts targeted three main project sites: 1) Stewart Creek, 2) Street Creek, and 3) Peach Creek Extension Channel.\n\nStreet Creek is a small creek that flows north and connects to the recently restored Browne Creek Wetlands. At the project site, significant encroachment of reed canary grass and sedimentation has altered accessibility of spawning gravels.",
+      "project_goals":"Remove invasive reed canary grass (Phalaris arundinacea) and sedimentation that was covering salmon spawning gravel and add complexity to the instream and riparian areas.",
+      "project_duration":[
+         2017,
+         2019
+      ],
+      "year_project_was_initiated":2017,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "email":"Natashia@fvwc.ca",
+            "tel":"604-855-8274",
+            "name":"Natashia Cox"
+         },
+         {
+            "email":"Dave.Nanson@dfo-mpo.gc.ca",
+            "tel":"604-666-8182",
+            "name":"Dave Nanson"
+         },
+         {
+            "email":"Murray.Manson@dfo-mpo.gc.ca",
+            "tel":"604-318-4758",
+            "name":"Murray Manson"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "project_partners":[
+         "Fraser Valley Regional District",
+         "City of Chilliwack",
+         "Yarrow EcoVillage",
+         "landowner partners",
+         "Instream",
+         "Pearson Ecological",
+         "ADS Bobcat",
+         "Jims Contracting and Streetwise"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.091656,
+      "longitude_in_decimal_degrees":-122.025029,
+      "sep_rru_in_kind_contributions":30000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":114242,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":26860,
+      "other_in_kind_contributions":88195,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community volunteers",
+         "City of Chilliwack Operations Department",
+         "City of Chilliwack Environmental Engineering Department",
+         "ROTARY/Great Blue Heron Nature Reserve Society",
+         "Steelhead Derby Donation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":259297,
+      "what_is_the_total_cost_of_the_project":444504,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":460,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":476,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":30,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Hydrometre installments",
+         "Water sampling"
+      ],
+      "season_monitored":[
+         "Winter"
+      ]
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7",
+      "project_id":"16-HPAC-00395",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Stave River Watershed- Restoring Salmon rearing spawning and overwintering habitat",
+      "project_description":"This Watershed level restoration project will improve salmon spawning, off-channel rearing and over-wintering habitat in the lower Stave River.  The project targets floodplain sites that were previously identified as representing excellent opportunities to restore unique and heavily impacted wetland habitat of the Fraser River lowlands.  Restoration will include complexing floodplain habitat that will be used by spawning and rearing salmonids and creating tidal channels that are critical for juvenile Chum, Chinook and Coho fry during critical rearing periods of their life history.",
+      "project_goals":"Increase the quantity and quality of tidally influenced off channel refuge habitat in the Lower Stave River.",
+      "project_duration":[
+         2016,
+         2018
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.165881,
+      "longitude_in_decimal_degrees":-122.411461,
+      "sep_rru_in_kind_contributions":30000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":55822,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":140754,
+      "other_in_kind_contributions":21624,
+      "other_funding_sources":[
+         "Fraser Valley Regional District",
+         "Stave Valley Salmonid Enhancement Society",
+         "Fraser Valley Watersheds Coalition",
+         "Pearson Ecological",
+         "Fraser Valley Watersheds Coalition community volunteers and University of the Fraser Valley students",
+         "BC Hydro Fish and Wildlife Compensation Program",
+         "Pacific Salmon Foundation",
+         "National Wetlands Conservation Fund"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":248200,
+      "what_is_the_total_cost_of_the_project":69280.36,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "CT",
+         "PK",
+         "SK"
+      ],
+      "life_stage":[
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Floodplain connectivity",
+      "outcome_metric":"Square-metres floodplain habitat treated",
+      "outcome_value":11564,
+      "what_was_the_secondary_restoration_activity":"Instream structure",
+      "outcome_metric_2":"Square-metres instream habitat treated",
+      "outcome_value_2":936,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":6,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":50,
+      "was_project_monitoring_completed":true,
+      "monitoring_objectives":[
+         "Biological and productivity"
+      ],
+      "monitoring_activities":[
+         "Water sampling",
+         "Hydrometer installments",
+         "Nets and traps",
+         "Bird surveys"
+      ],
+      "number_of_years_of_monitoring_after_restoration":1,
+      "monitoring_design":"BA",
+      "season_monitored":[
+         "Winter"
+      ],
+      "life_stage_monitored":[
+         "Freshwater juvenile"
+      ],
+      "other_information":"https://a100.gov.bc.ca/pub/acat/documents/r52611/COA_F17_F_1371_1500590579371_0588693505.pdf\n \n https://fwcp.ca/app/uploads/2017/12/Action-Plan-Coastal-Region-Stave-River-Watershed-Jul-2020.pdf"
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7, Final Report",
+      "number_of_sites":4,
+      "project_id":"16-HPAC-00402",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2016,
+         2017
+      ],
+      "project_name":"Restoring Salmon Habitat: Chilliwack River, Stewart Creek, Salwein Creek and Trestle Channel - Chilliwack River",
+      "project_description":"Chilliwack River - This Watershed level restoration project will enhance and restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. Specifically this project will include spawning gravel augmentation within the main-stem Chilliwack River to support steelhead and other salmonids ,and restoration and enhancement activities along Stewart Creek, Salwein Creek and Trestle Channel to support viable off-channel salmon habitats.",
+      "project_goals":"Restore and enhance salmon habitat along the Chilliwack-Vedder River to strengthen the recreational fisheries resource in this vital watershed.",
+      "project_duration":[
+         2016,
+         2017
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2017,
+      "project_contacts":[
+         {
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.08372,
+      "longitude_in_decimal_degrees":-121.458434,
+      "sep_rru_in_kind_contributions":13000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":100099,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":55510,
+      "other_in_kind_contributions":60484,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community Volunteers",
+         "Chilliwack Fish Hatchery",
+         "TD Friends of the Environment Fund"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":229093,
+      "what_is_the_total_cost_of_the_project":229093,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "CM",
+         "PK",
+         "SSU",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2982,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":1863,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":5,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":187
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7, Final Report",
+      "number_of_sites":4,
+      "project_id":"16-HPAC-00402",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2016,
+         2017
+      ],
+      "project_name":"Restoring Salmon Habitat: Chilliwack River, Stewart Creek, Salwein Creek and Trestle Channel - Salwein Creek",
+      "project_description":"Salwein Creek - This Watershed level restoration project will enhance and restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. Specifically this project will include spawning gravel augmentation within the main-stem Chilliwack River to support steelhead and other salmonids ,and restoration and enhancement activities along Stewart Creek, Salwein Creek and Trestle Channel to support viable off-channel salmon habitats.",
+      "project_goals":"Restore and enhance salmon habitat along the Chilliwack-Vedder River to strengthen the recreational fisheries resource in this vital watershed.",
+      "project_duration":[
+         2016,
+         2017
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2017,
+      "project_contacts":[
+         {
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.106627,
+      "longitude_in_decimal_degrees":-122.017329,
+      "sep_rru_in_kind_contributions":13000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":100099,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":55510,
+      "other_in_kind_contributions":60484,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community Volunteers",
+         "Chilliwack Fish Hatchery",
+         "TD Friends of the Environment Fund"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":229093,
+      "what_is_the_total_cost_of_the_project":229093,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "CM",
+         "PK",
+         "SSU",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2982,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":1863,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":5,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":187
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7, Final Report",
+      "number_of_sites":4,
+      "project_id":"16-HPAC-00402",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2016,
+         2017
+      ],
+      "project_name":"Restoring Salmon Habitat: Chilliwack River, Stewart Creek, Salwein Creek and Trestle Channel - Stewart Creek",
+      "project_description":"Stewart Creek - This Watershed level restoration project will enhance and restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. Specifically this project will include spawning gravel augmentation within the main-stem Chilliwack River to support steelhead and other salmonids ,and restoration and enhancement activities along Stewart Creek, Salwein Creek and Trestle Channel to support viable off-channel salmon habitats.",
+      "project_goals":"Restore and enhance salmon habitat along the Chilliwack-Vedder River to strengthen the recreational fisheries resource in this vital watershed.",
+      "project_duration":[
+         2016,
+         2017
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2017,
+      "project_contacts":[
+         {
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.078937,
+      "longitude_in_decimal_degrees":-122.051603,
+      "sep_rru_in_kind_contributions":13000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":100099,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":55510,
+      "other_in_kind_contributions":60484,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community Volunteers",
+         "Chilliwack Fish Hatchery",
+         "TD Friends of the Environment Fund"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":229093,
+      "what_is_the_total_cost_of_the_project":229093,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "CM",
+         "PK",
+         "SSU",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2982,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":1863,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":5,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":187
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7, Final Report",
+      "number_of_sites":4,
+      "project_id":"16-HPAC-00402",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2016,
+         2017
+      ],
+      "project_name":"Restoring Salmon Habitat: Chilliwack River, Stewart Creek, Salwein Creek and Trestle Channel - Trestle Channel",
+      "project_description":"Trestle Channel - This Watershed level restoration project will enhance and restore salmon spawning, off-channel rearing and over-wintering habitat in the Chilliwack and Vedder River watershed. Specifically this project will include spawning gravel augmentation within the main-stem Chilliwack River to support steelhead and other salmonids ,and restoration and enhancement activities along Stewart Creek, Salwein Creek and Trestle Channel to support viable off-channel salmon habitats.",
+      "project_goals":"Restore and enhance salmon habitat along the Chilliwack-Vedder River to strengthen the recreational fisheries resource in this vital watershed.",
+      "project_duration":[
+         2016,
+         2017
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2017,
+      "project_contacts":[
+         {
+            "name":"Natashia Cox"
+         }
+      ],
+      "project_lead_organization":[
+         "Fraser Valley Watersheds Coalition"
+      ],
+      "watershed_name":"Chilliwack River",
+      "latitude_in_decimal_degrees":49.088152,
+      "longitude_in_decimal_degrees":-122.045525,
+      "sep_rru_in_kind_contributions":13000,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":100099,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":55510,
+      "other_in_kind_contributions":60484,
+      "other_funding_sources":[
+         "Pacific Salmon Foundation",
+         "Fraser Valley Watersheds Coalition",
+         "Fraser Valley Regional District",
+         "Community Volunteers",
+         "Chilliwack Fish Hatchery",
+         "TD Friends of the Environment Fund"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":229093,
+      "what_is_the_total_cost_of_the_project":229093,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CO",
+         "CM",
+         "PK",
+         "SSU",
+         "ST"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":2982,
+      "what_was_the_secondary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric_2":"Square-metres riparian habitat treated",
+      "outcome_value_2":1863,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":5,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":187,
+      "other_information":"https://pearsonecological.com/wp-content/uploads/2018/04/Trestle-Channel-Effectiveness-Monitoring-Report-2017.pdf"
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7",
+      "project_id":"16-HPAC-00409",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2017,
+         2018
+      ],
+      "project_name":"Musqueam Watershed Bank Stabilization Project",
+      "project_description":"Using approved bioengineered methods and materials identified by a contracted bioengineering consulting firm, and supported by native plants, soil and log designs we will stabilize the banks along Musqueam Creek and restore and protect water quality and fish habitat.",
+      "project_goals":"Eliminate the physical impediments and water quality problems that young and returning trout, Coho, and Chum encounter in the Musqueam and Cutthroat Creek stream system.",
+      "project_duration":[
+         2016,
+         2018
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2018,
+      "project_contacts":[
+         {
+            "name":"Laura Sparrow"
+         },
+         {
+            "name":"Joanne Kienholz"
+         }
+      ],
+      "project_lead_organization":[
+         "Musqueam Indian Band"
+      ],
+      "project_partners":[
+         "Musqueam Indian Band"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Lower Fraser",
+      "latitude_in_decimal_degrees":49.227667,
+      "longitude_in_decimal_degrees":-123.193583,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":23438,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_funding_sources":[
+         "Musqueam Indian Band",
+         "Suzuki Foundation"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":23438,
+      "what_is_the_total_cost_of_the_project":70860.59,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CM",
+         "CO",
+         "CT"
+      ],
+      "life_stage":[
+         "All stages"
+      ],
+      "what_was_the_primary_restoration_activity":"Riparian restoration and management",
+      "outcome_metric":"Stream lengths (m) riparian habitat treated",
+      "outcome_value":15,
+      "what_was_the_primary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_primary_socio_economic_outcome":15,
+      "what_was_the_secondary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":2
+   },
+   {
+      "data_source":"EOI, CA, Schedule 7, Narrative Summary",
+      "project_id":"16-HPAC-00412",
+      "dfo_area":[
+         "FIA"
+      ],
+      "reporting_fiscal_year":[
+         2018,
+         2019
+      ],
+      "project_name":"Fraser River Channel Rehabilitation and Salmon Fry Nursery Habitat Enhancement",
+      "project_description":"Due to annual aggregate bed load migration, the channel routinely infills and becomes partially blocked. We propose to create a deflection groyne [a rigid hydraulic structure built from a bank that interrupts water flow and limits the movement of sediment] that will help establish a deep channel. Addition of native riparian plantings will provide cover and shade habitat to the out migrating salmonid smolts.",
+      "project_goals":"Help increase the fish populations in the Fraser River over time, the objective of our project is to rehabilitate and enhance rearing channel opportunities within areas along the Fraser River that are within the traditional territory of the Cheam people.",
+      "project_duration":[
+         2016,
+         2019
+      ],
+      "year_project_was_initiated":2016,
+      "year_project_was_last_modified":2019,
+      "project_contacts":[
+         {
+            "name":"Andrew Victor"
+         }
+      ],
+      "project_lead_organization":[
+         "Cheam Indian Band"
+      ],
+      "number_of_indigenous_partners":1,
+      "watershed_name":"Harrison River",
+      "latitude_in_decimal_degrees":49.214415,
+      "longitude_in_decimal_degrees":-121.753994,
+      "was_this_a_g_c_funded_project":true,
+      "g_c_cash_contributions":25178,
+      "g_c_funding_sources":[
+         "RFCPP"
+      ],
+      "other_cash_contributions":34543.31,
+      "other_funding_sources":[
+         "Cheam Indian Band"
+      ],
+      "what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year":59721.31,
+      "what_is_the_total_cost_of_the_project":892545.6799999999,
+      "project_phase":"Completed",
+      "primary_project_activities":[
+         "Implementation"
+      ],
+      "ecosystem_type":[
+         "Freshwater"
+      ],
+      "target_species":[
+         "CH",
+         "CM",
+         "CO",
+         "PK",
+         "SK"
+      ],
+      "life_stage":[
+         "Returning adult",
+         "Freshwater juvenile"
+      ],
+      "what_was_the_primary_restoration_activity":"Instream structure",
+      "outcome_metric":"Square-metres instream habitat treated",
+      "outcome_value":14000,
+      "what_was_the_secondary_restoration_activity":"Fish passage",
+      "outcome_metric_2":"Stream lengths (km) habitat made accessible",
+      "outcome_value_2":0.7,
+      "what_was_the_primary_socio_economic_outcome":"Number of jobs created",
+      "provide_the_value_of_the_primary_socio_economic_outcome":11,
+      "what_was_the_secondary_socio_economic_outcome":"Number of volunteers involved",
+      "provide_the_value_of_the_secondary_socio_economic_outcome":4
+   }
+]
