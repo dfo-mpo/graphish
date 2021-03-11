@@ -26,9 +26,9 @@ Or pull them
 
 Then in Neo4j Browser window:
 
-    :play http://localhost:8001/html/parr_show.html
+    :play http://localhost:8001/html/parr_show_v2.html
 
-Follow all instructions, would take 15-20 minutes depending on machine.
+Follow all instructions, would take 10 minutes depending on machine.
 
 ### B2. Quick-start
 

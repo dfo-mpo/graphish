@@ -198,10 +198,12 @@ CREATE INDEX ON :CONTACT_PERSON(email);
 //
 CREATE CONSTRAINT ON (n:ORGANIZATION) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :ORGANIZATION(name);
+CREATE CONSTRAINT ON (n:LEAD_ORGANIZATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :LEAD_ORGANIZATION(name);
 //
 // GC Funding Sources
 //
-CREATE CONSTRAINT ON (n:GC_FUNDING_SOURCE) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:GC_FUNDING_PROGRAM) ASSERT n.uid IS UNIQUE;
 //
 // Project Location
 //
@@ -806,7 +808,7 @@ UNWIND [
 	['RFCPP', 'Recreational Fisheries Conservation Partnership Program']
 ] AS pr_fndsrc
 WITH pr_fndsrc
-	MERGE (n:GC_FUNDING_SOURCE {uid: pr_fndsrc[0]})
+	MERGE (n:GC_FUNDING_PROGRAM {uid: pr_fndsrc[0]})
 		SET
 			n.name = pr_fndsrc[1];
 //
@@ -1164,7 +1166,7 @@ CALL apoc.periodic.iterate(
     )
     FOREACH (p IN map.project_lead_organization |
 			FOREACH (_ IN CASE p IN ['', 'N/A'] WHEN TRUE THEN [] ELSE [1] END |
-	      MERGE (pr_org:ORGANIZATION {uid: p})
+        MERGE (pr_org:ORGANIZATION:LEAD_ORGANIZATION {uid: p})
 	      MERGE (pr_org)<-[:HAS_LEAD_ORGANIZATION]-(n)
 			)
     )
@@ -1183,7 +1185,7 @@ CALL apoc.periodic.iterate(
       MERGE (pr_loc)<-[:HAS_WATERSHED]-(n)
     )
     FOREACH (p IN map.g_c_funding_sources |
-      MERGE (pr_fndsrc:GC_FUNDING_SOURCE {uid: p})
+      MERGE (pr_fndsrc:GC_FUNDING_PROGRAM {uid: p})
       MERGE (pr_fndsrc)<-[:HAS_GC_FUNDING_SOURCE]-(n)
     )
     FOREACH (p IN map.other_funding_sources |
@@ -1569,6 +1571,37 @@ MATCH (n:PROJECT)
 WITH n
 	MATCH (n)-[r:NEAREST_IN_PROJECT|NEAREST_IN_WATERSHED]-(m)-[:HAS_WATERSHED]-(w)
 RETURN m, n, w;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Funding program and other funding sources of projects lead by Fraser Valley Watersheds Coalition
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Funding program and other funding sources of projects lead by Fraser Valley Watersheds Coalition
+//
+MATCH (n:LEAD_ORGANIZATION {uid: "Fraser Valley Watersheds Coalition"})<-[:HAS_LEAD_ORGANIZATION]-(p:PROJECT)
+WITH n, p
+	MATCH (p)-[:HAS_GC_FUNDING_SOURCE]-(s:GC_FUNDING_PROGRAM)
+WITH n, p, COLLECT(s) AS fc
+	MATCH (p)-[:HAS_OTHER_FUNDING_SOURCE]-(s)
+RETURN n, p, fc, COLLECT(s) AS sc;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Projects and lead organizations
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Projects and lead organizations
+//
+MATCH (n:LEAD_ORGANIZATION)<-[:HAS_LEAD_ORGANIZATION]-(p:PROJECT) RETURN n, p;
 //
 ////////////////////////////////////////////////////////////////////////////////
 ----

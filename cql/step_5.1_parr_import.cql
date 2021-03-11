@@ -50,7 +50,7 @@ UNWIND [
 	['RFCPP', 'Recreational Fisheries Conservation Partnership Program']
 ] AS pr_fndsrc
 WITH pr_fndsrc
-	MERGE (n:GC_FUNDING_SOURCE {uid: pr_fndsrc[0]})
+	MERGE (n:GC_FUNDING_PROGRAM {uid: pr_fndsrc[0]})
 		SET
 			n.name = pr_fndsrc[1];
 //
@@ -408,7 +408,7 @@ CALL apoc.periodic.iterate(
     )
     FOREACH (p IN map.project_lead_organization |
 			FOREACH (_ IN CASE p IN ['', 'N/A'] WHEN TRUE THEN [] ELSE [1] END |
-	      MERGE (pr_org:ORGANIZATION {uid: p})
+	      MERGE (pr_org:ORGANIZATION:LEAD_ORGANIZATION {uid: p})
 	      MERGE (pr_org)<-[:HAS_LEAD_ORGANIZATION]-(n)
 			)
     )
@@ -428,7 +428,7 @@ CALL apoc.periodic.iterate(
     )
     FOREACH (p IN map.g_c_funding_sources |
       MERGE (pr_fndsrc:GC_FUNDING_SOURCE {uid: p})
-      MERGE (pr_fndsrc)<-[:HAS_GC_FUNDING_SOURCE]-(n)
+      MERGE (pr_fndsrc)<-[:GC_FUNDING_PROGRAM]-(n)
     )
     FOREACH (p IN map.other_funding_sources |
       MERGE (pr_ofs:ORGANIZATION {uid: p})
