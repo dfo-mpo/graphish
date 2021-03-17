@@ -154,7 +154,7 @@ It is a simple pipeline that:
 //
 // Define parameters
 //
-:param xls_file => "/input.xlsx";
+:param xls_file => "/import_samples/input.xlsx";
 :param sheets => "psf_news!A1:B6";
 :param nlp_service => "http://nlp:8000/process/";
 

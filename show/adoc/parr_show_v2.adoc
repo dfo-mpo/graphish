@@ -1,0 +1,1580 @@
+= Show case
+
+== Pacific Salmon Knowledge Graph Initiative - Proof of Concept
+
+DFO’s Pacific Salmon Strategy (PSS) is a multi-branch initiative that seeks to transform the governance, management and assessment of salmon in the Pacific Region. Those leading this initiative, which is anticipated to begin in earnest in 2021, recognize the potential of applying Knowledge Graph (KG) (or labelled property graph, e.g. Neo4j.com) technology to assist in the assembly, storage and interpretation of complex salmon-related data and information.
+
+One focus of the initiative is on information pertaining to current salmon rebuilding activities, building upon earlier KG work, including some that focused on southern BC Chinook salmon.
+
+This Proof of Concept (PoC) is intended to demonstrate the value of KG technology as a means of helping to achieve the overall goals of the PSS by showcasing data processing procedures for assembly, cleaning, transformation (standardization), loading, and linking of data from text sources (e.g. reports, Word documents and Excel spreadsheets) into nodes and links in a Salmon Knowledge Graph.
+
+== Step 0 - Check database
+
+[source,cypher]
+----
+CALL dbms.components()
+  YIELD name, versions, edition
+UNWIND versions AS version
+RETURN name, version, edition;
+----
+
+[source,cypher]
+----
+RETURN apoc.version();
+----
+
+== Step 1 - Clean up database
+
+[source,cypher]
+----
+MATCH (a)-[r]->() DELETE a, r;
+MATCH (a) DELETE a;
+CALL apoc.schema.assert(NULL, NULL, TRUE);
+CALL apoc.custom.removeProcedure('nlp_import');
+----
+
+== Step 2 - Schema and custom procedures
+
+[source,cypher]
+----
+// Note: This script will be processed by neo4j-shell utility
+// All comments in Java Style: line preceded by //
+// Its syntax must be list of cypher queries and neo4j-shell commands
+// separated by ';'
+//
+// CONSTRAINTS AND INDEXES
+//
+// 1. Create unique constraint
+// CREATE CONSTRAINT ON (n:Label) ASSERT n.property IS UNIQUE;
+//
+// 2. Create a single-property index
+// CREATE INDEX ON :Label(property);
+//
+// 3. Create a composite index
+// CREATE INDEX ON :Label(prop1, …​, propN);
+//
+// 4. Create node property existence constraint
+// CREATE CONSTRAINT ON (n:Label) ASSERT EXISTS(n.property);
+//
+// 5. Create relationship property existence constraint
+// CREATE CONSTRAINT ON ()-[r:relationshipType]-() ASSERT EXISTS(r.property);
+//
+// 6. Create a Node Key
+// ASSERT (variable.propertyName_1, …​, variable.propertyName_n) IS NODE KEY;
+//
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+//
+// NLP data: all node labels have 'NLP_' as prefix
+//
+////////////////////////////////////////////////////////////////////////
+//
+// Document
+//
+CREATE CONSTRAINT ON (n:DOCUMENT) ASSERT n.uid IS UNIQUE;
+// - uid: the unique identifier of a document (e.g. file name)
+//
+// Sentence
+//
+CREATE CONSTRAINT ON (n:SENTENCE) ASSERT n.uid IS UNIQUE;
+//
+CREATE INDEX ON :SENTENCE(c);
+// - c is the textual content, it is  indexed
+CREATE INDEX ON :SENTENCE(s);
+// - s is the sentiment score, it is an indexed integer
+CREATE INDEX ON :SENTENCE(n);
+// - n is the numner of occurences of the sentence
+//
+// Named Entity
+//
+CREATE CONSTRAINT ON (n:NAMED_ENTITY) ASSERT n.c IS UNIQUE;
+// - c is the textual content, it is unique and indexed
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_CARDINAL) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_DATE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_EVENT) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_FAC) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_GPE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_LAW) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_LANGUAGE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_LOC) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_MONEY) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_NORP) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_ORDINAL) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_ORG) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_PERCENT) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_PERSON) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_PRODUCT) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_QUANTITY) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_TIME) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_WORK_OF_ART) ASSERT n.c IS UNIQUE;
+// - the entity type label (18 named entity types, e.g. PERSON)
+CREATE INDEX ON :NAMED_ENTITY(n);
+// - n is the number of occurences of the entity
+//
+// Key Phrase
+//
+CREATE CONSTRAINT ON (n:KEY_PHRASE) ASSERT n.c IS UNIQUE;
+// - c is the textual content, it is unique and indexed
+CREATE INDEX ON :KEY_PHRASE(n);
+// - n is the numner of occurences of the key phrase
+//
+// Lemmatized word
+//
+CREATE CONSTRAINT ON (n:WORD) ASSERT n.l IS UNIQUE;
+// - l is the lemma form of the text, it is unique and indexed
+CREATE INDEX ON :WORD(n);
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+//
+// Geonames data: all node labels have 'GN_' as prefix
+//
+// Feature Codes
+//
+CREATE CONSTRAINT ON (n:GEO_FEATURE) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :GEO_FEATURE(name);
+CREATE INDEX ON :GEO_FEATURE(desc);
+//
+// Named locations
+//
+CREATE CONSTRAINT ON (n:GEO_LOCATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :GEO_LOCATION(name);
+CREATE INDEX ON :GEO_LOCATION(ascii_name);
+CREATE INDEX ON :GEO_LOCATION(alt_names);
+CREATE INDEX ON :GEO_LOCATION(feature);
+CREATE INDEX ON :GEO_LOCATION(location);
+CREATE INDEX ON :GEO_LOCATION(admin_code);
+CREATE INDEX ON :GEO_LOCATION(population);
+//
+// Postal codes
+//
+CREATE CONSTRAINT ON (n:CA_POST_CODE) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :CA_POST_CODE(place_name);
+CREATE INDEX ON :CA_POST_CODE(location);
+CREATE INDEX ON :CA_POST_CODE(centroid);
+//
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+//
+// British Columbia First Nations data: all node labels have 'FN_' as prefix
+//
+// First Nation Entity
+//
+CREATE CONSTRAINT ON (n:BC_FIRST_NATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :BC_FIRST_NATION(name);
+CREATE INDEX ON :BC_FIRST_NATION(address);
+CREATE INDEX ON :BC_FIRST_NATION(location);
+//
+// First Nation Group
+//
+CREATE CONSTRAINT ON (n:BC_NATION_COUNCIL) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :BC_NATION_COUNCIL(name);
+//
+// First Nation Region
+//
+CREATE CONSTRAINT ON (n:BC_GEO_REGION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :BC_GEO_REGION(name);
+//
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+//
+// Project specific data
+//
+CREATE CONSTRAINT ON (n:PROJECT) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :PROJECT(pid);
+CREATE INDEX ON :PROJECT(name);
+CREATE INDEX ON :PROJECT(desc);
+//
+// Project Contact
+//
+CREATE CONSTRAINT ON (n:CONTACT_PERSON) ASSERT n.name IS UNIQUE;
+CREATE INDEX ON :CONTACT_PERSON(tel);
+CREATE INDEX ON :CONTACT_PERSON(email);
+//
+// Project Organization
+//
+CREATE CONSTRAINT ON (n:ORGANIZATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :ORGANIZATION(name);
+//
+// GC Funding Sources
+//
+CREATE CONSTRAINT ON (n:GC_FUNDING_SOURCE) ASSERT n.uid IS UNIQUE;
+//
+// Project Location
+//
+CREATE CONSTRAINT ON (n:WATERSHED) ASSERT n.uid IS UNIQUE;
+//
+// DFO Area
+//
+CREATE CONSTRAINT ON (n:DFO_AREA) ASSERT n.uid IS UNIQUE;
+//
+// Policy and Program Connections
+//
+CREATE CONSTRAINT ON (n:POLICY_PROGRAM) ASSERT n.uid IS UNIQUE;
+//
+// Project Phase
+//
+CREATE CONSTRAINT ON (n:PROJECT_PHASE) ASSERT n.uid IS UNIQUE;
+//
+// Eco System Types
+//
+CREATE CONSTRAINT ON (n:ECO_SYSTEM_TYPE) ASSERT n.uid IS UNIQUE;
+//
+// Project Primary Activities
+//
+CREATE CONSTRAINT ON (n:PROJECT_ACTIVITY) ASSERT n.uid IS UNIQUE;
+//
+// Species
+//
+CREATE CONSTRAINT ON (n:SPECIES) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:TARGET_SPECIES) ASSERT n.uid IS UNIQUE;
+//
+// Life Stages
+//
+CREATE CONSTRAINT ON (n:LIFE_STAGE) ASSERT n.uid IS UNIQUE;
+//
+// Restoration Activities
+//
+CREATE CONSTRAINT ON (n:RESTORATION_ACTIVITY) ASSERT n.uid IS UNIQUE;
+//
+// Habitat Outcome Metric
+//
+CREATE CONSTRAINT ON (n:HABITAT_OUTCOME_METRIC) ASSERT n.uid IS UNIQUE;
+//
+// Monitoring objectives
+//
+CREATE CONSTRAINT ON (n:MONITORING_OBJECTIVE) ASSERT n.uid IS UNIQUE;
+//
+// Monitoring activites
+//
+CREATE CONSTRAINT ON (n:MONITORING_ACTIVITY) ASSERT n.uid IS UNIQUE;
+//
+// Monitoring design
+//
+CREATE CONSTRAINT ON (n:MONITORING_DESIGN) ASSERT n.uid IS UNIQUE;
+//
+// Season monitored
+//
+CREATE CONSTRAINT ON (n:SEASON_MONITORED) ASSERT n.uid IS UNIQUE;
+//
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+//
+// List all constraints
+CALL db.constraints();
+//
+// List all indexes
+CALL db.indexes();
+//
+// Wait for all indexes online
+CALL db.awaitIndexes();
+//
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+// Call the nlp micro service to process the documents.
+//
+CALL apoc.custom.asProcedure(
+  'nlp_import',
+  'WITH $n AS n
+    CALL apoc.load.jsonParams($nlp_service, {method: "POST"}, $input)
+      YIELD value
+  WITH n, value
+    UNWIND value AS document
+  WITH n, document
+    UNWIND document.p AS sentence
+
+  WITH n, sentence
+    UNWIND sentence.e AS entity
+  WITH n, sentence, entity
+    MERGE (e:NAMED_ENTITY {c: entity.c})
+      ON CREATE SET e.n = 1
+      ON MATCH SET e.n = e.n + 1
+    MERGE (n)-[r:HAS_NAMED_ENTITY]->(e)
+      ON CREATE SET r.n = 1
+      ON MATCH SET r.n = r.n + 1
+  WITH n, sentence, e, entity
+    CALL apoc.create.addLabels(e, ["NAMED_ENTITY_" + entity.t]) YIELD node
+  WITH n, sentence, node AS e, entity
+    UNWIND entity.w AS word
+      MERGE (w:WORD {l: word.l})
+        ON CREATE SET w.n = 1
+        ON MATCH SET w.n = w.n + 1
+      MERGE (e)-[r:HAS_WORD]->(w)
+
+  WITH n, sentence
+    UNWIND sentence.k AS key_phrase
+  WITH n, sentence, key_phrase
+    MERGE (k:KEY_PHRASE {c: key_phrase.c})
+      ON CREATE SET k.n = 1
+      ON MATCH SET k.n = k.n + 1
+    MERGE (n)-[r:HAS_KEY_PHRASE]->(k)
+      ON CREATE SET r.n = 1
+      ON MATCH SET r.n = r.n + 1
+  WITH n, sentence, k, key_phrase
+    UNWIND key_phrase.w AS word
+      MERGE (w:WORD {l: word.l})
+        ON CREATE SET w.n = 1
+        ON MATCH SET w.n = w.n + 1
+      MERGE (k)-[r:HAS_WORD]->(w)
+        ON CREATE SET r.c = word.c
+  RETURN n AS result;',
+  'write',
+  [['result','NODE']],
+  [['n','NODE'], ['nlp_service','STRING'], ['input','STRING']]
+);
+//
+CALL apoc.custom.list;
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// CALL apoc.custom.list;
+//
+// CALL apoc.custom.removeProcedure('nlp_import');
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 3 - Geonames and Postal codes
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Load Geonames feature code data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.csv('featureCodes_en.txt', {sep: 'TAB', nullValues: ['']})
+    YIELD lineNo, map, list
+", "
+  WITH map
+    MERGE (n:GEO_FEATURE {uid: map.code})
+      SET
+        n.name = map.name,
+        n.desc = map.desc;
+",
+{
+    batchSize:100, iterateList:true, parallel:true
+});
+//
+//
+// Load Geonames Bristish Columbia data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.csv('CA-BC-geonames.tsv', {sep: 'TAB', nullValues: ['']})
+    YIELD lineNo, map, list
+", "
+  WITH map
+    MERGE (n:GEO_LOCATION {uid: TOINTEGER(map.geonameid)})
+      SET
+        n.name = map.name,
+        n.ascii_name = map.ascii_name,
+        n.alt_names = SPLIT(map.alt_names, ','),
+        n.location = POINT({latitude: TOFLOAT(map.latitude), longitude: TOFLOAT(map.longitude), crs: 'WGS-84'}),
+        n.feature = map.feature_class + '.' + map.feature_code,
+        n.population = TOINTEGER(map.population),
+        n.elevation = TOINTEGER(map.elevation),
+        n.dem = TOINTEGER(map.dem),
+        n.timezone = map.timezone,
+        n.ts = DATE(map.modification_date)
+  WITH map, n
+    FOREACH (_ IN CASE n.feature IN ['A.ADM1'] WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.admin_code = map.admin1_code
+    )
+    FOREACH (_ IN CASE n.feature IN ['A.ADM2'] WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.admin_code = map.admin1_code + '.' + map.admin2_code,
+        n.upper_adm = map.admin1_code
+    )
+    FOREACH (_ IN CASE n.feature IN ['A.ADM3'] WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.admin_code = map.admin1_code + '.' + map.admin2_code + '.' + map.admin3_code,
+        n.upper_adm = map.admin1_code + '.' + map.admin2_code
+    )
+    FOREACH (_ IN CASE NOT(n.feature IN ['A.ADM1', 'A.ADM2', 'A.ADM3']) WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.upper_adm = map.admin1_code + (CASE map.admin2_code IS NOT NULL WHEN TRUE THEN '.' + map.admin2_code ELSE '' END) + (CASE map.admin3_code IS NOT NULL WHEN TRUE THEN '.' + map.admin3_code ELSE '' END)
+    );
+",
+{
+    batchSize:1000, iterateList:true, parallel:true
+});
+//
+//
+//
+CALL apoc.periodic.iterate(
+"
+  MATCH (n:GEO_LOCATION)
+  WITH n
+    MATCH (fc:GEO_FEATURE {uid: n.feature})
+  RETURN n, fc
+", "
+  WITH n, fc
+    MERGE (n)-[:HAS_FEATURE]->(fc);
+",
+{
+    batchSize:1000, iterateList:true, parallel:false
+});
+//
+//
+//
+CALL apoc.periodic.iterate(
+"
+  MATCH (n:GEO_LOCATION)
+    WHERE n.upper_adm IS NOT NULL
+  WITH n
+    MATCH (m:GEO_LOCATION {admin_code: n.upper_adm})
+  RETURN n, m
+", "
+  WITH n, m
+    MERGE (n)-[:WITH_IN]->(m);
+",
+{
+    batchSize:1000, iterateList:true, parallel:false
+});
+//
+// Load Canada postal code data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bc_pc_1.0.json')
+    YIELD value
+  RETURN value AS map
+", "
+  WITH map
+    MERGE (n:CA_POST_CODE {uid: map.code})
+      SET
+        n.centroid = POINT({latitude: map.centroid[0], longitude: map.centroid[1], crs: 'WGS-84'}),
+        n.boundary = [p IN map.points | POINT({latitude: p[0], longitude: p[1], crs: 'WGS-84'})];
+",
+{
+    batchSize:1000, iterateList:true, parallel:true
+});
+//
+// Load Geonames postal code data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.csv('gn_pc_1.0.tsv', {sep: 'TAB', nullValues: ['']})
+  YIELD lineNo, map, list
+", "
+  WITH map
+    MERGE (n:CA_POST_CODE {uid: REPLACE(map.code, ' ', '')})
+      SET
+        n.place_name = CASE EXISTS(n.place_name) WHEN TRUE THEN n.place_name + [map.place] ELSE [map.place] END,
+        n.lat_list = CASE EXISTS(n.lat_list) WHEN TRUE THEN n.lat_list + [TOFLOAT(map.latitude)] ELSE [TOFLOAT(map.latitude)] END,
+        n.lng_list = CASE EXISTS(n.lng_list) WHEN TRUE THEN n.lng_list + [TOFLOAT(map.longitude)] ELSE [TOFLOAT(map.longitude)] END
+  WITH n
+    SET
+      n.location =  POINT({latitude: apoc.coll.sum(n.lat_list)/SIZE(n.lat_list), longitude: apoc.coll.sum(n.lng_list)/SIZE(n.lng_list), crs: 'WGS-84'});
+",
+{
+    batchSize:1000, iterateList:true, parallel:true
+});
+//
+MATCH (n:CA_POST_CODE)
+  WHERE NOT(EXISTS(n.location))
+  SET n.location = n.centroid;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 4 - First Nation data
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Load First Nation data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bcgov_fn_2.0.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    MERGE (n:BC_FIRST_NATION {uid: map.url})
+      SET
+        n.name = map.name,
+        n.region = map.region,
+        n.loc_desc = map.loc,
+        n.website = map.website
+  WITH map, n
+    FOREACH (_ IN CASE map.lat <> '' AND map.lng <> '' WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.location = POINT({latitude: TOFLOAT(map.latitude), longitude: TOFLOAT(map.longitude), crs: 'WGS-84'})
+    )
+",
+{
+    batchSize:100, iterateList:true, parallel:true
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Load First Nation Group data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bcgov_og_2.0.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    MERGE (n:BC_NATION_COUNCIL {uid: map.url})
+      SET
+        n.name = map.name,
+        n.region = map.region,
+        n.loc_desc = map.loc,
+        n.website = map.website
+  WITH map, n
+    FOREACH (_ IN CASE map.lat <> '' AND map.lng <> '' WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.location = POINT({latitude: TOFLOAT(map.latitude), longitude: TOFLOAT(map.longitude), crs: 'WGS-84'})
+    )
+",
+{
+    batchSize:100, iterateList:true, parallel:true
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link First Nation to First Nation Group
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bcgov_og_2.0.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    MATCH (n:BC_NATION_COUNCIL {uid: map.url})
+  WITH map, n
+    UNWIND map.members As member
+  WITH map, n, member
+    MATCH (m:BC_FIRST_NATION {uid: member.url})
+      MERGE (n)-[:HAS_MEMBER]->(m);
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Load First Nation Region data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bcafn_2.0.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    MERGE (n:BC_GEO_REGION {uid: map.url})
+      SET
+        n.name = map.name,
+        n.lang = map.language,
+        n.desc = map.desc,
+        n.bkgd = map.bgd,
+        n.summ = map.summ
+  WITH map, n
+    FOREACH (_ IN CASE map.lat <> '' AND map.lng <> '' WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.location = POINT({latitude: TOFLOAT(map.latitude), longitude: TOFLOAT(map.longitude), crs: 'WGS-84'})
+    )
+    FOREACH (_ IN CASE map.fn_population <> '' WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.fn_pop = TOINTEGER(map.fn_population)
+    )
+    FOREACH (_ IN CASE map.total_population <> '' WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.tt_pop = TOINTEGER(map.total_population)
+    )
+    FOREACH (_ IN CASE map.percent_population <> '' WHEN TRUE THEN [1] ELSE [] END |
+      SET
+        n.pc_pop = TOFLOAT(REPLACE(map.percent_population, '%', ''))
+    )
+",
+{
+    batchSize:100, iterateList:true, parallel:true
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link First Nation Group to First Nation Region
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bcafn_2.0.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    MATCH (n:BC_GEO_REGION {uid: map.url})
+  WITH map, n
+    UNWIND map.grp AS grp
+  WITH map, n, grp
+    MATCH (g:BC_NATION_COUNCIL)
+      WHERE grp.name IN g.name
+    MERGE (n)-[:HAS_ASSOCIATION]->(g)
+  WITH grp, g
+      SET
+        g.desc = grp.desc;
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link First Nation Group to First Nation Region
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('bcafn_2.0.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    MATCH (n:BC_GEO_REGION {uid: map.url})
+  WITH map, n
+    UNWIND map.fn AS fn
+  WITH map, n, fn
+    MATCH (e:BC_FIRST_NATION {uid: fn.bc_ws})
+      MERGE (n)-[:HAS_NATION]->(e)
+      SET
+        e.lang = fn.language,
+        e.office = fn.bc_office,
+        e.region = fn.region,
+        e.chief = fn.chief,
+        e.council = [s IN SPLIT(fn.council, ',') | TRIM(s)],
+        e.gov = fn.gov,
+        e.contact = fn.contact
+      FOREACH (_ IN CASE fn.address <> '' WHEN TRUE THEN [1] ELSE [] END |
+        SET
+          e.address = fn.address
+      )
+      FOREACH (_ IN CASE fn.land_area <> '' WHEN TRUE THEN [1] ELSE [] END |
+        SET
+          e.area = TOFLOAT(REPLACE(fn.land_area, ' ha', ''))
+      )
+      FOREACH (_ IN CASE fn.pop_off <> '' WHEN TRUE THEN [1] ELSE [] END |
+        SET
+          e.pop_off = TOINTEGER(fn.pop_off)
+      )
+      FOREACH (_ IN CASE fn.pop_on <> '' WHEN TRUE THEN [1] ELSE [] END |
+        SET
+          e.pop_on = TOINTEGER(fn.pop_on)
+      )
+      FOREACH (_ IN CASE fn.pop_all <> '' WHEN TRUE THEN [1] ELSE [] END |
+        SET
+          e.pop_all = TOINTEGER(fn.pop_all)
+      )
+      FOREACH (_ IN CASE fn.fn_ws <> '' WHEN TRUE THEN [1] ELSE [] END |
+        SET
+          e.website = fn.fn_ws
+      );
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link First Nation with location of its addess postal code
+//
+MATCH (n:BC_FIRST_NATION)
+	WHERE EXISTS(n.address) AND n.address <> ''
+WITH n, REPLACE(SUBSTRING(n.address, SIZE(n.address)-7), ' ', '') AS zip
+WITH n, zip
+	MATCH (p:CA_POST_CODE {uid: zip})
+		MERGE (n)-[:AT_ZIP]->(p);
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link First Nation with same name, nearest populated place on Geonames
+//
+MATCH (n:BC_FIRST_NATION)-[:AT_ZIP]->(z)
+WITH n, TRIM(SPLIT(n.address, ',')[SIZE(SPLIT(n.address, ','))-2]) AS place_name, CASE EXISTS(n.location) WHEN TRUE THEN n.location ELSE z.location END AS loc
+WITH n, place_name, loc
+	MATCH (p:GEO_LOCATION {name: place_name})
+    	WHERE p.feature STARTS WITH 'P.PPL'
+        OR p.feature STARTS WITH 'A.ADM'
+        OR p.feature STARTS WITH 'L.RESV'
+WITH DISTINCT(n) AS n, COLLECT([p, DISTANCE(loc, p.location)]) AS pc
+WITH n, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
+WITH n, match[0] AS p
+  MERGE (n)-[:NEAR_BY_PLACE]->(p);
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Call the nlp micro service to process First Nation's name.
+//
+MATCH (n:BC_FIRST_NATION)
+  WITH n, [apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]])] AS input
+    CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
+      YIELD result
+RETURN 1;
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Call the nlp micro service to process First Nation Council's name
+//
+MATCH (n:BC_NATION_COUNCIL)
+  WITH n, [apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]])] AS input
+    CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
+      YIELD result
+RETURN 1;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 5 - PaRR Projects
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// DFO Area
+//
+UNWIND [
+	['FIA', 'Fraser and Interior Area'],
+	['NCA', 'North Coast Area'],
+	['SCA', 'South Coast Area'],
+	['Yukon', 'Yukon']
+] AS dfo_area
+WITH dfo_area
+	MERGE (n:DFO_AREA {uid: dfo_area[0]})
+		SET
+			n.name = dfo_area[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Policy and Program Connections
+//
+UNWIND [
+	['Species At Risk Act (SARA) Recovery Plans', 'Project supports implementation of priority activities described in federal recovery strategies, action plans or management plans for listed Species at Risk.'],
+	['COSEWIC Assessed Populations', 'Activities targeting species without federal recovery documents that seek to address habitats, threats and other considerations identified in COSEWIC assessments.'],
+	['WSP Implementation', 'Activities contribute to the WSP Implementation Plan at the watershed/CU level to advance Implementation Strategies.'],
+	['Fisheries Act Rebuilding Plans', 'Placeholder to be defined.'],
+	['Southern BC Chinook Initiative', 'Activities directly link to SBC high-level strategic plan that includes trends in aggregated CU and habitat status, limiting factors and threats, objectives, and management strategies.']
+] AS pr_policy
+WITH pr_policy
+	MERGE (n:POLICY_PROGRAM {uid: pr_policy[0]})
+		SET
+			n.name = pr_policy[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// G&C Funding Sources
+//
+UNWIND [
+	['AFSAR', 'Aboriginal Fund for Species at Risk'],
+	['AHRF', 'Aquatic Habitat Restoration Fund'],
+	['BCSRIF', 'British Columbia Salmon Restoration Innovation Fund'],
+	['CNFASAR', 'Canadian Nature Fund for Aquatic Species at Risk'],
+	['CRF', 'Coastal Restoration Fund'],
+	['FHRI', 'Fisheries Habitat Restoration Initiative '],
+	['HSP', 'Habitat Stewardship Program for Aquatic Species at Risk'],
+	['IHPP', 'Indigenous Habitat Participation Program'],
+	['SEP', 'Salmon Enhancement Program'],
+	['RFCPP', 'Recreational Fisheries Conservation Partnership Program']
+] AS pr_fndsrc
+WITH pr_fndsrc
+	MERGE (n:GC_FUNDING_SOURCE {uid: pr_fndsrc[0]})
+		SET
+			n.name = pr_fndsrc[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Project Phase
+//
+UNWIND [
+	['Proposed', 'A project that has been proposed, but has not undergone the planning and design and feasibility phase.'],
+	['Planning', 'A proposed project in the developmental and technical planning stage, typically undergoing design and feasibility analysis.'],
+	['Active', 'A project that is currently underway and being implemented (i.e. the project is being physically executed including activities such as construction, maintenance, site assessment, etc.).'],
+	['Completed', 'A project that was implemented and completed. This project may or may not be maintained and/or monitored after completion.']
+] AS pr_phase
+WITH pr_phase
+	MERGE (n:PROJECT_PHASE {uid: pr_phase[0]})
+		SET
+			n.name = pr_phase[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Project Primary Activities
+//
+UNWIND [
+	['Design and Feasibility', 'The development, technical planning, and/or feasibility analysis of a restoration project not in the project implementation stage (i.e. the actual physical application of a project).'],
+	['Decommissioning', 'The planned shut-down or removal of infrastructure, equipment, facilities, etc. from operation or usage.'],
+	['Implementation', 'The physical application of tasks for a project resulting from planning (e.g. habitat or infrastructure construction, earth moving, improvements to physical infrastructure, consultations/workshops).'],
+	['Maintenance', 'The physical application of tasks for a project on existing infrastructure with the intention of maintaining and/or modifying existing efficiency (i.e. not improvement).'],
+	['Stewardship', 'The application of tasks for a project with a large component of community involvement to promote salmon stewardship and salmon watershed conservation (e.g. Stream to Sea Education Program).'],
+	['Research and Monitoring', 'The application of research/monitoring tasks for a project with the intention of data collection to address information gaps. This can include the collection of baseline information to inform design.']
+] AS pr_prmact
+WITH pr_prmact
+	MERGE (n:PROJECT_ACTIVITY {uid: pr_prmact[0]})
+		SET
+			n.name = pr_prmact[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Eco System Types
+//
+UNWIND [
+	['Freshwater', 'Aquatic ecosystem with naturally occurring water that is neither seawater or brackish. Includes lakes, ponds, rivers, streams, and creeks. Includes Riparian.'],
+	['Estuarine', 'Aquatic ecosystem with naturally occurring water that is brackish and found at the interface where freshwater, usually from river and streams, mix with saltwater from the ocean.'],
+	['Marine', 'Aquatic ecosystem with naturally occurring water that is saltwater']
+] AS ecosystyp
+WITH ecosystyp
+	MERGE (n:ECO_SYSTEM_TYPE {uid: ecosystyp[0]})
+		SET
+			n.name = ecosystyp[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Target Species
+//
+UNWIND [
+	['BT', 'Bull Trout (Salvelinus confluentus) targeted in restoration activities.'],
+	['CH', 'Chinook Salmon (Oncorhynchus tshawytscha) targeted in restoration activities.'],
+	['CM', 'Chum Salmon (Oncorhynchus keta) targeted in restoration activities.'],
+	['CO', 'Coho Salmon (Oncorhynchus kisutch) targeted in restoration activities.'],
+	['CT', 'Cutthroat Trout (Oncorhynchus clarkii) targeted in restoration activities.'],
+	['DV', 'Dolly Varden (Salvelinus malma) targeted in restoration activities.'],
+	['PK', 'Pink Salmon (Oncorhynchus gorbuscha) targeted in restoration activities.'],
+	['RB', 'Rainbow Trout (Oncorhynchus mykiss) targeted in restoration activities.'],
+	['UDC', 'Umatilla Dace (Rhynichthys umatilla) targeted in restoration activities.'],
+	['SG', 'Sturgeon (General) targeted in restoration activities.'],
+	['SK', 'Sockeye Salmon (Oncorhynchus nerka) targeted in restoration activities.'],
+	['SSU', 'Salish Sucker (Catostomus sp.) targeted in restoration activities.'],
+	['ST', 'Steelhead (Oncorhynchus mykiss) targeted in restoration activities.'],
+	['WCT', 'Westslope (Yellowstone) Cutthroat Trout (Oncorhynchus clarki lewisi) targeted in restoration activities.'],
+	['WSG', 'White Sturgeon (Acipenser transmontanus) targeted in restoration activities.'],
+	['Other', 'Other aquatic species targeted in restoration activites provided as a list using the following format:  CCA, NP, intertidal bivalves.']
+] AS tgtspc
+WITH tgtspc
+	MERGE (n:TARGET_SPECIES:SPECIES {uid: tgtspc[0]})
+		SET
+			n.name = tgtspc[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Life Stages
+//
+UNWIND [
+	['Returning adult', 'Migrating adult and spawner stages.'],
+	['Estuarine juvenile', 'Marine and estuarine rearing life stages as juveniles grow into adults.'],
+	['Freshwater juvenile', 'Freshwater rearing and over-wintering life stages including fry, parr, and migrating smolt.'],
+	['Incubation', 'Inter-gravel development phase including the egg and alevin life cycle stages.']
+] AS lfestg
+WITH lfestg
+	MERGE (n:LIFE_STAGE {uid: lfestg[0]})
+		SET
+			n.name = lfestg[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Restoration Activities
+//
+UNWIND [
+	['Fish passage', 'Removal and/or remediation of obstructions to improve access to habitat above and below those obstructions. Includes maintenance and effectiveness monitoring of fish passage removal structures.'],
+	['Riparian restoration and management', 'Restoration activities focused on re-establishing riparian habitat (e.g. riparian planting, riparian fencing, riparian bank stabilization, invasive species control, treatment, etc.). Includes maintenance and effectiveness monitoring of riparian habitat.'],
+	['Estuarine restoration', 'Restoration activities focused on re-establishing estuarine habitat (e.g. distributary channels, breaching, marsh building, eelgrass planting, invasive species control, etc.). Includes maintenance and effectiveness monitoring of estuarine habitat.'],
+	['Nearshore and marine restoration', 'Restoration activities focused on re-establishing nearshore and marine habitat (e.g. bull-kelp planting, saltmarsh bench creation, shoreline stabilization, invasive species control, etc.). Includes maintenance and effectiveness monitoring of nearshore and marine habitat.'],
+	['Instream structure', 'Restoration activities involving rehabilitation or manipulation of instream habitat through the placement of natural and/or man-made materials (e.g. LWD, rocks, boulders, gravel, instream bank stabilization, etc.) to support channel structure and function. Includes maintenance and effectiveness monitoring of instream habitat.'],
+	['Instream flow', 'Restoration activities focused on re-establishing instream flow regimes (e.g. water storage and releases, reducing water withdrawals, etc). Includes maintenance and effectiveness monitoring of instream flow.'],
+	['Floodplain connectivity', 'Restoration activities that improves floodplain connectivity. For example, activities that include the development of alcoves, side channels, off-channels and groundwater channels that lie adjacent to and connect to the main river stem. Includes maintenance and effectiveness monitoring of floodplain connectivity.'],
+	['Watershed planning and assessment', 'Broad implementation of high-level watershed recovery plans including stakeholder involvement and management action. Includes watershed assessments to identify restoration options and sequencing.'],
+	['Nutrient supplementation', 'Activities focussed on improving the physical, chemical and biological characteristics of freshwater stream and lake habitats (e.g. carcass placement, stream and lake fertilization, etc.).'],
+	['NA', 'No restoration activities were completed.']
+] AS resact
+WITH resact
+	MERGE (n:RESTORATION_ACTIVITY {uid: resact[0]})
+		SET
+			n.name = resact[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Habitat Outcome Metric
+//
+UNWIND [
+	['Number of obstructions removed', 'The total number of obstructions removed for fish passage. Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Number of fish screens installed', 'The total number of fish screens installed to prevent fish from being drawn into a aqueduct, water intake, dam, or other diversion on a river, lake, or waterway.'],
+	['Stream lengths (km) habitat made accessible', 'The total square-metres of habitat maintained after fish passage restoration activities have been implemented (e.g. removal or remediation of an obstruction). Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Square-metres habitat maintained', 'The total stream lengths (km) of habitat maintained after fish passage restoration activities have been implemented (e.g. removal or remediation of an obstruction). Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Stream lengths (m) habitat maintained', 'The total square-metres of habitat monitored after fish passage restoration activities have been implemented (e.g. removal or remediation of an obstruction). Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Square-metres habitat monitored', 'The total stream lengths (km) of habitat monitored after fish passage restoration activities have been implemented (e.g. removal or remediation of an obstruction). Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Stream lengths (m) habitat monitored', 'The total square-metres of habitat (e.g. riparian, instream, floodplain, estuarine, nearshore, etc.) made accessible for fish passage after the removal or remediation of an obstruction. Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Square-metres habitat made accessible', 'The total stream lengths (km) of habitat (e.g. riparian, instream, floodplain etc.) made accessible for fish passage after the removal or remediation of an obstruction. Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
+	['Square-metres riparian habitat treated', 'The total square-metres of riparian habitat treated through activities such as riparian planting, stand management, riparian fencing, bank stabilization, invasive species control, and riparian treatment.'],
+	['Square-metres riparian habitat created', 'The total square-metres of riparian habitat created through activities such as riparian planting.'],
+	['Stream lengths (m) riparian habitat treated', 'The total stream lengths (m) of riparian habitat treated through activities such as riparian planting, riparian fencing, bank stabilization, invasive species control, and riparian treatment.'],
+	['Stream lengths (m) riparian habitat created', 'The total stream lengths (m) of riparian habitat created through activities such as riparian planting. '],
+	['Square-metres riparian habitat maintained', 'The total square-metres of riparian habitat maintained after riparian restoration activities have been implemented (e.g. riparian planting, riparian fencing, bank stabilization, invasive species control, and riparian treatment).'],
+	['Stream lengths (m) riparian habitat maintained', 'The total stream lengths (m) of riparian habitat maintained after riparian restoration activities have been implemented (e.g. riparian planting, riparian fencing, bank stabilization, invasive species control, and riparian treatment).'],
+	['Square-metres riparian habitat monitored', 'The total square-metres of riparian habitat monitored after riparian restoration activities have been implemented (e.g. riparian planting, riparian fencing, bank stabilization, invasive species control, and riparian treatment).'],
+	['Stream lengths (m) riparian habitat monitored', 'The total stream lengths (m) of riparian habitat monitored after riparian restoration activities have been implemented (e.g. riparian habitat treated or created through riparian planting, riparian fencing, bank stabilization, invasive species control, and riparian treatment).'],
+	['Square-metres estuarine habitat treated', 'The total square-metres of estuarine habitat treated through activities such as distributary channeling, breaching, marsh building, estuarine vegetation transplanting, and invasive species control.'],
+	['Square-metres estuarine habitat created', 'The total square-metres of estuarine habitat created through activities such as marsh building and eelgrass planting.'],
+	['Square-metres estuarine habitat maintained', 'The total square-metres of estuarine habitat maintained after estuarine restoration activities have been implemented (e.g. distributary channeling, breaching, marsh building, eelgrass planting, and invasive species control).'],
+	['Square-metres estuarine habitat monitored', 'The total square-metres of estuarine habitat monitored after estuarine restoration activities have been implemented (e.g. distributary channeling, breaching, marsh building, eelgrass planting, and invasive species control).'],
+	['Square-metres nearshore and marine habitat treated', 'The total square-metres of nearshore and marine habitat treated through activities such as nearshore and marine vegetation transplanting, shoreline stabilization, and invasive species control.'],
+	['Square-metres nearshore and marine habitat created', 'The total square-metres of nearshore and marine habitat created through activities such as bull-kelp planting and saltmarsh bench creation.'],
+	['Length (m) marine shoreline treated', 'he total length (m) of marine shoreline treated through activities such as nearshore and marine vegetation transplanting, saltmarsh bench creation, shoreline stabilization, invasive species control.'],
+	['Length (m) marine shoreline created', 'The total length (m) of marine shoreline created through activities such as bull-kelp planting and saltmarsh bench creation.'],
+	['Square-metres nearshore and marine habitat maintained', 'The total square-metres of nearshore and marine habitat maintained after nearshore/marine restoration activities have been implemented (e.g. bull-kelp planting, saltmarsh bench creation, shoreline stabilization, invasive species control).'],
+	['Lengths (m) marine shoreline maintained', 'The total length (m) of marine shoreline maintained after nearshore/marine restoration activities have been implemented (e.g. bull-kelp planting, saltmarsh bench creation, shoreline stabilization, invasive species control).'],
+	['Square-metres nearshore and marine habitat monitored', 'The total square-metres of nearshore and marine habitat monitored after nearshore/marine restoration activities have been implemented (e.g. bull-kelp planting, saltmarsh bench creation, shoreline stabilization, invasive species control).'],
+	['Length (m) marine shoreline monitored', 'The total length (m) of marine shoreline monitored after nearshore/marine restoration activities have been implemented (e.g. bull-kelp planting, saltmarsh bench creation, shoreline stabilization, invasive species control).'],
+	['Square-metres instream habitat treated', 'The total square-metres of instream habitat treated through activities such as the placement of natural and/or man-made materials (e.g. LWD, rocks, boulders, and gravel) to support channel structure and function.'],
+	['Square-metres instream habitat created', 'The total square-metres of instream habitat created through activities such as the placement of natural and/or man-made materials (e.g. LWD, rocks, boulders, and gravel) to support channel structure and function.'],
+	['Stream lengths (m) instream habitat treated', 'The total stream lengths (m) of instream habitat treated through activities such as the placement of natural and/or man-made materials (e.g. LWD, rocks, boulders, and gravel) to support channel structure and function.'],
+	['Stream lengths (m) instream habitat created', 'The total stream lengths (m) of instream habitat created through activities such as the placement of natural and/or man-made materials (e.g. LWD, rocks, boulders, and gravel) to support channel structure and function.'],
+	['Square-metres instream habitat maintained', 'The total square-metres of instream habitat maintained after instream restoration activities have been implemented (e.g. placement of natural and/or man-made materials such as LWD, rocks, boulders, and gravel).'],
+	['Stream lengths (m) instream habitat maintained', 'The total stream lengths (m) of instream habitat maintained after instream restoration activities have been implemented (e.g. placement of natural and/or man-made materials such as LWD, rocks, boulders, and gravel).'],
+	['Square-metres instream habitat monitored', 'The total square-metres of instream habitat monitored after instream restoration activities have been implemented (e.g. placement of natural and/or man-made materials such as LWD, rocks, boulders, and gravel).'],
+	['Stream lengths (m) instream habitat monitored', 'The total stream lengths (m) of instream habitat monitored after instream restoration activities have been implemented (e.g. placement of natural and/or man-made materials such as LWD, rocks, boulders, and gravel).'],
+	['Number of water use plans developed/implemented', 'The total number of water use plans developed and implemented to manage flow releases during critical flow periods.'],
+	['Number of real-time hydrometer stations installed', 'The total number of real-time hydrometer stations installed measuring water flows, levels, sediment, and temperature.'],
+	['Number of real-time hydrometer stations maintained', 'The total number of real-time hydrometers stations maintained after installment that measure water flows, levels, sediment, and temperature.'],
+	['Square-metres floodplain habitat treated', 'The total square-metres of floodplain habitat treated resulting in improved floodplain connectivity. Floodplain restoration activities may include restoring or building new alcoves, side channels, off-channels, and groundwater channels.'],
+	['Square-metres floodplain habitat created', 'The total square-metres of floodplain habitat created resulting in improved floodplain connectivity. Floodplain restoration activities may include restoring or building new alcoves, side channels, off-channels, and groundwater channels.'],
+	['Square-metres floodplain habitat made accessible', 'The total square-metres of floodplain habitat made accessible through activities such as the removal of an obstruction(s) or the restoration of a floodplain feature such as alcoves, side channels, off-channels, and groundwater channels'],
+	['Square-metres floodplain habitat maintained', 'The total square-metres of floodplain habitat maintained after floodplain restoration activities have been implemented (i.e. after the creation of alcoves, side channels, off-channels, and groundwater channels).'],
+	['Square-metres floodplain habitat monitored', 'The total square-metres of floodplain habitat monitored after floodplain restoration activities have been implemented (i.e. after the creation of alcoves, side channels, off-channels, and groundwater channels).'],
+	['Number of watershed plans and assessments completed', 'The total number of watershed plans and assessments produced through technical committees, working groups, etc.'],
+	['Number of recovery plans completed', 'The total number of recovery plans completed through COSEWIC, SARA, etc. processes.'],
+	['Mass (kg) of fertilizer applied', 'The total mass (kg) of fertilizer applied to a waterbody with the goal of enhancing nutrients and productivity.'],
+	['Volume (L) of fertilizer applied', 'The total volume (L) of fertilizer applied to a waterbody with the goal of enhancing nutrients and productivity.'],
+	['Number of salmon carcasses placed', 'The total number of salmon carcasses placed near a waterbody with the goal of enhancing nutrient and productivity.'],
+	['Biomass (kg) of salmon carcasses placed', 'The total biomass (kg) of salmon carcasses placed near a waterbody with the goal of enhancing nutrient and productivity.']
+] AS hbtoutmtr
+WITH hbtoutmtr
+	MERGE (n:HABITAT_OUTCOME_METRIC {uid: hbtoutmtr[0]})
+		SET
+			n.name = hbtoutmtr[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Socio-Economic Outcome
+//
+UNWIND [
+	['Number of volunteers involved', 'Number of volunteers involved in the planning and/or implementation of a restoration project.'],
+	['Number of hours of volunteer time donated', 'Number of volunteer hours donated to the planning and/or implementation of a restoration project.'],
+	['Number of volunteer person days donated', 'Number of volunteer days donated to the planning and/or implementation of a restoration project.'],
+	['Number of schools involved', 'Number of schools involved in the planning and/or implementation of a restoration project.'],
+	['Number of classes involved', 'Number of classes involved in the planning and/or implementation of a restoration project.'],
+	['Number of jobs created', 'Number of part-time and/or full-time employment opportunities created that employ indigenous and non-indigenous peoples.'],
+	['Number of employment days created', 'Number of days of part-time and/or full-time employment opportunities created that employ indigenous and non-indigenous peoples.'],
+	['Number of public engagement events', 'Number of days of public engagement events hosted as part of a restoration project. Includes educational/stewardship activities, local stakeholders engagement meetings, etc.'],
+	['Number of people trained', 'Number of people trained as part of a restoration project to support project planning, implementation, maintenance, and/or monitoring activities.']
+] AS socecoout
+WITH socecoout
+	MERGE (n:SOCIAL_OUTCOME_METRIC {uid: socecoout[0]})
+		SET
+			n.name = socecoout[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Monitoring objectives
+//
+UNWIND [
+	['Baseline information', 'Monitoring to collect baseline information at a proposed restoration site to inform restoration prioritization or to support feasibility analysis.'],
+	['Construction impacts', 'Monitoring conducted during the implementation of a restoration project, typically while construction is occurring to ensures restoration activities are not harming the site during implementation.'],
+	['Infrastructure inspection and design', 'Monitoring to determine whether or not the project was constructed as designed, if the project matches the project plan, and if the structural elements of the projects are in place and functioning.'],
+	['Biological and productivity', 'Monitoring to quantify the productivity of a restored or newly constructed habitat by measuring abundance, density, and production of target fish species (e.g. biomass or numbers of juveniles per unit area), number of juvenile fry or smolts from a spawning channel, condition factors, water quality (e.g. temperature, DO, pH), and other measures.'],
+	['Habitat structure', 'Monitoring to quantify the productivity or change in habitat structure of a restored or newly constructed habitat by measuring abundance, density, and production of vegetation, instream sedimentation, instream LWD, bank stabilization, and other measures.'],
+	['Other', 'Other monitoring objectives you would like to comment on that was not provided in our list.']
+] AS monobj
+WITH monobj
+	MERGE (n:MONITORING_OBJECTIVE {uid: monobj[0]})
+		SET
+			n.name = monobj[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//
+//
+UNWIND [
+	['Aerial surveys', 'Monitoring that employs aerial surveys.'],
+	['eDNA', 'Monitoring that employs environmental DNA (eDNA) collection from the environment (e.g. water, soil, feces).'],
+	['Electrofishing', 'Monitoring that employs an electrical current to survey fish.'],
+	['Hydrological modelling', 'Monitoring that employs statistical modeling to simulate water flows and other water characteristics.'],
+	['Invasive species surveys', 'Monitoring that employs invasive species surveys to determine changes in the abundance, density, production, and distribution of invasive species.'],
+	['Physical habitat surveys', 'Monitoring that employs surveys to determine amount of LWD, percent shade, substrate and sediment type, soil quality, and bank/shoreline stability.'],
+	['Vegetation surveys', 'Monitoring that employs vegetation surveys to determine vegetation cover, vegetation diversity, plant survival, and stem density.'],
+	['Nets and traps', 'Monitoring that employs nets (e.g. gill, seine) and traps (e.g. fyke, minnow) to survey fish and fish habitat.'],
+	['Photo point monitoring', 'Monitoring that employs repeated photo point monitoring to determine physical and visual changes at a restoration site.'],
+	['PIT tagging and telemetry', 'Monitoring that employs PIT Tagging and telemetry to track fish movement, fish escapement and returns, and fish counts.'],
+	['Snorkel surveys', 'Monitoring that employs snorkeling to survey fish.'],
+	['Temperature loggers', 'Monitoring that employs temperature loggers to monitor changes in water temperature.'],
+	['Hydrometer installments', 'Monitoring that employs hydrometer data to monitor changes in water flows.'],
+	['Water sampling', 'Monitoring that employs water sampling techniques to monitor changes in water chemistry (e.g. dissolved oxygen, salinity, pH, nutrients) and quality.'],
+	['Qualitative visual assessment', 'Monitoring that employs qualitative visual assessment of a restoration site to determine fish utilization, fish and riparian species, changes to infrastructure, etc.'],
+	['Other', 'Other monitoring activities provided as a list using the following format:  Capture-mark-recapture, Underwater video, PIT tagging']
+] AS monact
+WITH monact
+	MERGE (n:MONITORING_ACTIVITY {uid: monact[0]})
+		SET
+			n.name = monact[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//
+//
+UNWIND [
+	['BA', 'Before-after design'],
+	['CI', 'Control-impact design'],
+	['BACI', 'Before-after-control-impact design'],
+	['Multi-BACI', 'Multiple before-after-control-impact design'],
+	['Unknown', ''],
+	['None', ''],
+	['Other', '']
+] AS mondsg
+WITH mondsg
+	MERGE (n:MONITORING_DESIGN {uid: mondsg[0]})
+		SET
+			n.name = mondsg[1];
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//
+//
+UNWIND [
+	['Fall'],
+	['Spring'],
+	['Summer'],
+	['Winter']
+] AS seamon
+WITH seamon
+	MERGE (n:SEASON_MONITORED {uid: seamon[0]});
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Load PARR project data from the import/ directory
+//
+CALL apoc.periodic.iterate(
+"
+  CALL apoc.load.json('parr_projects_2.1.json')
+    YIELD value AS map
+  RETURN map
+", "
+  WITH map
+    CREATE (n:PROJECT {uid: apoc.create.uuid()})
+      SET
+        n.data_source = map.data_source,
+        n.number_of_sites = map.number_of_sites,
+        n.rru_involvement = map.rru_involvement,
+        n.reporting_fiscal_year = map.reporting_fiscal_year,
+        n.pid = map.project_id,
+        n.name = map.project_name,
+        n.desc = map.project_description,
+        n.goals = map.goals,
+        n.project_duration = map.project_duration,
+        n.year_project_was_initiated = map.year_project_was_initiated,
+        n.year_project_was_last_modified = map.year_project_was_last_modified,
+        n.number_of_indigenous_partners = map.number_of_indigenous_partners,
+        n.location = POINT({latitude:map.latitude_in_decimal_degrees, longitude:map.longitude_in_decimal_degrees, crs: 'WGS-84'}),
+        n.sep_rru_in_kind_contributions = map.sep_rru_in_kind_contributions,
+        n.sep_rru_cash_contributions = map.sep_rru_cash_contributions,
+        n.sep_cip_in_kind_contributions = map.sep_cip_in_kind_contributions,
+        n.sep_cip_cash_contributions = map.sep_cip_cash_contributions,
+        n.was_this_a_g_c_funded_project = map.was_this_a_g_c_funded_project,
+        n.g_c_cash_contributions = map.g_c_cash_contributions,
+        n.other_cash_contributions = map.other_cash_contributions,
+        n.other_in_kind_contributions = map.other_in_kind_contributions,
+        n.amount_of_money_you_spent_on_the_project_within_this_fiscal_year = map.what_was_the_amount_of_money_you_spent_on_the_project_within_this_fiscal_year,
+        n.the_total_cost_of_the_project = map.what_is_the_total_cost_of_the_project,
+        n.outcome_value = map.outcome_value,
+        n.outcome_value_2 = map.outcome_value_2,
+        n.primary_socio_economic_outcome = map.what_was_the_primary_socio_economic_outcome,
+        n.value_of_the_primary_socio_economic_outcome = map.provide_the_value_of_the_primary_socio_economic_outcome,
+        n.secondary_socio_economic_outcome = map.what_was_the_secondary_socio_economic_outcome,
+        n.value_of_the_secondary_socio_economic_outcome = map.provide_the_value_of_the_secondary_socio_economic_outcome,
+        n.was_project_monitoring_completed = map.was_project_monitoring_completed,
+        n.number_of_years_of_monitoring_before_restoration = map.number_of_years_of_monitoring_before_restoration,
+        n.number_of_years_of_monitoring_after_restoration = map.number_of_years_of_monitoring_after_restoration,
+        n.key_lessons_learned = n.key_lessons_learned,
+        n.are_sara_listed_aquatic_species_present = map.are_sara_listed_aquatic_species_present,
+        n.are_aquatic_invasive_species_present = map.are_aquatic_invasive_species_present,
+				n.other_information = map.other_information
+  WITH map, n
+    FOREACH (area IN map.dfo_area |
+      MERGE (dfo_area:DFO_AREA {uid: area})
+      MERGE (dfo_area)<-[:IN_DFO_AREA]-(n)
+    )
+    FOREACH (p IN map.project_contacts |
+      MERGE (person:CONTACT_PERSON {name: p.name})
+        SET
+          person.tel = p.tel,
+          person.email = p.email
+      MERGE (person)<-[:HAS_PROJECT_CONTACT]-(n)
+    )
+    FOREACH (p IN map.project_lead_organization |
+			FOREACH (_ IN CASE p IN ['', 'N/A'] WHEN TRUE THEN [] ELSE [1] END |
+	      MERGE (pr_org:ORGANIZATION {uid: p})
+	      MERGE (pr_org)<-[:HAS_LEAD_ORGANIZATION]-(n)
+			)
+    )
+    FOREACH (p IN map.project_partners |
+			FOREACH (_ IN CASE p IN ['', 'N/A'] WHEN TRUE THEN [] ELSE [1] END |
+	      MERGE (pr_ppn:ORGANIZATION {uid: p})
+	      MERGE (pr_ppn)<-[:HAS_PROJECT_PARTNER]-(n)
+			)
+    )
+    FOREACH (p IN map.policy_and_program_connections |
+      MERGE (pr_policy:POLICY_PROGRAM {uid: p})
+      MERGE (pr_policy)<-[:HAS_POLICY_PROGRAM]-(n)
+    )
+    FOREACH (_ IN CASE map.watershed_name IS NOT NULL AND map.watershed_name <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (pr_loc:WATERSHED {uid: map.watershed_name})
+      MERGE (pr_loc)<-[:HAS_WATERSHED]-(n)
+    )
+    FOREACH (p IN map.g_c_funding_sources |
+      MERGE (pr_fndsrc:GC_FUNDING_SOURCE {uid: p})
+      MERGE (pr_fndsrc)<-[:HAS_GC_FUNDING_SOURCE]-(n)
+    )
+    FOREACH (p IN map.other_funding_sources |
+      MERGE (pr_ofs:ORGANIZATION {uid: p})
+      MERGE (pr_ofs)<-[:HAS_OTHER_FUNDING_SOURCE]-(n)
+    )
+    FOREACH (_ IN CASE map.project_phase IS NOT NULL AND map.project_phase <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (pr_phase:PROJECT_PHASE {uid: map.project_phase})
+      MERGE (pr_phase)<-[:HAS_PROJECT_PHASE]-(n)
+    )
+    FOREACH (p IN map.primary_project_activities |
+      MERGE (pr_prmact:PROJECT_ACTIVITY {uid: p})
+      MERGE (pr_prmact)<-[:HAS_PRIMARY_ACTIVITY]-(n)
+    )
+    FOREACH (p IN map.ecosystem_type |
+      MERGE (ecosystyp:ECO_SYSTEM_TYPE {uid: p})
+      MERGE (ecosystyp)<-[:HAS_ECO_SYSTEM_TYPE]-(n)
+    )
+    FOREACH (p IN map.target_species |
+      MERGE (target_species:TARGET_SPECIES {uid: p})
+      MERGE (target_species)<-[:HAS_TARGET_SPECIES]-(n)
+    )
+    FOREACH (p IN map.life_stage |
+      MERGE (lfestg:LIFE_STAGE {uid: p})
+      MERGE (lfestg)<-[:HAS_LIFE_STAGE]-(n)
+    )
+    FOREACH (_ IN CASE map.what_was_the_primary_restoration_activity IS NOT NULL AND map.what_was_the_primary_restoration_activity <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (resact:RESTORATION_ACTIVITY {uid: map.what_was_the_primary_restoration_activity})
+      MERGE (resact)<-[:HAS_PRIMARY_RESTORATION_ACTIVITY]-(n)
+    )
+    FOREACH (_ IN CASE map.outcome_metric IS NOT NULL AND map.outcome_metric <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (hbtoutmtr:HABITAT_OUTCOME_METRIC {uid: map.outcome_metric})
+      MERGE (hbtoutmtr)<-[:HAS_PRIMARY_OUTCOME_METRIC]-(n)
+    )
+    FOREACH (_ IN CASE map.what_was_the_secondary_restoration_activity IS NOT NULL AND map.what_was_the_secondary_restoration_activity <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (resact:RESTORATION_ACTIVITY {uid: map.what_was_the_secondary_restoration_activity})
+      MERGE (resact)<-[:HAS_SECONDARY_RESTORATION_ACTIVITY]-(n)
+    )
+    FOREACH (_ IN CASE map.outcome_metric_2 IS NOT NULL AND map.outcome_metric_2 <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (hbtoutmtr:HABITAT_OUTCOME_METRIC {uid: map.outcome_metric_2})
+      MERGE (hbtoutmtr)<-[:HAS_SECONDARY_OUTCOME_METRIC]-(n)
+    )
+    FOREACH (p IN map.monitoring_objectives |
+      MERGE (monobj:MONITORING_OBJECTIVE {uid: p})
+      MERGE (monobj)<-[:HAS_MONITORING_OBJECTIVE]-(n)
+    )
+    FOREACH (p IN map.monitoring_activities |
+      MERGE (monact:MONITORING_ACTIVITY {uid: p})
+      MERGE (monact)<-[:HAS_MONITORING_ACTIVITY]-(n)
+    )
+    FOREACH (_ IN CASE map.monitoring_design IS NOT NULL AND map.monitoring_design <> '' WHEN TRUE THEN [1] ELSE [] END |
+      MERGE (mondsg:MONITORING_DESIGN {uid: map.monitoring_design})
+      MERGE (mondsg)<-[:HAS_MONITORING_DESIGN]-(n)
+    )
+    FOREACH (p IN map.season_monitored |
+      MERGE (seamon:SEASON_MONITORED {uid: p})
+      MERGE (seamon)<-[:HAS_SEASON_MONITORED]-(n)
+    )
+    FOREACH (p IN map.life_stage_monitored |
+      MERGE (lfestgmon:LIFE_STAGE {uid: p})
+      MERGE (lfestgmon)<-[:HAS_LIFE_STAGE_MONITORED]-(n)
+    )
+    FOREACH (p IN map.other_benefitting_species |
+      MERGE (other_species:SPECIES {uid: p})
+      MERGE (other_species)<-[:HAS_OTHER_BENEFITTING_SPECIES]-(n)
+    )
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Call the nlp micro service to process organization's name
+//
+MATCH (n:ORGANIZATION)
+	WITH n, [apoc.map.fromPairs([['u', 'uid'], ['c', n.uid]])] AS input
+    CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
+      YIELD result
+RETURN 1;
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Load PARR_PR name file from the import/ directory
+// Call the nlp micro service to process the documents.
+//
+CALL apoc.periodic.iterate(
+"
+	MATCH (n:PROJECT)
+		WITH n, [
+			apoc.map.fromPairs([['u', 'name'], ['c', n.name]]),
+			apoc.map.fromPairs([['u', 'desc'], ['c', n.desc]]),
+			apoc.map.fromPairs([['u', 'goals'], ['c', CASE n.goals IS NULL WHEN TRUE THEN '' ELSE n.goals END]]),
+			apoc.map.fromPairs([['u', 'primary_socio_economic_outcome'], ['c', CASE n.primary_socio_economic_outcome IS NULL WHEN TRUE THEN '' ELSE n.primary_socio_economic_outcome END]]),
+			apoc.map.fromPairs([['u', 'secondary_socio_economic_outcome'], ['c', CASE n.secondary_socio_economic_outcome IS NULL WHEN TRUE THEN '' ELSE n.secondary_socio_economic_outcome END]]),
+			apoc.map.fromPairs([['u', 'key_lessons_learned'], ['c', CASE n.key_lessons_learned IS NULL WHEN TRUE THEN '' ELSE n.key_lessons_learned END]])
+		] AS input
+	RETURN n, input
+", "
+	WITH n, input
+  	CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
+      YIELD result
+	RETURN 1;
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 6 - Linking entities
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link project watershed_name with same name, nearest location on Geonames
+//
+MATCH (n:PROJECT)
+  WHERE EXISTS(n.location)
+    AND EXISTS(n.watershed_name)
+WITH n, n.location AS loc, n.watershed_name AS place_name
+	MATCH (p:GEO_LOCATION {name: place_name})
+WITH DISTINCT(n) AS n, COLLECT([p, DISTANCE(loc, p.location)]) AS pc
+WITH n, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
+WITH n, match[0] AS p
+  MERGE (n)-[:PLACE_NEAR_WATERSHED]->(p);
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link project orgs to FN entities
+//
+MATCH (n:ORGANIZATION)
+WITH n
+	MATCH (p:BC_FIRST_NATION)
+    WHERE n.uid IN p.name
+WITH n, p
+  MERGE (n)-[:IS_A_FIRST_NATION]->(p);
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Link project orgs to FN groups
+//
+MATCH (n:ORGANIZATION)
+WITH n
+	MATCH (p:BC_NATION_COUNCIL)
+    WHERE n.uid IN p.name
+WITH n, p
+  MERGE (n)-[:IS_A_NATION_COUNCIL]->(p);
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Create nearest neighbor graph within watershed
+//
+CALL apoc.periodic.iterate(
+"
+	MATCH (n:PROJECT)-[:HAS_WATERSHED]-(w)
+    WHERE NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]->()))
+	WITH DISTINCT(w) AS w, COLLECT(n) AS nc
+  RETURN nc
+", "
+  WITH nc
+    UNWIND nc AS n
+  WITH nc, n, [m IN nc WHERE m <> n AND NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]->(m))) | [DISTANCE(m.location, n.location), m]] AS dl
+  WITH n, dl, REDUCE(h=HEAD(dl), e IN TAIL(dl) | CASE h[0] < e[0] WHEN TRUE THEN h ELSE e END) AS md
+  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll
+  WITH n, ll
+    FOREACH (m IN ll |
+      MERGE (n)-[r:NEAREST_IN_WATERSHED]->(m)
+        SET
+          r.d = ROUND(DISTANCE(n.location, m.location)/1000)
+    )
+",
+{
+    batchSize:10, iterateList:true, parallel:false
+});
+//
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// Create nearest neighbor graph within same project
+//
+CALL apoc.periodic.iterate(
+"
+	MATCH (n:PROJECT)
+    	WHERE EXISTS(n.pid)
+        AND n.pid <>'NA'
+        AND n.number_of_sites > 0
+        AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]->()))
+	WITH DISTINCT(n.pid) AS n, COLLECT(n) AS nc
+  RETURN nc
+", "
+  WITH nc
+    UNWIND nc AS n
+  WITH nc, n, [m IN nc WHERE m <> n AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]->(m))) | [DISTANCE(m.location, n.location), m]] AS dl
+  WITH n, dl, REDUCE(h=HEAD(dl), e IN TAIL(dl) | CASE h[0] < e[0] WHEN TRUE THEN h ELSE e END) AS md
+  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll
+  WITH n, ll
+    FOREACH (m IN ll |
+      MERGE (n)-[r:NEAREST_IN_PROJECT]->(m)
+        SET
+          r.d = ROUND(DISTANCE(n.location, m.location)/1000)
+    )
+",
+{
+    batchSize:10, iterateList:true, parallel:false
+});
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Geo admin tree
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Geo admin tree
+//
+MATCH (n:GEO_LOCATION)
+  WHERE n.feature STARTS WITH 'A.ADM'
+RETURN n;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Terrace
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Terrace
+//
+MATCH (n:GEO_LOCATION {name: 'Terrace'})
+RETURN n;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: First Nation Tree
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// First Nation Tree
+//
+MATCH (m:BC_GEO_REGION)-[r1:HAS_ASSOCIATION]-(n)-[r2:HAS_MEMBER]-(o)
+RETURN m, r1, n, r2, o;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Table view of a project
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Basic info of a project
+//
+MATCH (n:PROJECT {pid: "19-NF-PAC-043"})
+WITH n
+	MATCH
+    	(n)-[:HAS_LEAD_ORGANIZATION]-(l),
+    	(n)-[:HAS_PROJECT_PARTNER|HAS_OTHER_FUNDING_SOURCE|HAS_GC_FUNDING_SOURCE]-(o),
+      (n)-[:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s),
+      (n)-[:HAS_WATERSHED]-(w)
+WITH n, l.uid AS log, COLLECT(DISTINCT(o.uid)) AS ppn, COLLECT(DISTINCT(s.uid)) AS sc, w.uid AS ws
+WITH n, log, ppn, sc, ws
+	MATCH
+    	(n)-[:HAS_NAMED_ENTITY]-(e),
+    	(n)-[:HAS_KEY_PHRASE]-(k)
+RETURN n.pid AS project_id, log AS lead, ppn AS partners, sc AS impact_species,
+  n.the_total_cost_of_the_project AS cost, ws AS watershed,
+  COLLECT(DISTINCT(e.c)) AS nec, COLLECT(DISTINCT(k.c)) AS kec;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Graph view of a project
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Basic info in graph view
+//
+MATCH (n:PROJECT {pid: "19-NF-PAC-043"})-[r]-(o)
+RETURN n, r, o;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Projects at the same watershed
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Projects at the same watershed
+//
+MATCH (n:PROJECT)-[r1:HAS_WATERSHED]-(w:WATERSHED {uid: "Chilliwack River"})
+WITH n, r1, w
+	MATCH (n)-[r2:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s)
+RETURN n, r1, w, r2, s;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Same project with muliple sites
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Same project with muliple sites
+//
+MATCH (n:PROJECT {pid: "16-HPAC-00402"})
+WITH n
+	MATCH (n)-[:HAS_LEAD_ORGANIZATION]-(l)
+WITH n, l
+	MATCH (n)-[:HAS_PROJECT_PARTNER|HAS_OTHER_FUNDING_SOURCE|HAS_GC_FUNDING_SOURCE]-(o)
+WITH n, l, COLLECT(o) AS oc
+	MATCH (n)-[:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s)
+WITH n, l, oc, COLLECT(s) AS sc
+	MATCH (n)-[:HAS_WATERSHED]-(w)
+RETURN n, l, oc, sc;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Step 7 - Queries: Project Clusters
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Projects with multiple sites in the same watershed
+//
+MATCH (n:PROJECT)
+WITH n
+	MATCH (n)-[r:NEAREST_IN_PROJECT]-(m)-[:HAS_WATERSHED]-(w:WATERSHED {uid: "Lower Fraser"})
+RETURN m, n, w;
+----
+
+== Step 7 - Queries: Two projects with multiple sites at Lower Fraser
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Projects within the same watershed
+//
+MATCH (n:PROJECT)
+WITH n
+	MATCH (n)-[r:NEAREST_IN_WATERSHED]-(m)-[:HAS_WATERSHED]-(w:WATERSHED {uid: "Lower Fraser"})
+RETURN m, n, w;
+----
+
+== Step 7 - Queries: All project clusters
+
+[source,cypher]
+----
+////////////////////////////////////////////////////////////////////////////////
+//
+// Projects at the same watershed, not in the same project
+// Looking at organizations
+//
+MATCH (n:PROJECT)
+WITH n
+	MATCH (n)-[r:NEAREST_IN_PROJECT|NEAREST_IN_WATERSHED]-(m)-[:HAS_WATERSHED]-(w)
+RETURN m, n, w;
+//
+////////////////////////////////////////////////////////////////////////////////
+----
+
+== Thank you
+
+All questions, comments, suggestions are welcome!
+
+Thank you!
