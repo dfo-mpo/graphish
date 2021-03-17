@@ -10,6 +10,9 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  nlp_tag: '0.2.0'
+  show_tag: '0.2.0'
+  extractor_tag: '0.1.0'
 
 stages:
 - stage: Build
@@ -35,7 +38,7 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/show/Dockerfile'
         tags: |
-          $(tag)
+          $(show_tag)
 
     - task: Docker@2
       displayName: Build and push nlp image to dockerhub
@@ -45,5 +48,15 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/nlp/Dockerfile'
         tags: |
-          $(tag)
+          $(nlp_tag)
+    
+    - task: Docker@2
+      displayName: Build and push nlp image to dockerhub
+      inputs:
+        containerRegistry: 'OK-dockerhub-SC'
+        repository: 'dfompo/extractor'
+        command: 'buildAndPush'
+        Dockerfile: '$(Build.SourcesDirectory)/extractor/Dockerfile'
+        tags: |
+          $(extractor_tag)
  
