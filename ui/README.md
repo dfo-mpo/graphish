@@ -16,9 +16,10 @@ The UI was developed as a <a href="https://shiny.rstudio.com/" target="_blank">S
 
 ## Running/Stopping the Docker Container for the UI   
 
-1. Navigate to the `graphish` folder.  
-2. Start the ui: `docker-compose up -d --build ui` (may take 15-20 minutes the first time)
-3. Stop the ui: `docker-compose down`
+1. Navigate to the `graphish` folder.   
+2. Start the database containers: `docker-compose up --build nlp neo4j show` (must be running before step 3)
+3. Start the ui: `docker-compose up -d --build ui` 
+4. Stop the ui: `docker-compose down`
        
 ## Navigating the User Interface  
 
