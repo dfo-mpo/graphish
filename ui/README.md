@@ -14,16 +14,15 @@ The *graphishui* is a user interface providing access to the PSS-KG database hou
 
 The UI was developed as a <a href="https://shiny.rstudio.com/" target="_blank">Shiny app</a>.
 
-## Building the Docker Container for the UI   
+## Running/Stopping the Docker Container for the UI   
 
-1. Navigate to the `graphishui` folder.  
-2. Build image: `docker build -t graphishui-image .` (may take 15-20 minutes the first time this is run)
-3. Build container: `docker run -d --rm -p 3838:3838 graphishui-image`  
-4. Open a web browser and navigate to `localhost:3838`    
+1. Navigate to the `graphish` folder.  
+2. Start the ui: `docker-compose up -d --build ui` (may take 15-20 minutes the first time)
+3. Stop the ui: `docker-compose down`
        
 ## Navigating the User Interface  
 
-1. The opening (`Home`) screen will display, in a production version, information personalized to the user. In this proof-of-concept (POC) version, it serves as a placeholder. ![home screen](graphishui/images/home-screen.jpg)  
+1. The opening (`Home`) screen will display, in a production version, information personalized to the user. In this proof-of-concept (PoC) version, it serves as a placeholder. ![home screen](graphishui/images/home-screen.jpg)  
 2. Click on the `Graph` icon (red arrow in above image) in the side panel to access the data query/exploration tools. Note that the side-bar, Instructions, and Query Builder can be minimized to provide more room for query output. ![minimize](graphishui/images/minimize.jpg)  
 3. The query builder is designed to let the user explore relationships between two node types. The dropdown menus provide a list of all available node labels and relationships that exist in the PSS-KG database. Additionally, *r* is given as an option in the relationship column and, if chosen, queries for all relationships between the two selected nodes. ![query builder](graphishui/images/dropdown.jpg)  
 4. With desired nodes and relationship selected, press the `run query` button. Note that queries take time to run, and those returning many nodes take time to display. In this POC, there is no "spinner" indicating that the query is running, so patience is encouraged. (After the first query, the display will dim for subsequent queries, indicating that it is running.) In testing, most results were displayed in less than 5 seconds.    
