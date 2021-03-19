@@ -385,7 +385,7 @@ CALL apoc.periodic.iterate(
         n.outcome_value_2 = map.outcome_value_2,
         n.primary_socio_economic_outcome = map.what_was_the_primary_socio_economic_outcome,
         n.value_of_the_primary_socio_economic_outcome = map.provide_the_value_of_the_primary_socio_economic_outcome,
-				n.secondary_socio_economic_outcome = map.what_was_the_secondary_socio_economic_outcome,
+		n.secondary_socio_economic_outcome = map.what_was_the_secondary_socio_economic_outcome,
         n.value_of_the_secondary_socio_economic_outcome = map.provide_the_value_of_the_secondary_socio_economic_outcome,
         n.was_project_monitoring_completed = map.was_project_monitoring_completed,
         n.number_of_years_of_monitoring_before_restoration = map.number_of_years_of_monitoring_before_restoration,
@@ -393,7 +393,7 @@ CALL apoc.periodic.iterate(
         n.key_lessons_learned = n.key_lessons_learned,
         n.are_sara_listed_aquatic_species_present = map.are_sara_listed_aquatic_species_present,
         n.are_aquatic_invasive_species_present = map.are_aquatic_invasive_species_present,
-				n.other_information = map.other_information
+		n.other_information = map.other_information
   WITH map, n
     FOREACH (area IN map.dfo_area |
       MERGE (dfo_area:DFO_AREA {uid: area})
@@ -538,5 +538,14 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
+//
+// Set project site
+//
+MATCH (n:PROJECT)
+WITH DISTINCT(n.pid) AS pid, COUNT(n) AS c
+WITH pid, c
+	WHERE c > 1
+MATCH (n:PROJECT {pid: pid})
+	SET n:PROJECT_SITE;
 //
 ////////////////////////////////////////////////////////////////////////////////

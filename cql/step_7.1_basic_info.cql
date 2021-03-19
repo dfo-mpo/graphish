@@ -19,10 +19,13 @@ RETURN n;
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-// FN
+// First Nation Tree: Region - Council - Nation
 //
-MATCH (m:BC_GEO_REGION)-[r1:HAS_ASSOCIATION]-(n)-[r2:HAS_MEMBER]-(o)
-RETURN m, r1, n, r2, o;
+MATCH (m:BC_GEO_REGION)-[r:HAS_NATION]-(n:BC_FIRST_NATION)
+WITH DISTINCT(m) AS m, COLLECT([r, n]) AS nc
+	MATCH (m)-[r1:HAS_ASSOCIATION]-(a:BC_NATION_COUNCIL)-[r2:HAS_MEMBER]-(n:BC_FIRST_NATION)
+WITH DISTINCT(m) AS m, nc, COLLECT([r1, a, r2, n]) AS anc
+RETURN m, nc, anc;
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -61,7 +64,7 @@ RETURN n, r, o;
 //
 // Project at same watershed
 //
-MATCH (n:PROJECT)-[r1:HAS_WATERSHED]-(w:WATERSHED {uid: "Chilliwack River})
+MATCH (n:PROJECT)-[r1:HAS_WATERSHED]-(w:WATERSHED {uid: "Chilliwack River"})
 WITH n, r1, w
 	MATCH (n)-[r2:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s)
 RETURN n, r1, w, r2, s;

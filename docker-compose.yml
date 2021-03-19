@@ -24,35 +24,35 @@ services:
     volumes:
       - ./conf:/conf
 
-  ####################
+  # ####################
+  # # tika:
+  # #
   # tika:
-  #
-  tika:
-    image: apache/tika:1.25-full
-    hostname: tika
-    container_name: tika
-    networks:
-      - backend
-    ports:
-      - 9998:9998
+  #   image: apache/tika:1.25-full
+  #   hostname: tika
+  #   container_name: tika
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 9998:9998
 
-  ####################
+  # ####################
+  # # extractor:
+  # #
   # extractor:
-  #
-  extractor:
-    build:
-      context: ./extractor
-      dockerfile: Dockerfile
-    image: dfompo/graphish-extractor:0.1.0
-    hostname: extractor
-    container_name: extractor
-    networks:
-      - backend
-    ports:
-      - 8002:8002
-    volumes:
-      - ./conf:/conf
-      - ./import:/import
+  #   build:
+  #     context: ./extractor
+  #     dockerfile: Dockerfile
+  #   image: dfompo/graphish-extractor:0.1.0
+  #   hostname: extractor
+  #   container_name: extractor
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 8002:8002
+  #   volumes:
+  #     - ./conf:/conf
+  #     - ./import:/import
 
   ####################
   # neo4j:

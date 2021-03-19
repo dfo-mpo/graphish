@@ -1,16 +1,39 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Link project watershed_name with same name, nearest location on Geonames
+// Link project with the nearest location on Geonames
 //
 MATCH (n:PROJECT)
   WHERE EXISTS(n.location)
-    AND EXISTS(n.watershed_name)
-WITH n, n.location AS loc, n.watershed_name AS place_name
-	MATCH (p:GEO_LOCATION {name: place_name})
+WITH n, n.location AS loc
+	MATCH (p:GEO_LOCATION)
+    WHERE p.feature STARTS WITH 'P.PPL'
 WITH DISTINCT(n) AS n, COLLECT([p, DISTANCE(loc, p.location)]) AS pc
-WITH n, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
-WITH n, match[0] AS p
-  MERGE (n)-[:PLACE_NEAR_WATERSHED]->(p);
+WITH n, pc, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
+WITH n, [e IN pc WHERE e[1] = match[1] | e[0]] AS ll, match[1] AS d
+WITH n, ll, d
+	FOREACH (p IN ll |
+    	MERGE (n)-[r:PLACE_NEARBY]->(p)
+        	SET r.d = ROUND(d/1000)
+  );
+//
+//
+//
+MATCH (n:PROJECT {pid: '19-NF-PAC-043'})
+WITH n 
+  MATCH (p:GEO_LOCATION) 
+    WHERE p.name CONTAINS "Chilliwack" 
+      AND p.feature STARTS WITH "P.PPL" 
+  MERGE (n)-[r:PLACE_NEARBY]->(p)
+    SET
+      r.d = 0.0;
+//
+MATCH (n:PROJECT {pid: '18-HPAC-01090'})
+WITH n 
+  MATCH (p:GEO_LOCATION) 
+    WHERE p.name CONTAINS "Fraser Valley Regional District" 
+  MERGE (n)-[r:PLACE_NEARBY]->(p)
+    SET
+      r.d = 0.0;
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -46,21 +69,21 @@ WITH n, p
 //
 CALL apoc.periodic.iterate(
 "
-	MATCH (n:PROJECT)-[:HAS_WATERSHED]-(w)
-    WHERE NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]->()))
-	WITH DISTINCT(w) AS w, COLLECT(n) AS nc
+  MATCH (w:WATERSHED)
+  WITH w
+    MATCH (n:PROJECT)-[:HAS_WATERSHED]-(w)
+  WITH DISTINCT(w) AS w, COLLECT(n) AS nc
   RETURN nc
 ", "
   WITH nc
-    UNWIND nc AS n
-  WITH nc, n, [m IN nc WHERE m <> n AND NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]->(m))) | [DISTANCE(m.location, n.location), m]] AS dl
+	  UNWIND nc AS n
+  WITH nc, n, [m IN nc WHERE m <> n AND NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]-(m))) | [ROUND(DISTANCE(m.location, n.location)/1000), m]] AS dl
   WITH n, dl, REDUCE(h=HEAD(dl), e IN TAIL(dl) | CASE h[0] < e[0] WHEN TRUE THEN h ELSE e END) AS md
-  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll
-  WITH n, ll
-    FOREACH (m IN ll |
+  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll, md[0] AS d
+  WITH n, ll, d
+	  FOREACH (m IN ll |
       MERGE (n)-[r:NEAREST_IN_WATERSHED]->(m)
-        SET
-          r.d = ROUND(DISTANCE(n.location, m.location)/1000)
+        SET r.d = d
     )
 ",
 {
@@ -76,23 +99,21 @@ CALL apoc.periodic.iterate(
 CALL apoc.periodic.iterate(
 "
 	MATCH (n:PROJECT)
-    	WHERE EXISTS(n.pid)
-        AND n.pid <>'NA'
-        AND n.number_of_sites > 0
-        AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]->()))
-	WITH DISTINCT(n.pid) AS n, COLLECT(n) AS nc
+    WHERE EXISTS(n.pid)
+	WITH DISTINCT(n.pid) AS pid, COLLECT(n) AS nc
+    WITH pid, nc
+    	WHERE SIZE(nc) > 1
   RETURN nc
 ", "
   WITH nc
     UNWIND nc AS n
-  WITH nc, n, [m IN nc WHERE m <> n AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]->(m))) | [DISTANCE(m.location, n.location), m]] AS dl
+  WITH nc, n, [m IN nc WHERE m <> n AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]-(m))) | [ROUND(DISTANCE(m.location, n.location)/1000), m]] AS dl
   WITH n, dl, REDUCE(h=HEAD(dl), e IN TAIL(dl) | CASE h[0] < e[0] WHEN TRUE THEN h ELSE e END) AS md
-  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll
-  WITH n, ll
+  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll, md[0] AS d
+  WITH n, ll, d
     FOREACH (m IN ll |
       MERGE (n)-[r:NEAREST_IN_PROJECT]->(m)
-        SET
-          r.d = ROUND(DISTANCE(n.location, m.location)/1000)
+        SET r.d = d
     )
 ",
 {
