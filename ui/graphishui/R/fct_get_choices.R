@@ -6,9 +6,10 @@
         
 fct_get_choices <- function() {
   
-  # connection to Nghia's computer
+  # connection to database
   con <- neo4j_api$new(
-    url = "http://neo4j:7474", #"http://206.47.13.10:7474/",
+    url = "http://neo4j:7474",          # connct to container
+    # url = "http://206.47.13.10:7474/", # connect to Nghia's computer
     user = "neo4j", 
     password = "pskgi"
   )
