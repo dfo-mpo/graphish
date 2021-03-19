@@ -48,7 +48,7 @@ Then in a browser (Chrome, Firefox, Safari):
  
  Once logged in, you can start the interactive slideshow by typing the following into the query box:
 
-    :play http://localhost:8001/html/parr_show_v2.html
+    :play http://localhost:8001/html/parr_show_v3.html
 
 ![Start the interactive slde show](img/start_show.png)
 
