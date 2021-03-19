@@ -59,6 +59,7 @@ And use the `pin` to pin up the panel so that the slide deck stay there during t
 Note:
 - all docker `nlp` `show` already built and can be pulled from https://hub.docker.com/orgs/dfompo/repositories
 - in the instructions above, `localhost` is used as a hostname, you should replace it with the appropriate hostname
+- if this is a fresh installation, go to slide 13/15 of the interactive slideshow `parr_show_v3` and run all queries on slide 13, 14, 15 to get the database populated.
 
 ### C. Interactive slideshow:
 
