@@ -105,6 +105,20 @@ services:
     ports:
       - 8001:8001
 
+  ####################
+  # ui:
+  #
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    hostname: ui
+    container_name: ui
+    ports:
+      - 3838:3838
+    networks:
+      - backend
+
 ################################################################################
 #
 # networks
