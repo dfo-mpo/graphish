@@ -138,4 +138,36 @@ MATCH (n:CA_POST_CODE)
   WHERE NOT(EXISTS(n.location))
   SET n.location = n.centroid;
 //
+// Link Post Code with location
+//
+CALL apoc.periodic.iterate(
+"
+  MATCH (n:CA_POST_CODE)
+    WHERE EXISTS(n.location) AND EXISTS(n.place_name)
+  WITH n, n.location AS loc
+    MATCH (p:GEO_LOCATION)
+      WHERE p.name IN n.place_name 
+        AND p.feature STARTS WITH 'P.PPL'
+  WITH DISTINCT(n) AS n, COLLECT([p, ROUND(DISTANCE(loc, p.location)/1000)]) AS pc
+    WHERE SIZE(pc) > 0
+  RETURN n, pc
+", "
+  WITH n, pc, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
+  WITH n, [e IN pc WHERE e[1] = match[1] | e[0]] AS ll, match[1] AS d
+  WITH n, ll, d
+    FOREACH (p IN ll |
+      MERGE (n)-[r:PLACE_NEARBY]->(p)
+        SET r.d = d
+    )
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
+//
+//
+//
+MATCH (g:GEO_LOCATION)
+  WHERE g.feature STARTS WITH 'A.ADM' 
+    SET g:GEO_ADM;
+//
 ////////////////////////////////////////////////////////////////////////////////

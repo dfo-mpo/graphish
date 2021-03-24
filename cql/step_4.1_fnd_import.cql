@@ -222,12 +222,15 @@ WITH n, TRIM(SPLIT(n.address, ',')[SIZE(SPLIT(n.address, ','))-2]) AS place_name
 WITH n, place_name, loc
 	MATCH (p:GEO_LOCATION {name: place_name})
     	WHERE p.feature STARTS WITH 'P.PPL'
-        OR p.feature STARTS WITH 'A.ADM'
         OR p.feature STARTS WITH 'L.RESV'
 WITH DISTINCT(n) AS n, COLLECT([p, DISTANCE(loc, p.location)]) AS pc
-WITH n, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
-WITH n, match[0] AS p
-  MERGE (n)-[:NEAR_BY_PLACE]->(p);
+WITH n, pc, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] < m[1] WHEN TRUE THEN e ELSE m END) AS match
+WITH n, [e IN pc WHERE e[1] = match[1] | e[0]] AS ll, match[1] AS d
+WITH n, ll, d
+  FOREACH (p IN ll |
+    MERGE (n)-[r:PLACE_NEARBY]->(p)
+      SET r.d = d
+  );
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -236,7 +239,11 @@ WITH n, match[0] AS p
 // Call the nlp micro service to process First Nation's name.
 //
 MATCH (n:BC_FIRST_NATION)
-  WITH n, [apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]])] AS input
+  WITH n, [
+      apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]])
+			apoc.map.fromPairs([['u', 'pref_name'], ['c', CASE n.pref_name IS NOT NULL WHEN TRUE THEN n.pref_name ELSE '' END]]),
+			apoc.map.fromPairs([['u', 'alt_name'], ['c', CASE n.alt_name IS NOT NULL WHEN TRUE THEN n.pref_name ELSE '' END]])
+    ] AS input
     CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
       YIELD result
 RETURN 1;

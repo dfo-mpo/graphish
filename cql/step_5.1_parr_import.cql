@@ -50,7 +50,7 @@ UNWIND [
 	['RFCPP', 'Recreational Fisheries Conservation Partnership Program']
 ] AS pr_fndsrc
 WITH pr_fndsrc
-	MERGE (n:GC_FUNDING_SOURCE {uid: pr_fndsrc[0]})
+	MERGE (n:GC_FUNDING_PROGRAM {uid: pr_fndsrc[0]})
 		SET
 			n.name = pr_fndsrc[1];
 //
@@ -385,7 +385,7 @@ CALL apoc.periodic.iterate(
         n.outcome_value_2 = map.outcome_value_2,
         n.primary_socio_economic_outcome = map.what_was_the_primary_socio_economic_outcome,
         n.value_of_the_primary_socio_economic_outcome = map.provide_the_value_of_the_primary_socio_economic_outcome,
-				n.secondary_socio_economic_outcome = map.what_was_the_secondary_socio_economic_outcome,
+		n.secondary_socio_economic_outcome = map.what_was_the_secondary_socio_economic_outcome,
         n.value_of_the_secondary_socio_economic_outcome = map.provide_the_value_of_the_secondary_socio_economic_outcome,
         n.was_project_monitoring_completed = map.was_project_monitoring_completed,
         n.number_of_years_of_monitoring_before_restoration = map.number_of_years_of_monitoring_before_restoration,
@@ -393,7 +393,7 @@ CALL apoc.periodic.iterate(
         n.key_lessons_learned = n.key_lessons_learned,
         n.are_sara_listed_aquatic_species_present = map.are_sara_listed_aquatic_species_present,
         n.are_aquatic_invasive_species_present = map.are_aquatic_invasive_species_present,
-				n.other_information = map.other_information
+		n.other_information = map.other_information
   WITH map, n
     FOREACH (area IN map.dfo_area |
       MERGE (dfo_area:DFO_AREA {uid: area})
@@ -408,7 +408,7 @@ CALL apoc.periodic.iterate(
     )
     FOREACH (p IN map.project_lead_organization |
 			FOREACH (_ IN CASE p IN ['', 'N/A'] WHEN TRUE THEN [] ELSE [1] END |
-	      MERGE (pr_org:ORGANIZATION {uid: p})
+	      MERGE (pr_org:ORGANIZATION:LEAD_ORGANIZATION {uid: p})
 	      MERGE (pr_org)<-[:HAS_LEAD_ORGANIZATION]-(n)
 			)
     )
@@ -428,7 +428,7 @@ CALL apoc.periodic.iterate(
     )
     FOREACH (p IN map.g_c_funding_sources |
       MERGE (pr_fndsrc:GC_FUNDING_SOURCE {uid: p})
-      MERGE (pr_fndsrc)<-[:HAS_GC_FUNDING_SOURCE]-(n)
+      MERGE (pr_fndsrc)<-[:GC_FUNDING_PROGRAM]-(n)
     )
     FOREACH (p IN map.other_funding_sources |
       MERGE (pr_ofs:ORGANIZATION {uid: p})
@@ -538,5 +538,14 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
+//
+// Set project site
+//
+MATCH (n:PROJECT)
+WITH DISTINCT(n.pid) AS pid, COUNT(n) AS c
+WITH pid, c
+	WHERE c > 1
+MATCH (n:PROJECT {pid: pid})
+	SET n:PROJECT_SITE;
 //
 ////////////////////////////////////////////////////////////////////////////////

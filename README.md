@@ -8,29 +8,9 @@ One focus of the initiative is on information pertaining to current salmon rebui
 
 This **Proof of Concept** (PoC) is intended to demonstrate the value of KG technology as a means of helping to achieve the overall goals of the PSS by showcasing data processing procedures for assembly, cleaning, transformation (standardization), loading, and linking of data from text sources (e.g. reports, Word documents and Excel spreadsheets) into nodes and links in a Salmon Knowledge Graph.
 
-### B1. Shortcut for `PaRR projects` showcase:
+### B. Quick-start
 
-***This is for people who used this system - don't do it if read first time***
-
-    git clone https://github.com/dfo-mpo/graphish.git
-    cd graphish
-    ./gather_neo4j_plugins.sh
-
-Choose to create dockers
-
-    docker-compose up --build nlp neo4j show
-
-Or pull them
-
-    docker-compose pull nlp neo4j show
-
-Then in Neo4j Browser window:
-
-    :play http://localhost:8001/html/parr_show.html
-
-Follow all instructions, would take 15-20 minutes depending on machine.
-
-### B2. Quick-start
+Note: for a more detailed installation and in-depth discussion, please see [installation.md](/installation.md).
 
 ##### 1. Prerequisite
 
@@ -41,995 +21,362 @@ Following software are required, please install their latest versions:
 - `git`
 - `graphish` (this repository)
 
-<details><summary>Click for details!</summary>
+##### 2. Setup
 
-###### Step 1 - Install `Docker Desktop`/`Docker Engine`
-For macOS or Windows install [Docker Desktop](https://docs.docker.com/desktop/).
-
-For people who know what WSL is: Installing `Windows Subsystem for Linux 2`, a.k.a `WSL2` is highly recommended before installing Docker Desktop.
-
-For Linux, install [Docker Engine](https://docs.docker.com/engine/).
-
-**Important**: it is recommended that at least 6GB memory and 10GB disk space allowed for Docker Desktop. Check the `Preferences`, and then `Resources` menu-item of the `Docker` top menu icon to adjust them.
-
-###### Step 2 - Install `Docker Compose`
-For all system, install [Docker Compose](https://docs.docker.com/compose/).
-
-###### Step 3 - Install `git`
-Make sure that you have `git` install on your system.
-
-- For Windows: Download [Git for Windows](https://git-scm.com/download/win) and install it.
-
-- For macOS: install [homebrew](https://brew.sh), and then in Terminal:
-
-      brew install git
-
-- For Debian-based Linux:
-
-      sudo apt update
-      sudo apt upgrade
-      sudo apt install git
-
-
-- For RPM-based Linux:
-
-      sudo yum upgrade
-      sudo yum install git
-
-*For Ubuntu: in case permission error is encountered at the first run of docker-compose, try to create the docker user group and add yourself to it*
-
-    sudo groupadd docker
-    sudo usermod -aG docker ${USER}
-
-###### Step 4 - Install `Python`
-Follow instructions this [guide](https://installpython3.com/).
-
-###### Step 5 - Install `graphish` (this repository):
-Check out the [repo](https://github.com/dfo-mpo/graphish) by opening a Terminal or Command Prompt on your system, go to a directory where you want to place this repository, and type:
+Open a terminal window:
 
     git clone https://github.com/dfo-mpo/graphish.git
+   
     cd graphish
 
-Collect addtional libraries for `neo4j`:
-
     ./gather_neo4j_plugins.sh
 
-</details>
+    docker-compose pull 
 
-##### 2. Shortcut to demo:
+    docker-compose up -d nlp neo4j show
 
-Assume that you are in `graphish` directory:
 
-    ./run.sh
+Then in a browser (Chrome, Firefox, Safari):
 
-Wait until you see the following line, it would mean all three docker containers (nlp, neo4j, show) are running.
+    http://localhost:7474/
 
-    neo4j    | 2021-01-27 23:37:39.305+0000 INFO  Started.
+`Neo4j` will ask you to login.
 
-Open the browser, go to http://localhost:7474, enter username (neo4j) and password (pskgi), type the below and press `[Ctrl/Cmd]+Enter`:
+![Login to Neo4j server](img/neo4j_login.png)
 
-      :play http://localhost:8001/html/show.html
+ Use `neo4j` for `username`, and `pskgi` for `password`. 
+ 
+ Once logged in, you can start the interactive slideshow by typing the following into the query box:
 
-and follow the instructions on the screen.
+    :play http://localhost:8001/html/parr_show_v3.html
 
+![Start the interactive slde show](img/start_show.png)
 
-##### 3. Setting up the Dockers:
-The dockers can be managed via several steps:
-- Obtain the dockers by pulling the docker images from Docker Hub.
-- Stop the running containers
-- Removing unused images
+And use the `pin` to pin up the panel so that the slide deck stay there during the whole show.
 
-<details><summary>Click for details!</summary>
+![Pin the slide deck](img/pin_down.png)
 
-Make sure that all requirements in `1. Prerequisite` are satisfied.
-It it **important** to note that all `docker` and `docker-compose` command must be execute inside the `graphish` repo directory, where the `docker-compose.yml` is present.
+Note:
+- all docker `nlp` `show` already built and can be pulled from https://hub.docker.com/orgs/dfompo/repositories
+- in the instructions above, `localhost` is used as a hostname, you should replace it with the appropriate hostname
+- if this is a fresh installation, go to slide 13/15 of the interactive slideshow `parr_show_v3` and run all queries on slide 13, 14, 15 to get the database populated.
 
-###### a. Obtain the dockers by pulling the built docker images from [repositories](https://hub.docker.com/repository/docker/nghiadh/nlp) on Docker Hub, create the containers, and run them
+### C. Interactive slideshow:
 
-    docker-compose pull
-    docker-compose up --no-build
+**How-to use the interactive slideshow**
 
-*Note: it will takes sometimes to download about 2GB image.*
+An interactive slideshow contains `runable` Cypher queries. You don't have to type anything. The queries are already included in the slide deck. Whenever you see a shaded rectange, it's a query. You only need to click on it to (automatically) copying its content into the query box. After that, clicking the blue button on the right side of the query box runs the query. If you have pinned the slide deck (see above), then the query result always written below the slide deck.
 
-Add a `-d` option if you want them run in the background
+![How to run a query](img/run-query.png)
 
-    docker-compose up -d --no-build
+**The interactive slideshow consists of two parts:**
+- the first one attempts to discuss a few questions that are time comsuming to answer without capabilities to deal with connected data represented by graphs. This part can be run, experiment with, or refactor for new needs.
+- the second part provides detailed queries, that can be run by a few click to (re)populate the database. Normally this has to be done once and never need to be touched again.
 
-***[Optional]: Build the docker images, create the containers, and run them***
+#### Part 1 - 5 Questions
 
-Rebuild the image:
+In this section 5 questions are addressed:
 
-    docker-compose up --build
+- Q1: Where are the projects? What are the nearest popoluated places? How far are they from each other? How project sites from the same project can be viewed? How this view is change over time?
+  Focus: Panoramic view of the projects in geographical context, with time-based snapshot.
+  Graph technology: shortest path and traversal filtering
 
-*Note: it will takes sometimes to download `PyTorch` (700MB), and neural English language models for `stanza`.*
+- Q2: Who are the lead organizations? Are they local entities? How can they be measured based on what they have done?
+  Focus: Overview of the roles and relationships of lead organizations to projects, setting up proven track record.
+  Graph technology: tree construction and data aggregation
 
-Add a `-d` option if you want them run in the background
+- Q3: Are there similar projects aiming at same set of target species and life stages, with same or different fundding sources?
+  Focus: Measure similarities based on common objectives, closer look.
+  Graph technology: set intersection similarity with geographical spatial distance constraint
 
-    docker-compose up -d --build
+- Q4: At which watershed certain species at certain life stage have not been benefitted from the projects?
+  Focus: Looking for what have not been there.
+  Graph technology: tree construction and traversal filtering
 
-Later invocations:
+- Q5: Given a set of parameters for a location, which lead organization and partners could be selected for such project execution?
+  Focus: Multi-goal objective based on learned past experience. 
+  Graph technology: minimal spanning tree.
 
-    docker-compose up
+**Topic 1 - Panoramic view - All projects in a single view**
 
+The geographical entities of British Columbia are arranged into a large tree structure. 
 
-###### b. Stop the running containers
+The query below constructs a graph by:
+- locating the nearest populated place (from Geonames data) for each project,
+- tracing the tree branches connecting the places to the root
 
-If they are running on the console (i.e. without `-d` option). Press `Ctrl+C` to gracefully shutdow.
+The result is a subtree of the British Columbia geographical tree, with the projects as leaves, each connected to the nearest geo-location. The distance, rounded to the nearest kilometer, is displayed on the relationship between the project and its nearest location.
 
-You can also stop it from the other Terminal (in `graphish` directory):
+    MATCH (province:GEO_LOCATION {name: "British Columbia"})
+    WITH province
+        MATCH (project:PROJECT)-[rel:PLACE_NEARBY]->(place)
+    WITH province, project, rel, place
+        MATCH path=shortestPath((place)-[:WITH_IN*1..]-(province))
+    RETURN province, project, rel, place, path;
 
-    docker-compose down
+![Pin the slide deck](img/parr/q1-all.png)
 
-###### c. Removing unused images
+**Topic 1 - Yearly snapshot - Choose a year and view the picture**
 
-    docker image prune
+The all-project graph contains all projects over the years. Here how's you can choose the 2016 snapshot.
 
-*Note: it is worth to run because it can remove over 3.5GB temporary data produced during the build of the docker image*
+First click on the query below in order to move its content into the query editor. Change the year to one of 2016, 2017, ..., 2022 and then run it by clicking on the blue arrow on the right of the query editor to set the year parameter.
 
-</details>
+    :param year => 2016;
 
-##### 4. Using the Dockers:
+Now the year parameter is set, you can rerun the query to view only projects in 2016.
 
-Instructions to use and/or monitor following dockers:
-- `nlp`
-- `neo4j`
-- `show`
+    MATCH (province:GEO_LOCATION {name: "British Columbia"})
+    WITH province
+    MATCH (project:PROJECT)-[rel:PLACE_NEARBY]->(place)
+        WHERE project.project_duration IS NOT NULL 
+        AND apoc.meta.cypher.type(project.project_duration) = 'LIST OF INTEGER'
+        AND project.project_duration[0] <= $year
+        AND $year <= project.project_duration[1]
+    WITH province, project, rel, place
+        MATCH path=shortestPath((place)-[:WITH_IN*1..]-(province))
+    RETURN province, project, rel, place, path;
+
+![Pin the slide deck](img/parr/q1-2016.png)
+
+You can reset the year parameter by choosing the year param setting again and then run the project query again for other yearly snapshot. Below are a few years from 2017-2020
+
+Below is snapshot 2017.
+
+![Snapshot 2017](img/parr/q1-2017.png)
+
+Below is snapshot 2018.
 
-<details><summary>Click for details!</summary>
+![Snapshot 2018](img/parr/q1-2018.png)
 
-##### a. `nlp`:
+Below is snapshot 2019.
 
-Assume that you are in `graphish` directory, check if it's running:
+![Snapshot 2019](img/parr/q1-2019.png)
+
+Below is snapshot 2020.
+![Snapshot 2020](img/parr/q1-2020.png)
+
+Below is snapshot 2021.
+![Snapshot 2021](img/parr/q1-2021.png)
 
-    cd test
+**Topic 2 - Learned insights - All lead organizations in one view**
 
-**For macOS, Linux**
+Since the projects are more likely watershed specific, so it is also very likely that the project lead organizations more or less local ones. The diagram shows that there are only a few who works for projects in different watersheds.
 
-    ./check_nlp.sh http://127.0.0.1:8000/
+    MATCH (project:PROJECT)-[rel1]-(organization:LEAD_ORGANIZATION)
+    WITH  project, rel1, organization
+        OPTIONAL MATCH (project)-[rel2:HAS_WATERSHED]-(watershed)
+    RETURN project, rel1, organization, rel2, watershed
+
+![All lead organizations and projects](img/parr/q2-all.png)
+
+**Topic 2 - Learned insights - What did the highest sum of total costs of completed projects by a lead organization bring?**
 
-**For Windows**
+Using traversal aggregation, we look at all projects indicated as completed by each lead organization. Furthermore, target species and life stages of all completed project are combined to provide a full picture. Note that it can be seen that how many projects contribute to a target species or life stage.
 
-Assume that you are in `graphish` directory, check if it's running:
+An interesting feature here is that the result is created as a partital virtual graph. Some nodes and edges are created only for this view, they make the view much simple but still comprehensive.
 
-    check_nlp.bat http://127.0.0.1:8000/
-
-If the script prints `"OK"`, the service is ready, then test it with proper input. You should see `json` output on the console.
-
-**For macOS, Linux**
-
-    ./test_nlp.sh http://127.0.0.1:8000/process/ nlp_input.txt
-
-**For Windows**
-
-    test_nlp.bat http://127.0.0.1:8000/process/ nlp_input.txt
-
-
-*Note 1: the `nlp` docker is accessible from anywhere if the host's IP and port 8000 is reachable.*
-
-*Note 2: see the Input and Output sections of the Natural Language Processing (NLP) micro service for more details*
-
-##### b. `neo4j`:
-
-Assume that you are in `graphish` directory, check if it's running:
-
-    cd test
-
-**For macOS, Linux**
-
-    ./data_tasks.sh t neo4j neo4j pskgi bolt://localhost:7687/
-
-**For all OS**
-
-You can start a browser and points it at http://localhost:7474/.
-
-*Note 1: the `neo4j` docker is accessible from anywhere if the host's IP and port 7474 is reachable.*
-
-Create a new set of unique constraints and indexes defined in a `Cypher Query Language` (`cql`) script, which is placed in the local `cql/` directory.
-
-    ./data_tasks.sh a neo4j neo4j pskgi bolt://localhost:7687 cql/nlp_schema.cql
-
-Import data from a `xlsx` formatted data file, placed in `import/` directory, for example `input.xlsx`. There is no need for prefix `import/` since `neo4j` will see it at the mounted volume inside the container.
-
-    ./data_tasks.sh j neo4j neo4j pskgi bolt://localhost:7687 /input.xlsx psf_news\!A1:B6 http://nlp:8000/process/
-
-Open the browser, go to http://localhost:7474, enter username (neo4j) and password (pskgi), type the below and press `[Ctrl/Cmd]+Enter`:
-
-    MATCH (e:NE)-[:E_IN_S]->(s)<-[:E_IN_S]-(loc:LOC)-[:W_IN_E]-(w:LW)
-      WHERE e.c IN ["Coho", "Chinook", "Chum", "Sockeye"] AND w.l = "river"
-    WITH e, loc
-      MATCH (e)-[:E_IN_D]->(d)<-[:K_IN_D]-(k:KP)-[:W_IN_K]-(w:LW)
-        WHERE w.l IN ["habitat", "project", "grant"]
-    WITH DISTINCT(d) AS d, e, COLLECT(DISTINCT(loc)) AS oc, COLLECT(DISTINCT(k)) AS kc
-    RETURN DISTINCT(e) AS species, COLLECT([d, oc, kc]) AS mentioned_locations;
-
-![Match locations, key phrases related to salmons in projects or grants](img/graph.png)
-
-##### c. `show`:
-
-  A simple docker, to host the interactive slideshow.
-
-    docker-compose pull
-    docker-compose up --no-build
-
-  To build this docker:
-
-    docker-compose up --build show
-
-  Open the brower, go to http://localhost:7474, enter username (neo4j) and password (pskgi), type the below and press `[Ctrl/Cmd]+Enter`:
-
-    :play http://localhost:8001/html/show.html
-
-  or (for PaRR Projects, note that importing PaRR projects would take 10-15 mins depending on machine configuration)
-
-    :play http://localhost:8001/html/parr_show.html
-
-  and follow the instructions on the screen.
-
-</details>
-
-### C. Micro Service Architecture
-
-![Docker services](img/docker-compose.png)
-
-### D. Services
-
-#### 1. Natural Language Processing (NLP) as micro service
-
-This NLP micro service (`nlp`) is to provide an internal feature that:
-- accept `human language text` in plain textual Unicode format with UTF-8 encoding.
-- convert given text into lists of sentences and words, to generate base forms of those words, their parts of speech and morphological features, to give a syntactic structure dependency parse, and to recognize named entities.
-- assemble extracted `key phrases` (based on customizable *syntactic treebank annotations*), `named entities`, and `sentiment score` into json objects as result.
-
-The *back-end* of `nlp` incorporates [Stanza](https://stanfordnlp.github.io/stanza/), a Python natural language analysis package, which is built with highly accurate neural network components that also enable efficient training and evaluation with your own annotated data. The modules are built on top of the [PyTorch](https://pytorch.org) library. Stanza also provides the official Python wrapper for accessing [the Java Stanford CoreNLP package](https://stanfordnlp.github.io/CoreNLP/).
-
-The *front-end* of `nlp` is a lightweight web server based on [Uvicorn](https://www.uvicorn.org), a fast `ASGI` (*Asynchronous Server Gateway Interface*). It accepts HTTP requests, forwards them to the back-end, and returns responses coming back from the back-end to the caller.
-
-##### Input
-How input is submitted to `nlp`:
-- a HTTP POST request to **http://`HOST_NAME`:8000/process/**
-- A `json` document formatted as below must be sent in the `request's body`
-
-<details><summary>Click for details!</summary>
-
-
-      ####################
-      # Define the document model that the webapp receives from submission:
-      # It is a json format:
-      # {
-      #   "u": the uid of the document, the webapp retains and returns it
-      #   "c": the textual content of the document.
-      # }
-
-</details>
-
-##### Output:
-`nlp` processes the document and extracts for each sentence:
-- `sentiment score`
-- `named entities` (18 named entity types
-described [here](https://stanfordnlp.github.io/stanza/available_models.html)).
-- `noun phrases` based on given *treebank annotations* that is configurable
-in *conf/nlp.ini*, section *key_phrase*, entry *grammar*.
-
-<details><summary>Click for details!</summary>
-
-  Output is a `json` document in following format:
-
-      {
-          'u': the uid of the document
-          'p': the processed content, see PostProcessor for more information
-      }
-
-  Processed document is represented by a list of sentences, each is a dictionary:
-
-      {
-          't': the original text of the sentence,
-          's': the sentiment score (0, 1, 2), as a string,
-          'e': list of extracted entities (see below),
-          'k': list of extracted key phrases, for format see below
-      }
-
-    Extracted entities of a document is a list of dictionaries:
-
-      {
-          't': the entity type, one of the 18 named entity types, e.g. PERSON,
-          'c': the textual content, for example `First Nations`,
-          'w': list of words, each is a dictionary, see below
-      }
-
-    Extracted key phrases of a sentence is a list of dictionaries:
-
-      {
-          'c': the textual content, e.g. `restoration stock assessment activities`
-          'w': list of words, each is a dictionary, see below
-      }
-
-    Extracted word in format of {'c': word text, 'l': lemmatized form}
-
-    *Note: a key phrase is collected from a sentence by using treebank-specific grammar on the `xpos` property of each word in a sentence:*
-
-      JJ? ((VB[G|N|D]|NN[P]?[S]?) (HYPH|IN|POS)*)* NN[P]?[S]?
-
-</details>
-
-##### Sample input & output:
-
-<details>
-  <summary>Sample input, click for more!</summary>
-
-  Sample input from [PSF](https://www.psf.ca/news-media/238056-granted-16-south-vancouver-island-salmon-community-projects-pacific-salmon), this can be located at `test/nlp_input.txt`
-
-      [
-        {
-          "u":"123",
-          "c":"The Pacific Salmon Foundation (PSF) announces grants for 16 projects in the South Vancouver Island region, totalling $238,056 through the PSF Community Salmon Program (CSP). The total value of the projects, which includes community fundraising, contributions and volunteer time, is $1,488,711 and is focused on the rehabilitation of key Pacific salmon habitats and stock enhancement in the South Vancouver Island area."
-        }
-      ]
-</details>
-
-<details>
-  <summary>Sample output, click for more!</summary>
-
-  Sample output from processing of the above input.
-
-    [
-        {
-            "p": [
-                {
-                    "c": "The Pacific Salmon Foundation (PSF) announces grants for 16 projects in the South Vancouver Island region, totalling $238,056 through the PSF Community Salmon Program (CSP).",
-                    "e": [
-                        {
-                            "c": "The Pacific Salmon Foundation (PSF)",
-                            "t": "ORG",
-                            "w": [
-                                {
-                                    "c": "Pacific",
-                                    "l": "pacific"
-                                },
-                                {
-                                    "c": "Salmon",
-                                    "l": "salmon"
-                                },
-                                {
-                                    "c": "Foundation",
-                                    "l": "foundation"
-                                },
-                                {
-                                    "c": "(",
-                                    "l": "("
-                                },
-                                {
-                                    "c": "PSF",
-                                    "l": "psf"
-                                },
-                                {
-                                    "c": ")",
-                                    "l": ")"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "16",
-                            "t": "CARDINAL",
-                            "w": [
-                                {
-                                    "c": "16",
-                                    "l": "16"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "South Vancouver Island",
-                            "t": "LOC",
-                            "w": [
-                                {
-                                    "c": "South",
-                                    "l": "south"
-                                },
-                                {
-                                    "c": "Vancouver",
-                                    "l": "vancouver"
-                                },
-                                {
-                                    "c": "Island",
-                                    "l": "island"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "238,056",
-                            "t": "MONEY",
-                            "w": [
-                                {
-                                    "c": "238,056",
-                                    "l": "238,056"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "PSF Community Salmon Program",
-                            "t": "ORG",
-                            "w": [
-                                {
-                                    "c": "PSF",
-                                    "l": "psf"
-                                },
-                                {
-                                    "c": "Community",
-                                    "l": "community"
-                                },
-                                {
-                                    "c": "Salmon",
-                                    "l": "salmon"
-                                },
-                                {
-                                    "c": "Program",
-                                    "l": "program"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "CSP",
-                            "t": "ORG",
-                            "w": [
-                                {
-                                    "c": "CSP",
-                                    "l": "csp"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "1,488,711",
-                            "t": "MONEY",
-                            "w": [
-                                {
-                                    "c": "1,488,711",
-                                    "l": "1,488,711"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "Pacific",
-                            "t": "LOC",
-                            "w": [
-                                {
-                                    "c": "Pacific",
-                                    "l": "pacific"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "South Vancouver Island",
-                            "t": "LOC",
-                            "w": [
-                                {
-                                    "c": "South",
-                                    "l": "south"
-                                },
-                                {
-                                    "c": "Vancouver",
-                                    "l": "vancouver"
-                                },
-                                {
-                                    "c": "Island",
-                                    "l": "island"
-                                }
-                            ]
-                        }
-                    ],
-                    "k": [
-                        {
-                            "c": "pacific",
-                            "w": [
-                                {
-                                    "c": "pacific",
-                                    "l": "pacific"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "salmon",
-                            "w": [
-                                {
-                                    "c": "salmon",
-                                    "l": "salmon"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "foundation",
-                            "w": [
-                                {
-                                    "c": "foundation",
-                                    "l": "foundation"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "psf",
-                            "w": [
-                                {
-                                    "c": "psf",
-                                    "l": "psf"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "grants",
-                            "w": [
-                                {
-                                    "c": "grants",
-                                    "l": "grant"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "projects",
-                            "w": [
-                                {
-                                    "c": "projects",
-                                    "l": "project"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "south",
-                            "w": [
-                                {
-                                    "c": "south",
-                                    "l": "south"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "vancouver",
-                            "w": [
-                                {
-                                    "c": "vancouver",
-                                    "l": "vancouver"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "island",
-                            "w": [
-                                {
-                                    "c": "island",
-                                    "l": "island"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "region",
-                            "w": [
-                                {
-                                    "c": "region",
-                                    "l": "region"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "psf community salmon program",
-                            "w": [
-                                {
-                                    "c": "psf",
-                                    "l": "psf"
-                                },
-                                {
-                                    "c": "community",
-                                    "l": "community"
-                                },
-                                {
-                                    "c": "salmon",
-                                    "l": "salmon"
-                                },
-                                {
-                                    "c": "program",
-                                    "l": "program"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "csp",
-                            "w": [
-                                {
-                                    "c": "csp",
-                                    "l": "csp"
-                                }
-                            ]
-                        }
-                    ],
-                    "s": 1
-                },
-                {
-                    "c": "The total value of the projects, which includes community fundraising, contributions and volunteer time, is $1,488,711 and is focused on the rehabilitation of key Pacific salmon habitats and stock enhancement in the South Vancouver Island area.",
-                    "e": [
-                        {
-                            "c": "The Pacific Salmon Foundation (PSF)",
-                            "t": "ORG",
-                            "w": [
-                                {
-                                    "c": "Pacific",
-                                    "l": "pacific"
-                                },
-                                {
-                                    "c": "Salmon",
-                                    "l": "salmon"
-                                },
-                                {
-                                    "c": "Foundation",
-                                    "l": "foundation"
-                                },
-                                {
-                                    "c": "(",
-                                    "l": "("
-                                },
-                                {
-                                    "c": "PSF",
-                                    "l": "psf"
-                                },
-                                {
-                                    "c": ")",
-                                    "l": ")"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "16",
-                            "t": "CARDINAL",
-                            "w": [
-                                {
-                                    "c": "16",
-                                    "l": "16"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "South Vancouver Island",
-                            "t": "LOC",
-                            "w": [
-                                {
-                                    "c": "South",
-                                    "l": "south"
-                                },
-                                {
-                                    "c": "Vancouver",
-                                    "l": "vancouver"
-                                },
-                                {
-                                    "c": "Island",
-                                    "l": "island"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "238,056",
-                            "t": "MONEY",
-                            "w": [
-                                {
-                                    "c": "238,056",
-                                    "l": "238,056"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "PSF Community Salmon Program",
-                            "t": "ORG",
-                            "w": [
-                                {
-                                    "c": "PSF",
-                                    "l": "psf"
-                                },
-                                {
-                                    "c": "Community",
-                                    "l": "community"
-                                },
-                                {
-                                    "c": "Salmon",
-                                    "l": "salmon"
-                                },
-                                {
-                                    "c": "Program",
-                                    "l": "program"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "CSP",
-                            "t": "ORG",
-                            "w": [
-                                {
-                                    "c": "CSP",
-                                    "l": "csp"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "1,488,711",
-                            "t": "MONEY",
-                            "w": [
-                                {
-                                    "c": "1,488,711",
-                                    "l": "1,488,711"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "Pacific",
-                            "t": "LOC",
-                            "w": [
-                                {
-                                    "c": "Pacific",
-                                    "l": "pacific"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "South Vancouver Island",
-                            "t": "LOC",
-                            "w": [
-                                {
-                                    "c": "South",
-                                    "l": "south"
-                                },
-                                {
-                                    "c": "Vancouver",
-                                    "l": "vancouver"
-                                },
-                                {
-                                    "c": "Island",
-                                    "l": "island"
-                                }
-                            ]
-                        }
-                    ],
-                    "k": [
-                        {
-                            "c": "total value",
-                            "w": [
-                                {
-                                    "c": "total",
-                                    "l": "total"
-                                },
-                                {
-                                    "c": "value",
-                                    "l": "value"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "projects",
-                            "w": [
-                                {
-                                    "c": "projects",
-                                    "l": "project"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "community fundraising",
-                            "w": [
-                                {
-                                    "c": "community",
-                                    "l": "community"
-                                },
-                                {
-                                    "c": "fundraising",
-                                    "l": "fundraising"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "contributions",
-                            "w": [
-                                {
-                                    "c": "contributions",
-                                    "l": "contribution"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "volunteer time",
-                            "w": [
-                                {
-                                    "c": "volunteer",
-                                    "l": "volunteer"
-                                },
-                                {
-                                    "c": "time",
-                                    "l": "time"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "rehabilitation",
-                            "w": [
-                                {
-                                    "c": "rehabilitation",
-                                    "l": "rehabilitation"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "key pacific",
-                            "w": [
-                                {
-                                    "c": "key",
-                                    "l": "key"
-                                },
-                                {
-                                    "c": "pacific",
-                                    "l": "pacific"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "salmon habitats",
-                            "w": [
-                                {
-                                    "c": "salmon",
-                                    "l": "salmon"
-                                },
-                                {
-                                    "c": "habitats",
-                                    "l": "habitat"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "stock enhancement",
-                            "w": [
-                                {
-                                    "c": "stock",
-                                    "l": "stock"
-                                },
-                                {
-                                    "c": "enhancement",
-                                    "l": "enhancement"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "south",
-                            "w": [
-                                {
-                                    "c": "south",
-                                    "l": "south"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "vancouver",
-                            "w": [
-                                {
-                                    "c": "vancouver",
-                                    "l": "vancouver"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "island",
-                            "w": [
-                                {
-                                    "c": "island",
-                                    "l": "island"
-                                }
-                            ]
-                        },
-                        {
-                            "c": "area",
-                            "w": [
-                                {
-                                    "c": "area",
-                                    "l": "area"
-                                }
-                            ]
-                        }
-                    ],
-                    "s": 2
-                }
-            ],
-            "u": "123"
-        }
-    ]
-</details>
-
-##### Limitations:
-Following features are not included:
-1. Multiple language support (only English at the moment).
-2. Dynamic treebank annotations parsing (to obtain key phrases with different grammatical compositions)
-3. Dependency-parsing (that builds a tree structure of words from the input sentence, which represents the syntactic dependency relations between words)
-4. Enabling GPU usage inside container for better ML performance.
-5. Configurable parallel processing and throughput for higher performance.
-
-#### 2. Neo4j graph database as micro service
-
-`Neo4j` Graph Database CE (Community Edition), `4.2.2` is assembled inside `docker-compose.yml`. Following additional features are added
-- Graph Data Science ([GPS](https://neo4j.com/developer/graph-data-science/)) library, version `1.4.1`.
-- Awesome Procedures On Cypher ([APOC](https://neo4j.com/labs/apoc/)) library, version `4.2.0.1`.
-- A set of `Apache` `POI` and dependency for [importing Excel](https://neo4j.com/labs/apoc/4.2/import/xls/) spreadsheets in both `xls` and `xlsx` format.
-
-All required libraries must be downloaded prior to start the `neo4j` docker by running:
-
-    ./gather_neo4j_plugins.sh
-
-The libraries are placed in the local `plugins/` directory, which will be mounted as a local folder for `neo4j` docker.
-
-- `neo4j` docker image based on `neo4j:4.2.2` in Docker Hub and configured:
-  + automatically accept user license
-  + use max 2GB memory for heap, 1GB for page cache
-  + import files from the mounted local `import/` directory
-  + load additional libraries from the mounted local `plugins/` directory
-  + keeps the physical database files in the mounted local `data/` directory
-  + generates log entires in the `debug.log` file in the mounted local `logs/` directory
-
-##### Running tasks
-Several tasks can be executed with `neo4j` service, to see what you can do, try:
-
-    ./data_tasks.sh
-
-You should see the following print out:
-
-```
-Usage: ./data_tasks.sh <COMMANDS> <NEO4J_CONTAINER> <USER_NAME> <PASSWORD> <BOLT_URL>
-  COMMAND:
-      a: add new schema (unique constraints & indexes)
-      j: nlp and import json file (inside import/ directory)
-      x: nlp and import data xls(x) file (inside import/ directory)
-      c: clean up by remove all nodes and relationships
-      r: remove schema
-      s: print database statistics
-      t: test if database ready
-  EXAMPLES:
-      ./data_tasks.sh t: test if database ready
-      ./data_tasks.sh a: add new schema
-      ./data_tasks.sh j: nlp and import json file
-      ./data_tasks.sh x: nlp and import data xls(x) file
-      ./data_tasks.sh c: clear database
-      ./data_tasks.sh r: remove schema
-      ./data_tasks.sh cr: run an c -> r pipeline
-      ./data_tasks.sh s: print database statistics
-  NEO4J_CONTAINER: the name of the running container, e.g. neo4j
-  USER_NAME: username to access neo4j database, e.g neo4j
-  PASSWORD: password to access neo4j database, e.g pskgi
-  BOLT_URL: Bolt-based URL to access neo4j database, e.g bolt://localhost:7687
-  EXAMPLES:
-      ./data_tasks.sh t neo4j neo4j pskgi bolt://localhost:7687
-```
-
-<details><summary>Click for details!</summary>
-
-Test if `neo4j` docker container is running:
-
-    ./data_tasks.sh t neo4j neo4j pskgi bolt://localhost:7687
-
-[Optional] Clear - remove all nodes and relationships from - the database (note that this might slow down for large database):
-
-    ./data_tasks.sh c neo4j neo4j pskgi bolt://localhost:7687
-
-[Optional] Remove all unique constraints and indexes from the database :
-
-    ./data_tasks.sh r neo4j neo4j pskgi bolt://localhost:7687
-
-[Optional] Create a new set of unique constraints and indexes defined in a `Cypher Query Language` (`cql`) script, which is placed in the local `cql/` directory. Note that this needs to be done only once and before any data import
-
-    ./data_tasks.sh a neo4j neo4j pskgi bolt://localhost:7687 cql/nlp_schema.cql
-
-Import data from a `json` formatted data file, placed in `import/` directory, for example `input.json`. There is no need for prefix `import/` since `neo4j` will see it at the mounted volume inside the container. Note that
-the `nlp` service is access at the URL http://nlp:8000/process/. `neo4j` and `nlp` services communicate via a private network `backend`, which is not exposed outside, so `neo4j` *sees* `nlp` by its own hostname `nlp`.
-
-    ./data_tasks.sh j neo4j neo4j pskgi bolt://localhost:7687 input.json http://nlp:8000/process/
-
-Import data from a `xlsx` formatted data file, placed in `import/` directory, for example `input.xlsx`. There is no need for prefix `import/` since `neo4j` will see it at the mounted volume inside the container. Note that
-the `nlp` service is access at the URL http://nlp:8000/process/. `neo4j` and `nlp` services communicate via a private network `backend`, which is not exposed outside, so `neo4j` *sees* `nlp` by its own hostname `nlp`.
-
-    ./data_tasks.sh j neo4j neo4j pskgi bolt://localhost:7687 /input.xlsx psf_news\!A1:B6 http://nlp:8000/process/
-
-*Important*: the slash `/` in `/input.xlsx` is mandatory. The `!` in `psf_news\!A1:B6` is to escape the special character `!` in shell command. Note that the `psf_news\!A1:B6` is considered as a input sheet. Line numbers starts at 0, so `psf_news\!A1:B6` means to use cells from the region `A2:B6` in the Excel file.
-
-</details>
-
-#### 4. Apache Tika & Extractor Services
-
-Apache Tika `tika` micro service, a docker container, running Tika Server inside the container on port 9998 to provide access to the `extractor` micro service, another docker container, which in turn is used by `import_pdf.cql` Cypher from within `neo4j` docker (or its `cypher-shell`).
-
-Note: *This is only to show the capability for integration with Tika for `pdf` processing. Since the `pdf` file are rendered for presentation, extracted textual paragraphs are not well connected, and could result in dis-organized content. Using `pdf` is possible, but with care.*
+    MATCH (org:LEAD_ORGANIZATION)-[:HAS_LEAD_ORGANIZATION]-(project:PROJECT)-[:HAS_PROJECT_PHASE]-(:PROJECT_PHASE {uid: "Completed"})
+    WITH DISTINCT(project.pid) AS pid, org, COLLECT(project) AS project_list
+    WITH org, COLLECT(project_list[0]) AS project_list
+    MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_LIFE_STAGE]-(stg)
+        WHERE project IN project_list
+    WITH DISTINCT(stg) AS stg, org, project_list, COUNT(DISTINCT(project)) AS n_of_p
+        CALL apoc.create.vRelationship(org, 'WITH_LIFE_STAGE', {projects: n_of_p}, stg) YIELD rel
+    WITH org, project_list, COLLECT([stg, rel]) AS stg_list
+        MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_TARGET_SPECIES]-(species)
+        WHERE project IN project_list AND EXISTS(species.name)
+    WITH DISTINCT(species) AS species, org, project_list, stg_list, COUNT(DISTINCT(project)) AS n_of_p
+        CALL apoc.create.vRelationship(org, 'WITH_TARGET_SPECIES', {projects: n_of_p}, species) YIELD rel
+    WITH org, project_list, stg_list, COLLECT([species, rel]) AS species_list
+        MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_WATERSHED]-(wsh)
+        WHERE project IN project_list
+    WITH DISTINCT(wsh) AS wsh, org, project_list, stg_list, species_list, COUNT(DISTINCT(project)) AS n_of_p
+        CALL apoc.create.vRelationship(org, 'WITH_WATERSHED', {projects: n_of_p}, wsh) YIELD rel
+    WITH DISTINCT(org) AS org, project_list, stg_list, species_list, COLLECT([wsh, rel]) AS wsh_list
+    WITH org, stg_list, species_list, wsh_list, apoc.coll.sum([project IN project_list | CASE project.the_total_cost_of_the_project IS NOT NULL WHEN TRUE THEN project.the_total_cost_of_the_project ELSE 0 END]) AS total_cost
+        CALL apoc.create.vNode(['PROJECT_COST'],{cost: total_cost}) YIELD node AS cost_node
+    CALL apoc.create.vRelationship(org, 'WITH_COST', {}, cost_node) YIELD rel
+    WITH org, stg_list, species_list, wsh_list, cost_node, rel ORDER BY total_cost DESC 
+    RETURN org, stg_list, species_list, wsh_list, cost_node, rel LIMIT 1;
+
+![A lead organization with highest sum of total costs of completed projects](img/parr/q2-highest-total-cost.png)
+
+**Topic 3 - Clusters of nearby projects funded by same sources**
+
+In this topic, first we look for all projects that aim at the same tager species AND same life stages and are very near to each other (within 2000 meters)). They could be funded by the same set of organizations or sources.
+
+The query below shows 1 cluster of different nearby projects with same objectives having funded by the same G&C funding source.
+
+    MATCH (project:PROJECT)
+    WITH DISTINCT(project.pid) AS pid, COLLECT(project) AS project_list
+    WITH COLLECT(project_list[0]) AS project_list
+        MATCH (first_project)-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project)-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+            WHERE first_project <> second_project 
+        AND first_project IN project_list 
+        AND second_project IN project_list 
+        AND DISTANCE(first_project.location, second_project.location) < 2000
+    WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+    WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+        MATCH (first_project)-[r1:HAS_GC_FUNDING_SOURCE]-(source)-[r2:HAS_GC_FUNDING_SOURCE]-(second_project)
+    WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path
+        CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+    RETURN first_project, second_project, objective_path, funding_path, rel;
+
+![G&C funding for similar projects](img/parr/q3-g&c_funding_source.png)
+
+The query below shows 4 clusters of different nearby projects with same objectives having other funding sources the same set of organizations.
+
+    MATCH (project:PROJECT)
+    WITH DISTINCT(project.pid) AS pid, COLLECT(project) AS project_list
+    WITH COLLECT(project_list[0]) AS project_list
+        MATCH (first_project)-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project)-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+            WHERE first_project <> second_project 
+        AND first_project IN project_list 
+        AND second_project IN project_list 
+        AND DISTANCE(first_project.location, second_project.location) < 2000
+    WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+    WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+        MATCH (first_project)-[r1:HAS_OTHER_FUNDING_SOURCE]-(source)-[r2:HAS_OTHER_FUNDING_SOURCE]-(second_project)
+    WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path
+        CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+    RETURN first_project, second_project, objective_path, funding_path, rel;
+
+![Same set of otherfunding sources for similar projects](img/parr/q3-other_funding_sources.png)
+
+**Topic 3 - Closer look at a pairs of projects**
+
+A closer look - at a pair of projects (16-HPAC-00395 and COA-F18-F-2396\n(Ecocat ID 54487)) can reveal more details.
+
+    MATCH (first_project:PROJECT {pid: "16-HPAC-00395"})-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project:PROJECT {pid: "COA-F18-F-2396\n(Ecocat ID 54487)"})-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+    WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+    WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+        MATCH (first_project)-[r1:HAS_OTHER_FUNDING_SOURCE]-(source)-[r2:HAS_OTHER_FUNDING_SOURCE]-(second_project), (first_project)-[r3:HAS_ECO_SYSTEM_TYPE]-(eco)-[r4:HAS_ECO_SYSTEM_TYPE]-(second_project)
+    WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path, COLLECT([r3, eco, r4]) AS eco_path
+        CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+    RETURN first_project, second_project, objective_path, funding_path, eco_path, rel;
+
+![Closer look for pairs of similar projects](img/parr/q3-closer-look-pair-1.png)
+
+Another closer look - at a pair of projects (16-HPAC-00395 and COA-F18-F-2396\n(Ecocat ID 54487)) can reveal more details.
+
+    MATCH (first_project:PROJECT {pid: "COA-F18-F-2362\n(Ecocat ID 54480)"})-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project:PROJECT {pid: "COA-F18-F-2485\n(Ecocat ID 55505)"})-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+    WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+    WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+        MATCH (first_project)-[r1:HAS_OTHER_FUNDING_SOURCE]-(source)-[r2:HAS_OTHER_FUNDING_SOURCE]-(second_project), (first_project)-[r3:HAS_ECO_SYSTEM_TYPE]-(eco)-[r4:HAS_ECO_SYSTEM_TYPE]-(second_project)
+    WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path, COLLECT([r3, eco, r4]) AS eco_path
+        CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+    RETURN first_project, second_project, objective_path, funding_path, eco_path, rel;
+
+![Another closer look for pairs of similar projects](img/parr/q3-closer-look-pair-2.png)
+
+**Topic 4 - Looking for what is not there**
+
+The query aims to analyze what watershed have projects for a number of life stages but not all of them. The result is to reveal what number of projects support different target species and life stages. Obviously what are not on the display, are not supported by the projects.
+
+    MATCH (stage:LIFE_STAGE)
+        WHERE stage.name <> 'All stages'
+    WITH COLLECT(DISTINCT(stage)) AS all_stage_list
+        MATCH (watershed:WATERSHED)
+    WITH all_stage_list, watershed
+        MATCH (watershed)-[:HAS_WATERSHED]-(project:PROJECT)-[:HAS_LIFE_STAGE]-(stage)
+    WITH watershed, all_stage_list, COLLECT(DISTINCT(stage)) AS stage_list, COUNT(DISTINCT(project)) AS n_of_p
+    WITH watershed, all_stage_list, stage_list, n_of_p
+        WHERE SIZE(stage_list) < SIZE(all_stage_list)
+    WITH watershed, stage_list ORDER BY SIZE(stage_list)/SIZE(all_stage_list) DESC, n_of_p DESC
+    WITH watershed
+        MATCH (watershed)-[:HAS_WATERSHED]-(project:PROJECT)-[:HAS_LIFE_STAGE]-(stage)
+    WITH DISTINCT(stage) AS stage, watershed, COUNT(DISTINCT(project)) AS n_of_p
+        CALL apoc.create.vRelationship(watershed, 'WITH_LIFE_STAGE', {projects: n_of_p}, stage) YIELD rel
+    WITH watershed, COLLECT([stage, rel]) AS objective_path_1
+        MATCH (watershed)-[:HAS_WATERSHED]-(project:PROJECT)-[:HAS_TARGET_SPECIES]-(species)
+            WHERE EXISTS(species.name)
+    WITH DISTINCT(species) AS species, watershed, objective_path_1, COUNT(DISTINCT(project)) AS n_of_p
+        CALL apoc.create.vRelationship(watershed, 'WITH_TARGET_SPECIES', {projects: n_of_p}, species) YIELD rel
+    RETURN watershed, objective_path_1, COLLECT([species, rel]) AS objective_path_2;
+
+![Watershed without all life stages](img/parr/q4-watershed-without-all-life-stages.png)
+
+**Topic 5 - Matching multiple objectives**
+
+What lead organization would be suitable to implement a project:
+- at Lower Fraser watershed
+- supporting freshwater juvenile and returning adult
+- aiming at target species of Sockeye Salmon, Chinook Salmon, and Salish Sucker
+- have been completed projects with total value at least $50,000
+
+Turned out, there might not be a single of them satifying all conditions, but three candidates are nearly good.
+
+    MATCH (project:PROJECT)-[:HAS_PROJECT_PHASE]-(:PROJECT_PHASE {uid: "Completed"})
+    WITH DISTINCT(project.pid) AS pid, COLLECT(project) AS project_list
+    WITH COLLECT(project_list[0]) AS project_list
+        MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_LIFE_STAGE]-(stage:LIFE_STAGE)
+            WHERE project IN project_list AND stage.uid IN ["Freshwater juvenile", "Returning adult"]
+    WITH DISTINCT(stage) AS stage, org, project_list, COUNT(DISTINCT(project)) AS count
+        CALL apoc.create.vRelationship(org, 'WITH_LIFE_STAGE', {projects: count}, stage) YIELD rel
+    WITH org, project_list, COLLECT([stage, rel]) AS stage_list
+        MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_TARGET_SPECIES]-(species:TARGET_SPECIES)
+            WHERE project IN project_list AND EXISTS(species.name) AND species.uid IN ["SK", "CH", "SSU"]
+    WITH DISTINCT(species) AS species, org, project_list, stage_list, COUNT(DISTINCT(project)) AS count
+        CALL apoc.create.vRelationship(org, 'WITH_TARGET_SPECIES', {projects: count}, species) YIELD rel
+    WITH org, project_list, stage_list, COLLECT([species, rel]) AS species_list
+        MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_WATERSHED]-(watershed:WATERSHED {uid: "Lower Fraser"})
+            WHERE project IN project_list
+    WITH DISTINCT(watershed) AS watershed, org, project_list, stage_list, species_list, COUNT(DISTINCT(project)) AS count
+        CALL apoc.create.vRelationship(org, 'WITH_WATERSHED', {projects: count}, watershed) YIELD rel
+    WITH DISTINCT(org) AS org, project_list, stage_list, species_list, COLLECT([watershed, rel]) AS watershed_list
+        MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)
+            WHERE project IN project_list
+    WITH org, stage_list, species_list, watershed_list, SUM(CASE project.the_total_cost_of_the_project IS NOT NULL WHEN TRUE THEN project.the_total_cost_of_the_project ELSE 0 END) AS total_cost
+    WITH org, stage_list, species_list, watershed_list, total_cost
+        WHERE total_cost > 50000
+    WITH org, stage_list, species_list, watershed_list, total_cost
+        CALL apoc.create.vNode(['PROJECT_COST'],{value: total_cost}) YIELD node AS cost
+        CALL apoc.create.vRelationship(org, 'WITH_COST', {}, cost) YIELD rel
+    RETURN org, stage_list, species_list, watershed_list, cost, rel;
+
+![Top candidates](img/parr/q5-top-candidates.png)
+
+**Topic 5 - Who would be the partners of the candidate organizations?***
+
+Again, it's simple to show what organizations the candidates used to work with.
+
+    MATCH (org1:LEAD_ORGANIZATION)-[r1:HAS_LEAD_ORGANIZATION]-(p:PROJECT)-[r2:HAS_PROJECT_PARTNER]-(org2:LEAD_ORGANIZATION)
+        WHERE org1 <> org2
+    WITH DISTINCT([org1, org2]) AS lo, COLLECT([r1, r2]) AS rc, COLLECT(p) AS pc
+    WITH lo, rc, pc
+        OPTIONAL MATCH (p:PROJECT)-[r:HAS_WATERSHED]-(w)
+            WHERE p IN pc
+    WITH lo, rc, pc, COLLECT([r, w]) AS wc
+        OPTIONAL MATCH (p1:PROJECT)-[r]-(p2:PROJECT)
+            WHERE p1 IN pc AND p2 IN pc
+    RETURN lo, rc, pc, wc, r;
+
+![Candidates' partners](img/parr/q5-candidate-partners.png)
+
+#### Part 2 - Setup database
+
+**Extra 1: Check neo4j version and verify if APOC library is ready**
+
+    CALL dbms.components()
+    YIELD name, versions, edition
+    UNWIND versions AS version
+    RETURN name, version, edition;
+
+    RETURN apoc.version();
+
+**Extra 2: Clean up database, drop all constrainst and indexes, and remove custom procedures**
+
+    MATCH (a)-[r]->() DELETE a, r;
+    MATCH (a) DELETE a;
+    CALL apoc.schema.assert(NULL, NULL, TRUE);
+    CALL apoc.custom.removeProcedure('nlp_import');
+
+**Extra 3: Setup database**
+
+In this section we will set up the database by executing the processing pipeline.
+- create unique constraints and indexes (the schema skeleton)
+- import geographical entities, postal codes, and First nation info from Geonames.org, bcafn.org, and gov.bc.ca
+- import PaRR projects
+
+Note: You can ignore this step if the database has been setup. Otherwise click and perform all queries, one-by-one. Do not leave out any of them and keep them executed in order of apperance.

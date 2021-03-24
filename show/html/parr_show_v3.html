@@ -70,7 +70,420 @@
 
 <slide class="row-fluid">
   <div class="col-sm-12">
-    <h3>Step 0 - Check database</h3>
+    <h3>5 Questions</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>In this section 5 questions are addressed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Q1: Where are the projects? What are the nearest popoluated places? How far are they from each other? How project sites from the same project can be viewed? How this view is change over time?
+Focus: Panoramic view of the projects in geographical context, with time-based snapshot.
+Graph technology: shortest path and traversal filtering</p>
+</li>
+<li>
+<p>Q2: Who are the lead organizations? Are they local entities? How can they be measured based on what they have done?
+Focus: Overview of the roles and relationships of lead organizations to projects, setting up proven track record.
+Graph technology: tree construction and data aggregation</p>
+</li>
+<li>
+<p>Q3: Are there similar projects aiming at same set of target species and life stages, with same or different fundding sources?
+Focus: Measure similarities based on common objectives, closer look.
+Graph technology: set intersection similarity with geographical spatial distance constraint</p>
+</li>
+<li>
+<p>Q4: At which watershed certain species at certain life stage have not been benefitted from the projects?
+Focus: Looking for what have not been there.
+Graph technology: tree construction and traversal filtering</p>
+</li>
+<li>
+<p>Q5: Given a set of parameters for a location, which lead organization and partners could be selected for such project execution?
+Focus: Multi-goal objective based on learned past experience.
+Graph technology: minimal spanning tree.</p>
+</li>
+</ul>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 1 - Panoramic view - All projects in a single view</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>The geographical entities of British Columbia are arranged into a large tree structure.</p>
+</div>
+<div class="paragraph">
+<p>The query below constructs a graph by:
+- locating the nearest populated place (from Geonames data) for each project,
+- tracing the tree branches connecting the places to the root</p>
+</div>
+<div class="paragraph">
+<p>The result is a subtree of the British Columbia geographical tree, with the projects as leaves, each connected to the nearest geo-location. The distance, rounded to the nearest kilometer, is displayed on the relationship between the project and its nearest location.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (province:GEO_LOCATION {name: "British Columbia"})
+WITH province
+	MATCH (project:PROJECT)-[rel:PLACE_NEARBY]-&gt;(place)
+WITH province, project, rel, place
+	MATCH path=shortestPath((place)-[:WITH_IN*1..]-(province))
+RETURN province, project, rel, place, path;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 1 - Yearly snapshot - Choose a year and view the picture</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>The all-project graph contains all projects over the years. Here how&#8217;s you can choose the 2016 snapshot.</p>
+</div>
+<div class="paragraph">
+<p>First click on the query below in order to move its content into the query editor. Change the year to one of 2016, 2017, &#8230;&#8203;, 2022 and then run it by clicking on the blue arrow on the right of the query editor to set the year parameter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->:param year =&gt; 2016;<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the year parameter is set, you can rerun the query to view only projects in 2016.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (province:GEO_LOCATION {name: "British Columbia"})
+WITH province
+  MATCH (project:PROJECT)-[rel:PLACE_NEARBY]-&gt;(place)
+	  WHERE project.project_duration IS NOT NULL
+      AND apoc.meta.cypher.type(project.project_duration) = 'LIST OF INTEGER'
+      AND project.project_duration[0] &lt;= $year
+      AND $year &lt;= project.project_duration[1]
+WITH province, project, rel, place
+	MATCH path=shortestPath((place)-[:WITH_IN*1..]-(province))
+RETURN province, project, rel, place, path;<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can reset the year parameter by choosing the year param setting again and then run the project query again for other yearly snapshot.</p>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 2 - Learned insights - All lead organizations in one view</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>Since the projects are more likely watershed specific, so it is also very likely that the project lead organizations more or less local ones. The diagram shows that there are only a few who works for projects in different watersheds.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (project:PROJECT)-[rel1]-(organization:LEAD_ORGANIZATION)
+WITH  project, rel1, organization
+	OPTIONAL MATCH (project)-[rel2:HAS_WATERSHED]-(watershed)
+RETURN project, rel1, organization, rel2, watershed<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 2 - Learned insights - What did the highest sum of total costs of completed projects by a lead organization bring?</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>Using traversal aggregation, we look at all projects indicated as completed by each lead organization. Furthermore, target species and life stages of all completed project are combined to provide a full picture. Note that it can be seen that how many projects contribute to a target species or life stage.</p>
+</div>
+<div class="paragraph">
+<p>An interesting feature here is that the result is created as a partital virtual graph. Some nodes and edges are created only for this view, they make the view much simple but still comprehensive.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (org:LEAD_ORGANIZATION)-[:HAS_LEAD_ORGANIZATION]-(project:PROJECT)-[:HAS_PROJECT_PHASE]-(:PROJECT_PHASE {uid: "Completed"})
+WITH DISTINCT(project.pid) AS pid, org, COLLECT(project) AS project_list
+WITH org, COLLECT(project_list[0]) AS project_list
+  MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_LIFE_STAGE]-(stg)
+    WHERE project IN project_list
+WITH DISTINCT(stg) AS stg, org, project_list, COUNT(DISTINCT(project)) AS n_of_p
+	CALL apoc.create.vRelationship(org, 'WITH_LIFE_STAGE', {projects: n_of_p}, stg) YIELD rel
+WITH org, project_list, COLLECT([stg, rel]) AS stg_list
+	MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_TARGET_SPECIES]-(species)
+    WHERE project IN project_list AND EXISTS(species.name)
+WITH DISTINCT(species) AS species, org, project_list, stg_list, COUNT(DISTINCT(project)) AS n_of_p
+	CALL apoc.create.vRelationship(org, 'WITH_TARGET_SPECIES', {projects: n_of_p}, species) YIELD rel
+WITH org, project_list, stg_list, COLLECT([species, rel]) AS species_list
+	MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_WATERSHED]-(wsh)
+    WHERE project IN project_list
+WITH DISTINCT(wsh) AS wsh, org, project_list, stg_list, species_list, COUNT(DISTINCT(project)) AS n_of_p
+	CALL apoc.create.vRelationship(org, 'WITH_WATERSHED', {projects: n_of_p}, wsh) YIELD rel
+WITH DISTINCT(org) AS org, project_list, stg_list, species_list, COLLECT([wsh, rel]) AS wsh_list
+WITH org, stg_list, species_list, wsh_list, apoc.coll.sum([project IN project_list | CASE project.the_total_cost_of_the_project IS NOT NULL WHEN TRUE THEN project.the_total_cost_of_the_project ELSE 0 END]) AS total_cost
+	CALL apoc.create.vNode(['PROJECT_COST'],{cost: total_cost}) YIELD node AS cost_node
+  CALL apoc.create.vRelationship(org, 'WITH_COST', {}, cost_node) YIELD rel
+WITH org, stg_list, species_list, wsh_list, cost_node, rel ORDER BY total_cost DESC
+RETURN org, stg_list, species_list, wsh_list, cost_node, rel LIMIT 1;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 3 - Clusters of nearby projects funded by same sources</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>In this topic, first we look for all projects that aim at the same tager species AND same life stages and are very near to each other (within 2000 meters)). They could be funded by the same set of organizations or sources.</p>
+</div>
+<div class="paragraph">
+<p>The query below shows 1 cluster of different nearby projects with same objectives having funded by the same G&amp;C funding source.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (project:PROJECT)
+WITH DISTINCT(project.pid) AS pid, COLLECT(project) AS project_list
+WITH COLLECT(project_list[0]) AS project_list
+	MATCH (first_project)-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project)-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+		WHERE first_project &lt;&gt; second_project
+      AND first_project IN project_list
+      AND second_project IN project_list
+      AND DISTANCE(first_project.location, second_project.location) &lt; 2000
+WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+	MATCH (first_project)-[r1:HAS_GC_FUNDING_SOURCE]-(source)-[r2:HAS_GC_FUNDING_SOURCE]-(second_project)
+WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path
+	CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+RETURN first_project, second_project, objective_path, funding_path, rel;<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The query below shows 4 clusters of different nearby projects with same objectives having other funding sources the same set of organizations.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (project:PROJECT)
+WITH DISTINCT(project.pid) AS pid, COLLECT(project) AS project_list
+WITH COLLECT(project_list[0]) AS project_list
+	MATCH (first_project)-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project)-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+		WHERE first_project &lt;&gt; second_project
+      AND first_project IN project_list
+      AND second_project IN project_list
+      AND DISTANCE(first_project.location, second_project.location) &lt; 2000
+WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+	MATCH (first_project)-[r1:HAS_OTHER_FUNDING_SOURCE]-(source)-[r2:HAS_OTHER_FUNDING_SOURCE]-(second_project)
+WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path
+	CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+RETURN first_project, second_project, objective_path, funding_path, rel;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 3 - Closer look at a pairs of projects</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>A closer look - at a pair of projects (16-HPAC-00395 and COA-F18-F-2396\n(Ecocat ID 54487)) can reveal more details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (first_project:PROJECT {pid: "16-HPAC-00395"})-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project:PROJECT {pid: "COA-F18-F-2396\n(Ecocat ID 54487)"})-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+	MATCH (first_project)-[r1:HAS_OTHER_FUNDING_SOURCE]-(source)-[r2:HAS_OTHER_FUNDING_SOURCE]-(second_project), (first_project)-[r3:HAS_ECO_SYSTEM_TYPE]-(eco)-[r4:HAS_ECO_SYSTEM_TYPE]-(second_project)
+WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path, COLLECT([r3, eco, r4]) AS eco_path
+	CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+RETURN first_project, second_project, objective_path, funding_path, eco_path, rel;<!--/code--></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another closer look - at a pair of projects (16-HPAC-00395 and COA-F18-F-2396\n(Ecocat ID 54487)) can reveal more details.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (first_project:PROJECT {pid: "COA-F18-F-2362\n(Ecocat ID 54480)"})-[r1:HAS_LIFE_STAGE]-(stage)-[r2:HAS_LIFE_STAGE]-(second_project:PROJECT {pid: "COA-F18-F-2485\n(Ecocat ID 55505)"})-[r3:HAS_TARGET_SPECIES]-(species)-[r4:HAS_TARGET_SPECIES]-(first_project)
+WITH DISTINCT([first_project, second_project]) AS pair, COLLECT([r1, stage, r2, r3, species, r4]) AS objective_path
+WITH pair[0] AS first_project, pair[1] AS second_project, objective_path
+	MATCH (first_project)-[r1:HAS_OTHER_FUNDING_SOURCE]-(source)-[r2:HAS_OTHER_FUNDING_SOURCE]-(second_project), (first_project)-[r3:HAS_ECO_SYSTEM_TYPE]-(eco)-[r4:HAS_ECO_SYSTEM_TYPE]-(second_project)
+WITH first_project, second_project, objective_path, COLLECT([r1, source, r2]) AS funding_path, COLLECT([r3, eco, r4]) AS eco_path
+	CALL apoc.create.vRelationship(first_project, 'DISTANCE', {d: apoc.math.round(DISTANCE(first_project.location, second_project.location), 0, 'FLOOR')}, second_project) YIELD rel
+RETURN first_project, second_project, objective_path, funding_path, eco_path, rel;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 4 - Looking for what is not there</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>The query aims to analyze what watershed have projects for a number of life stages but not all of them. The result is to reveal what number of projects support different target species and life stages. Obviously what are not on the display, are not supported by the projects.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (stage:LIFE_STAGE)
+	WHERE stage.name &lt;&gt; 'All stages'
+WITH COLLECT(DISTINCT(stage)) AS all_stage_list
+	MATCH (watershed:WATERSHED)
+WITH all_stage_list, watershed
+	MATCH (watershed)-[:HAS_WATERSHED]-(project:PROJECT)-[:HAS_LIFE_STAGE]-(stage)
+WITH watershed, all_stage_list, COLLECT(DISTINCT(stage)) AS stage_list, COUNT(DISTINCT(project)) AS n_of_p
+WITH watershed, all_stage_list, stage_list, n_of_p
+	WHERE SIZE(stage_list) &lt; SIZE(all_stage_list)
+WITH watershed, stage_list ORDER BY SIZE(stage_list)/SIZE(all_stage_list) DESC, n_of_p DESC
+WITH watershed
+	MATCH (watershed)-[:HAS_WATERSHED]-(project:PROJECT)-[:HAS_LIFE_STAGE]-(stage)
+WITH DISTINCT(stage) AS stage, watershed, COUNT(DISTINCT(project)) AS n_of_p
+	CALL apoc.create.vRelationship(watershed, 'WITH_LIFE_STAGE', {projects: n_of_p}, stage) YIELD rel
+WITH watershed, COLLECT([stage, rel]) AS objective_path_1
+	MATCH (watershed)-[:HAS_WATERSHED]-(project:PROJECT)-[:HAS_TARGET_SPECIES]-(species)
+    	WHERE EXISTS(species.name)
+WITH DISTINCT(species) AS species, watershed, objective_path_1, COUNT(DISTINCT(project)) AS n_of_p
+	CALL apoc.create.vRelationship(watershed, 'WITH_TARGET_SPECIES', {projects: n_of_p}, species) YIELD rel
+RETURN watershed, objective_path_1, COLLECT([species, rel]) AS objective_path_2;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 5 - Matching multiple objectives</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>What lead organization would be suitable to implement a project:
+- at Lower Fraser watershed
+- supporting freshwater juvenile and returning adult
+- aiming at target species of Sockeye Salmon, Chinook Salmon, and Salish Sucker
+- have been completed projects with total value at least $50,000</p>
+</div>
+<div class="paragraph">
+<p>Turned out, there might not be a single of them satifying all conditions, but three candidates are nearly good.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (project:PROJECT)-[:HAS_PROJECT_PHASE]-(:PROJECT_PHASE {uid: "Completed"})
+WITH DISTINCT(project.pid) AS pid, COLLECT(project) AS project_list
+WITH COLLECT(project_list[0]) AS project_list
+	MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_LIFE_STAGE]-(stage:LIFE_STAGE)
+    	WHERE project IN project_list AND stage.uid IN ["Freshwater juvenile", "Returning adult"]
+WITH DISTINCT(stage) AS stage, org, project_list, COUNT(DISTINCT(project)) AS count
+	CALL apoc.create.vRelationship(org, 'WITH_LIFE_STAGE', {projects: count}, stage) YIELD rel
+WITH org, project_list, COLLECT([stage, rel]) AS stage_list
+	MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_TARGET_SPECIES]-(species:TARGET_SPECIES)
+    	WHERE project IN project_list AND EXISTS(species.name) AND species.uid IN ["SK", "CH", "SSU"]
+WITH DISTINCT(species) AS species, org, project_list, stage_list, COUNT(DISTINCT(project)) AS count
+	CALL apoc.create.vRelationship(org, 'WITH_TARGET_SPECIES', {projects: count}, species) YIELD rel
+WITH org, project_list, stage_list, COLLECT([species, rel]) AS species_list
+	MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)-[:HAS_WATERSHED]-(watershed:WATERSHED {uid: "Lower Fraser"})
+    	WHERE project IN project_list
+WITH DISTINCT(watershed) AS watershed, org, project_list, stage_list, species_list, COUNT(DISTINCT(project)) AS count
+	CALL apoc.create.vRelationship(org, 'WITH_WATERSHED', {projects: count}, watershed) YIELD rel
+WITH DISTINCT(org) AS org, project_list, stage_list, species_list, COLLECT([watershed, rel]) AS watershed_list
+	MATCH (org)-[:HAS_LEAD_ORGANIZATION]-(project)
+    	WHERE project IN project_list
+WITH org, stage_list, species_list, watershed_list, SUM(CASE project.the_total_cost_of_the_project IS NOT NULL WHEN TRUE THEN project.the_total_cost_of_the_project ELSE 0 END) AS total_cost
+WITH org, stage_list, species_list, watershed_list, total_cost
+	WHERE total_cost &gt; 50000
+WITH org, stage_list, species_list, watershed_list, total_cost
+	CALL apoc.create.vNode(['PROJECT_COST'],{value: total_cost}) YIELD node AS cost
+    CALL apoc.create.vRelationship(org, 'WITH_COST', {}, cost) YIELD rel
+RETURN org, stage_list, species_list, watershed_list, cost, rel;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Topic 5 - Who would be the partners of the candidate organizations?</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>Again, it&#8217;s simple to show what organizations the candidates used to work with.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->MATCH (org1:LEAD_ORGANIZATION)-[r1:HAS_LEAD_ORGANIZATION]-(p:PROJECT)-[r2:HAS_PROJECT_PARTNER]-(org2:LEAD_ORGANIZATION)
+	WHERE org1 &lt;&gt; org2
+WITH DISTINCT([org1, org2]) AS lo, COLLECT([r1, r2]) AS rc, COLLECT(p) AS pc
+WITH lo, rc, pc
+	OPTIONAL MATCH (p:PROJECT)-[r:HAS_WATERSHED]-(w)
+    	WHERE p IN pc
+WITH lo, rc, pc, COLLECT([r, w]) AS wc
+	OPTIONAL MATCH (p1:PROJECT)-[r]-(p2:PROJECT)
+    	WHERE p1 IN pc AND p2 IN pc
+RETURN lo, rc, pc, wc, r;<!--/code--></pre>
+</div>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Thank you</h3>
+    <br/>
+    <div>
+      <div class="paragraph">
+<p>All questions, comments, suggestions are welcome!</p>
+</div>
+<div class="paragraph">
+<p>Thank you!</p>
+</div>
+	</div>
+  </div>
+</slide>
+
+
+
+<slide class="row-fluid">
+  <div class="col-sm-12">
+    <h3>Extra 1: Check neo4j version and verify if APOC library is ready</h3>
     <br/>
     <div>
       <div class="listingblock">
@@ -94,7 +507,7 @@ RETURN name, version, edition;<!--/code--></pre>
 
 <slide class="row-fluid">
   <div class="col-sm-12">
-    <h3>Step 1 - Clean up database</h3>
+    <h3>Extra 2: Clean up database, drop all constrainst and indexes, and remove custom procedures</h3>
     <br/>
     <div>
       <div class="listingblock">
@@ -113,64 +526,30 @@ CALL apoc.custom.removeProcedure('nlp_import');<!--/code--></pre>
 
 <slide class="row-fluid">
   <div class="col-sm-12">
-    <h3>Step 2 - Schema and custom procedures</h3>
+    <h3>Extra 3: Setup database</h3>
     <br/>
     <div>
-      <div class="listingblock">
+      <div class="paragraph">
+<p>In this section we will set up the database by executing the processing pipeline.
+- create unique constraints and indexes (the schema skeleton)
+- import geographical entities, postal codes, and First nation info from Geonames.org, bcafn.org, and gov.bc.ca
+- import PaRR projects</p>
+</div>
+<div class="paragraph">
+<p>Note: You can ignore this step if the database has been setup. Otherwise click on the shaded rectangle containing the query. It will be copied into the query editor above and you just need to click on the blue arrow button on the right side to run it.</p>
+</div>
+<div class="paragraph">
+<p>1 - Create unique constraints and indexes (the schema skeleton)</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->// Note: This script will be processed by neo4j-shell utility
-// All comments in Java Style: line preceded by //
-// Its syntax must be list of cypher queries and neo4j-shell commands
-// separated by ';'
-//
-// CONSTRAINTS AND INDEXES
-//
-// 1. Create unique constraint
-// CREATE CONSTRAINT ON (n:Label) ASSERT n.property IS UNIQUE;
-//
-// 2. Create a single-property index
-// CREATE INDEX ON :Label(property);
-//
-// 3. Create a composite index
-// CREATE INDEX ON :Label(prop1, …​, propN);
-//
-// 4. Create node property existence constraint
-// CREATE CONSTRAINT ON (n:Label) ASSERT EXISTS(n.property);
-//
-// 5. Create relationship property existence constraint
-// CREATE CONSTRAINT ON ()-[r:relationshipType]-() ASSERT EXISTS(r.property);
-//
-// 6. Create a Node Key
-// ASSERT (variable.propertyName_1, …​, variable.propertyName_n) IS NODE KEY;
-//
-////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////
-//
-// NLP data: all node labels have 'NLP_' as prefix
-//
-////////////////////////////////////////////////////////////////////////
-//
-// Document
-//
-CREATE CONSTRAINT ON (n:DOCUMENT) ASSERT n.uid IS UNIQUE;
-// - uid: the unique identifier of a document (e.g. file name)
-//
-// Sentence
-//
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->CREATE CONSTRAINT ON (n:DOCUMENT) ASSERT n.uid IS UNIQUE;
 CREATE CONSTRAINT ON (n:SENTENCE) ASSERT n.uid IS UNIQUE;
-//
 CREATE INDEX ON :SENTENCE(c);
-// - c is the textual content, it is  indexed
 CREATE INDEX ON :SENTENCE(s);
-// - s is the sentiment score, it is an indexed integer
 CREATE INDEX ON :SENTENCE(n);
-// - n is the numner of occurences of the sentence
-//
-// Named Entity
-//
+
 CREATE CONSTRAINT ON (n:NAMED_ENTITY) ASSERT n.c IS UNIQUE;
-// - c is the textual content, it is unique and indexed
 CREATE CONSTRAINT ON (n:NAMED_ENTITY_CARDINAL) ASSERT n.c IS UNIQUE;
 CREATE CONSTRAINT ON (n:NAMED_ENTITY_DATE) ASSERT n.c IS UNIQUE;
 CREATE CONSTRAINT ON (n:NAMED_ENTITY_EVENT) ASSERT n.c IS UNIQUE;
@@ -189,36 +568,17 @@ CREATE CONSTRAINT ON (n:NAMED_ENTITY_PRODUCT) ASSERT n.c IS UNIQUE;
 CREATE CONSTRAINT ON (n:NAMED_ENTITY_QUANTITY) ASSERT n.c IS UNIQUE;
 CREATE CONSTRAINT ON (n:NAMED_ENTITY_TIME) ASSERT n.c IS UNIQUE;
 CREATE CONSTRAINT ON (n:NAMED_ENTITY_WORK_OF_ART) ASSERT n.c IS UNIQUE;
-// - the entity type label (18 named entity types, e.g. PERSON)
 CREATE INDEX ON :NAMED_ENTITY(n);
-// - n is the number of occurences of the entity
-//
-// Key Phrase
-//
-CREATE CONSTRAINT ON (n:KEY_PHRASE) ASSERT n.c IS UNIQUE;
-// - c is the textual content, it is unique and indexed
-CREATE INDEX ON :KEY_PHRASE(n);
-// - n is the numner of occurences of the key phrase
-//
-// Lemmatized word
-//
-CREATE CONSTRAINT ON (n:WORD) ASSERT n.l IS UNIQUE;
-// - l is the lemma form of the text, it is unique and indexed
-CREATE INDEX ON :WORD(n);
-////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////
-//
-// Geonames data: all node labels have 'GN_' as prefix
-//
-// Feature Codes
-//
+CREATE CONSTRAINT ON (n:KEY_PHRASE) ASSERT n.c IS UNIQUE;
+CREATE INDEX ON :KEY_PHRASE(n);
+CREATE CONSTRAINT ON (n:WORD) ASSERT n.l IS UNIQUE;
+CREATE INDEX ON :WORD(n);
+
 CREATE CONSTRAINT ON (n:GEO_FEATURE) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :GEO_FEATURE(name);
 CREATE INDEX ON :GEO_FEATURE(desc);
-//
-// Named locations
-//
+
 CREATE CONSTRAINT ON (n:GEO_LOCATION) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :GEO_LOCATION(name);
 CREATE INDEX ON :GEO_LOCATION(ascii_name);
@@ -227,138 +587,73 @@ CREATE INDEX ON :GEO_LOCATION(feature);
 CREATE INDEX ON :GEO_LOCATION(location);
 CREATE INDEX ON :GEO_LOCATION(admin_code);
 CREATE INDEX ON :GEO_LOCATION(population);
-//
-// Postal codes
-//
+
 CREATE CONSTRAINT ON (n:CA_POST_CODE) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :CA_POST_CODE(place_name);
 CREATE INDEX ON :CA_POST_CODE(location);
-CREATE INDEX ON :CA_POST_CODE(centroid);
-//
-////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////
-//
-// British Columbia First Nations data: all node labels have 'FN_' as prefix
-//
-// First Nation Entity
-//
 CREATE CONSTRAINT ON (n:BC_FIRST_NATION) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :BC_FIRST_NATION(name);
 CREATE INDEX ON :BC_FIRST_NATION(address);
 CREATE INDEX ON :BC_FIRST_NATION(location);
-//
-// First Nation Group
-//
+
 CREATE CONSTRAINT ON (n:BC_NATION_COUNCIL) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :BC_NATION_COUNCIL(name);
-//
-// First Nation Region
-//
+
 CREATE CONSTRAINT ON (n:BC_GEO_REGION) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :BC_GEO_REGION(name);
-//
-////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////
-//
-// Project specific data
-//
 CREATE CONSTRAINT ON (n:PROJECT) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :PROJECT(pid);
 CREATE INDEX ON :PROJECT(name);
 CREATE INDEX ON :PROJECT(desc);
-//
-// Project Contact
-//
+
 CREATE CONSTRAINT ON (n:CONTACT_PERSON) ASSERT n.name IS UNIQUE;
 CREATE INDEX ON :CONTACT_PERSON(tel);
 CREATE INDEX ON :CONTACT_PERSON(email);
-//
-// Project Organization
-//
+
 CREATE CONSTRAINT ON (n:ORGANIZATION) ASSERT n.uid IS UNIQUE;
 CREATE INDEX ON :ORGANIZATION(name);
-//
-// GC Funding Sources
-//
-CREATE CONSTRAINT ON (n:GC_FUNDING_SOURCE) ASSERT n.uid IS UNIQUE;
-//
-// Project Location
-//
+
+CREATE CONSTRAINT ON (n:LEAD_ORGANIZATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :LEAD_ORGANIZATION(name);
+
+CREATE CONSTRAINT ON (n:GC_FUNDING_PROGRAM) ASSERT n.uid IS UNIQUE;
+
 CREATE CONSTRAINT ON (n:WATERSHED) ASSERT n.uid IS UNIQUE;
-//
-// DFO Area
-//
+
 CREATE CONSTRAINT ON (n:DFO_AREA) ASSERT n.uid IS UNIQUE;
-//
-// Policy and Program Connections
-//
+
 CREATE CONSTRAINT ON (n:POLICY_PROGRAM) ASSERT n.uid IS UNIQUE;
-//
-// Project Phase
-//
+
 CREATE CONSTRAINT ON (n:PROJECT_PHASE) ASSERT n.uid IS UNIQUE;
-//
-// Eco System Types
-//
+
 CREATE CONSTRAINT ON (n:ECO_SYSTEM_TYPE) ASSERT n.uid IS UNIQUE;
-//
-// Project Primary Activities
-//
+
 CREATE CONSTRAINT ON (n:PROJECT_ACTIVITY) ASSERT n.uid IS UNIQUE;
-//
-// Species
-//
+
 CREATE CONSTRAINT ON (n:SPECIES) ASSERT n.uid IS UNIQUE;
+
 CREATE CONSTRAINT ON (n:TARGET_SPECIES) ASSERT n.uid IS UNIQUE;
-//
-// Life Stages
-//
+
 CREATE CONSTRAINT ON (n:LIFE_STAGE) ASSERT n.uid IS UNIQUE;
-//
-// Restoration Activities
-//
+
 CREATE CONSTRAINT ON (n:RESTORATION_ACTIVITY) ASSERT n.uid IS UNIQUE;
-//
-// Habitat Outcome Metric
-//
+
 CREATE CONSTRAINT ON (n:HABITAT_OUTCOME_METRIC) ASSERT n.uid IS UNIQUE;
-//
-// Monitoring objectives
-//
+
 CREATE CONSTRAINT ON (n:MONITORING_OBJECTIVE) ASSERT n.uid IS UNIQUE;
-//
-// Monitoring activites
-//
+
 CREATE CONSTRAINT ON (n:MONITORING_ACTIVITY) ASSERT n.uid IS UNIQUE;
-//
-// Monitoring design
-//
+
 CREATE CONSTRAINT ON (n:MONITORING_DESIGN) ASSERT n.uid IS UNIQUE;
-//
-// Season monitored
-//
+
 CREATE CONSTRAINT ON (n:SEASON_MONITORED) ASSERT n.uid IS UNIQUE;
-//
-////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////
-//
-// List all constraints
 CALL db.constraints();
-//
-// List all indexes
 CALL db.indexes();
-//
-// Wait for all indexes online
 CALL db.awaitIndexes();
-//
-////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-// Call the nlp micro service to process the documents.
-//
 CALL apoc.custom.asProcedure(
   'nlp_import',
   'WITH $n AS n
@@ -408,38 +703,16 @@ CALL apoc.custom.asProcedure(
   [['result','NODE']],
   [['n','NODE'], ['nlp_service','STRING'], ['input','STRING']]
 );
-//
-CALL apoc.custom.list;
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// CALL apoc.custom.list;
-//
-// CALL apoc.custom.removeProcedure('nlp_import');
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
+CALL apoc.custom.list;<!--/code--></pre>
 </div>
 </div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 3 - Geonames and Postal codes</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
+<div class="paragraph">
+<p>2 - Import geographical entities, postal codes, and First nation info from Geonames.org, bcafn.org, and gov.bc.ca</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Load Geonames feature code data from the import/ directory
-//
-CALL apoc.periodic.iterate(
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->CALL apoc.periodic.iterate(
 "
   CALL apoc.load.csv('featureCodes_en.txt', {sep: 'TAB', nullValues: ['']})
     YIELD lineNo, map, list
@@ -453,10 +726,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:true
 });
-//
-//
-// Load Geonames Bristish Columbia data from the import/ directory
-//
+
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.csv('CA-BC-geonames.tsv', {sep: 'TAB', nullValues: ['']})
@@ -498,9 +768,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:1000, iterateList:true, parallel:true
 });
-//
-//
-//
+
 CALL apoc.periodic.iterate(
 "
   MATCH (n:GEO_LOCATION)
@@ -514,9 +782,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:1000, iterateList:true, parallel:false
 });
-//
-//
-//
+
 CALL apoc.periodic.iterate(
 "
   MATCH (n:GEO_LOCATION)
@@ -531,9 +797,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:1000, iterateList:true, parallel:false
 });
-//
-// Load Canada postal code data from the import/ directory
-//
+
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bc_pc_1.0.json')
@@ -549,9 +813,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:1000, iterateList:true, parallel:true
 });
-//
-// Load Geonames postal code data from the import/ directory
-//
+
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.csv('gn_pc_1.0.tsv', {sep: 'TAB', nullValues: ['']})
@@ -570,31 +832,37 @@ CALL apoc.periodic.iterate(
 {
     batchSize:1000, iterateList:true, parallel:true
 });
-//
+
 MATCH (n:CA_POST_CODE)
   WHERE NOT(EXISTS(n.location))
   SET n.location = n.centroid;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
 
+CALL apoc.periodic.iterate(
+"
+  MATCH (n:CA_POST_CODE)
+    WHERE EXISTS(n.location)
+  WITH n, n.location AS loc
+    MATCH (p:GEO_LOCATION)
+      WHERE p.name IN n.place_name
+        AND p.feature STARTS WITH 'P.PPL'
+  RETURN DISTINCT(n) AS n, COLLECT([p, ROUND(DISTANCE(loc, p.location)/1000)]) AS pc
+", "
+  WITH n, pc, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] &lt; m[1] WHEN TRUE THEN e ELSE m END) AS match
+  WITH n, [e IN pc WHERE e[1] = match[1] | e[0]] AS ll, match[1] AS d
+  WITH n, ll, d
+    FOREACH (p IN ll |
+      MERGE (n)-[r:PLACE_NEARBY]-&gt;(p)
+        SET r.d = d
+    )
+",
+{
+    batchSize:100, iterateList:true, parallel:false
+});
 
+MATCH (g:GEO_LOCATION)
+  WHERE g.feature STARTS WITH 'A.ADM'
+    SET g:GEO_ADM;
 
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 4 - First Nation data</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Load First Nation data from the import/ directory
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bcgov_fn_2.0.json')
@@ -617,12 +885,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:true
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Load First Nation Group data from the import/ directory
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bcgov_og_2.0.json')
@@ -645,12 +908,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:true
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link First Nation to First Nation Group
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bcgov_og_2.0.json')
@@ -668,12 +926,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Load First Nation Region data from the import/ directory
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bcafn_2.0.json')
@@ -709,12 +962,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:true
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link First Nation Group to First Nation Region
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bcafn_2.0.json')
@@ -736,12 +984,7 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link First Nation Group to First Nation Region
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('bcafn_2.0.json')
@@ -791,82 +1034,53 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link First Nation with location of its addess postal code
-//
 MATCH (n:BC_FIRST_NATION)
 	WHERE EXISTS(n.address) AND n.address &lt;&gt; ''
 WITH n, REPLACE(SUBSTRING(n.address, SIZE(n.address)-7), ' ', '') AS zip
 WITH n, zip
 	MATCH (p:CA_POST_CODE {uid: zip})
 		MERGE (n)-[:AT_ZIP]-&gt;(p);
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link First Nation with same name, nearest populated place on Geonames
-//
-MATCH (n:BC_FIRST_NATION)-[:AT_ZIP]-&gt;(z)
+MATCH (n:FN_E)-[:FN_AT_ZIP]-&gt;(z)
 WITH n, TRIM(SPLIT(n.address, ',')[SIZE(SPLIT(n.address, ','))-2]) AS place_name, CASE EXISTS(n.location) WHEN TRUE THEN n.location ELSE z.location END AS loc
 WITH n, place_name, loc
-	MATCH (p:GEO_LOCATION {name: place_name})
+	MATCH (p:GN_NE {name: place_name})
     	WHERE p.feature STARTS WITH 'P.PPL'
         OR p.feature STARTS WITH 'A.ADM'
         OR p.feature STARTS WITH 'L.RESV'
-WITH DISTINCT(n) AS n, COLLECT([p, DISTANCE(loc, p.location)]) AS pc
-WITH n, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] &lt; m[1] WHEN TRUE THEN e ELSE m END) AS match
-WITH n, match[0] AS p
-  MERGE (n)-[:NEAR_BY_PLACE]-&gt;(p);
-//
-////////////////////////////////////////////////////////////////////////////////
+WITH DISTINCT(n) AS n, COLLECT([p, ROUND(DISTANCE(loc, p.location)/1000)]) AS pc
+WITH n, pc, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] &lt; m[1] WHEN TRUE THEN e ELSE m END) AS match
+WITH n, [e IN pc WHERE e[1] = match[1] | e[0]] AS ll, match[1] AS d
+WITH n, ll, d
+  FOREACH (p IN ll |
+    MERGE (n)-[r:PLACE_NEARBY]-&gt;(p)
+      SET r.d = d
+  );
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Call the nlp micro service to process First Nation's name.
-//
 MATCH (n:BC_FIRST_NATION)
-  WITH n, [apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]])] AS input
+  WITH n, [
+      apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]]),
+      apoc.map.fromPairs([['u', 'pref_name'], ['c', CASE n.pref_name IS NOT NULL WHEN TRUE THEN n.pref_name ELSE '' END]]),
+      apoc.map.fromPairs([['u', 'alt_name'], ['c', CASE n.alt_name IS NOT NULL WHEN TRUE THEN n.alt_name ELSE '' END]])
+    ] AS input
     CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
       YIELD result
 RETURN 1;
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Call the nlp micro service to process First Nation Council's name
-//
 MATCH (n:BC_NATION_COUNCIL)
   WITH n, [apoc.map.fromPairs([['u', 'name'], ['c', REDUCE(s=HEAD(n.name), e IN TAIL(n.name) | s+ '.\n\n'+ e)]])] AS input
     CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
       YIELD result
-RETURN 1;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
+RETURN 1;<!--/code--></pre>
 </div>
 </div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 5 - PaRR Projects</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
+<div class="paragraph">
+<p>3 - Import PaRR projects.</p>
+</div>
+<div class="listingblock">
 <div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// DFO Area
-//
-UNWIND [
+<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->UNWIND [
 	['FIA', 'Fraser and Interior Area'],
 	['NCA', 'North Coast Area'],
 	['SCA', 'South Coast Area'],
@@ -876,13 +1090,7 @@ WITH dfo_area
 	MERGE (n:DFO_AREA {uid: dfo_area[0]})
 		SET
 			n.name = dfo_area[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Policy and Program Connections
-//
 UNWIND [
 	['Species At Risk Act (SARA) Recovery Plans', 'Project supports implementation of priority activities described in federal recovery strategies, action plans or management plans for listed Species at Risk.'],
 	['COSEWIC Assessed Populations', 'Activities targeting species without federal recovery documents that seek to address habitats, threats and other considerations identified in COSEWIC assessments.'],
@@ -894,13 +1102,7 @@ WITH pr_policy
 	MERGE (n:POLICY_PROGRAM {uid: pr_policy[0]})
 		SET
 			n.name = pr_policy[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// G&amp;C Funding Sources
-//
 UNWIND [
 	['AFSAR', 'Aboriginal Fund for Species at Risk'],
 	['AHRF', 'Aquatic Habitat Restoration Fund'],
@@ -914,16 +1116,10 @@ UNWIND [
 	['RFCPP', 'Recreational Fisheries Conservation Partnership Program']
 ] AS pr_fndsrc
 WITH pr_fndsrc
-	MERGE (n:GC_FUNDING_SOURCE {uid: pr_fndsrc[0]})
+	MERGE (n:GC_FUNDING_PROGRAM {uid: pr_fndsrc[0]})
 		SET
 			n.name = pr_fndsrc[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Project Phase
-//
 UNWIND [
 	['Proposed', 'A project that has been proposed, but has not undergone the planning and design and feasibility phase.'],
 	['Planning', 'A proposed project in the developmental and technical planning stage, typically undergoing design and feasibility analysis.'],
@@ -934,13 +1130,6 @@ WITH pr_phase
 	MERGE (n:PROJECT_PHASE {uid: pr_phase[0]})
 		SET
 			n.name = pr_phase[1];
-//
-////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////////
-//
-// Project Primary Activities
-//
 UNWIND [
 	['Design and Feasibility', 'The development, technical planning, and/or feasibility analysis of a restoration project not in the project implementation stage (i.e. the actual physical application of a project).'],
 	['Decommissioning', 'The planned shut-down or removal of infrastructure, equipment, facilities, etc. from operation or usage.'],
@@ -953,13 +1142,7 @@ WITH pr_prmact
 	MERGE (n:PROJECT_ACTIVITY {uid: pr_prmact[0]})
 		SET
 			n.name = pr_prmact[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Eco System Types
-//
 UNWIND [
 	['Freshwater', 'Aquatic ecosystem with naturally occurring water that is neither seawater or brackish. Includes lakes, ponds, rivers, streams, and creeks. Includes Riparian.'],
 	['Estuarine', 'Aquatic ecosystem with naturally occurring water that is brackish and found at the interface where freshwater, usually from river and streams, mix with saltwater from the ocean.'],
@@ -969,13 +1152,6 @@ WITH ecosystyp
 	MERGE (n:ECO_SYSTEM_TYPE {uid: ecosystyp[0]})
 		SET
 			n.name = ecosystyp[1];
-//
-////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////////
-//
-// Target Species
-//
 UNWIND [
 	['BT', 'Bull Trout (Salvelinus confluentus) targeted in restoration activities.'],
 	['CH', 'Chinook Salmon (Oncorhynchus tshawytscha) targeted in restoration activities.'],
@@ -998,13 +1174,7 @@ WITH tgtspc
 	MERGE (n:TARGET_SPECIES:SPECIES {uid: tgtspc[0]})
 		SET
 			n.name = tgtspc[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Life Stages
-//
 UNWIND [
 	['Returning adult', 'Migrating adult and spawner stages.'],
 	['Estuarine juvenile', 'Marine and estuarine rearing life stages as juveniles grow into adults.'],
@@ -1015,13 +1185,7 @@ WITH lfestg
 	MERGE (n:LIFE_STAGE {uid: lfestg[0]})
 		SET
 			n.name = lfestg[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Restoration Activities
-//
 UNWIND [
 	['Fish passage', 'Removal and/or remediation of obstructions to improve access to habitat above and below those obstructions. Includes maintenance and effectiveness monitoring of fish passage removal structures.'],
 	['Riparian restoration and management', 'Restoration activities focused on re-establishing riparian habitat (e.g. riparian planting, riparian fencing, riparian bank stabilization, invasive species control, treatment, etc.). Includes maintenance and effectiveness monitoring of riparian habitat.'],
@@ -1038,13 +1202,7 @@ WITH resact
 	MERGE (n:RESTORATION_ACTIVITY {uid: resact[0]})
 		SET
 			n.name = resact[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Habitat Outcome Metric
-//
 UNWIND [
 	['Number of obstructions removed', 'The total number of obstructions removed for fish passage. Obstructions include dams, road crossings, berms, tidal gates, culverts or any other feature that impedes the upstream or downstream movement of fish.'],
 	['Number of fish screens installed', 'The total number of fish screens installed to prevent fish from being drawn into a aqueduct, water intake, dam, or other diversion on a river, lake, or waterway.'],
@@ -1101,13 +1259,7 @@ WITH hbtoutmtr
 	MERGE (n:HABITAT_OUTCOME_METRIC {uid: hbtoutmtr[0]})
 		SET
 			n.name = hbtoutmtr[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Socio-Economic Outcome
-//
 UNWIND [
 	['Number of volunteers involved', 'Number of volunteers involved in the planning and/or implementation of a restoration project.'],
 	['Number of hours of volunteer time donated', 'Number of volunteer hours donated to the planning and/or implementation of a restoration project.'],
@@ -1123,13 +1275,7 @@ WITH socecoout
 	MERGE (n:SOCIAL_OUTCOME_METRIC {uid: socecoout[0]})
 		SET
 			n.name = socecoout[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Monitoring objectives
-//
 UNWIND [
 	['Baseline information', 'Monitoring to collect baseline information at a proposed restoration site to inform restoration prioritization or to support feasibility analysis.'],
 	['Construction impacts', 'Monitoring conducted during the implementation of a restoration project, typically while construction is occurring to ensures restoration activities are not harming the site during implementation.'],
@@ -1142,13 +1288,7 @@ WITH monobj
 	MERGE (n:MONITORING_OBJECTIVE {uid: monobj[0]})
 		SET
 			n.name = monobj[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-//
-//
 UNWIND [
 	['Aerial surveys', 'Monitoring that employs aerial surveys.'],
 	['eDNA', 'Monitoring that employs environmental DNA (eDNA) collection from the environment (e.g. water, soil, feces).'],
@@ -1171,13 +1311,7 @@ WITH monact
 	MERGE (n:MONITORING_ACTIVITY {uid: monact[0]})
 		SET
 			n.name = monact[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-//
-//
 UNWIND [
 	['BA', 'Before-after design'],
 	['CI', 'Control-impact design'],
@@ -1191,13 +1325,7 @@ WITH mondsg
 	MERGE (n:MONITORING_DESIGN {uid: mondsg[0]})
 		SET
 			n.name = mondsg[1];
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-//
-//
 UNWIND [
 	['Fall'],
 	['Spring'],
@@ -1206,13 +1334,7 @@ UNWIND [
 ] AS seamon
 WITH seamon
 	MERGE (n:SEASON_MONITORED {uid: seamon[0]});
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Load PARR project data from the import/ directory
-//
 CALL apoc.periodic.iterate(
 "
   CALL apoc.load.json('parr_projects_2.1.json')
@@ -1272,7 +1394,7 @@ CALL apoc.periodic.iterate(
     )
     FOREACH (p IN map.project_lead_organization |
 			FOREACH (_ IN CASE p IN ['', 'N/A'] WHEN TRUE THEN [] ELSE [1] END |
-	      MERGE (pr_org:ORGANIZATION {uid: p})
+        MERGE (pr_org:ORGANIZATION:LEAD_ORGANIZATION {uid: p})
 	      MERGE (pr_org)&lt;-[:HAS_LEAD_ORGANIZATION]-(n)
 			)
     )
@@ -1291,7 +1413,7 @@ CALL apoc.periodic.iterate(
       MERGE (pr_loc)&lt;-[:HAS_WATERSHED]-(n)
     )
     FOREACH (p IN map.g_c_funding_sources |
-      MERGE (pr_fndsrc:GC_FUNDING_SOURCE {uid: p})
+      MERGE (pr_fndsrc:GC_FUNDING_PROGRAM {uid: p})
       MERGE (pr_fndsrc)&lt;-[:HAS_GC_FUNDING_SOURCE]-(n)
     )
     FOREACH (p IN map.other_funding_sources |
@@ -1362,25 +1484,13 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Call the nlp micro service to process organization's name
-//
 MATCH (n:ORGANIZATION)
 	WITH n, [apoc.map.fromPairs([['u', 'uid'], ['c', n.uid]])] AS input
     CALL custom.nlp_import(n, 'http://nlp:8000/process/', apoc.convert.toJson(input))
       YIELD result
 RETURN 1;
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Load PARR_PR name file from the import/ directory
-// Call the nlp micro service to process the documents.
-//
 CALL apoc.periodic.iterate(
 "
 	MATCH (n:PROJECT)
@@ -1402,400 +1512,98 @@ CALL apoc.periodic.iterate(
 {
     batchSize:100, iterateList:true, parallel:false
 });
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
 
+MATCH (n:PROJECT)
+WITH DISTINCT(n.pid) AS pid, COUNT(n) AS c
+WITH pid, c
+	WHERE c &gt; 1
+MATCH (n:PROJECT {pid: pid})
+	SET n:PROJECT_SITE;
 
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 6 - Linking entities</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Link project watershed_name with same name, nearest location on Geonames
-//
 MATCH (n:PROJECT)
   WHERE EXISTS(n.location)
-    AND EXISTS(n.watershed_name)
-WITH n, n.location AS loc, n.watershed_name AS place_name
-	MATCH (p:GEO_LOCATION {name: place_name})
+WITH n, n.location AS loc
+	MATCH (p:GEO_LOCATION)
+    WHERE p.feature STARTS WITH 'P.PPL'
 WITH DISTINCT(n) AS n, COLLECT([p, DISTANCE(loc, p.location)]) AS pc
-WITH n, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] &lt; m[1] WHEN TRUE THEN e ELSE m END) AS match
-WITH n, match[0] AS p
-  MERGE (n)-[:PLACE_NEAR_WATERSHED]-&gt;(p);
-//
-////////////////////////////////////////////////////////////////////////////////
+WITH n, pc, REDUCE(m=HEAD(pc), e IN TAIL(pc) | CASE e[1] &lt; m[1] WHEN TRUE THEN e ELSE m END) AS match
+WITH n, [e IN pc WHERE e[1] = match[1] | e[0]] AS ll, match[1] AS d
+WITH n, ll, d
+	FOREACH (p IN ll |
+    	MERGE (n)-[r:PLACE_NEARBY]-&gt;(p)
+        	SET r.d = ROUND(d/1000)
+  );
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link project orgs to FN entities
-//
+MATCH (n:PROJECT {pid: '19-NF-PAC-043'})
+WITH n
+  MATCH (p:GEO_LOCATION)
+    WHERE p.name CONTAINS "Chilliwack"
+      AND p.feature STARTS WITH "P.PPL"
+  MERGE (n)-[r:PLACE_NEARBY]-&gt;(p)
+    SET
+      r.d = 0.0;
+
 MATCH (n:ORGANIZATION)
 WITH n
 	MATCH (p:BC_FIRST_NATION)
     WHERE n.uid IN p.name
 WITH n, p
   MERGE (n)-[:IS_A_FIRST_NATION]-&gt;(p);
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Link project orgs to FN groups
-//
 MATCH (n:ORGANIZATION)
 WITH n
 	MATCH (p:BC_NATION_COUNCIL)
     WHERE n.uid IN p.name
 WITH n, p
   MERGE (n)-[:IS_A_NATION_COUNCIL]-&gt;(p);
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Create nearest neighbor graph within watershed
-//
 CALL apoc.periodic.iterate(
 "
-	MATCH (n:PROJECT)-[:HAS_WATERSHED]-(w)
-    WHERE NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]-&gt;()))
-	WITH DISTINCT(w) AS w, COLLECT(n) AS nc
+  MATCH (w:WATERSHED)
+  WITH w
+    MATCH (n:PROJECT)-[:HAS_WATERSHED]-(w)
+  WITH DISTINCT(w) AS w, COLLECT(n) AS nc
   RETURN nc
 ", "
   WITH nc
-    UNWIND nc AS n
-  WITH nc, n, [m IN nc WHERE m &lt;&gt; n AND NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]-&gt;(m))) | [DISTANCE(m.location, n.location), m]] AS dl
+	  UNWIND nc AS n
+  WITH nc, n, [m IN nc WHERE m &lt;&gt; n AND NOT(EXISTS((n)-[:NEAREST_IN_WATERSHED]-(m))) | [ROUND(DISTANCE(m.location, n.location)/1000), m]] AS dl
   WITH n, dl, REDUCE(h=HEAD(dl), e IN TAIL(dl) | CASE h[0] &lt; e[0] WHEN TRUE THEN h ELSE e END) AS md
-  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll
-  WITH n, ll
-    FOREACH (m IN ll |
+  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll, md[0] AS d
+  WITH n, ll, d
+	  FOREACH (m IN ll |
       MERGE (n)-[r:NEAREST_IN_WATERSHED]-&gt;(m)
-        SET
-          r.d = ROUND(DISTANCE(n.location, m.location)/1000)
+        SET r.d = d
     )
 ",
 {
     batchSize:10, iterateList:true, parallel:false
 });
-//
-////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Create nearest neighbor graph within same project
-//
 CALL apoc.periodic.iterate(
 "
 	MATCH (n:PROJECT)
-    	WHERE EXISTS(n.pid)
-        AND n.pid &lt;&gt;'NA'
-        AND n.number_of_sites &gt; 0
-        AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]-&gt;()))
-	WITH DISTINCT(n.pid) AS n, COLLECT(n) AS nc
+    WHERE EXISTS(n.pid)
+	WITH DISTINCT(n.pid) AS pid, COLLECT(n) AS nc
+    WITH pid, nc
+    	WHERE SIZE(nc) &gt; 1
   RETURN nc
 ", "
   WITH nc
     UNWIND nc AS n
-  WITH nc, n, [m IN nc WHERE m &lt;&gt; n AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]-&gt;(m))) | [DISTANCE(m.location, n.location), m]] AS dl
+  WITH nc, n, [m IN nc WHERE m &lt;&gt; n AND NOT(EXISTS((n)-[:NEAREST_IN_PROJECT]-(m))) | [ROUND(DISTANCE(m.location, n.location)/1000), m]] AS dl
   WITH n, dl, REDUCE(h=HEAD(dl), e IN TAIL(dl) | CASE h[0] &lt; e[0] WHEN TRUE THEN h ELSE e END) AS md
-  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll
-  WITH n, ll
+  WITH n, [e IN dl WHERE e[0] = md[0] | e[1]] AS ll, md[0] AS d
+  WITH n, ll, d
     FOREACH (m IN ll |
       MERGE (n)-[r:NEAREST_IN_PROJECT]-&gt;(m)
-        SET
-          r.d = ROUND(DISTANCE(n.location, m.location)/1000)
+        SET r.d = d
     )
 ",
 {
     batchSize:10, iterateList:true, parallel:false
-});
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
+});<!--/code--></pre>
 </div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Geo admin tree</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Geo admin tree
-//
-MATCH (n:GEO_LOCATION)
-  WHERE n.feature STARTS WITH 'A.ADM'
-RETURN n;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Terrace</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Terrace
-//
-MATCH (n:GEO_LOCATION {name: 'Terrace'})
-RETURN n;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: First Nation Tree</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// First Nation Tree
-//
-MATCH (m:BC_GEO_REGION)-[r1:HAS_ASSOCIATION]-(n)-[r2:HAS_MEMBER]-(o)
-RETURN m, r1, n, r2, o;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Table view of a project</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Basic info of a project
-//
-MATCH (n:PROJECT {pid: "19-NF-PAC-043"})
-WITH n
-	MATCH
-    	(n)-[:HAS_LEAD_ORGANIZATION]-(l),
-    	(n)-[:HAS_PROJECT_PARTNER|HAS_OTHER_FUNDING_SOURCE|HAS_GC_FUNDING_SOURCE]-(o),
-      (n)-[:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s),
-      (n)-[:HAS_WATERSHED]-(w)
-WITH n, l.uid AS log, COLLECT(DISTINCT(o.uid)) AS ppn, COLLECT(DISTINCT(s.uid)) AS sc, w.uid AS ws
-WITH n, log, ppn, sc, ws
-	MATCH
-    	(n)-[:HAS_NAMED_ENTITY]-(e),
-    	(n)-[:HAS_KEY_PHRASE]-(k)
-RETURN n.pid AS project_id, log AS lead, ppn AS partners, sc AS impact_species,
-  n.the_total_cost_of_the_project AS cost, ws AS watershed,
-  COLLECT(DISTINCT(e.c)) AS nec, COLLECT(DISTINCT(k.c)) AS kec;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Graph view of a project</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Basic info in graph view
-//
-MATCH (n:PROJECT {pid: "19-NF-PAC-043"})-[r]-(o)
-RETURN n, r, o;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Projects at the same watershed</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Projects at the same watershed
-//
-MATCH (n:PROJECT)-[r1:HAS_WATERSHED]-(w:WATERSHED {uid: "Chilliwack River"})
-WITH n, r1, w
-	MATCH (n)-[r2:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s)
-RETURN n, r1, w, r2, s;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Same project with muliple sites</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Same project with muliple sites
-//
-MATCH (n:PROJECT {pid: "16-HPAC-00402"})
-WITH n
-	MATCH (n)-[:HAS_LEAD_ORGANIZATION]-(l)
-WITH n, l
-	MATCH (n)-[:HAS_PROJECT_PARTNER|HAS_OTHER_FUNDING_SOURCE|HAS_GC_FUNDING_SOURCE]-(o)
-WITH n, l, COLLECT(o) AS oc
-	MATCH (n)-[:HAS_TARGET_SPECIES|HAS_OTHER_BENEFITTING_SPECIES]-(s)
-WITH n, l, oc, COLLECT(s) AS sc
-	MATCH (n)-[:HAS_WATERSHED]-(w)
-RETURN n, l, oc, sc;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Project Clusters</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Projects with multiple sites in the same watershed
-//
-MATCH (n:PROJECT)
-WITH n
-	MATCH (n)-[r:NEAREST_IN_PROJECT]-(m)-[:HAS_WATERSHED]-(w:WATERSHED {uid: "Lower Fraser"})
-RETURN m, n, w;<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: Two projects with multiple sites at Lower Fraser</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Projects within the same watershed
-//
-MATCH (n:PROJECT)
-WITH n
-	MATCH (n)-[r:NEAREST_IN_WATERSHED]-(m)-[:HAS_WATERSHED]-(w:WATERSHED {uid: "Lower Fraser"})
-RETURN m, n, w;<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Step 7 - Queries: All project clusters</h3>
-    <br/>
-    <div>
-      <div class="listingblock">
-<div class="content">
-<pre mode="cypher"  class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding" data-lang="cypher" lang="cypher"><!--code class="cypher language-cypher"-->////////////////////////////////////////////////////////////////////////////////
-//
-// Projects at the same watershed, not in the same project
-// Looking at organizations
-//
-MATCH (n:PROJECT)
-WITH n
-	MATCH (n)-[r:NEAREST_IN_PROJECT|NEAREST_IN_WATERSHED]-(m)-[:HAS_WATERSHED]-(w)
-RETURN m, n, w;
-//
-////////////////////////////////////////////////////////////////////////////////<!--/code--></pre>
-</div>
-</div>
-	</div>
-  </div>
-</slide>
-
-
-
-<slide class="row-fluid">
-  <div class="col-sm-12">
-    <h3>Thank you</h3>
-    <br/>
-    <div>
-      <div class="paragraph">
-<p>All questions, comments, suggestions are welcome!</p>
-</div>
-<div class="paragraph">
-<p>Thank you!</p>
 </div>
 	</div>
   </div>
