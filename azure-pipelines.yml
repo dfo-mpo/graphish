@@ -12,6 +12,7 @@ variables:
   tag: '$(Build.BuildId)'
   nlp_tag: '0.3.0'
   show_tag: '0.3.0'
+  ui_tag: '0.1.0'
   extractor_tag: '0.1.0'
 
 stages:
@@ -41,8 +42,9 @@ stages:
           $(show_tag)
           $(tag)
 
+
     - task: Docker@2
-      displayName: Build and push extractor image to dockerhub
+      displayName: Build and push NLP image to dockerhub
       inputs:
         containerRegistry: 'OK-dockerhub-SC'
         repository: 'dfompo/graphish-nlp'
@@ -51,15 +53,27 @@ stages:
         tags: |
           $(nlp_tag)
           $(tag)
-    
+
     - task: Docker@2
-      displayName: Build and push nlp image to dockerhub
+      displayName: Build and push IU image to dockerhub
       inputs:
         containerRegistry: 'OK-dockerhub-SC'
-        repository: 'dfompo/extractor'
+        repository: 'dfompo/graphish-ui'
         command: 'buildAndPush'
-        Dockerfile: '$(Build.SourcesDirectory)/extractor/Dockerfile'
+        Dockerfile: '$(Build.SourcesDirectory)/ui/Dockerfile'
         tags: |
-          $(extractor_tag)
+          $(ui_tag)
           $(tag)
- 
+
+##  extractor is not required for the minimal production app install.    
+#    - task: Docker@2
+#      displayName: Build and push extractor image to dockerhub
+#      inputs:
+#        containerRegistry: 'OK-dockerhub-SC'
+#        repository: 'dfompo/extractor'
+#        command: 'buildAndPush'
+#        Dockerfile: '$(Build.SourcesDirectory)/extractor/Dockerfile'
+#        tags: |
+#          $(extractor_tag)
+#          $(tag)
+  

@@ -113,7 +113,7 @@ services:
       context: ./ui
       dockerfile: Dockerfile
     hostname: ui
-    container_name: ui
+    container_name: dfompo/graphish-show:0.1.0
     ports:
       - 3838:3838
     networks:
