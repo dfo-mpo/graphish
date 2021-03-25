@@ -1,0 +1,15 @@
+------------------
+Order Details
+-----------------
+Order ID: 2125366
+Date: 20210305
+
+
+----------------------
+Feature Types
+-----------------------
+ - BC Major Watersheds in subdirectory BC_MAJOR_WATERSHEDS
+
+----------------------------
+Packaged Products
+----------------------------

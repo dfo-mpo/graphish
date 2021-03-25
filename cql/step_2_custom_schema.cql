@@ -33,58 +33,58 @@
 //
 // Document
 //
-CREATE CONSTRAINT ON (n:D) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:DOCUMENT) ASSERT n.uid IS UNIQUE;
 // - uid: the unique identifier of a document (e.g. file name)
 //
 // Sentence
 //
-CREATE CONSTRAINT ON (n:S) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:SENTENCE) ASSERT n.uid IS UNIQUE;
 //
-CREATE INDEX ON :Sent(c);
+CREATE INDEX ON :SENTENCE(c);
 // - c is the textual content, it is  indexed
-CREATE INDEX ON :Sent(s);
+CREATE INDEX ON :SENTENCE(s);
 // - s is the sentiment score, it is an indexed integer
-CREATE INDEX ON :Sent(n);
+CREATE INDEX ON :SENTENCE(n);
 // - n is the numner of occurences of the sentence
 //
 // Named Entity
 //
-CREATE CONSTRAINT ON (n:NE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY) ASSERT n.c IS UNIQUE;
 // - c is the textual content, it is unique and indexed
-CREATE CONSTRAINT ON (n:CARDINAL) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:DATE) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:EVENT) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:FAC) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:GPE) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:LAW) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:LANGUAGE) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:LOC) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:MONEY) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:NORP) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:ORDINAL) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:ORG) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:PERCENT) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:PERSON) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:PRODUCT) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:QUANTITY) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:TIME) ASSERT n.c IS UNIQUE;
-CREATE CONSTRAINT ON (n:WORK_OF_ART) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_CARDINAL) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_DATE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_EVENT) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_FAC) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_GPE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_LAW) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_LANGUAGE) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_LOC) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_MONEY) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_NORP) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_ORDINAL) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_ORG) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_PERCENT) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_PERSON) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_PRODUCT) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_QUANTITY) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_TIME) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:NAMED_ENTITY_WORK_OF_ART) ASSERT n.c IS UNIQUE;
 // - the entity type label (18 named entity types, e.g. PERSON)
-CREATE INDEX ON :NE(n);
+CREATE INDEX ON :NAMED_ENTITY(n);
 // - n is the number of occurences of the entity
 //
 // Key Phrase
 //
-CREATE CONSTRAINT ON (n:KP) ASSERT n.c IS UNIQUE;
+CREATE CONSTRAINT ON (n:KEY_PHRASE) ASSERT n.c IS UNIQUE;
 // - c is the textual content, it is unique and indexed
-CREATE INDEX ON :KP(n);
+CREATE INDEX ON :KEY_PHRASE(n);
 // - n is the numner of occurences of the key phrase
 //
 // Lemmatized word
 //
-CREATE CONSTRAINT ON (n:LW) ASSERT n.l IS UNIQUE;
+CREATE CONSTRAINT ON (n:WORD) ASSERT n.l IS UNIQUE;
 // - l is the lemma form of the text, it is unique and indexed
-CREATE INDEX ON :LW(n);
+CREATE INDEX ON :WORD(n);
 ////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////
@@ -93,27 +93,26 @@ CREATE INDEX ON :LW(n);
 //
 // Feature Codes
 //
-CREATE CONSTRAINT ON (n:GN_FC) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :GN_FC(name);
-CREATE INDEX ON :GN_FC(desc);
+CREATE CONSTRAINT ON (n:GEO_FEATURE) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :GEO_FEATURE(name);
+CREATE INDEX ON :GEO_FEATURE(desc);
 //
 // Named locations
 //
-CREATE CONSTRAINT ON (n:GN_NE) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :GN_NE(name);
-CREATE INDEX ON :GN_NE(ascii_name);
-CREATE INDEX ON :GN_NE(alt_names);
-CREATE INDEX ON :GN_NE(feature);
-CREATE INDEX ON :GN_NE(location);
-CREATE INDEX ON :GN_NE(admin_code);
-CREATE INDEX ON :GN_NE(population);
+CREATE CONSTRAINT ON (n:GEO_LOCATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :GEO_LOCATION(name);
+CREATE INDEX ON :GEO_LOCATION(ascii_name);
+CREATE INDEX ON :GEO_LOCATION(alt_names);
+CREATE INDEX ON :GEO_LOCATION(feature);
+CREATE INDEX ON :GEO_LOCATION(location);
+CREATE INDEX ON :GEO_LOCATION(admin_code);
+CREATE INDEX ON :GEO_LOCATION(population);
 //
 // Postal codes
 //
-CREATE CONSTRAINT ON (n:GN_PC) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :GN_PC(place_name);
-CREATE INDEX ON :GN_PC(location);
-CREATE INDEX ON :GN_PC(centroid);
+CREATE CONSTRAINT ON (n:CA_POST_CODE) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :CA_POST_CODE(place_name);
+CREATE INDEX ON :CA_POST_CODE(location);
 //
 ////////////////////////////////////////////////////////////////////////
 
@@ -123,20 +122,20 @@ CREATE INDEX ON :GN_PC(centroid);
 //
 // First Nation Entity
 //
-CREATE CONSTRAINT ON (n:FN_E) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :FN_E(name);
-CREATE INDEX ON :FN_E(address);
-CREATE INDEX ON :FN_E(location);
+CREATE CONSTRAINT ON (n:BC_FIRST_NATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :BC_FIRST_NATION(name);
+CREATE INDEX ON :BC_FIRST_NATION(address);
+CREATE INDEX ON :BC_FIRST_NATION(location);
 //
 // First Nation Group
 //
-CREATE CONSTRAINT ON (n:FN_G) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :FN_G(name);
+CREATE CONSTRAINT ON (n:BC_NATION_COUNCIL) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :BC_NATION_COUNCIL(name);
 //
 // First Nation Region
 //
-CREATE CONSTRAINT ON (n:FN_R) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :FN_R(name);
+CREATE CONSTRAINT ON (n:BC_GEO_REGION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :BC_GEO_REGION(name);
 //
 ////////////////////////////////////////////////////////////////////////
 
@@ -144,92 +143,84 @@ CREATE INDEX ON :FN_R(name);
 //
 // Project specific data
 //
-CREATE CONSTRAINT ON (n:PARR_PR) ASSERT n.uid IS UNIQUE;
-CREATE INDEX ON :PARR_PR(pid);
-CREATE INDEX ON :PARR_PR(name);
-CREATE INDEX ON :PARR_PR(desc);
+CREATE CONSTRAINT ON (n:PROJECT) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :PROJECT(pid);
+CREATE INDEX ON :PROJECT(name);
+CREATE INDEX ON :PROJECT(desc);
 //
 // Project Contact
 //
-CREATE CONSTRAINT ON (n:Person) ASSERT n.name IS UNIQUE;
-CREATE INDEX ON :Person(tel);
-CREATE INDEX ON :Person(email);
+CREATE CONSTRAINT ON (n:CONTACT_PERSON) ASSERT n.name IS UNIQUE;
+CREATE INDEX ON :CONTACT_PERSON(tel);
+CREATE INDEX ON :CONTACT_PERSON(email);
 //
 // Project Organization
 //
-CREATE CONSTRAINT ON (n:PR_ORG) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:ORGANIZATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :ORGANIZATION(name);
+CREATE CONSTRAINT ON (n:LEAD_ORGANIZATION) ASSERT n.uid IS UNIQUE;
+CREATE INDEX ON :LEAD_ORGANIZATION(name);
+//
+// GC Funding Programs
+//
+CREATE CONSTRAINT ON (n:GC_FUNDING_PROGRAM) ASSERT n.uid IS UNIQUE;
 //
 // Project Location
 //
-CREATE CONSTRAINT ON (n:PR_LOC) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:WATERSHED) ASSERT n.uid IS UNIQUE;
 //
 // DFO Area
 //
-CREATE CONSTRAINT ON (n:DFO_Area) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:DFO_AREA) ASSERT n.uid IS UNIQUE;
 //
 // Policy and Program Connections
 //
-CREATE CONSTRAINT ON (n:PR_Policy) ASSERT n.uid IS UNIQUE;
-//
-// G&C Funding Sources
-//
-CREATE CONSTRAINT ON (n:PR_FndSrc) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:POLICY_PROGRAM) ASSERT n.uid IS UNIQUE;
 //
 // Project Phase
 //
-CREATE CONSTRAINT ON (n:PR_Phase) ASSERT n.uid IS UNIQUE;
-//
-// Project Primary Activities
-//
-CREATE CONSTRAINT ON (n:PR_PrmAct) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:PROJECT_PHASE) ASSERT n.uid IS UNIQUE;
 //
 // Eco System Types
 //
-CREATE CONSTRAINT ON (n:EcoSysTyp) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:ECO_SYSTEM_TYPE) ASSERT n.uid IS UNIQUE;
 //
-// Target Species
+// Project Primary Activities
 //
-CREATE CONSTRAINT ON (n:TgtSpc) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:PROJECT_ACTIVITY) ASSERT n.uid IS UNIQUE;
+//
+// Species
+//
+CREATE CONSTRAINT ON (n:SPECIES) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:TARGET_SPECIES) ASSERT n.uid IS UNIQUE;
 //
 // Life Stages
 //
-CREATE CONSTRAINT ON (n:LfeStg) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:LIFE_STAGE) ASSERT n.uid IS UNIQUE;
 //
 // Restoration Activities
 //
-CREATE CONSTRAINT ON (n:ResAct) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:RESTORATION_ACTIVITY) ASSERT n.uid IS UNIQUE;
 //
 // Habitat Outcome Metric
 //
-CREATE CONSTRAINT ON (n:HbtOutMtr) ASSERT n.uid IS UNIQUE;
-//
-// Socio-Economic Outcome
-//
-CREATE CONSTRAINT ON (n:SocEcoOut) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:HABITAT_OUTCOME_METRIC) ASSERT n.uid IS UNIQUE;
 //
 // Monitoring objectives
 //
-CREATE CONSTRAINT ON (n:MonObj) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:MONITORING_OBJECTIVE) ASSERT n.uid IS UNIQUE;
 //
 // Monitoring activites
 //
-CREATE CONSTRAINT ON (n:MonAct) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:MONITORING_ACTIVITY) ASSERT n.uid IS UNIQUE;
 //
 // Monitoring design
 //
-CREATE CONSTRAINT ON (n:MonDsg) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:MONITORING_DESIGN) ASSERT n.uid IS UNIQUE;
 //
 // Season monitored
 //
-CREATE CONSTRAINT ON (n:SeaMon) ASSERT n.uid IS UNIQUE;
-//
-// Life Stage monitored
-//
-CREATE CONSTRAINT ON (n:LfeStgMon) ASSERT n.uid IS UNIQUE;
-//
-// Other Species
-//
-CREATE CONSTRAINT ON (n:OthSpc) ASSERT n.uid IS UNIQUE;
+CREATE CONSTRAINT ON (n:SEASON_MONITORED) ASSERT n.uid IS UNIQUE;
 //
 ////////////////////////////////////////////////////////////////////////
 
@@ -262,36 +253,36 @@ CALL apoc.custom.asProcedure(
   WITH n, sentence
     UNWIND sentence.e AS entity
   WITH n, sentence, entity
-    MERGE (e:NE {c: entity.c})
+    MERGE (e:NAMED_ENTITY {c: entity.c})
       ON CREATE SET e.n = 1
       ON MATCH SET e.n = e.n + 1
-    MERGE (n)<-[r:E_IN_D]-(e)
+    MERGE (n)-[r:HAS_NAMED_ENTITY]->(e)
       ON CREATE SET r.n = 1
       ON MATCH SET r.n = r.n + 1
   WITH n, sentence, e, entity
-    CALL apoc.create.addLabels(e, [entity.t]) YIELD node
+    CALL apoc.create.addLabels(e, ["NAMED_ENTITY_" + entity.t]) YIELD node
   WITH n, sentence, node AS e, entity
     UNWIND entity.w AS word
-      MERGE (w:LW {l: word.l})
+      MERGE (w:WORD {l: word.l})
         ON CREATE SET w.n = 1
         ON MATCH SET w.n = w.n + 1
-      MERGE (e)<-[r:W_IN_E]-(w)
+      MERGE (e)-[r:HAS_WORD]->(w)
 
   WITH n, sentence
     UNWIND sentence.k AS key_phrase
   WITH n, sentence, key_phrase
-    MERGE (k:KP {c: key_phrase.c})
+    MERGE (k:KEY_PHRASE {c: key_phrase.c})
       ON CREATE SET k.n = 1
       ON MATCH SET k.n = k.n + 1
-    MERGE (n)<-[r:K_IN_D]-(k)
+    MERGE (n)-[r:HAS_KEY_PHRASE]->(k)
       ON CREATE SET r.n = 1
       ON MATCH SET r.n = r.n + 1
   WITH n, sentence, k, key_phrase
     UNWIND key_phrase.w AS word
-      MERGE (w:LW {l: word.l})
+      MERGE (w:WORD {l: word.l})
         ON CREATE SET w.n = 1
         ON MATCH SET w.n = w.n + 1
-      MERGE (k)<-[r:W_IN_K]-(w)
+      MERGE (k)-[r:HAS_WORD]->(w)
         ON CREATE SET r.c = word.c
   RETURN n AS result;',
   'write',
