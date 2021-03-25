@@ -70,7 +70,7 @@ stages:
 #      displayName: Build and push extractor image to dockerhub
 #      inputs:
 #        containerRegistry: 'OK-dockerhub-SC'
-#        repository: 'dfompo/extractor'
+#        repository: 'dfompo/graphish-extractor'
 #        command: 'buildAndPush'
 #        Dockerfile: '$(Build.SourcesDirectory)/extractor/Dockerfile'
 #        tags: |
