@@ -1,0 +1,576 @@
+<article class="guide">
+  <carousel class="deck container-fluid">
+<html>
+<slide>
+<h3>Freshwater Knowledge Graph</h3>
+<p>This guide will show you how to:</p>
+        <ol class="big">
+          <li>Match: find individual Fishes, rivers,waterbody, segment, groups and persons</li>
+          <li>Create: insert NHN data into the graph</li>
+          <li>Delete: remove unwanted or incorrect data</li>
+          <li>Query: discover related rivers and fishes</li>
+          <li>Solve: the Bacon Path</li>
+          <li>Recommend: new connections</li>
+        </ol>
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c6/NLW_Table2_tango7174.jpg"/>
+</slide>
+
+<slide>
+Set index for segment and junction nodes.
+
+<pre class= "code runnable" >
+CREATE CONSTRAINT ON (s:Segment) ASSERT s.segment_id IS UNIQUE;
+CREATE CONSTRAINT ON (j:Junction) ASSERT j.junction_id IS UNIQUE;
+CREATE CONSTRAINT ON (w:Waterbody) ASSERT w.waterbody_id IS UNIQUE;
+CREATE CONSTRAINT ON (b:Barrier) ASSERT b.OBJECTID IS UNIQUE;
+</pre>
+
+</slide>
+
+
+<slide>
+Create segment nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/segments_to_junction.csv' AS SG
+	CREATE (s:Segment{segment_id:SG.segment_id})
+	SET s.DataSetNam=SG.DATASETNAM,
+	s.ACQTECH=SG.ACQTECH,
+    s.ACCURACY=tOInteger(SG.ACCURACY),
+	s.METACOVER=tOInteger(SG.METACOVER),
+    s.Type=tOInteger(SG.type),
+	s.DIRECTION=tOInteger(SG.DIRECTION),
+	s.ISOLATED=tOInteger(SG.ISOLATED),
+	s.PRIORITY=tOInteger(SG.PRIORITY),
+	s.geometry=SG.geometry,
+	s.number_of_points=SG.number_of_points,
+	s.segment_start_lon=toFloat(SG.segment_start_lon),
+	s.segment_start_lat=toFloat(SG.segment_start_lat),
+	s.segment_end_lon=toFloat(SG.segment_end_lon),
+	s.segment_end_lat=toFloat(SG.segment_end_lat),
+    s.From_Junct=SG.junction_id_from,
+    s.To_Junct=SG.junction_id_to;
+</pre>
+</slide>
+<slide>
+   Create Junction nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/junction.csv' AS JC
+	CREATE (j:Junction{junction_id:JC.junction_id})
+	SET j.Latitude=toFloat(JC.lat),
+    j.Longitude=toFloat(JC.lon);
+</pre>
+</slide>
+
+<slide>
+	Create Barrier Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+    LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/barrier_to_segments.csv' AS BR
+	CREATE (br:Barrier{OBJECTID:BR.OBJECTID})
+	SET br.barrier_ty=BR.barrier_ty,
+	br.datasetNam=BR.datasetNam,
+	br.planimetri=tOInteger(BR.planimetri),
+	br.provider=tOInteger(BR.provider),
+	br.completely=tOInteger(BR.completely),
+	br.manmadeTyp=tOInteger(BR.manmadeTyp),
+	br.manmadeT_1=BR.manmadeT_1,
+	br.manmadeSta=tOInteger(BR.manmadeSta),
+	br.SHAPE_Leng=toFloat(BR.SHAPE_Leng),
+	br.ID_NHN=BR.ID_NHN,
+	br.segment_id=BR.segment_id,
+	br.dist_meters=toFloat(BR.dist_meters),
+	br.lon=toFloat(BR.lon),
+	br.lat=toFloat(BR.lat);
+</pre>
+	
+</slide>
+<slide>
+Create Waterbody Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+    LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/junction-to-waterbodies.csv' AS WB
+	MERGE (w:Waterbody{waterbody_id:WB.waterbody_id})
+	MERGE (j:Junction{junction_id:WB.junction_id})
+	SET j.waterbody_id=w.waterbody_id;
+	</pre>
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+    LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/barrier_to_waterbody.csv' AS BRWB
+	WITH BRWB WHERE BRWB.OBJECTID IS NOT NULL
+	MERGE (w:Waterbody{waterbody_id:BRWB.waterbody_id})
+	MERGE (br:Barrier{OBJECTID:BRWB.OBJECTID})
+	SET br.waterbody_id=BRWB.waterbody_id
+	</pre>
+</slide>
+<slide>
+Create River Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+    LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/rivers_segments.csv' AS RI
+	MERGE (r:River{river_name:RI.river_name})
+	
+	</pre>
+</slide>
+<slide>
+	Create Crossing Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/ACA.csv' AS row
+	WITH row WHERE row.CrossingId IS NOT NULL
+	WITH row, SPLIT(row.Date,'-') AS date 
+	MERGE (c:Crossing {crossing_id: row.CrossingId})
+	SET c.location = Point({latitude: ToFloat(row.Latitude), longitude: ToFloat(row.Longitude)}),
+    c.name = row.CrossingName,
+    c.year = ToInteger(date[0]),
+	c.month = ToInteger(date[1]),
+	c.day = ToInteger(date[2]),
+    c.structure_type = coalesce(row.StructureType," "),
+    c.condition = coalesce(row.Condition," "),
+    c.shape = coalesce(row.Shape," "),
+    c.barriers_up_down_stream = coalesce(row['Barriers up/downstream?']," "),
+    c.furthere_assessment_required = coalesce(row['Further Assesment Required?']," "),
+    c.furthere_assessment_required = coalesce(row['Further Assesment Required?']," "),
+    c.material = coalesce(row.Material," "),
+    c.diameter = coalesce(row['Diameter (m)']," "),
+    c.wet_width = coalesce(row['Wet width (m)']," "),
+    c.high_water_mark = coalesce(row['High Water mark (cm)']," "),
+    c.inlet_depth = coalesce(row['Inlet depth (cm)']," "),
+    c.outlet_depth = coalesce(row['Outlet depth (cm)']," "),
+    c.inlet_el = coalesce(row['Inlet El (m)']," "),
+    c.outlet_el = coalesce(row['Outlet El (m)']," "),
+    c.length = coalesce(row['Length (m)']," "),
+    c.slope = coalesce(row['Slope (%)']," "),
+    c.outflow_drop = coalesce(row['Outflow drop (cm)']," "),
+    c.outflow_pool_depth = coalesce(row['Outflow pool depth (cm)']," "),
+    c.plunge_factor = coalesce(row['Plunge factor (1.5x)']," "),
+    c.notes = coalesce(row['Notes']," "),
+    c.dfo_comments = coalesce(row['DFO Comments']," "),
+    c.obstruction = coalesce(row['Obstruction?']," "),
+    c.sent_to_reg_review = coalesce(row['Sent_to_Reg_Review']," "),
+    c.monitoring = coalesce(row['Monitoring & Occurences Unit Update']," "),
+    c.added_to_pick_list = coalesce(row['Added to pick list?']," "),
+    c.issue = coalesce(row['Issue']," "),
+    c.action_required = coalesce(row['Action Required']," "),
+	c.RoadName=coalesce(row['RoadName']," "),
+	c.GroupName=coalesce(row['Group']," "),
+	c.segment_id=coalesce(row['segment_id']," ")
+	
+</pre>
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/ACA_to_segments.csv' AS row
+	WITH row WHERE row.CrossingId IS NOT NULL
+	MERGE (c:Crossing {crossing_id: row.CrossingId})
+	SET c.segment_id=coalesce(row['segment_id']," "),
+		c.segment_distance=coalesce(row['dist_meters']," ")
+	
+</pre>
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/ACA_to_waterbodies.csv' AS row
+	WITH row WHERE row.CrossingId IS NOT NULL
+	MERGE (c:Crossing {crossing_id: row.CrossingId})
+	SET c.waterbody_id=coalesce(row['waterbody_id']," "),
+		c.waterbody_distance=coalesce(row['dist_meters']," ")
+	
+</pre>
+</slide>
+<slide>
+	Create Road Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Roads.csv' AS row
+	WITH row WHERE row.RoadId IS NOT NULL
+	MERGE (r:Road {road_id: row.RoadId})
+	SET r.RoadName = row['RoadName']
+</pre>
+</slide>
+<slide>
+Create Group Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Groups.csv' AS row
+	WITH row WHERE row.GroupId IS NOT NULL
+	MERGE (g:Group {group_id: row.GroupId})
+	SET g.GroupName = row['Group'],
+    g.Full_Name = coalesce(row.Group_Full_Name," "),
+    g.region = coalesce(row.Region," "),
+    g.type = coalesce(row.Type," "),
+    g.engo_caucus_part = coalesce(row['ENGO caucus participant']," "),
+    g.cnlcom_part = coalesce(row['CNLCOM participant']," "),
+    g.website = coalesce(row['Website']," "),
+    g.about = coalesce(row['About']," ")
+</pre>
+</slide>
+<slide>
+Create Site Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Sites.csv' AS row
+	WITH row WHERE row.SiteId IS NOT NULL
+	MERGE (s:Site {site_id: row.SiteId})
+	SET s.location = Point({latitude: ToFloat(row.Latitude), longitude: ToFloat(row.Longitude)}),
+    s.data_set_name = row.DataSetName,
+    s.site_name = coalesce(row.SiteName," "),
+    s.datum = coalesce(row.DATUM," "),
+    s.pearseda = coalesce(row.PEARSEDA," "),
+    s.site_type = coalesce(row.SiteType," ")
+</pre>
+</slide>
+<slide>
+Create Person Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/PersonData.csv' AS row
+	WITH row WHERE row.Name IS NOT NULL
+	MERGE (p:Person {name: row.Name})
+	SET p.GroupName=coalesce(row.Group," "),
+	p.Address=coalesce(row.Address," "), 
+	p.email=coalesce(row.Email," "),
+	p.city_town=coalesce(row['City/Town']," "),
+	p.province=coalesce(row.Province," "), 
+	p.postal_code=coalesce(row['Postal Code']," "),
+	p.phone_number= coalesce(row['Phone Number']," "),
+	p.Position= coalesce(row['Position']," ")
+</pre>					
+</slide>
+<slide>
+Create Project Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Projects.csv' AS row
+	WITH row WHERE row.ProjectId IS NOT NULL
+	MERGE (pr:Project {project_id: row.ProjectId})
+	SET pr.name = row['DFO project involvement']
+</pre>	
+</slide>
+<slide>
+Create Fish Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Fishes.csv' AS row
+	WITH row WHERE row.FishId IS NOT NULL
+	MERGE (f:Fish {fish_id: row.FishId})
+	SET f.fish_spp = row['Fish Spp']
+</pre>
+</slide>
+<slide>
+Create Effort Nodes.
+<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/labrador.csv' AS row
+	WITH row WHERE row.Effort_Id IS NOT NULL
+	WITH row, SPLIT(row.Date,'-') AS date 
+	MERGE (e:Effort {effort_id: row.Effort_Id})
+	SET e.data_set_name = row.DataSetName,
+	e.year = ToInteger(date[0]),
+	e.month = ToInteger(date[1]),
+	e.day = ToInteger(date[2]),
+    e.data_set_name = row.DataSetName,
+    e.filter_size = row['Filter size'],
+    e.sample_method = coalesce(row.Sample_Method," "),
+    e.effort_type = coalesce(row.effort_type," "),
+    e.volume_filtered = coalesce(row.VolumeFIltered," "),
+    e.access_type = coalesce(row.Access_Type," "),
+    e.confirmed_killi_fish = coalesce(row.Confirmed_Killifish," "),
+    e.obstruction = coalesce(row.Obstruction," "),
+    e.depth = coalesce(row.Depth," "),
+    e.flow = coalesce(row.Flow," "),
+    e.measured_with = coalesce(row.Measured_with," "),
+    e.water_temp = coalesce(row.WaterTemp," "),
+    e.do_perc = coalesce(row['DO%']," "),
+    e.domgl = coalesce(row['DOmg.L']," "),
+    e.doch = coalesce(row['DO.CH']," "),
+    e.cus_cm = coalesce(row['C.us.-cm']," "),
+    e.sal = coalesce(row.Sal," "),
+    e.ph = coalesce(row.pH," "),
+    e.ph_mv = coalesce(row['pH.mV']," "),
+    e.orp = coalesce(row['ORP']," ")
+</pre>
+</slide>
+<slide>
+Create relationships between segment and junction
+	<pre class= "code runnable" >
+	MATCH(s:Segment),(j:Junction) WHERE s.To_Junct=j.junction_id
+	CREATE (s)-[:End_Junction]->(j)
+	</pre>
+	<pre class= "code runnable" >
+	MATCH(s:Segment),(j:Junction) WHERE s.From_Junct=j.junction_id
+	CREATE (s)<-[:Start_Junction]-(j)
+	</pre>
+	Create relationships between Segment and Barrier
+	<pre class= "code runnable" >
+	MATCH(s:Segment),(br:Barrier) WHERE s.segment_id=br.segment_id
+	MERGE (br)-[BS:Located_on]->(s)
+	SET BS.distance=br.dist_meters;
+	</pre>
+	Create relationships between Barrier and Waterbody
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/barrier_to_waterbody.csv' AS row
+	MATCH(w:Waterbody),(br:Barrier) WHERE w.waterbody_id=br.waterbody_id
+	MERGE (br)-[BW:Located_on]->(w)
+	SET BW.distance=row.dist_meters;
+	</pre>
+	Create relationships between Junction and Waterbody
+	<pre class= "code runnable" >
+	MATCH(w:Waterbody),(j:Junction) WHERE w.waterbody_id=j.waterbody_id
+	MERGE (j)-[:Located_on]->(w)
+	</pre>
+	Create relationships between Crossing and Road
+	<pre class= "code runnable" >
+	MATCH(c:Crossing),(r:Road) WHERE c.RoadName=r.RoadName
+	CREATE (c)-[:Located_on]->(r)
+	</pre>
+	Create relationships between Crossing and Group
+	<pre class= "code runnable" >
+	MATCH(c:Crossing),(g:Group) WHERE c.GroupName=g.GroupName
+	CREATE (g)-[:ASSESSED]->(c)
+	</pre>
+	Create relationships between Crossing and Segment
+	<pre class= "code runnable" >
+	MATCH(c:Crossing),(s:Segment) WHERE c.segment_id=s.segment_id
+	MERGE (c)-[CS:Located_on]->(s)
+	SET CS.distance=c.segment_distance;
+	</pre>
+	Create relationships between Crossing and Waterbody
+	<pre class= "code runnable" >
+	MATCH(c:Crossing),(w:Waterbody) WHERE c.waterbody_id=w.waterbody_id
+	MERGE (c)-[CS:Located_on]->(w)
+	SET CS.distance=c.waterbody_distance;
+	</pre>
+	Create relationships between Person and Group
+	<pre class= "code runnable" >
+	MATCH(p:Person),(g:Group) WHERE g.GroupName=p.GroupName
+	CREATE (p)-[:MEMBER_OF]->(g)
+	</pre>
+	Create relationships between Person and Project
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Person_Project_Relation.csv' AS row
+	WITH row WHERE row['DFO project involvement'] IS NOT NULL
+	MATCH (p:Person {name: row.Name})
+	MATCH (pr:Project {name: row['DFO project involvement']})
+	MERGE (p)-[:DFO_PROJECT_INVOLVMENT]->(pr); 
+	</pre>
+	Create relationships between Effort and Site
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/labrador.csv' AS row
+	WITH row WHERE row.SiteId IS NOT NULL
+	MATCH (e:Effort {effort_id: row.Effort_Id})
+	MATCH (s:Site {site_id: row.SiteId})
+	MERGE (e)-[:ASSESSED_ON]->(s); 
+	</pre>
+	Create relationships between Fish and Crossing
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/Fish_Relation.csv' AS row
+	WITH row WHERE row.CrossingId IS NOT NULL
+	MATCH (c:Crossing {crossing_id: row.CrossingId})
+	MATCH (f:Fish {fish_spp: row['Fish Spp']})
+	MERGE (f)-[:AVAILABLE_FISH_SPP]->(c); 
+	</pre>
+	Create relationships between Person and Effort
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/labrador.csv' AS row
+	WITH row WHERE row.Effort_Id IS NOT NULL
+	MATCH (p:Person {name: row.PrimaryInvestigator})
+	MATCH (e:Effort {effort_id: row.Effort_Id})
+	MERGE (p)-[wk:WORK_ON]->(e)
+	SET wk.role="PrimaryInvestigator";
+	</pre>
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/labrador.csv' AS row
+	WITH row WHERE row.Effort_Id IS NOT NULL
+	MATCH (p:Person {name: row.Technician})
+	MATCH (e:Effort {effort_id: row.Effort_Id})
+	MERGE (p)-[wk:WORK_ON]->(e)
+	SET wk.role="Technician";
+	</pre>
+	Create relationships between Segment and Effort
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/points_to_segments.csv' AS row
+	WITH row WHERE row.Effort_Id IS NOT NULL
+	MATCH (s:Segment {segment_id: row.segment_id})
+	MATCH (e:Effort {effort_id: row.Effort_Id})
+	MERGE (e)-[SE:ASSESSED_ON]->(s)
+	SET SE.distance=row.dist_meters;
+	</pre>
+	Create relationships between Waterbody and Effort
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+	LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/points_to_waterbodies.csv' AS row
+	WITH row WHERE row.Effort_Id IS NOT NULL
+	MATCH (w:Waterbody {waterbody_id: row.waterbody_id})
+	MATCH (e:Effort {effort_id: row.Effort_Id})
+	MERGE (e)-[WE:ASSESSED_ON]->(w)
+	SET WE.Distance=row.dist_meters;
+	</pre>
+	Create relationships between Segment and River
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+    LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/rivers_segments.csv' AS RI
+	MATCH (r:River{river_name:RI.river_name})
+	MATCH (s:Segment {segment_id: RI.segment_id})
+	MERGE (s)-[:Located_on]->(r);
+	</pre>
+	Create relationships between Segments
+	<pre class= "code runnable" >
+	:auto USING PERIODIC COMMIT
+    LOAD CSV WITH HEADERS FROM 
+	'FILE:///C:/segment_to_segment.csv' AS RI
+	MATCH (s1:Segment {segment_id: RI.segment_id_first})
+	MATCH (s2:Segment {segment_id: RI.segment_id_second})
+	MERGE (s1)-[:Connected_to]->(s2);
+	</pre>
+</slide>
+<slide>
+<pre class= "code runnable" >
+CALL db.schema.visualization
+</pre>
+</slide>
+<slide>
+What river and segments the Barrier{OBJECTID:'4257} is located?
+<pre class= "code runnable" >
+match p=(b:Barrier{OBJECTID:'4257'})-[l2:Located_on]-(s:Segment)<-[c:Connected_to*1..4]-(:Segment)-[l:Located_on]-(r:River) return p
+</pre>
+</slide>
+<slide>
+What segments are upstream of a barrier and connected river(s) to them?
+<pre class= "code runnable" >
+match p=(b:Barrier{OBJECTID:'4257'})-[l2:Located_on]-(s:Segment)<-[c:Connected_to*1..4]-(:Segment)-[l:Located_on]-(r:River) where l2.distance < 10 return p
+</pre>
+</slide>
+<slide>
+What groups assessed crossings with a specific fish species?
+<pre class= "code runnable" >
+Match p=(:Group)-[]-(:Crossing)-[]-(f:Fish) where f.fish_spp='Salmon' return p
+</pre>
+<pre class= "code runnable" >
+Match p=(:Group)-[]-(:Crossing)-[]-(f:Fish) where f.fish_spp='Trout' return p limit 5
+</pre>
+</slide>
+
+<slide>
+<pre class= "code runnable" >
+Match p=(g:Group)-[]-(:Crossing)-[]-(f:Fish) where g.GroupName='BSGS' return p
+</pre>
+</slide>
+
+<slide>
+
+people who worked on Parr worked on what species :
+<pre class= "code runnable" >
+Match p=(:Fish)-[]-(:Crossing)-[]-(:Group)-[]-(:Crossing)-[]-(f:Fish) where f.fish_spp='Parr' return p
+</pre>
+</slide>
+
+<slide>
+- Which rivers have multiple survey efforts on them?
+<pre class= "code runnable" >
+
+match p=(:Effort)-[]-(:Segment)-[:Connected_to*1..4]-(:Segment)-[]-(:River) return p limit 30
+
+</pre>
+</slide>
+<slide>
+What groups assessed Salmon in November 2019?
+<pre class= "code runnable" >
+Match p=(:Group)-[]-(c:Crossing)-[]-(f:Fish) where f.fish_spp="Salmon" and c.year = 2019 and c.month = 11 return p
+</pre>
+</slide>
+<slide>
+What people assessed Salmon  in November 2019?
+<pre class= "code runnable" >
+Match p=(:Person)-[]-(:Group)-[]-(c:Crossing)-[]-(f:Fish) where f.fish_spp="Salmon" and c.year = 2019 and c.month = 11 return p
+</pre>
+</slide>
+<slide>
+Who assessed Char and what groups do they belong to?
+<pre class= "code runnable" >
+Match p=(:Person)-[]-(:Group)-[]-(c:Crossing)-[]-(f:Fish) where f.fish_spp="Char" return p
+</pre>
+</slide>
+<slide>
+All species assessed by Ross Hinks?
+<pre class= "code runnable" >
+Match p=(m:Person)-[]-(:Group)-[]-(c:Crossing)-[]-(f:Fish) where m.name="Ross Hinks" return p
+</pre>
+</slide>
+<slide>
+What species are assessed by "BSGS"  group?
+<pre class= "code runnable" >
+Match p=(g:Group)-[]-(:Crossing)-[]-(f:Fish) where g.GroupName='BSGS' return p
+</pre>
+</slide>
+<slide>
+What are the species that are observed at crossing that Parr was observed at and what groups assessed those species?
+<pre class= "code runnable" >
+Match p=(:Fish)-[]-(:Crossing)-[]-(:Group)-[]-(:Crossing)-[]-(f:Fish) where f.fish_spp='Parr' return p
+</pre>
+</slide>
+<slide>
+
+<pre class= "code runnable" >
+</pre>
+</slide>
+<slide>
+Who worked on   Cooks-Brook river with an effort type of eDNA
+<pre class= "code runnable" >
+match p=(:Person)-[]-(e:Effort)-[]-(:Segment)-[:Connected_to*1..4]-(:Segment)-[]-(r:River) where e.effort_type="eDNA" and r.river_name = "Cooks-Brook" return p limit 10
+</pre>
+</slide>
+<slide>
+ What segments have intersection with crossings that have Salmon?
+ <pre class= "code runnable" >
+ match p=(s:Segment)-[r:Located_on]-(c:Crossing)-[]-(f:Fish) where f.fish_spp = "Salmon" and ToFloat(r.distance) < 10 return p
+ </pre>
+</slide>
+<slide>
+ What Barriers are located on  Yellow-Marsh-Brook river?
+ <pre class= "code runnable" >
+ match p=(:Barrier)-[]-(s:Segment)-[]-(:River{river_name:'Yellow-Marsh-Brook'}) return p
+ </pre>
+</slide>
+
+<slide>
+ What water bodies and segments connected to a site?
+ <pre class= "code runnable" >
+ match p=(:Site)-[]-(:Effort)-[a:ASSESSED_ON]-(:Segment)-[]-(:Junction)-[]-(:Waterbody) where ToFloat(a.distance) < 100 return p 
+
+ </pre>
+</slide>
+</html>
+</carousel>
+</article>
