@@ -33,7 +33,7 @@ Create segment nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/segments_to_junction.csv' AS SG
+	'FILE:///segments_to_junction.csv' AS SG
 	CREATE (s:Segment{segment_id:SG.segment_id})
 	SET s.DataSetNam=SG.DATASETNAM,
 	s.ACQTECH=SG.ACQTECH,
@@ -58,7 +58,7 @@ Create segment nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/junction.csv' AS JC
+	'FILE:///junction.csv' AS JC
 	CREATE (j:Junction{junction_id:JC.junction_id})
 	SET j.Latitude=toFloat(JC.lat),
     j.Longitude=toFloat(JC.lon);
@@ -70,7 +70,7 @@ Create segment nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
     LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/barrier_to_segments.csv' AS BR
+	'FILE:///barrier_to_segments.csv' AS BR
 	CREATE (br:Barrier{OBJECTID:BR.OBJECTID})
 	SET br.barrier_ty=BR.barrier_ty,
 	br.datasetNam=BR.datasetNam,
@@ -94,7 +94,7 @@ Create Waterbody Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
     LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/junction-to-waterbodies.csv' AS WB
+	'FILE:///junction-to-waterbodies.csv' AS WB
 	MERGE (w:Waterbody{waterbody_id:WB.waterbody_id})
 	MERGE (j:Junction{junction_id:WB.junction_id})
 	SET j.waterbody_id=w.waterbody_id;
@@ -102,7 +102,7 @@ Create Waterbody Nodes.
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
     LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/barrier_to_waterbody.csv' AS BRWB
+	'FILE:///barrier_to_waterbody.csv' AS BRWB
 	WITH BRWB WHERE BRWB.OBJECTID IS NOT NULL
 	MERGE (w:Waterbody{waterbody_id:BRWB.waterbody_id})
 	MERGE (br:Barrier{OBJECTID:BRWB.OBJECTID})
@@ -114,7 +114,7 @@ Create River Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
     LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/rivers_segments.csv' AS RI
+	'FILE:///rivers_segments.csv' AS RI
 	MERGE (r:River{river_name:RI.river_name})
 	
 	</pre>
@@ -124,7 +124,7 @@ Create River Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/ACA.csv' AS row
+	'FILE:///ACA.csv' AS row
 	WITH row WHERE row.CrossingId IS NOT NULL
 	WITH row, SPLIT(row.Date,'-') AS date 
 	MERGE (c:Crossing {crossing_id: row.CrossingId})
@@ -168,7 +168,7 @@ Create River Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/ACA_to_segments.csv' AS row
+	'FILE:///ACA_to_segments.csv' AS row
 	WITH row WHERE row.CrossingId IS NOT NULL
 	MERGE (c:Crossing {crossing_id: row.CrossingId})
 	SET c.segment_id=coalesce(row['segment_id']," "),
@@ -178,7 +178,7 @@ Create River Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/ACA_to_waterbodies.csv' AS row
+	'FILE:///ACA_to_waterbodies.csv' AS row
 	WITH row WHERE row.CrossingId IS NOT NULL
 	MERGE (c:Crossing {crossing_id: row.CrossingId})
 	SET c.waterbody_id=coalesce(row['waterbody_id']," "),
@@ -191,7 +191,7 @@ Create River Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Roads.csv' AS row
+	'FILE:///Roads.csv' AS row
 	WITH row WHERE row.RoadId IS NOT NULL
 	MERGE (r:Road {road_id: row.RoadId})
 	SET r.RoadName = row['RoadName']
@@ -202,7 +202,7 @@ Create Group Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Groups.csv' AS row
+	'FILE:///Groups.csv' AS row
 	WITH row WHERE row.GroupId IS NOT NULL
 	MERGE (g:Group {group_id: row.GroupId})
 	SET g.GroupName = row['Group'],
@@ -220,7 +220,7 @@ Create Site Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Sites.csv' AS row
+	'FILE:///Sites.csv' AS row
 	WITH row WHERE row.SiteId IS NOT NULL
 	MERGE (s:Site {site_id: row.SiteId})
 	SET s.location = Point({latitude: ToFloat(row.Latitude), longitude: ToFloat(row.Longitude)}),
@@ -236,7 +236,7 @@ Create Person Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/PersonData.csv' AS row
+	'FILE:///PersonData.csv' AS row
 	WITH row WHERE row.Name IS NOT NULL
 	MERGE (p:Person {name: row.Name})
 	SET p.GroupName=coalesce(row.Group," "),
@@ -254,7 +254,7 @@ Create Project Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Projects.csv' AS row
+	'FILE:///Projects.csv' AS row
 	WITH row WHERE row.ProjectId IS NOT NULL
 	MERGE (pr:Project {project_id: row.ProjectId})
 	SET pr.name = row['DFO project involvement']
@@ -265,7 +265,7 @@ Create Fish Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Fishes.csv' AS row
+	'FILE:///Fishes.csv' AS row
 	WITH row WHERE row.FishId IS NOT NULL
 	MERGE (f:Fish {fish_id: row.FishId})
 	SET f.fish_spp = row['Fish Spp']
@@ -276,7 +276,7 @@ Create Effort Nodes.
 <pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/labrador.csv' AS row
+	'FILE:///labrador.csv' AS row
 	WITH row WHERE row.Effort_Id IS NOT NULL
 	WITH row, SPLIT(row.Date,'-') AS date 
 	MERGE (e:Effort {effort_id: row.Effort_Id})
@@ -326,7 +326,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/barrier_to_waterbody.csv' AS row
+	'FILE:///barrier_to_waterbody.csv' AS row
 	MATCH(w:Waterbody),(br:Barrier) WHERE w.waterbody_id=br.waterbody_id
 	MERGE (br)-[BW:Located_on]->(w)
 	SET BW.distance=row.dist_meters;
@@ -367,7 +367,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Person_Project_Relation.csv' AS row
+	'FILE:///Person_Project_Relation.csv' AS row
 	WITH row WHERE row['DFO project involvement'] IS NOT NULL
 	MATCH (p:Person {name: row.Name})
 	MATCH (pr:Project {name: row['DFO project involvement']})
@@ -377,7 +377,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/labrador.csv' AS row
+	'FILE:///labrador.csv' AS row
 	WITH row WHERE row.SiteId IS NOT NULL
 	MATCH (e:Effort {effort_id: row.Effort_Id})
 	MATCH (s:Site {site_id: row.SiteId})
@@ -387,7 +387,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/Fish_Relation.csv' AS row
+	'FILE:///Fish_Relation.csv' AS row
 	WITH row WHERE row.CrossingId IS NOT NULL
 	MATCH (c:Crossing {crossing_id: row.CrossingId})
 	MATCH (f:Fish {fish_spp: row['Fish Spp']})
@@ -397,7 +397,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/labrador.csv' AS row
+	'FILE:///labrador.csv' AS row
 	WITH row WHERE row.Effort_Id IS NOT NULL
 	MATCH (p:Person {name: row.PrimaryInvestigator})
 	MATCH (e:Effort {effort_id: row.Effort_Id})
@@ -407,7 +407,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/labrador.csv' AS row
+	'FILE:///labrador.csv' AS row
 	WITH row WHERE row.Effort_Id IS NOT NULL
 	MATCH (p:Person {name: row.Technician})
 	MATCH (e:Effort {effort_id: row.Effort_Id})
@@ -418,7 +418,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/points_to_segments.csv' AS row
+	'FILE:///points_to_segments.csv' AS row
 	WITH row WHERE row.Effort_Id IS NOT NULL
 	MATCH (s:Segment {segment_id: row.segment_id})
 	MATCH (e:Effort {effort_id: row.Effort_Id})
@@ -429,7 +429,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
 	LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/points_to_waterbodies.csv' AS row
+	'FILE:///points_to_waterbodies.csv' AS row
 	WITH row WHERE row.Effort_Id IS NOT NULL
 	MATCH (w:Waterbody {waterbody_id: row.waterbody_id})
 	MATCH (e:Effort {effort_id: row.Effort_Id})
@@ -440,7 +440,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
     LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/rivers_segments.csv' AS RI
+	'FILE:///rivers_segments.csv' AS RI
 	MATCH (r:River{river_name:RI.river_name})
 	MATCH (s:Segment {segment_id: RI.segment_id})
 	MERGE (s)-[:Located_on]->(r);
@@ -449,7 +449,7 @@ Create relationships between segment and junction
 	<pre class= "code runnable" >
 	:auto USING PERIODIC COMMIT
     LOAD CSV WITH HEADERS FROM 
-	'FILE:///C:/segment_to_segment.csv' AS RI
+	'FILE:///segment_to_segment.csv' AS RI
 	MATCH (s1:Segment {segment_id: RI.segment_id_first})
 	MATCH (s2:Segment {segment_id: RI.segment_id_second})
 	MERGE (s1)-[:Connected_to]->(s2);
