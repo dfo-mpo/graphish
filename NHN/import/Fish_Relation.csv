@@ -1,0 +1,661 @@
+,CrossingId,Fish Spp
+0,BSGS1,Trout
+1,BSGS2,Trout
+2,BSGS3,Trout
+3,BSGS3,Salmon
+4,BSGS4,Trout
+5,BSGS4,Salmon
+6,BSGS5,Trout
+7,BSGS5,Salmon
+8,BSGS6,Trout
+9,BSGS6,Salmon
+10,BSGS7,Trout
+11,BSGS7,Salmon
+12,BSGS8,Trout
+13,BSGS9,Trout
+14,BSGS9,Salmon
+15,BSGS10,Trout
+16,BSGS11,Trout
+17,BSGS11,Salmon
+18,BSGS12,Trout
+19,BSGS12,Salmon
+20,ERMA1,Salmon
+21,ERMA2,Trout
+22,ERMA2,Salmon
+23,ERMA3,Trout
+24,ERMA3,Salmon
+25,ERMA4,Salmon
+26,ERMA5,Salmon
+27,ERMA6,Salmon
+28,ERMA7,Trout
+29,ERMA7,Salmon
+30,ERMA8,Trout
+31,ERMA8,Salmon
+32,ERMA9,Salmon
+33,ERMA10,Trout
+34,ERMA10,Salmon
+35,ERMA11,Trout
+36,ERMA11,Salmon
+37,ERMA12,Salmon
+38,ERMA13,Salmon
+39,ERMA14,Salmon
+40,ERMA15,Salmon
+41,ERMA16,Trout
+42,ERMA16,Salmon
+43,ERMA17,Salmon
+44,FABEC1,Trout
+45,FABEC1,Salmon
+46,FABEC2,Trout
+47,FABEC2,Salmon
+48,FABEC3,Trout
+49,FABEC3,Salmon
+50,FABEC4,Trout
+51,FABEC5,Trout
+52,FABEC6,Trout
+53,FABEC7,Trout
+54,FABEC8,Trout
+55,FABEC9,Trout
+56,FABEC10,Trout
+57,FABEC11,Trout
+58,FABEC12,Trout
+59,FABEC13,Trout
+60,FABEC14,Trout
+61,FABEC15,Trout
+62,FABEC16,Trout
+63,FABEC17,Trout
+64,FABEC18,Trout
+65,FABEC19,Trout
+66,FABEC20,Trout
+67,FABEC20,Salmon
+68,FABEC21,Trout
+69,FABEC22,Trout
+70,FABEC22,Salmon
+71,FABEC23,Trout
+72,FABEC24,Trout
+73,FABEC25,Trout
+74,FABEC25,Salmon
+75,FABEC26,Trout
+76,FABEC26,Salmon
+77,FABEC27,Trout
+78,FABEC28,Trout
+79,FABEC29,Trout
+80,FABEC29,Salmon
+81,FABEC30,Trout
+82,FABEC31,Trout
+83,FABEC32,Trout
+84,FABEC33,Trout
+85,FABEC33,Salmon
+86,FABEC34,Trout
+87,FABEC35,Trout
+88,FABEC36,Trout
+89,FABEC37,Trout
+90,FABEC38,Trout
+91,FABEC38,Salmon
+92,FABEC39,Trout
+93,FABEC40,Trout
+94,FABEC41,Trout
+95,FABEC42,Trout
+96,FABEC43,Trout
+97,FABEC44,Trout
+98,FABEC45,Trout
+99,FABEC46,Trout
+100,FABEC46,Salmon
+101,FABEC47,Trout
+102,FABEC48,Trout
+103,FABEC48,Salmon
+104,FABEC49,Trout
+105,FABEC50,Trout
+106,FABEC51,Trout
+107,FABEC51,Salmon
+108,FABEC52,Trout
+109,FABEC52,Salmon
+110,FABEC53,Trout
+111,FABEC53,Salmon
+112,FABEC54,Trout
+113,FABEC54,Salmon
+114,FABEC55,Trout
+115,FABEC56,Trout
+116,FABEC57,Trout
+117,GBIBC1,Trout
+118,GBIBC2,Trout
+119,GBIBC2,Parr
+120,GBIBC3,Trout
+121,GBIBC3,Salmon
+122,GBIBC4,Trout
+123,GBIBC5,Trout
+124,GBIBC6,Trout
+125,GBIBC9,Trout
+126,GBIBC9,Parr
+127,GBIBC10,Trout
+128,GBIBC11,Trout
+129,GBIBC12,Trout
+130,GBIBC14,Trout
+131,GBIBC15,Trout
+132,Glenwood FN1,Trout
+133,Glenwood FN2,Trout
+134,Glenwood FN3,Trout
+135,Glenwood FN4,Trout
+136,Glenwood FN5,Trout
+137,Glenwood FN6,Trout
+138,Glenwood FN7,Trout
+139,Glenwood FN8,Trout
+140,Glenwood FN8,Salmon
+141,Glenwood FN9,Trout
+142,Glenwood FN9,Salmon
+143,Glenwood FN10,Trout
+144,Glenwood FN10,Salmon
+145,Glenwood FN11,Trout
+146,Glenwood FN11,Salmon
+147,Glenwood FN12,Trout
+148,Glenwood FN12,Salmon
+149,Glenwood FN13,Trout
+150,Glenwood FN14,Trout
+151,Glenwood FN15,Trout
+152,Glenwood FN16,Trout
+153,Glenwood FN17,Trout
+154,Glenwood FN18,Trout
+155,Glenwood FN19,Trout
+156,Glenwood FN20,Trout
+157,Glenwood FN21,Trout
+158,Glenwood FN22,Trout
+159,Glenwood FN23,Trout
+160,Glenwood FN24,Trout
+161,Glenwood FN25,Trout
+162,Glenwood FN26,Trout
+163,Glenwood FN27,Trout
+164,Glenwood FN28,Trout
+165,Glenwood FN29,Trout
+166,Glenwood FN30,Trout
+167,Glenwood FN31,Trout
+168,Glenwood FN32,Trout
+169,Glenwood FN33,Trout
+170,Glenwood FN34,Trout
+171,Glenwood FN35,Trout
+172,Glenwood FN36,Trout
+173,Glenwood FN37,Trout
+174,Glenwood FN38,Trout
+175,Glenwood FN39,Trout
+176,Glenwood FN40,Trout
+177,Glenwood FN41,Trout
+178,Glenwood FN42,Trout
+179,Glenwood FN43,Trout
+180,Glenwood FN44,Trout
+181,Glenwood FN45,Trout
+182,Glenwood FN47,Trout
+183,Glenwood FN48,Trout
+184,Glenwood FN48,Salmon
+185,Glenwood FN49,Trout
+186,Glenwood FN50,Trout
+187,Glenwood FN51,Trout
+188,Glenwood FN52,Trout
+189,Glenwood FN53,Trout
+190,Glenwood FN54,Trout
+191,Glenwood FN55,Trout
+192,Glenwood FN56,Trout
+193,Glenwood FN57,Trout
+194,Glenwood FN58,Trout
+195,Glenwood FN59,Trout
+196,Glenwood FN60,Trout
+197,Glenwood FN61,Trout
+198,Glenwood FN62,Trout
+199,Glenwood FN63,Trout
+200,Glenwood FN64,Trout
+201,Glenwood FN65,Trout
+202,Glenwood FN66,Trout
+203,Glenwood FN67,Trout
+204,GREC1,Trout
+205,GREC2,Trout
+206,GREC3,Trout
+207,GREC3,Salmon
+208,GREC4,Trout
+209,GREC4,Salmon
+210,GREC4,Parr
+211,GREC5,Trout
+212,GREC6,Trout
+213,GREC6,Salmon
+214,GREC7,Trout
+215,GREC8,Trout
+216,GREC9,Trout
+217,GREC10,Trout
+218,GREC11,Trout
+219,GREC12,Trout
+220,GREC13,Trout
+221,GREC14,Trout
+222,GREC14,Salmon
+223,GREC14,Parr
+224,GREC15,Trout
+225,Humber Arm1,Trout
+226,Humber Arm1,Salmon
+227,Humber Arm2,Trout
+228,Humber Arm2,Salmon
+229,Humber Arm3,Salmon
+230,Humber Arm4,Salmon
+231,Humber Arm5,Salmon
+232,Humber Arm6,Salmon
+233,Humber Arm7,Trout
+234,Humber Arm7,Salmon
+235,Humber Arm8,Trout
+236,Humber Arm8,Salmon
+237,Humber Arm9,Trout
+238,Humber Arm9,Salmon
+239,Humber Arm10,Trout
+240,Humber Arm10,Salmon
+241,Humber Arm11,Trout
+242,Humber Arm11,Salmon
+243,Humber Arm12,Trout
+244,Humber Arm12,Salmon
+245,Humber Arm13,Trout
+246,Humber Arm13,Salmon
+247,Humber Arm14,Trout
+248,Humber Arm14,Salmon
+249,Humber Arm15,Trout
+250,Humber Arm15,Salmon
+251,Humber Arm16,Trout
+252,Humber Arm16,Salmon
+253,Humber Arm17,Trout
+254,Humber Arm17,Salmon
+255,Humber Arm18,Trout
+256,Humber Arm18,Salmon
+257,Humber Arm19,Trout
+258,Humber Arm19,Salmon
+259,Humber Arm20,Trout
+260,Humber Arm20,Salmon
+261,Humber Arm21,Trout
+262,Humber Arm21,Salmon
+263,Humber Arm22,Trout
+264,Humber Arm22,Salmon
+265,Humber Arm23,Trout
+266,Humber Arm23,Salmon
+267,Humber Arm24,Trout
+268,Humber Arm24,Salmon
+269,Humber Arm25,Trout
+270,Humber Arm25,Salmon
+271,Humber Arm26,Trout
+272,Humber Arm26,Salmon
+273,Humber Arm27,Trout
+274,Humber Arm27,Salmon
+275,Humber Arm28,Trout
+276,Humber Arm28,Salmon
+277,Humber Arm29,Trout
+278,Humber Arm29,Salmon
+279,Humber Arm30,Trout
+280,Humber Arm30,Salmon
+281,Humber Arm31,Trout
+282,Humber Arm31,Salmon
+283,Humber Arm32,Trout
+284,Humber Arm32,Salmon
+285,Humber Arm33,Trout
+286,Humber Arm33,Salmon
+287,Humber Arm34,Trout
+288,Humber Arm34,Salmon
+289,Humber Arm35,Trout
+290,Humber Arm35,Salmon
+291,Humber Arm36,Salmon
+292,Humber Arm37,Trout
+293,Humber Arm37,Salmon
+294,Humber Arm38,Trout
+295,Humber Arm38,Salmon
+296,Humber Arm39,Trout
+297,Humber Arm39,Salmon
+298,Humber Arm40,Trout
+299,Humber Arm41,Trout
+300,Humber Arm41,Salmon
+301,Humber Arm42,Salmon
+302,Humber Arm43,Salmon
+303,Humber Arm44,Salmon
+304,Humber Arm45,Trout
+305,Humber Arm45,Salmon
+306,Humber Arm46,Trout
+307,Humber Arm46,Salmon
+308,Humber Arm47,Trout
+309,Humber Arm47,Salmon
+310,IBEC1,Trout
+311,IBEC1,Salmon
+312,IBEC1,Eel
+313,IBEC2,Trout
+314,IBEC2,Salmon
+315,IBEC2,Eel
+316,IBEC3,Trout
+317,IBEC4,Trout
+318,IBEC5,Trout
+319,IBEC5,Salmon
+320,IBEC5,Eel
+321,IBEC6,Trout
+322,IBEC6,Salmon
+323,IBEC6,Eel
+324,IBEC7,Trout
+325,IBEC8,Trout
+326,IBEC9,Trout
+327,IBEC9,Eel
+328,IBEC10,Trout
+329,IBEC11,Trout
+330,IBEC11,Salmon
+331,IBEC12,Trout
+332,IBEC12,Salmon
+333,IBEC13,Trout
+334,IBEC13,Salmon
+335,IBEC14,Trout
+336,IBEC14,Salmon
+337,IBEC15,Trout
+338,IBEC16,Trout
+339,IBEC17,Trout
+340,IBEC18,Trout
+341,IBEC18,Salmon
+342,IBEC19,Trout
+343,IBEC19,Salmon
+344,IBEC19,Eel
+345,IBEC20,Trout
+346,IBEC20,Salmon
+347,IBEC21,Trout
+348,IBEC22,Trout
+349,IBEC23,Trout
+350,IBEC24,Trout
+351,IBEC25,Trout
+352,IBEC26,Trout
+353,IBEC27,Trout
+354,IBEC28,Trout
+355,IBEC29,Trout
+356,IBEC30,Trout
+357,IBEC31,Trout
+358,IBEC32,Trout
+359,IBEC33,Trout
+360,IBEC34,Trout
+361,IBEC35,Trout
+362,IBEC36,Trout
+363,IBEC37,Trout
+364,IBEC38,Trout
+365,IBEC39,Trout
+366,IBEC40,Trout
+367,IBEC41,Trout
+368,IBEC42,Trout
+369,IBEC43,Trout
+370,IBEC44,Trout
+371,IBEC45,Trout
+372,IBEC46,Trout
+373,IBEC47,Trout
+374,IBEC48,Trout
+375,IBEC49,Trout
+376,IBEC50,Trout
+377,IBEC51,Trout
+378,IBEC52,Trout
+379,IBEC53,Trout
+380,IBEC54,Trout
+381,IBEC55,Trout
+382,IBEC56,Trout
+383,IBEC57,Trout
+384,IBEC58,Trout
+385,IBEC59,Trout
+386,IBEC60,Trout
+387,IBEC61,Trout
+388,IBEC62,Trout
+389,IBEC63,Trout
+390,IBEC64,Trout
+391,IBEC65,Trout
+392,IBEC66,Trout
+393,IBEC67,Trout
+394,IBEC68,Trout
+395,IBEC69,Trout
+396,IBEC70,Trout
+397,IBEC71,Trout
+398,IBEC72,Trout
+399,IBEC72,Salmon
+400,IBEC73,Trout
+401,IBEC74,Trout
+402,IBEC75,Trout
+403,IBEC76,Trout
+404,IBEC77,Trout
+405,IBEC78,Trout
+406,IBEC79,Trout
+407,IBEC80,Trout
+408,IBEC81,Trout
+409,IBEC82,Trout
+410,IBEC83,Trout
+411,IBEC84,Trout
+412,Inrervale W1,Trout
+413,Inrervale W2,Trout
+414,Inrervale W3,Trout
+415,Inrervale W4,Trout
+416,Inrervale W4,Salmon
+417,Inrervale W5,Trout
+418,Inrervale W5,Salmon
+419,Inrervale W6,Trout
+420,Inrervale W7,Trout
+421,Inrervale W8,Trout
+422,Inrervale W9,Trout
+423,Inrervale W10,Trout
+424,Inrervale W11,Stickleback
+425,Inrervale W12,Trout
+426,Inrervale W13,Trout
+427,Inrervale W14,Trout
+428,Inrervale W15,Trout
+429,Inrervale W16,Trout
+430,Intervale NP1,Trout
+431,Intervale NP1,Salmon
+432,Intervale NP2,Trout
+433,Intervale NP3,Trout
+434,Intervale NP4,Trout
+435,Intervale NP5,Trout
+436,Intervale NP5,Salmon
+437,Intervale NP5,Calm
+438,Intervale NP6,Trout
+439,Intervale NP7,Trout
+440,Intervale NP8,Trout
+441,Intervale NP8,Salmon
+442,Intervale NP9,Salmon
+443,Intervale NP10,Trout
+444,Intervale NP10,Salmon
+445,Intervale NP11,Trout
+446,Intervale NP11,Salmon
+447,Intervale NP12,Trout
+448,Intervale NP13,Trout
+449,Intervale NP14,Trout
+450,Intervale NP15,Trout
+451,Intervale NP16,Trout
+452,Intervale NP17,Trout
+453,Intervale NP18,Trout
+454,Intervale NP19,Trout
+455,Intervale NP20,Trout
+456,Intervale NP21,Trout
+457,Intervale NP22,Trout
+458,Intervale NP23,Trout
+459,Intervale NP24,Trout
+460,Intervale NP25,Trout
+461,Intervale NP26,Trout
+462,Intervale NP26,Salmon
+463,Intervale NP27,Trout
+464,Intervale NP28,Trout
+465,Intervale NP29,Trout
+466,Intervale NP30,Trout
+467,Intervale NP30,Stickleback
+468,Intervale NP31,Trout
+469,Intervale NP31,Stickleback
+470,Intervale NP32,Trout
+471,Intervale NP33,Trout
+472,Intervale NP34,Trout
+473,Intervale NP35,Trout
+474,Intervale NP36,Trout
+475,Intervale NP37,Trout
+476,Intervale NP40,Trout
+477,Intervale NP41,Trout
+478,Intervale NP42,Trout
+479,Intervale NP43,Trout
+480,Intervale NP44,Trout
+481,Intervale NP45,Trout
+482,MFN1,Trout
+483,MFN2,Trout
+484,MFN2,Salmon
+485,MFN3,Trout
+486,MFN4,Trout
+487,MFN5,Trout
+488,MFN5,Salmon
+489,MFN6,Trout
+490,MFN7,Trout
+491,MFN8,Trout
+492,MFN9,Trout
+493,MFN10,Trout
+494,MFN11,Trout
+495,MFN12,Trout
+496,MFN13,Trout
+497,MFN14,Trout
+498,MFN15,Trout
+499,MFN16,Trout
+500,MFN16,Salmon
+501,MFN17,Trout
+502,MFN17,Salmon
+503,MFN18,Trout
+504,MFN18,Salmon
+505,MFN19,Trout
+506,MFN19,Salmon
+507,MFN20,Trout
+508,MFN20,Salmon
+509,MFN21,Trout
+510,MFN21,Salmon
+511,MFN22,Trout
+512,NAACAP1,Trout
+513,NAACAP2,Trout
+514,NAACAP3,Trout
+515,NAACAP4,Trout
+516,NAACAP5,Trout
+517,NAACAP6,Trout
+518,NAACAP6,Salmon
+519,NAACAP7,Trout
+520,NAACAP7,Salmon
+521,NAACAP8,Trout
+522,NAACAP8,Salmon
+523,NAACAP9,Trout
+524,NAACAP9,Salmon
+525,NAACAP10,Trout
+526,NAACAP10,Salmon
+527,NAACAP11,Trout
+528,NAACAP11,Salmon
+529,NAACAP12,Trout
+530,NAACAP12,Salmon
+531,NAACAP13,Trout
+532,NAACAP13,Salmon
+533,NAACAP14,Trout
+534,NAACAP14,Salmon
+535,NAACAP15,Trout
+536,NCC1,Trout
+537,NCC2,Trout
+538,NCC3,Trout
+539,NCC4,Trout
+540,NCC5,Trout
+541,NCC7,Trout
+542,NCC7,Salmon
+543,NCC8,Trout
+544,NCC8,Salmon
+545,NCC9,Trout
+546,NCC9,Salmon
+547,NCC10,Trout
+548,NCC10,Salmon
+549,NCC11,Trout
+550,NCC11,Salmon
+551,NCC12,Trout
+552,NCC13,Trout
+553,NCC14,Trout
+554,NCC15,Trout
+555,NCC16,Trout
+556,NCC16,Salmon
+557,NCC17,Trout
+558,NCC18,Trout
+559,NCC19,Trout
+560,NCC20,Trout
+561,NCC21,Trout
+562,NCC21,Salmon
+563,NCC22,Trout
+564,NCC23,Trout
+565,NCC23,Salmon
+566,NCC24,Trout
+567,NCC24,Stickleback
+568,NCC25,Trout
+569,NCC25,Salmon
+570,NCC26,Trout
+571,NCC27,Trout
+572,NCC28,Trout
+573,NCC29,Trout
+574,NCC30,Trout
+575,NCC31,Trout
+576,NCC32,Trout
+577,NCC33,Trout
+578,NCC34,Trout
+579,NCC35,Trout
+580,NCC36,Trout
+581,NCC37,Trout
+582,NCC38,Trout
+583,NCC39,Trout
+584,NCC40,Trout
+585,NCC41,Trout
+586,NCC42,Trout
+587,NCC43,Trout
+588,NCC44,Trout
+589,NCC45,Trout
+590,NCC46,Trout
+591,NCC47,Trout
+592,NCC48,Trout
+593,NCC49,Trout
+594,NCC50,Trout
+595,NCC51,Trout
+596,NCC51,Salmon
+597,NCC51,Char
+598,NCC52,Trout
+599,NCC52,Salmon
+600,NCC52,Char
+601,NCC53,Trout
+602,NCC54,Trout
+603,NCC54,Salmon
+604,NCC54,Char
+605,NCC54,Smelts
+606,NCC54,Cod
+607,NCC54,Sculpin
+608,NCC55,Trout
+609,NCC56,Trout
+610,NCC57,Trout
+611,NCC58,Trout
+612,NCC59,Trout
+613,NCC60,Trout
+614,NCC61,Trout
+615,NCC62,Trout
+616,NCC62,Salmon
+617,NCC63,Trout
+618,NCC64,Trout
+619,Qalipu1,Trout
+620,Qalipu1,Salmon
+621,Qalipu2,Trout
+622,Qalipu2,Salmon
+623,Qalipu4,Trout
+624,Qalipu4,Salmon
+625,Qalipu5,Trout
+626,Qalipu5,Salmon
+627,Qalipu6,Trout
+628,Qalipu6,Salmon
+629,Qalipu7,Trout
+630,Qalipu7,Salmon
+631,Qalipu8,Trout
+632,Qalipu8,Salmon
+633,Qalipu9,Trout
+634,Qalipu10,Trout
+635,Qalipu10,Salmon
+636,Qalipu11,Trout
+637,Qalipu11,Salmon
+638,Qalipu12,Trout
+639,Qalipu12,Salmon
+640,Qalipu13,Trout
+641,Qalipu13,Salmon
+642,Qalipu14,Trout
+643,Qalipu14,Salmon
+644,Qalipu15,Trout
+645,Qalipu15,Salmon
+646,Qalipu16,Trout
+647,Qalipu16,Salmon
+648,Qalipu17,Trout
+649,Qalipu17,Salmon
+650,Qalipu18,Trout
+651,Qalipu19,Trout
+652,Qalipu3A,Trout
+653,Qalipu3A,Salmon
+654,Qalipu3B,Trout
+655,Qalipu3B,Salmon
+656,Qalipu3C,Trout
+657,Qalipu3C,Salmon
+658,Qalipu3D,Trout
+659,Qalipu3D,Salmon
